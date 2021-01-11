@@ -1,6 +1,21 @@
 $waterColor: #2BE3FA;
 $speed: 1;
 
+.loading {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  transition: opacity .5s, left 0s 1s;
+  &.hideIt {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
 .index-loader {
   position: relative;
   z-index: 1;

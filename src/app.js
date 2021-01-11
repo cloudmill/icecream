@@ -2,7 +2,7 @@
 import AOS from 'aos';
 import Rellax from 'rellax';
 import Sticky from 'sticky-js';
-import "velocity-animate";
+import 'velocity-animate';
 
 // Styles
 import 'Styles/_app.scss';
@@ -81,19 +81,16 @@ $(window).on('load', function() {
 			}
 		}, 35);
 	} else {
-		$('.fullpage-block').addClass('active');
-		$('.fullpage-desc span:first-child').addClass('active');
+		$('body').css('overflow', 'hidden');
 		setTimeout(() => {
-			$('.fullpage-desc span:nth-child(3)').addClass('active');
-			setTimeout(() => {
-				$('.fullpage-desc span:last-child').addClass('active');
-			}, 300);
-		}, 300);
-		AOS.init({offset: 50});
-		if ($('.rellax').length) {
-			// eslint-disable-next-line no-new
-			new Rellax('.rellax');
-		}
+			$('.loading').addClass('hideIt');
+			$('body').css('overflow', 'visible');
+			AOS.init({offset: 50});
+			if ($('.rellax').length) {
+				// eslint-disable-next-line no-new
+				new Rellax('.rellax');
+			}
+		}, 500);
 	}
 
 });
