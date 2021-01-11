@@ -1,0 +1,76 @@
+//- mixins
+
+mixin newsList(classList)
+    a.news-list__item(href='#', class=classList)
+        .news-list__item-date 20 ноября 2020
+        .news-list__item-title Новый завод по производству молочной продукции «Чистая Линия» появится в Долгопрудном в 2024 году
+        .news-list__item-link
+            svg(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='white')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M22.2545 18.2762C22.5937 17.9079 23.1435 17.9079 23.4827 18.2762L28.6936 23.9337C29.0327 24.3019 29.0327 24.8989 28.6936 25.2672L23.4827 30.9247C23.1435 31.2929 22.5937 31.2929 22.2545 30.9247C21.9153 30.5565 21.9153 29.9594 22.2545 29.5912L26.8513 24.6004L22.2545 19.6097C21.9153 19.2414 21.9153 18.6444 22.2545 18.2762Z' fill='#5CA8C0')
+
+mixin title(title, items)
+    .mainTitle
+        ul.breadcrumbs
+            each item in items
+                li.breadcrumbs__item
+                    a.breadcrumbs__link(href="#")= item
+            li.breadcrumbs__item.active
+                a.breadcrumbs__link(href="/"): +img('icons/home.svg')
+        h1.mainTitle-text= title
+
+//- menu
+mixin menu(items)
+    ul.main-nav
+        each item in items
+            - var parent  = ''
+            - if(item.subitems !== false) parent='main-nav__item--parent'
+            li.main-nav__item(class=parent)
+                a.main-nav__link(href=item.href, title=item.title)= item.title
+                - if(item.subitems !== false)
+                    ul.sub-nav
+                        each subitem in item.subitems
+                            li.main-nav__item
+                                a.main-nav__link(href=subitem.href, title=subitem.title)= subitem.title
+
+
+//- form-input
+mixin fieldInput(type, name, id, label, placeholder, required)
+    label(for=id)= label
+    input.control(type=type, name=name, id=id, placeholder=placeholder, required=required)
+
+//- form-textarea
+mixin fieldTextarea(name, id, label, placeholder, rows, required)
+    label(for=id)= label
+    textarea.control(name=name, id=id, placeholder=placeholder, rows=rows,  required=required)
+
+//- form-checkbox
+mixin fieldCheckbox(name, id, checked)
+    .checkbox
+        input(type="checkbox", id=id, checked=checked)
+        label(for=id)=name
+
+//- form-radio
+mixin fieldRadio(name, id, label, checked)
+    .radio
+        input(type="radio", id=id, value=id, name=label, checked=checked)
+        label(for=id)=name
+
+
+mixin img(src)
+    img(src='assets/images/'+src, alt='')
+
+
+//- maps-iframe
+- var map = 'iframe src="putMapURLhere" width="100%" height="400" frameborder="0" style="pointer-events: none;" allowfullscreen></iframe';
+
+
+//- article
+mixin article(title)
+  .article
+    .article-wrapper
+      h1= title
+      if block
+        block
+      else
+        p No content provided

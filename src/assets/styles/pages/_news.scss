@@ -1,0 +1,9 @@
+.news {
+  padding-bottom: 50px;
+  @media screen and (min-width: $screen-md-min) {
+    padding-bottom: 80px;
+  }
+  @media screen and (min-width: 1150px) {
+    padding-bottom: 160px;
+  }
+}

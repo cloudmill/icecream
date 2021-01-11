@@ -1,0 +1,154 @@
+//
+// Partials -> Header
+// ------------------------------------
+
+.mobile {
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    z-index: 101;
+    @media screen and (min-width: $screen-lg-min) {
+      display: none;
+    }
+  }
+  &__logo {
+    img {
+      @media screen and (min-width: 900px) {
+        width: 140px;
+      }
+    }
+  }
+  &__nav {
+    cursor: pointer;
+    svg {
+      @media screen and (min-width: 900px) {
+        width: 140px !important;
+        height: 140px !important;
+      }
+    }
+    path {
+      transition: all .5s;
+    }
+    .close {
+      opacity: 0;
+    }
+    &.active {
+      .close {
+        opacity: 1;
+      }
+      path.text {
+        opacity: 0;
+      }
+    }
+    &.active,
+    &:hover {
+      path.circle {
+        stroke: $base-color-main;
+        fill: $base-color-main;
+      }
+      path.text {
+        fill: white;
+      }
+    }
+  }
+}
+
+//
+// Header
+//
+.page-header {
+  left: -1000px;
+  bottom: 0;
+  top: 0;
+  position: fixed;
+  padding: 120px 30px 40px;
+  background: white;
+  border: 1px solid $color-type-3a;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 99;
+  transition: left .5s;
+  &.active {
+    left: 0;
+  }
+  @media screen and (min-width: $screen-md-min) {
+    padding: 160px 30px 40px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding: 40px 30px;
+    overflow-y: auto;
+    top: 40px;
+    left: -1000px;
+    bottom: 40px;
+    left: 40px;
+    border-radius: 20px;
+  }
+  a {
+    transition: color .5s;
+  }
+  &__logo {
+    text-align: center;
+    display: none;
+    @media screen and (min-width: $screen-lg-min) {
+      display: block;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  &__link {
+    height: 42px;
+    border-radius: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    text-decoration: none;
+    background: #EBFAFF;
+    color: $base-color-light;
+    transition: all .5s !important;
+    span {
+      margin-right: auto;
+    }
+    img {
+      height: 100%;
+      margin-right: auto;
+    }
+    &:hover {
+      color: white;
+      background: $base-color-main;
+    }
+  }
+}
+
+.bubble {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  transition: left .5s;
+  //width: 400px;
+  //height: 20px;
+}
+
+//
+// Main title
+//
+.title { }
+
+
+//
+// old-browser
+//
+.browsehappy {
+  @extend .container;
+}
+.lt-ie8 { }

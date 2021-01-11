@@ -1,0 +1,29 @@
+//
+// Partials -> Aside
+// ------------------------------------
+
+@mixin asideBlock {
+  background: white;
+  border: 1px solid $gray;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  h5,
+  h4 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.contacts-block {
+  @include asideBlock();
+}
+
+.sign-block {
+  @include asideBlock();
+  background: $gray;
+}

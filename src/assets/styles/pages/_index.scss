@@ -1,0 +1,382 @@
+//
+// Pages -> Index
+// ------------------------------------
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px -10px 0;
+  @media screen and (min-width: $screen-md-min) {
+    margin: 0;
+    justify-content: center;
+  }
+  a {
+    display: inline-block;
+    margin: 0 10px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin: 0 4px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      margin: 0 20px;
+    }
+  }
+}
+
+
+.fullpage {
+  &-block {
+    position: relative;
+    padding-left: 20px;
+    min-height: 100vh;
+    background: url("../images/back.svg") no-repeat center center / cover;
+    overflow: hidden;
+    @media screen and (min-width: $screen-lg-min) {
+      padding-left: 250px;
+    }
+
+    .swiper-container {
+      overflow: visible;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 20px;
+      margin: auto;
+      z-index: 9;
+      width: 210px;
+      @media screen and (min-width: $screen-md-min) {
+        bottom: 40px;
+        width: auto;
+        left: 20px;
+        right: auto;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        left: 100px;
+      }
+    }
+
+    > img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      width: 100%;
+      z-index: 1;
+      @media screen and (min-width: $screen-md-min) {
+        bottom: -20px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        bottom: -40px;
+      }
+    }
+
+    &.active {
+      .fullpage-title {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .fullpage-desc {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  &-slider {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 9;
+  }
+
+  &-title {
+    opacity: 0;
+    transform: translateY(100px) scale(0.7);
+    transition: all .5s;
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    text-align: right;
+    z-index: 9;
+    @media screen and (min-width: 900px) {
+      top: 140px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      top: 40px;
+    }
+
+    h2 {
+      margin: 0;
+      color: white;
+      font-size: 22px;
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 3.5vw;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        font-size: 55px;
+      }
+    }
+
+    &.remove {
+      opacity: 0 !important;
+      transform: translateY(-100px) scale(0.7) !important;
+      &.active {
+        transform: translateY(100px) scale(0.7) !important;
+      }
+    }
+  }
+
+  &-desc {
+    opacity: 0;
+    transform: translate(-40px, 40px);
+    transition: all .5s;
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    color: white;
+    font-weight: bold;
+    line-height: 1.3;
+    font-size: 14px;
+    display: none;
+    @media screen and (min-width: $screen-md-min) {
+      display: block;
+    }
+    @media screen and (min-width: 900px) {
+      top: 40px;
+      left: 140px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 1.6vw;
+      left: 100px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      font-size: 22px;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+
+      &:after {
+        content: '';
+        background: $base-color-main;
+        border-radius: 7px;
+        position: absolute;
+        top: 5px;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        z-index: -1;
+        transition: width .5s .6s;
+      }
+      &.active:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.house {
+  &-block {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(180deg, #F8F6E9 0%, #F8F6E9 46%, #F3F0DA 47%, #F3F0DA 100%), #F8F6E9;
+    @media screen and (min-width: $screen-md-min) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 9;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 30px;
+      background: url("../images/houseb-mob.svg") no-repeat center top / 100% auto;
+      @media screen and (min-width: $screen-md-min) {
+        display: none;
+      }
+    }
+    svg,
+    img {
+      vertical-align: middle;
+      width: 130%;
+      max-width: inherit;
+      margin-left: -20%;
+      @media screen and (min-width: $screen-lg-min) {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+      }
+    }
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  &__desc {
+    @media screen and (min-width: $screen-md-min) {
+      z-index: 11;
+      width: 40%;
+      position: absolute;
+      top: 170px;
+      left: 60%;
+    }
+
+    p {
+      margin: 20px 0;
+      @media screen and (min-width: $screen-md-min) {
+        margin: 40px 0;
+      }
+    }
+
+    h2 {
+      span {
+        position: relative;
+        z-index: 1;
+
+        &:after {
+          content: '';
+          background: #EBE29F;
+          border-radius: 7px;
+          position: absolute;
+          top: 5px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          @media screen and (min-width: $screen-lg-min) {
+            top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sert {
+  &-block {
+    background: #F3F0DA;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    h4 {
+      margin-top: 0;
+    }
+    .inline-link {
+      margin-top: 10px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 20px;
+      }
+      @media screen and (min-width: $screen-lg-min) {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+.desc-block {
+  &-inner {
+    padding-bottom: 60px;
+    padding-top: 60px;
+    background:
+      url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+      url("../images/descs-circle.svg") no-repeat top center / 100% auto,
+      url("../images/descm.svg") no-repeat top right / 104% auto,
+      #F3F0DA;
+    @media screen and (min-width: $screen-md-min) {
+      padding-bottom: 140px;
+      padding-top: 80px;
+      background:
+        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        url("../images/descm-circle.svg") no-repeat top center / 100% auto,
+        url("../images/descf.svg") no-repeat top center / 111% auto,
+        #F3F0DA;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-bottom: 100px;
+      padding-top: 100px;
+    }
+    @media screen and (min-width: 1100px) {
+      background:
+        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        url("../images/desc-circle.svg") no-repeat top center / 100% auto,
+        url("../images/descf.svg") no-repeat top center / 104% auto,
+        #F3F0DA;
+    }
+    @media screen and (min-width: 1200px) {
+      background:
+        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        url("../images/desc-circle.svg") no-repeat top center / 100% auto,
+      url("../images/descf.svg") no-repeat top center / 100% auto,
+        #F3F0DA;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      background:
+        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        url("../images/desc-circle.svg") no-repeat top center / 100% auto,
+        url("../images/descf.svg") no-repeat top center / cover,
+        #F3F0DA;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      padding-top: 200px;
+      padding-bottom: 160px;
+    }
+  }
+  h2 {
+    margin-top: 0;
+    font-size: 37px;
+    line-height: 100%;
+    margin-bottom: 40px;
+    color: $gray;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 37px;
+      margin-bottom: 100px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 5.1vw;
+      margin-bottom: 40px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      font-size: 120px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .swiper-container {
+    margin-top: 53vh;
+    @media screen and (min-width: $screen-md-min) {
+      margin: 0;
+    }
+  }
+}
+
+.news {
+  &-block {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background: white;
+    @media screen and (min-width: $screen-md-min) {
+      padding-top: 80px;
+      padding-bottom: 60px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding-top: 180px;
+      padding-bottom: 160px;
+    }
+    h2 {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+aside.aside
+    .sticky
+        .contacts-block(data-aos='fade-up')
+            h4 Контакты для СМИ
+            h5 Жильцов Сергей
+            div: a.icon-link(href='#')
+                +img('icons/phone.svg')
+                span 8 812 958-32-32
+            div: a.icon-link(href='#')
+                +img('icons/message.svg')
+                span js@icecream-chl.ru
+        .sign-block(data-aos='fade-up')
+            h4 Подписаться на новости
+            form(action='' method='POST')
+                .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
+                .checkbox.form__group
+                    input(type="checkbox", id='sign')
+                    label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+                button.btn.btn--primary.btn__sm.btn--full(type='submit') Подписаться

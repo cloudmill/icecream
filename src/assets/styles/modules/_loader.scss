@@ -1,0 +1,124 @@
+$waterColor: #2BE3FA;
+$speed: 1;
+
+.index-loader {
+  position: relative;
+  z-index: 1;
+  //clip-path: circle(50% at 130% 70%);
+  //transition: all 2s;
+  //&.active {
+  //  clip-path: circle(50% at 75% 24%);
+  //}
+  //&.hidden {
+  //  clip-path: none;
+  //}
+}
+
+.summerdream {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: linear-gradient(106.01deg, #28B6E6 0%, #89E2FF 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0s 1.5s;
+  &.hidden {
+    opacity: 0;
+  }
+  h2 {
+    font-size: 40px;
+    position: absolute;
+    color: white;
+    margin: 0;
+    line-height: 1;
+  }
+  h2:first-child {
+    top: 40px;
+    left: 40px;
+  }
+  h2:last-child {
+    bottom: 40px;
+    right: 40px;
+  }
+
+  .loader {
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+
+    &__layer {
+      position: absolute;
+      background: $gray;
+      height: 2px;
+      width: 0;
+      left: 0;
+      bottom: 130px;
+    }
+  }
+}
+.summerdream,
+.summerdream div {
+  transform-style: preserve-3d;
+}
+
+.sea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .surface {
+    max-height: 600px;
+    max-width: 600px;
+    height: 40vw;
+    width: 40vw;
+    background: $waterColor;
+    overflow: hidden;
+    animation:
+      surface 13000ms ease-in-out infinite alternate,
+      rotateZ 20000ms linear infinite;
+
+    .inner {
+      width: 600px;
+      height: 600px;
+      animation: rotateZ 20000ms linear infinite reverse;
+    }
+  }
+}
+
+
+
+@keyframes surface {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+    border-radius: 65% 35% 51% 49% / 49% 52% 48% 51%;
+  }
+
+  50% {
+    border-radius: 42% 58% 28% 72% / 65% 34% 66% 35%;
+  }
+
+  75% {
+    border-radius: 34% 66% 63% 37% / 77% 38% 62% 23%;
+  }
+
+  100% {
+    border-radius: 24% 76% 72% 28% / 53% 68% 32% 47%;
+  }
+}
+
+@keyframes rotateZ {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

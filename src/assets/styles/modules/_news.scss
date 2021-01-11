@@ -1,0 +1,96 @@
+.news {
+  &-list {
+    &__item {
+      display: block;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      background: $base-color-lighten;
+      padding: 20px 80px 20px 20px;
+      font-size: 16px;
+      transition: background .5s !important;
+      height: calc(100% - 20px);
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 18px;
+        padding: 25px;
+        border-radius: 40px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        padding: 40px;
+      }
+      &--main {
+        background: $gray;
+        @media screen and (min-width: $screen-xl-min) {
+          .news-list__item-title {
+            font-size: 30px;
+          }
+        }
+      }
+      &--light {
+        background: white;
+        border-color: $color-type-3a;
+        path:first-child {
+          fill: $gray
+        }
+      }
+      &-date {
+        color: $base-color-light;
+        margin-bottom: 10px;
+        font-size: 12px;
+        @media screen and (min-width: $screen-lg-min) {
+          margin-bottom: 20px;
+          font-size: 18px;
+        }
+      }
+      &-title {}
+      &-link {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        svg {
+          transform: scale(0.7);
+          @media screen and (min-width: $screen-lg-min) {
+            transform: scale(1);
+          }
+        }
+        @media screen and (min-width: $screen-lg-min) {
+          position: static;
+          text-align: right;
+          margin-top: auto;
+        }
+      }
+      svg {
+        vertical-align: middle;
+        transition: transform .5s;
+        path {
+          transition: fill .5s;
+        }
+      }
+      &:hover {
+        //.news-list__item {
+        background: #D2F0FA;
+        &.news-list__item--main {
+          background: $color-type-3a;
+        }
+        svg {
+          transform: scale(1);
+          @media screen and (min-width: $screen-lg-min) {
+            transform: scale(1.4);
+          }
+          path:first-child {
+            fill: #5DCBEE;
+          }
+          path:last-child {
+            fill: white;
+          }
+        }
+        //}
+      }
+    }
+  }
+}

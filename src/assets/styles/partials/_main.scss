@@ -1,0 +1,135 @@
+//
+// Partials -> Main
+// ------------------------------------
+
+//
+// Main container
+//
+.main {
+  min-height: calc(100vh - 128px); // min-height depends on header && footer
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.mainTitle {
+  margin-bottom: 40px;
+  padding-top: 60px;
+  @media screen and (min-width: $screen-md-min) {
+    padding-top: 110px;
+    margin-bottom: 70px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    padding-top: 0;
+    margin-bottom: 90px;
+  }
+  h1 {
+    margin: 0;
+    line-height: 1;
+  }
+}
+
+.inline-link {
+  font-weight: bold;
+  color: $color-type-2a;
+  font-size: 16px;
+  padding: 10px 0;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  @media screen and (min-width: $screen-lg-min) {
+    font-size: 18px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    height: 2px;
+    border-radius: 3px;
+    background: $color-type-2a;
+    transition: width .5s;
+  }
+  &:hover {
+    color: $color-type-2a;
+    &:after {
+      width: 0;
+    }
+  }
+}
+
+.br-style {
+  @media screen and (min-width: $screen-lg-min) {
+    display: block;
+  }
+}
+
+.mobile-flex {
+  display: flex;
+  justify-content: space-between;
+  > * {
+    width: 48%;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    display: block;
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.icon-link {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-left: 40px;
+  position: relative;
+  img {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.block-aside {
+  display: flex;
+  flex-wrap: wrap;
+  > div:first-child {
+    width: 100%;
+    @media screen and (min-width: 1150px) {
+      width: calc(100% - 330px);
+    }
+  }
+  > aside {
+    margin-bottom: 70px;
+    width: 290px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: 1150px) {
+      margin-left: 40px;
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.left-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  @media screen and (min-width: $screen-lg-min) {
+    padding-right: 40px;
+    padding-left: 340px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    padding-left: 360px;
+  }
+}

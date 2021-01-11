@@ -1,0 +1,57 @@
+.filter {
+	display: flex;
+	overflow-x: auto;
+	width: 100%;
+	margin-bottom: 20px;
+	@media screen and (min-width: $screen-md-min) {
+		margin-bottom: 40px;
+	}
+	li {
+		font-size: 14px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: $base-color-lighten;
+		border-radius: 10px;
+		padding: 10px 16px;
+		margin-right: 10px;
+		transition: all .5s;
+		cursor: pointer;
+		@media screen and (min-width: $screen-md-min) {
+			font-size: 18px;
+			padding: 28px 37px;
+			border-radius: 20px;
+			font-weight: bold;
+		}
+		&:hover,
+		&.active {
+			background: $color-type-1a;
+			color: white;
+		}
+		&.last {
+			width: 100%;
+			margin-right: 0;
+			margin-left: auto;
+			background: $gray;
+			height: 50px;
+			&.hidden__xs {
+				display: none;
+				@media screen and (min-width: $screen-md-min) {
+					display: inline-flex;
+				}
+			}
+			@media screen and (min-width: $screen-md-min) {
+				margin-top: 0;
+				height: auto;
+				width: 290px;
+			}
+			img {
+				margin-right: 10px;
+			}
+			&:hover {
+				background: $color-type-1a;
+				color: white;
+			}
+		}
+	}
+}
