@@ -1,0 +1,208 @@
+.catalog {
+  &__item {
+    margin-bottom: 40px;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 80px;
+    }
+    &:hover {
+      .sea {
+        transform: scale(1);
+      }
+    }
+  }
+  img {
+    border-radius: 20px;
+  }
+  &-date {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $base-color-light;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 18px;
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    font-weight: bold;
+    color: $black-darken;
+  }
+  &-img {
+    position: relative;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    @media screen and (min-width: $screen-md-min) {
+      height: 270px;
+    }
+    img {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .tags {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+
+  &--main {
+    .catalog__item {
+      padding-top: 30px;
+      @media screen and (min-width: $screen-md-min) {
+        padding-top: 60px;
+      }
+    }
+  }
+
+  .sea {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    transform: scale(0);
+    transition: transform .5s;
+    .surface {
+      width: 330px;
+      height: 230px;
+      background: linear-gradient(193.63deg, #C0F0FF -8.79%, #E8F9FF 104.17%);
+    }
+  }
+}
+
+
+.catalogFilter {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 110px 20px 20px;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  transition: left .5s;
+  background: white;
+  border: 1px solid $color-type-3a;
+  width: 100%;
+  max-width: 290px;
+  z-index: 9;
+  @media screen and (min-width: $screen-lg-min) {
+    padding: 0;
+    position: static;
+    flex-direction: row;
+    margin: 0 -20px;
+    border-color: transparent;
+    max-width: inherit;
+  }
+  &.active {
+    left: 0;
+  }
+  &__item {
+    width: 100%;
+    margin-bottom: 10px;
+    @media screen and (min-width: $screen-md-min) {
+      margin-bottom: 40px;
+      width: 33.3333%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media screen and (min-width: $screen-xl-min) {
+      width: 37.5%;
+    }
+    &:last-child {
+      width: 100%;
+      margin-top: auto;
+      @media screen and (min-width: $screen-md-min) {
+        width: 33.3333%;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        width: 25%;
+      }
+    }
+  }
+  &--btn {
+    display: inline-flex;
+    background: $base-color-lighten;
+    border-radius: 20px;
+    padding: 17px 20px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .5s;
+    &:hover {
+      background: $color-type-3a;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      display: none;
+    }
+  }
+
+  .btn__lg {
+    @media screen and (max-width: $screen-md-max) {
+      border-radius: 10px;
+      height: 50px;
+    }
+  }
+}
+
+
+.btn-group {
+  @media screen and (max-width: $screen-sm-max) {
+    .btn {
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+}
+
+.whereBuy {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  @media screen and (min-width: $screen-md-min) {
+    margin-top: 140px;
+    margin-bottom: 160px;
+  }
+  h2 {
+    margin: 0;
+  }
+  p {
+    margin: 10px 0 20px;
+    @media screen and (min-width: $screen-md-min) {
+      margin: 40px 0;
+    }
+  }
+}
+
+
+.tags {
+  &-item {
+    vertical-align: middle;
+    display: inline-block;
+    background: white;
+    border: 1px solid #DAEFFB;
+    font-size: 9px;
+    font-weight: bold;
+    border-radius: 40px;
+    color: #17A3D0;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    padding: 3px 5px;
+    @media screen and (min-width: $screen-md-min) {
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}

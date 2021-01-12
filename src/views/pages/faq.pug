@@ -1,0 +1,64 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page-faq
+    .left-container
+      +title('Вопрос–ответ', ['Вопрос–ответ', 'Покупателю'])
+      .block-aside(data-sticky-container)
+        .faq
+          .moreDetail--js
+            -
+              let items = [
+                {
+                  title: 'Где можно купить ваше мороженое?'
+                },
+                {
+                  title: 'Почему мороженое «Радуга» таких цветов? Используются ли там красители?'
+                },
+                {
+                  title: 'Почему вы используете сухое молоко и в каких количествах?'
+                },
+                {
+                  title: 'Какой срок годности у мороженого?'
+                },
+                {
+                  title: 'Действительно ли используете только натуральные продукты, без консервантов и красителей?'
+                },
+                {
+                  title: 'Почему у вас написано, что мороженое без растительных жиров, а в составе рожка они есть?'
+                },
+                {
+                  title: 'Содержит ли ваше мороженое ГМО или какие-нибудь химические добавки?'
+                },
+                {
+                  title: 'Какое сырье используется для изготовления мороженого?'
+                },
+                {
+                  title: 'Как мороженое «Чистая линия» доставляется в кафе и магазины?'
+                }
+              ]
+            .accordion
+              each item in items
+                .accordion__item.more__item--js(data-aos='fade-up')
+                  .accordion-head= item.title
+                  .accordion-body: div Мы в рецептуре закладываем сухое обезжиренное молоко по причине полноты СОМО (сухой обезжиренный молочный остаток), который предусмотрен ГОСТ. Но его там очень мало (2%) т.к. основными компонентами являются натуральное молоко (60,7%), сгущеное молоко (12%), сливки (8%), сливочное масло (8%). Состав каждого продукта можно найти на omoloko.ru
+            .margtop70(data-aos='fade-up')
+              a.btn.btn--default.btn--full.btn-icon.showMore--js(href='#')
+                span Показать еще
+                i.sprite.sprite--arr-d
+        include ../components/_sidebar-qu
+      .nextBlock
+        a.row.between__xs.middle__xs(href='#')
+          .col
+            p Смотрите также
+            h3 Отзывы
+          .col
+            .nextBlock--ico
+              +img('icons/nextArr.svg')
+
+
+block footer
+  include ../partials/_footer.pug

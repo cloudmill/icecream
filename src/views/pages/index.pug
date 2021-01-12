@@ -29,8 +29,8 @@ block content
               img(src='assets/images/slider/slide-3-1.png')
               img.first.first--add(src='assets/images/slider/slide-3-2.png')
               img.second(src='assets/images/slider/slide-3-3.png')
-        .swiper-pagination
-        a.btn.btn--primary(href='#') Смотреть ассортимент
+        .swiper-pagination(data-aos='fade-up')
+        a.btn.btn--primary(href='#', data-aos='fade-up') Смотреть ассортимент
       +img('bottom.svg')
     .house-block
       .relative
@@ -75,9 +75,9 @@ block content
             .carousel.swiper-container
               .swiper-wrapper
                 - for (let i = 1; i < 5; i++)
-                  .swiper-slide
-                    h3(data-aos='fade-up') Экскурсия на фабрику «Чистая линия»
-                    p.text__lg(data-aos='fade-up') Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
+                  .swiper-slide(data-aos='fade-up')
+                    h3 Экскурсия на фабрику «Чистая линия»
+                    p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
                     a.btn.btn--primary(href='#') Подробнее
               .swiper-pagination(data-aos='fade-up')
     .news-block

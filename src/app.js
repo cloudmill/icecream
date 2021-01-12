@@ -13,12 +13,13 @@ $(document).ready(() => {
 	require('Scripts/header');
 	require('Scripts/showMore');
 	require('Scripts/filtering');
+	require('Scripts/select');
 
 	if (screenWidth > 1150) {
 		const sticky = new Sticky('.sticky');
 	}
 
-	require('Scripts/demo');
+	require('Scripts/server');
 });
 
 
@@ -35,15 +36,16 @@ $(window).on('load', function() {
 	let counter = 0;
 	const loaderCounter = $('.loader span');
 	const loaderLayer = $('.loader__layer');
-	const getMainUrl = window.location.pathname === '/' || window.location.pathname === '/index';
+	const getMainUrl = window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html';
 
-	if (process.env.NODE_ENV === 'production') {
+	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
 		setTimeout(function() {
 			window.scrollTo(0, 0);
 		}, 200);
 	}
+	console.log(getMainUrl);
 
-	if (getMainUrl) {
+	if ($('.summerdream').length) {
 		$('body').css('overflow', 'hidden');
 		const loaderTimer = setInterval(() => {
 			counter++;
@@ -52,31 +54,32 @@ $(window).on('load', function() {
 			if (counter === 100) {
 				clearInterval(loaderTimer);
 
-				if (getMainUrl) {
-					$('body').css('overflow', 'visible');
-					$('.summerdream').addClass('hidden');
-					$('.index-loader').addClass('active');
+				$('body').css('overflow', 'visible');
+				$('.summerdream').addClass('hidden');
+				$('.index-loader').addClass('active');
 
+				setTimeout(() => {
+					$('.fullpage-block').addClass('active');
+					$('.fullpage-desc span:first-child').addClass('active');
 					setTimeout(() => {
-						$('.fullpage-block').addClass('active');
-						$('.fullpage-desc span:first-child').addClass('active');
+						$('.fullpage-desc span:nth-child(3)').addClass('active');
 						setTimeout(() => {
-							$('.fullpage-desc span:nth-child(3)').addClass('active');
-							setTimeout(() => {
-								$('.fullpage-desc span:last-child').addClass('active');
-							}, 300);
+							$('.fullpage-desc span:last-child').addClass('active');
 						}, 300);
 					}, 300);
+				}, 500);
 
-					setTimeout(() => {
-						$('.index-loader').addClass('hidden');
-					}, 2000);
-
+				setTimeout(() => {
 					AOS.init({offset: 50});
-					if ($('.rellax').length) {
-						// eslint-disable-next-line no-new
-						new Rellax('.rellax');
-					}
+				}, 500);
+
+				setTimeout(() => {
+					$('.index-loader').addClass('hidden');
+				}, 2000);
+
+				if ($('.rellax').length) {
+					// eslint-disable-next-line no-new
+					new Rellax('.rellax');
 				}
 			}
 		}, 35);

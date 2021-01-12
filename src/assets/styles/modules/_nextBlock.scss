@@ -1,0 +1,121 @@
+.nextBlock {
+  width: 100%;
+  background: linear-gradient(94.84deg, #F8F4DC 0%, #F8F6E9 100%);
+  border-radius: 20px;
+  margin-top: 70px;
+  margin-bottom: 80px;
+  @media screen and (min-width: $screen-md-min) {
+    border-radius: 40px;
+    margin-top: 100px;
+    margin-bottom: 160px;
+  }
+  .row {
+    @media screen and (min-width: $screen-md-min) {
+      flex-wrap: nowrap;
+    }
+  }
+  img {
+    max-width: 124px;
+  }
+  &--ico {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80px;
+    border: 2px solid white;
+    background: transparent;
+    transition: all .5s;
+    position: relative;
+    z-index: 1;
+    @media screen and (min-width: $screen-lg-min) {
+      width: 80px;
+      height: 80px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0) scale(0);
+      background-color: white;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      z-index: -1;
+      transition: transform .3s cubic-bezier(.4,0,0,1);
+      @media screen and (min-width: $screen-lg-min) {
+        width: 108px;
+        height: 108px;
+      }
+    }
+  }
+  a {
+    padding: 20px;
+    text-decoration: none;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 40px 80px;
+    }
+    h3 {
+      margin: 0;
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 18px;
+      }
+    }
+    &:hover {
+      .nextBlock--ico {
+        &:before {
+          transform: translate3d(-50%,-50%,0) scale(1);
+          transition: transform .45s cubic-bezier(.6,.01,0,1.38);
+        }
+      }
+    }
+  }
+  &--img a {
+    padding: 20px 20px 0;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 0 20px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 15px 80px;
+    }
+  }
+}
+
+.unionBlock {
+  > * {
+    margin-top: 10px;
+  }
+  .shareIt {
+    margin: 0;
+  }
+}
+
+.backLink {
+  background: $gray;
+  div + span,
+  span + div {
+    margin-left: 10px;
+  }
+  .nextBlock {
+    &--ico {
+      height: 48px;
+      width: 48px;
+      &:before {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+  &:hover {
+    .nextBlock {
+      &--ico {
+        &:before {
+          transform: translate3d(-50%, -50%, 0) scale(1);
+          transition: transform .45s cubic-bezier(.6, .01, 0, 1.38);
+        }
+      }
+    }
+  }
+}

@@ -19,6 +19,17 @@
     }
   }
   &__logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 8;
+    @media screen and (min-width: $screen-md-min) {
+      top: 20px;
+      right: 20px;
+    }
+    @media screen and (min-width: $screen-lg-min) {
+      display: none;
+    }
     img {
       @media screen and (min-width: 900px) {
         width: 140px;
@@ -113,7 +124,7 @@
     align-items: center;
     font-weight: bold;
     text-decoration: none;
-    background: #EBFAFF;
+    background: $base-color-lighten;
     color: $base-color-light;
     transition: all .5s !important;
     span {

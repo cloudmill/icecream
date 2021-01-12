@@ -55,6 +55,9 @@ body {
   font-size: 12px;
   font-family: $base-font-family;
   line-height: $base-line-height;
+  @media screen and (min-width: $screen-md-min) {
+    font-size: 14px;
+  }
   @media screen and (min-width: $screen-lg-min) {
     font-size: $base-font-size;
   }

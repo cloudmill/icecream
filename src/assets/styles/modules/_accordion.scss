@@ -2,39 +2,120 @@
 // Modules -> Accordion
 // --------------------------------------------------
 
-@if $use-accordion == true {
-	.accordion {
-		&__item {
-			width: 100%;
-			background: $accordion-bg;
-			color: $accordion-color;
-      & + & {
-        margin-top: $accordion-margin-top;
+.accordion {
+  &__item {
+    background: white;
+    border: 1px solid #DAEFFB;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &.active {
+      background: $base-color-lighten;
+      .accordion-head {
+        &:after {
+          background: url("../images/icons/minus.svg") no-repeat center;
+        }
       }
-		}
-		&__header {
-			border-bottom: solid 1px $base-color-dark;
-			cursor: pointer;
-			padding: $accordion-padding-horizontal $accordion-padding-vertical;
-      position: relative;
-			.icon {
-				position: absolute;
-        right: 10px;
-        top: 0;bottom: 0;margin: auto;
-        height: 100%;
-				transition: transform .3s;
-			}
-      &:hover .icon {
-        transform: rotate(90deg);
+    }
+    &--sm {
+      padding-bottom: 10px;
+      .accordion-head {
+        font-size: 14px;
+        padding-bottom: 0;
+        @media screen and (min-width: $screen-md-min) {
+          display: flex;
+        }
+        &:after {
+          top: 33px;
+          bottom: auto;
+        }
+        .date {
+          font-weight: 400;
+          font-size: 12px;
+          @media screen and (min-width: $screen-md-min) {
+            width: 120px;
+          }
+        }
       }
-		}
-		&__content {
-			display: none;
-			width: 100%;
-			padding: $accordion-padding-horizontal $accordion-padding-vertical;
-      &.active {
-        display: block;
+      .accordion-body {
+        padding-bottom: 20px;
+        > div {
+          position: relative;
+          &:after {
+            //content: '...';
+            position: absolute;
+            top: 0; right: 0;
+            height: 1em;
+            font-size: 16px;
+            line-height: 1.1;
+            color: $black-darken;
+            padding: 0 .2em;
+            background-color: white;
+            opacity: 0;
+            transition: opacity 0s 0s;
+            @media screen and (min-width: $screen-lg-min) {
+              height: 1.5em;
+            }
+          }
+        }
+        &:not(.ellipses) {
+          > div {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+        &:not(.shown) {
+          > div {
+            &:after {
+              opacity: 1;
+              transition: opacity .1s .3s;
+            }
+          }
+        }
       }
-		}
-	}
+    }
+  }
+  &-head {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    padding: 16px 50px 16px 20px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 26px 50px 26px 30px;
+    }
+    &:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: url("../images/icons/plus.svg") no-repeat center;
+      transition: background .5s;
+      @media screen and (min-width: $screen-md-min) {
+        right: 30px;
+      }
+    }
+  }
+  &-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s;
+    div {
+      padding: 10px 20px 30px;
+      @media screen and (min-width: $screen-md-min) {
+        padding: 10px 80px 30px 150px;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        padding: 10px 150px 30px;
+      }
+    }
+    &.shown {
+      max-height: 1000px;
+    }
+  }
 }

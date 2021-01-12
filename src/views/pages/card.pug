@@ -1,0 +1,165 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page-card
+    .left-container
+      .mainTitle
+        ul.breadcrumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#") Пломбир с кусочками клубники в вафельном стаканчике, 80г
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#") Мороженое
+          li.breadcrumbs__item.active
+            a.breadcrumbs__link(href="/"): +img('icons/home.svg')
+      .card
+        .row
+          .col.col__md-6.col__xs-12.last__md(data-aos='fade-left')
+            +img('catalog/card.png')
+          .col.col__md-6.col__xs-12
+            .tags(data-aos='fade-up')
+              .tags-item Хит
+              .tags-item Новинка
+              .tags-item Без ГМО
+              .tags-item 100% натурально
+            h1.mainTitle-text(data-aos='fade-up') Пломбир с кусочками клубники в вафельном стаканчике, 80г
+            .col__xl-9(data-aos='fade-up')
+              p Попробуйте интересный и необычный вкус ванильного пломбира с клубникой от компании-производителя «Чистая Линия». Теперь хрустящая "Сахарная трубочка" с большой шапочкой глазури "КАКТУС".
+            .card-structure.margbot80.margtop80(data-aos='fade-up')
+              .card-structure__item
+                .card-structure__item-title Белки
+                .card-structure__item-desc 3 г/100 г
+              .card-structure__item
+                .card-structure__item-title Жиры
+                .card-structure__item-desc 13 г/100 г
+              .card-structure__item
+                .card-structure__item-title Углеводы
+                .card-structure__item-desc 34 г/100 г
+              .card-structure__item
+                .card-structure__item-title Вес
+                .card-structure__item-desc 70 г
+              .card-structure__item
+                .card-structure__item-title Энергетическая ценность
+                .card-structure__item-desc 273,0 ккал/100 г
+        .btn-group(data-aos='fade-up')
+          a.btn.btn--primary(href='#')
+            +img('icons/location.svg')
+            span Купить в Москве и МО
+          a.btn.btn--primary(href='#')
+            +img('icons/location.svg')
+            span Купить в Санкт–Петурбурге и ЛО
+        .col__xl-10.card-options
+          .row(data-aos='fade-up')
+            .col.col__lg-4.col__xs-12
+              h5 Состав пломбира
+            .col.col__lg-8.col__xs-12
+              p.text__sm Молоко коровье цельное – 60,7%, молоко сгущенное цельное с сахаром – 12% (молоко цельное, молоко обезжиренное, сахароза, лактоза), сливки натуральные – 8,0%, масло сливочное – 8,0%, сахар – 6,8%, молоко сухое обезжиренное – 2,0%, глюкозный сироп – 2,0%, комплексная пищевая добавка – 0,4% (эмульгатор моно- и диглицериды жирных кислот, стабилизаторы: гуаровая камедь, камедь рожкового дерева, камедь тары, каррагинан), ароматизатор натуральный ваниль – 0,1%. Может содержать следы глютена.
+          .row(data-aos='fade-up')
+            .col.col__lg-4.col__xs-12
+              h5 Состав рожка
+            .col.col__lg-8.col__xs-12
+              p.text__sm Мука пшеничная, сахар, масло кокосовое рафинированное дезодорированное, эмульгатор–лецитин (соевый), пшеничные волокна (клетчатка), ароматизатор–ванилин, краситель–медные комплексы хлорофиллов.
+        .card-list(data-aos='fade-up')
+          .card-structure__item
+            .card-structure__item-title Температура хранения
+            .card-structure__item-desc не выше -18С
+          .card-structure__item
+            .card-structure__item-title Гост
+            .card-structure__item-desc 31457-2012
+          .card-structure__item
+            .card-structure__item-title Масса Нетто
+            .card-structure__item-desc 80 г
+          .card-structure__item
+            .card-structure__item-title Массовая доля жира
+            .card-structure__item-desc 12%
+          .card-structure__item
+            .card-structure__item-title Упаковка
+            .card-structure__item-desc Пергамент
+          .card-structure__item
+            .card-structure__item-title Штрих код
+            .card-structure__item-desc 404456454046
+          .card-structure__item
+            .card-structure__item-title Штрих код коробки
+            .card-structure__item-desc 456546406540
+      .card-slider
+        .row(data-aos='fade-up')
+          .col.col__lg-4.col__xs-12.flex
+            h2 Рецепты #[span.br-style] с этим #[span.br-style] продуктом
+            .swiper-button.hidden__sm.hidden__xs
+              .swiper-prev.nextBlock--ico
+                +img('icons/prevArr.svg')
+              .swiper-next.nextBlock--ico
+                +img('icons/nextArr.svg')
+          .col.col__lg-8.col__xs-12
+            -
+              let items = [
+                {
+                  isTime: true,
+                  title: 'Картофель в сметане',
+                  tag: 'Завтраки',
+                  img: 'interests/int-1.jpg'
+                },
+                {
+                  isTime: true,
+                  title: 'Яблочный крамбл с медовым пломбиром',
+                  tag: 'Завтраки',
+                  img: 'interests/int-2.jpg'
+                },
+                {
+                  isTime: false,
+                  title: 'Картофель в сметане',
+                  tag: 'Завтраки',
+                  img: 'interests/int-3.jpg'
+                },
+                {
+                  isTime: false,
+                  title: 'Яблочный крамбл с медовым пломбиром',
+                  tag: 'Завтраки',
+                  img: 'interests/int-1.jpg'
+                },
+                {
+                  isTime: false,
+                  title: 'Картофель в сметане',
+                  tag: 'Завтраки',
+                  img: 'interests/int-2.jpg'
+                },
+                {
+                  isTime: false,
+                  title: 'Яблочный крамбл с медовым пломбиром',
+                  tag: 'Завтраки',
+                  img: 'interests/int-3.jpg'
+                },
+                {
+                  isTime: false,
+                  title: 'Картофель в сметане',
+                  tag: 'Завтраки',
+                  img: 'interests/int-1.jpg'
+                },
+              ]
+            .rollerIt.swiper-container
+              .swiper-wrapper
+                each item in items
+                  .swiper-slide
+                    a.catalog__item(href='#')
+                      .img
+                        - if (item.isTime)
+                          span 30 #[small мин]
+                        +img(item.img)
+                      .catalog-desc= item.title
+                      .catalog-tag= item.tag
+      .nextBlock.nextBlock--img(data-aos='fade-up')
+        a.row.between__xs.middle__xs(href='#')
+          .col
+            p Следующий продукт
+            h3 Cтаканчик шоколадный (флоупак), 80г
+          .col
+            +img('catalog/next.png')
+          .col
+            .nextBlock--ico
+              +img('icons/nextArr.svg')
+
+
+block footer
+  include ../partials/_footer.pug

@@ -1,0 +1,154 @@
+.page-card {
+  background: url("../images/catalog/back.svg") no-repeat top right / 110% auto;
+  @media screen and (min-width: $screen-md-min) {
+    background: url("../images/catalog/back.svg") no-repeat top right / 80% auto;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    background: url("../images/catalog/back.svg") no-repeat top right;
+  }
+}
+
+.card {
+  h1 {
+    line-height: 1.1;
+    margin-bottom: 40px;
+    @media screen and (max-width: $screen-md-max) {
+      font-size: 22px;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    background: $base-color-lighten;
+    border-radius: 40px;
+    padding: 40px 80px 20px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 160px;
+      margin-bottom: 160px;
+      padding: 60px 40px 20px;
+    }
+    .card-structure__item {
+      min-width: 100%;
+      @media screen and (min-width: $screen-md-min) {
+        min-width: 50%;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        min-width: 25%;
+      }
+    }
+  }
+  &-structure {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media screen and (min-width: $screen-md-min) {
+      justify-content: flex-start;
+    }
+    &__item {
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-bottom: 40px;
+        min-width: 25%;
+      }
+      @media screen and (min-width: $screen-xl-min) {
+        min-width: 20%;
+      }
+      &-title {
+        font-size: 14px;
+        font-weight: normal;
+        margin-bottom: 5px;
+      }
+      &-desc {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+  &-options {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-top: 160px;
+      margin-bottom: 160px;
+    }
+    h5 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .row + .row {
+      margin-top: 40px;
+    }
+  }
+  &-slider {
+    margin-right: -20px;
+    @media screen and (min-width: $screen-lg-min) {
+      margin-right: -40px;
+    }
+    h2 {
+      margin-top: 0;
+      line-height: 1.1;
+      @media screen and (max-width: $screen-md-max) {
+        font-size: 22px;
+      }
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      margin-right: 20px;
+      @media screen and (min-width: $screen-lg-min) {
+        display: block;
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+    .swiper-button {
+      margin-left: auto;
+      @media screen and (min-width: $screen-lg-min) {
+        margin-top: 115px;
+      }
+    }
+    .catalog__item {
+      margin-bottom: 0;
+      padding-bottom: 2px;
+      .img {
+        position: relative;
+        margin-bottom: 20px;
+        img {
+          vertical-align: middle;
+        }
+        span {
+          top: 15px;
+          right: 15px;
+          height: 80px;
+          width: 80px;
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+          position: absolute;
+          line-height: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: url("../images/icons/cloud.svg") no-repeat center;
+          small {
+            font-size: 12px;
+            display: block;
+          }
+        }
+      }
+    }
+    .catalog-tag {
+      display: inline;
+      font-size: 12px;
+      padding: 3px 10px;
+      font-weight: bold;
+      border: 1px solid #F1EFD6;
+      border-radius: 40px;
+    }
+  }
+}

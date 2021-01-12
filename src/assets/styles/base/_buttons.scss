@@ -51,8 +51,11 @@
   // Button with icon
   &-icon {
     position: relative;
-    span {
-      margin-right: 10px;
+    span + i,
+    span + img,
+    i + span,
+    img + span {
+      margin-left: 10px;
     }
     > * {
       vertical-align: middle;
@@ -80,7 +83,15 @@
       @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
     }
     &--info {
-      @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+      color: $btn-info-color;
+      background-color: $btn-info-bg;
+      border-color: $btn-info-border;
+      transition: all .5s;
+      &:focus,
+      &:hover {
+        background-color: $color-type-3a;
+        border-color: $color-type-3a;
+      }
     }
     &--warning {
       @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
@@ -98,7 +109,7 @@
   @if $use-btn-size == true {
     &__lg {
       @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-btn, $btn-border-radius-large);
-      height: 55px;
+      height: 80px;
     }
     &__sm {
       @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-btn, $btn-border-radius-small);
@@ -151,6 +162,18 @@
           width: 1%;
         }
       }
+    }
+  }
+}
+
+
+.showMore--js {
+  i {
+    transition: transform .5s;
+  }
+  &:hover {
+    i {
+      transform: rotate(180deg);
     }
   }
 }

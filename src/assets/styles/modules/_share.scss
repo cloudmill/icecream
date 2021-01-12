@@ -1,0 +1,67 @@
+.shareIt {
+  font-size: 18px;
+  font-weight: bold;
+  background: $base-color-lighten;
+  border-radius: 20px;
+  padding: 5px;
+  height: 80px;
+  color: $base-color-light;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (min-width: $screen-md-min) {
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+  @media screen and (min-width: $screen-lg-min) {
+    margin-bottom: 160px;
+  }
+  &-text {
+    @media screen and (min-width: $screen-md-min) {
+      width: 45%;
+      padding-left: 100px;
+    }
+  }
+  &-soc {
+    .social {
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      width: 50%;
+    }
+    svg {
+      vertical-align: middle;
+    }
+    a {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+}
+
+
+.sameBlock {
+  margin-bottom: 60px;
+  @media screen and (min-width: $screen-lg-min) {
+    margin-bottom: 80px;
+  }
+  h2 {
+    margin-top: 0;
+    line-height: 1.1;
+  }
+  .row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    .col {
+      min-width: 320px;
+      @media screen and (min-width: $screen-md-min) {
+        min-width: auto;
+      }
+    }
+    @media screen and (min-width: $screen-md-min) {
+      flex-wrap: wrap;
+    }
+  }
+}

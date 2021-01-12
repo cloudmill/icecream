@@ -138,21 +138,10 @@
   background-color: $background;
   border-color: $border;
   &:focus,
-  &.focus {
-    color: $color;
-    background-color: lighten($background, 8%);
-    border-color: lighten($border, 8%);
-  }
   &:hover {
     color: $color;
     background-color: lighten($background, 8%);
     border-color: lighten($border, 8%);
-  }
-  &:active,
-  &.active {
-    background-color: darken($background, 5%);
-    border-color: darken($border, 5%);
-    @include box-shadow(0 -1px 0 0 darken($border, 16%));
   }
 }
 @mixin button-variant-tr($color, $background, $border) {

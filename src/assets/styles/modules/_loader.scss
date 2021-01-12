@@ -1,4 +1,4 @@
-$waterColor: #2BE3FA;
+$waterColor: #70DBFF;
 $speed: 1;
 
 .loading {
@@ -19,14 +19,14 @@ $speed: 1;
 .index-loader {
   position: relative;
   z-index: 1;
-  //clip-path: circle(50% at 130% 70%);
-  //transition: all 2s;
-  //&.active {
-  //  clip-path: circle(50% at 75% 24%);
-  //}
-  //&.hidden {
-  //  clip-path: none;
-  //}
+  clip-path: circle(50% at 130% 70%);
+  transition: all 2s;
+  &.active {
+    clip-path: circle(50% at 75% 24%);
+  }
+  &.hidden {
+    clip-path: none;
+  }
 }
 
 .summerdream {
@@ -85,6 +85,7 @@ $speed: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  transform-style: preserve-3d;
   .surface {
     max-height: 600px;
     max-width: 600px;
@@ -92,6 +93,7 @@ $speed: 1;
     width: 40vw;
     background: $waterColor;
     overflow: hidden;
+    transform-style: preserve-3d;
     animation:
       surface 13000ms ease-in-out infinite alternate,
       rotateZ 20000ms linear infinite;

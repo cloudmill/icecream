@@ -101,8 +101,8 @@ $btn-success-color:                   #fff !default;
 $btn-success-bg:                      $color-type-4a !default;
 $btn-success-border:                  $btn-success-bg !default;
 
-$btn-info-color:                      #fff !default;
-$btn-info-bg:                         $color-type-1a !default;
+$btn-info-color:                      $black-darken !default;
+$btn-info-bg:                         $gray !default;
 $btn-info-border:                     $btn-info-bg !default;
 
 $btn-warning-color:                   #fff !default;
@@ -140,7 +140,7 @@ $border-radius-large:                 5px;
 $border-radius-small:                 5px;
 
 $btn-border-radius-base:              60px;
-$btn-border-radius-large:             $border-radius-large;
+$btn-border-radius-large:             20px;
 $btn-border-radius-small:             60px;
 
 

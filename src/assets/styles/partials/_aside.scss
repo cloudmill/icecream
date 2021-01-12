@@ -25,5 +25,35 @@
 
 .sign-block {
   @include asideBlock();
+  position: relative;
   background: $gray;
+}
+
+.img-block {
+  margin-bottom: 10px;
+  img {
+    border-radius: 20px;
+  }
+}
+
+.form-response {
+  position: absolute;
+  background: $gray;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  height: 0;
+  transition: height .5s;
+  .inner {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &.shown {
+    height: 100%;
+  }
 }

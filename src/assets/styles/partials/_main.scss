@@ -13,6 +13,22 @@
   }
 }
 
+body {
+  &.activated {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      background: rgba($black-darken, .3);
+    }
+  }
+}
+
+
 .mainTitle {
   margin-bottom: 40px;
   padding-top: 60px;
@@ -27,6 +43,9 @@
   h1 {
     margin: 0;
     line-height: 1;
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 80%;
+    }
   }
 }
 
@@ -125,6 +144,7 @@
 .left-container {
   padding-left: 20px;
   padding-right: 20px;
+  overflow: hidden;
   @media screen and (min-width: $screen-lg-min) {
     padding-right: 40px;
     padding-left: 340px;
