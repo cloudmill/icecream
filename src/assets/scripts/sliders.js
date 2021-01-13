@@ -1,7 +1,9 @@
 import Swiper from 'swiper/swiper-bundle.min';
 
+let swiper;
+let settings;
 if ($('.fullpage-slider').length) {
-	const swiper = new Swiper('.fullpage-slider', {
+	settings = {
 		slidesPerView: 2,
 		centeredSlides: true,
 		simulateTouch: false,
@@ -55,7 +57,8 @@ if ($('.fullpage-slider').length) {
 				}, 500);
 			},
 		},
-	});
+	};
+	swiper = new Swiper('.fullpage-slider', settings);
 }
 
 if ($('.carousel').length) {
@@ -118,3 +121,8 @@ if ($('.rollerIt').length) {
 		}
 	});
 }
+
+export {
+	swiper,
+	settings
+};

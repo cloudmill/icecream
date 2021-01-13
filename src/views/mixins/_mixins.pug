@@ -1,63 +1,72 @@
 //- mixins
 
 mixin newsList(classList)
-    a.news-list__item(href='#', class=classList)
-        .news-list__item-date 20 ноября 2020
-        .news-list__item-title Новый завод по производству молочной продукции «Чистая Линия» появится в Долгопрудном в 2024 году
-        .news-list__item-link
-            svg(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
-                path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='white')
-                path(fill-rule='evenodd' clip-rule='evenodd' d='M22.2545 18.2762C22.5937 17.9079 23.1435 17.9079 23.4827 18.2762L28.6936 23.9337C29.0327 24.3019 29.0327 24.8989 28.6936 25.2672L23.4827 30.9247C23.1435 31.2929 22.5937 31.2929 22.2545 30.9247C21.9153 30.5565 21.9153 29.9594 22.2545 29.5912L26.8513 24.6004L22.2545 19.6097C21.9153 19.2414 21.9153 18.6444 22.2545 18.2762Z' fill='#5CA8C0')
+  a.news-list__item(href='#', class=classList)
+    .news-list__item-date 20 ноября 2020
+    .news-list__item-title Новый завод по производству молочной продукции «Чистая Линия» появится в Долгопрудном в 2024 году
+    .news-list__item-link
+      svg(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+        path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='white')
+        path(fill-rule='evenodd' clip-rule='evenodd' d='M22.2545 18.2762C22.5937 17.9079 23.1435 17.9079 23.4827 18.2762L28.6936 23.9337C29.0327 24.3019 29.0327 24.8989 28.6936 25.2672L23.4827 30.9247C23.1435 31.2929 22.5937 31.2929 22.2545 30.9247C21.9153 30.5565 21.9153 29.9594 22.2545 29.5912L26.8513 24.6004L22.2545 19.6097C21.9153 19.2414 21.9153 18.6444 22.2545 18.2762Z' fill='#5CA8C0')
 
 mixin title(title, items)
-    .mainTitle
-        ul.breadcrumbs
-            each item in items
-                li.breadcrumbs__item
-                    a.breadcrumbs__link(href="#")= item
-            li.breadcrumbs__item.active
-                a.breadcrumbs__link(href="/"): +img('icons/home.svg')
-        h1.mainTitle-text= title
+  .mainTitle
+    ul.breadcrumbs(data-aos='fade-left')
+      each item in items
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href="#")= item
+      li.breadcrumbs__item.active
+        a.breadcrumbs__link(href="/")
+          svg(width='23' height='22' viewbox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5958 0.578664C11.9567 0.295897 12.4637 0.294803 12.8259 0.576012L22.6131 8.17601C23.0493 8.51474 23.1283 9.14295 22.7896 9.57917C22.4509 10.0154 21.8227 10.0944 21.3865 9.75568L12.2153 2.63406L7.6165 6.23701C7.18176 6.57762 6.55321 6.5013 6.2126 6.06655C5.87199 5.6318 5.94831 5.00326 6.38306 4.66265L11.5958 0.578664Z' fill='#5DCBEE')
+            path(fill-rule='evenodd' clip-rule='evenodd' d='M20.9998 10.9659C20.4475 10.9659 19.9998 11.4137 19.9998 11.9659V19.6342H4.99978V16.2219C4.99978 15.6696 4.55206 15.2219 3.99978 15.2219C3.4475 15.2219 2.99978 15.6696 2.99978 16.2219V20.6342C2.99978 21.1865 3.4475 21.6342 3.99978 21.6342H20.9998C21.5521 21.6342 21.9998 21.1865 21.9998 20.6342V11.9659C21.9998 11.4137 21.5521 10.9659 20.9998 10.9659Z' fill='#5DCBEE')
+            path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
+    h1.mainTitle-text(data-aos='fade-up')= title
 
 //- menu
 mixin menu(items)
-    ul.main-nav
-        each item in items
-            - var parent  = ''
-            - if(item.subitems !== false) parent='main-nav__item--parent'
-            li.main-nav__item(class=parent)
-                a.main-nav__link(href=item.href, title=item.title)= item.title
-                - if(item.subitems !== false)
-                    ul.sub-nav
-                        each subitem in item.subitems
-                            li.main-nav__item
-                                a.main-nav__link(href=subitem.href, title=subitem.title)= subitem.title
+  ul.main-nav
+    each item in items
+      - var parent  = ''
+      - if(item.subitems !== false) parent='main-nav__item--parent'
+      li.main-nav__item(class=parent)
+        a.main-nav__link(href=item.href, title=item.title)= item.title
+        - if(item.subitems !== false)
+        ul.sub-nav
+          each subitem in item.subitems
+            li.main-nav__item
+              a.main-nav__link(href=subitem.href, title=subitem.title)= subitem.title
 
 
 //- form-input
 mixin fieldInput(type, name, id, label, placeholder, required)
-    label(for=id)= label
+  .control-body.input
+    - if(label)
+      label(for=id)= label
     input.control(type=type, name=name, id=id, placeholder=placeholder, required=required)
+    .control-error
 
 //- form-textarea
 mixin fieldTextarea(name, placeholder, rows, required)
+  .control-body.input
     textarea.control(name=name, placeholder=placeholder, rows=rows,  required=required)
+    .control-error
 
 //- form-checkbox
 mixin fieldCheckbox(name, id, checked)
-    .checkbox
-        input(type="checkbox", id=id, checked=checked)
-        label(for=id)=name
+  .checkbox
+    input(type="checkbox", id=id, checked=checked)
+    label(for=id)=name
 
 //- form-radio
 mixin fieldRadio(name, id, label, checked)
-    .radio
-        input(type="radio", id=id, value=id, name=label, checked=checked)
-        label(for=id)=name
+  .radio
+    input(type="radio", id=id, value=id, name=label, checked=checked)
+    label(for=id)=name
 
 
 mixin img(src)
-    img(src='assets/images/'+src, alt='')
+  img(src='assets/images/' + src, alt='')
 
 
 //- maps-iframe

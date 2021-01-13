@@ -1,7 +1,9 @@
 /* src/app.js */
 import AOS from 'aos';
-import Rellax from 'rellax';
+// import Rellax from 'rellax';
 import Sticky from 'sticky-js';
+import {settings, swiper} from 'assets/scripts/sliders';
+import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
 
 // Styles
@@ -19,6 +21,7 @@ $(document).ready(() => {
 		const sticky = new Sticky('.sticky');
 	}
 
+	require('Scripts/input');
 	require('Scripts/server');
 });
 
@@ -47,6 +50,8 @@ $(window).on('load', function() {
 
 	if ($('.summerdream').length) {
 		$('body').css('overflow', 'hidden');
+		swiper.destroy();
+
 		const loaderTimer = setInterval(() => {
 			counter++;
 			loaderCounter.text(counter);
@@ -75,11 +80,13 @@ $(window).on('load', function() {
 
 				setTimeout(() => {
 					$('.index-loader').addClass('hidden');
+
+					swiper = new Swiper('.fullpage-slider', settings);
 				}, 2000);
 
 				if ($('.rellax').length) {
 					// eslint-disable-next-line no-new
-					new Rellax('.rellax');
+					// new Rellax('.rellax');
 				}
 			}
 		}, 35);
@@ -91,7 +98,7 @@ $(window).on('load', function() {
 			AOS.init({offset: 50});
 			if ($('.rellax').length) {
 				// eslint-disable-next-line no-new
-				new Rellax('.rellax');
+				// new Rellax('.rellax');
 			}
 		}, 500);
 	}

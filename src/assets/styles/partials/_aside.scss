@@ -2,6 +2,13 @@
 // Partials -> Aside
 // ------------------------------------
 
+.aside {
+  .control {
+    height: 50px;
+    border-color: $color-type-3a;
+  }
+}
+
 @mixin asideBlock {
   background: white;
   border: 1px solid $gray;
