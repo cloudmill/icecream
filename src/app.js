@@ -1,23 +1,85 @@
 /* src/app.js */
 import AOS from 'aos';
-// import Rellax from 'rellax';
+import Rellax from 'rellax';
 import Sticky from 'sticky-js';
-import {settings, swiper} from 'assets/scripts/sliders';
 import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
 
 // Styles
 import 'Styles/_app.scss';
 
+
+let swiper;
+let settings;
+
 $(document).ready(() => {
 	const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+	// require('Scripts/slidersClass');
 	require('Scripts/sliders');
+	if ($('.fullpage-slider').length) {
+		settings = {
+			slidesPerView: 2,
+			centeredSlides: true,
+			simulateTouch: false,
+			speed: 1000,
+			// autoplay: {
+			// 	delay: 5000,
+			// 	disableOnInteraction: false,
+			// },
+			loop: true,
+			pagination: {
+				el: '.fullpage-slider .swiper-pagination',
+				clickable: true,
+				renderBullet: (index, className) => {
+					return `<div class="${className}"><svg width="114" height="114" viewBox="0 0 114 114" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	        <mask id="mask${index + 1}" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="114" height="114">
+	        <path d="M21.8928 78.7031C8.75805 58.8537 13.6054 37.1789 33.4548 24.0442C53.4265 6.17486 78.5116 14.4651 91.6463 34.3145C104.781 54.1639 103.759 74.5032 83.9097 87.6379C64.0603 100.773 35.0275 98.5525 21.8928 78.7031Z" fill="white"/>
+	        </mask>
+	        <g mask="url(#mask${index + 1})">
+	          <rect x="1" y="8" width="117" height="103" fill="url(#pattern${index + 1})"/>
+	          <path d="M34.5585 25.7121L34.6799 25.6318L34.7884 25.5347C44.3035 17.0213 54.912 14.81 64.6793 16.9869C74.5097 19.1779 83.6519 25.8575 89.9784 35.4181C96.373 45.0818 99.1835 54.6584 98.161 63.258C97.146 71.7946 92.319 79.675 82.806 85.97C63.62 98.6657 35.9282 96.2895 23.5607 77.5994C17.248 68.0597 15.3371 58.2215 17.2601 49.276C19.1845 40.3238 24.9982 32.0384 34.5585 25.7121Z" stroke-width="4"/>
+	        </g>
+	        <defs>
+	        <pattern id="pattern${index + 1}" patternContentUnits="objectBoundingBox" width="1" height="1">
+	          <use xlink:href="#image${index + 1}" transform="translate(-0.0091898) scale(0.000937734 0.00107527)"/>
+	          <image id="image${index + 1}" width="1086" height="930" xlink:href="assets/images/pagin-${index + 1}.png"/>
+	        </pattern></defs></svg></div>`;
+				},
+			},
+			on: {
+				slideChangeTransitionStart: function() {
+					$('.fullpage-title').removeClass('active');
+					$('.fullpage-title').addClass('remove');
+					const getTitle = $('.fullpage-slider .swiper-slide-active').data('title');
+					const activeSlide = $('.fullpage-slider .swiper-slide-active');
+					const slide = $('.fullpage-slider .swiper-slide:not(.swiper-slide-active)');
+					slide.addClass('remove');
+					activeSlide.addClass('active');
+					//
+					setTimeout(() => {
+						slide.removeClass('active');
+						setTimeout(() => {
+							$('.fullpage-title h2').html(getTitle);
+							$('.fullpage-title').addClass('active');
+							setTimeout(() => {
+								$('.fullpage-title').removeClass('remove');
+								slide.removeClass('remove');
+							}, 300);
+						}, 500);
+					}, 500);
+				},
+			},
+		};
+		swiper = new Swiper('.fullpage-slider', settings);
+	}
 	require('Scripts/header');
 	require('Scripts/showMore');
 	require('Scripts/filtering');
 	require('Scripts/select');
+	require('Scripts/popup');
 
-	if (screenWidth > 1150) {
+
+	if (screenWidth > 1150 && $('.sticky').length) {
 		const sticky = new Sticky('.sticky');
 	}
 
@@ -50,7 +112,7 @@ $(window).on('load', function() {
 
 	if ($('.summerdream').length) {
 		$('body').css('overflow', 'hidden');
-		swiper.destroy();
+		// swiper.destroy();
 
 		const loaderTimer = setInterval(() => {
 			counter++;
@@ -61,10 +123,11 @@ $(window).on('load', function() {
 
 				$('body').css('overflow', 'visible');
 				$('.summerdream').addClass('hidden');
-				$('.index-loader').addClass('active');
+				// $('.index-loader').addClass('active');
 
 				setTimeout(() => {
 					$('.fullpage-block').addClass('active');
+					$('.summerdream').addClass('hideIt');
 					$('.fullpage-desc span:first-child').addClass('active');
 					setTimeout(() => {
 						$('.fullpage-desc span:nth-child(3)').addClass('active');
@@ -72,21 +135,21 @@ $(window).on('load', function() {
 							$('.fullpage-desc span:last-child').addClass('active');
 						}, 300);
 					}, 300);
+					swiper.autoplay.start();
 				}, 500);
 
 				setTimeout(() => {
 					AOS.init({offset: 50});
 				}, 500);
 
-				setTimeout(() => {
-					$('.index-loader').addClass('hidden');
-
-					swiper = new Swiper('.fullpage-slider', settings);
-				}, 2000);
+				// setTimeout(() => {
+				// 	$('.index-loader').addClass('hidden');
+				//
+				// }, 2000);
 
 				if ($('.rellax').length) {
 					// eslint-disable-next-line no-new
-					// new Rellax('.rellax');
+					new Rellax('.rellax');
 				}
 			}
 		}, 35);
@@ -98,7 +161,7 @@ $(window).on('load', function() {
 			AOS.init({offset: 50});
 			if ($('.rellax').length) {
 				// eslint-disable-next-line no-new
-				// new Rellax('.rellax');
+				new Rellax('.rellax');
 			}
 		}, 500);
 	}

@@ -32,6 +32,10 @@ $items:
 }
 //svg-icons
 
+.jBox-overlay.jBox-overlay-Image {
+  background: rgba(black, 0.6);
+}
+
 
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "fontello";
@@ -170,3 +174,8 @@ $items:
   }
 }
 //select
+
+
+.swiper-pagination-bullet {
+  outline: 0 !important;
+}

@@ -32,10 +32,10 @@ mixin menu(items)
       li.main-nav__item(class=parent)
         a.main-nav__link(href=item.href, title=item.title)= item.title
         - if(item.subitems !== false)
-        ul.sub-nav
-          each subitem in item.subitems
-            li.main-nav__item
-              a.main-nav__link(href=subitem.href, title=subitem.title)= subitem.title
+          ul.sub-nav
+            each subitem in item.subitems
+              li.main-nav__item
+                a.main-nav__link(href=subitem.href, title=subitem.title)= subitem.title
 
 
 //- form-input

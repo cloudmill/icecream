@@ -288,20 +288,32 @@
 
 .desc-block {
   &-inner {
+    overflow: hidden;
     padding-bottom: 60px;
     padding-top: 60px;
     background:
-      url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+      //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
       url("../images/descs-circle.svg") no-repeat top center / 100% auto,
       url("../images/descm.svg") no-repeat top right / 104% auto,
       #F3F0DA;
+    position: relative;
+    &:after {
+      content: '';
+      background: url("../images/news.svg") no-repeat bottom -1px center / 100% auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9;
+      height: 100px;
+    }
     @media screen and (min-width: $screen-md-min) {
       padding-bottom: 140px;
       padding-top: 80px;
       background:
-        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
         url("../images/descm-circle.svg") no-repeat top center / 100% auto,
-        url("../images/descf.svg") no-repeat top center / 111% auto,
+        url("../images/animation/background.svg") no-repeat top center / 111% auto,
         #F3F0DA;
     }
     @media screen and (min-width: $screen-lg-min) {
@@ -310,28 +322,32 @@
     }
     @media screen and (min-width: 1100px) {
       background:
-        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
         url("../images/desc-circle.svg") no-repeat top center / 100% auto,
-        url("../images/descf.svg") no-repeat top center / 104% auto,
+        url("../images/animation/background.svg") no-repeat top center / 104% auto,
         #F3F0DA;
     }
     @media screen and (min-width: 1200px) {
       background:
-        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
         url("../images/desc-circle.svg") no-repeat top center / 100% auto,
-      url("../images/descf.svg") no-repeat top center / 100% auto,
+        url("../images/animation/background.svg") no-repeat top center / 100% auto,
         #F3F0DA;
     }
     @media screen and (min-width: $screen-xl-min) {
       background:
-        url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
+        //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
         url("../images/desc-circle.svg") no-repeat top center / 100% auto,
-        url("../images/descf.svg") no-repeat top center / cover,
+        url("../images/animation/background.svg") no-repeat top center / cover,
         #F3F0DA;
     }
     @media screen and (min-width: $screen-xl-min) {
       padding-top: 200px;
       padding-bottom: 160px;
+    }
+    .left-container {
+      position: relative;
+      z-index: 2;
     }
   }
   h2 {

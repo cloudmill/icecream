@@ -19,14 +19,14 @@ $speed: 1;
 .index-loader {
   position: relative;
   z-index: 1;
-  clip-path: circle(50% at 130% 70%);
-  transition: all 2s;
-  &.active {
-    clip-path: circle(50% at 75% 24%);
-  }
-  &.hidden {
-    clip-path: none;
-  }
+  //clip-path: circle(50% at 130% 70%);
+  //transition: all 2s;
+  //&.active {
+  //  clip-path: circle(50% at 75% 24%);
+  //}
+  //&.hidden {
+  //  clip-path: none;
+  //}
 }
 
 .summerdream {
@@ -35,14 +35,18 @@ $speed: 1;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1;
+  z-index: 99999;
   background: linear-gradient(106.01deg, #28B6E6 0%, #89E2FF 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0s 1.5s;
+  transition: opacity 0.5s;
+  opacity: 1;
   &.hidden {
     opacity: 0;
+  }
+  &.hideIt {
+    display: none;
   }
   h2 {
     font-size: 40px;

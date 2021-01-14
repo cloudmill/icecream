@@ -13,19 +13,19 @@ block content
           h2 Классический пломбир #[br] в лучших традициях!
         .swiper-wrapper
           .swiper-slide(data-title="Классический пломбир #[br] в лучших традициях!")
-            .image-pack
+            .image-pack(data-aos='fade-up', data-aos-delay='300')
               img(src='assets/images/slider/slide-1-1.png')
               img.first(src='assets/images/slider/slide-1-2.png')
               img.third(src='assets/images/slider/slide-1-4.png')
               img.second(src='assets/images/slider/slide-1-3.png')
           .swiper-slide(data-title="Радуга — ярко–вкусное #[br] мороженое")
-            .image-pack
+            .image-pack(data-aos='fade-up', data-aos-delay='300')
               img(src='assets/images/slider/slide-2-1.png')
               img.first.first--add(src='assets/images/slider/slide-2-2.png')
               img.second.second--add(src='assets/images/slider/slide-2-3.png')
               img.third(src='assets/images/slider/slide-2-4.png')
           .swiper-slide(data-title="Снаружи кактус, #[br] внутри пломбир #[br] с джемом")
-            .image-pack
+            .image-pack(data-aos='fade-up', data-aos-delay='300')
               img(src='assets/images/slider/slide-3-1.png')
               img.first.first--add(src='assets/images/slider/slide-3-2.png')
               img.second(src='assets/images/slider/slide-3-3.png')
@@ -59,9 +59,9 @@ block content
             h4(data-aos='fade-up') Следим за качеством #[span.br-style] и подтверждаем #[span.br-style] это многочисленными #[span.br-style] наградами
             a.inline-link(href='#') Все награды
           .col.col__lg-8.col__md-7.col__xs-12.gallery(data-aos='fade-up')
-            a(href='assets/images/sert-1.png'): +img('sert-1.png')
-            a(href='assets/images/sert-2.png'): +img('sert-2.png')
-            a(href='assets/images/sert-3.png'): +img('sert-3.png')
+            a(href='assets/images/sert-1.png', data-jbox-image="gallery1"): +img('sert-1.png')
+            a(href='assets/images/sert-2.png', data-jbox-image="gallery1"): +img('sert-2.png')
+            a(href='assets/images/sert-3.png', data-jbox-image="gallery1"): +img('sert-3.png')
     .desc-block.desc-block-inner
       .left-container
         .row
@@ -72,14 +72,30 @@ block content
             br
             p.text__lg(data-aos='fade-up') Это целый мир добрых эмоций #[span.br-style] и веселых развлечений #[span.br-style] для детей и взрослых.
           .col.col__md-6.col__xs-12
-            .carousel.swiper-container
+            .carousel.swiper-container(data-aos='fade-up')
               .swiper-wrapper
-                - for (let i = 1; i < 5; i++)
-                  .swiper-slide(data-aos='fade-up')
-                    h3 Экскурсия на фабрику «Чистая линия»
-                    p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
-                    a.btn.btn--primary(href='#') Подробнее
+                .swiper-slide
+                  h3 Интернет–магазин
+                  p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
+                  a.btn.btn--primary(href='#') Подробнее
+                .swiper-slide
+                  h3 Экскурсия на фабрику «Чистая линия»
+                  p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
+                  a.btn.btn--primary(href='#') Подробнее
+                .swiper-slide
+                  h3 О!Эскимо
+                  p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
+                  a.btn.btn--primary(href='#') Подробнее
+                .swiper-slide
+                  h3 Смотровая площадка PANORAMA360
+                  p.text__lg Познакомьтесь со всеми этапами производства мороженого на нашей фабрике в г. Долгопрудный.
+                  a.btn.btn--primary(href='#') Подробнее
               .swiper-pagination(data-aos='fade-up')
+      .slider-image
+        - for (let i = 1; i < 5; i++)
+          - let parent  = ''
+          - if(i == 1) parent='active'
+          img(src='assets/images/animation/slide-' + i + '.png', alt='', class=parent)
     .news-block
       .left-container
         .row.margbot80
