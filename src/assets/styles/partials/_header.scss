@@ -88,6 +88,11 @@
   justify-content: space-between;
   z-index: 99;
   transition: left .5s;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
   &.active {
     left: 0;
   }
@@ -118,6 +123,7 @@
   }
   &__link {
     height: 42px;
+    margin-top: 20px;
     border-radius: 60px;
     width: 100%;
     display: flex;

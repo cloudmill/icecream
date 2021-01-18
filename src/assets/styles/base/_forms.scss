@@ -75,7 +75,7 @@ input[type="checkbox"]:focus {
 .control {
   display: block;
   width: 100%;
-  height: 50px;
+  height: 60px;
   padding: $padding-base-vertical $padding-base-horizontal;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -94,12 +94,36 @@ input[type="checkbox"]:focus {
 
   @include placeholder;
 
+  &-body {
+    position: relative;
+    &.error {
+      color: $color-type-2a;
+      .control {
+        border-color: $color-type-2a;
+      }
+      label {
+        color: $color-type-2a;
+        &:after {
+          border-color: $color-type-2a;
+        }
+      }
+    }
+  }
+  &-error {
+    font-size: 11px;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    color: $color-type-2a;
+  }
 }
 
 // Reset height for `textarea`s
 textarea.control {
   height: auto;
   resize: none;
+  font-family: 'Core Sans';
+  font-weight: normal;
 }
 
 select.control {
@@ -120,7 +144,7 @@ input[type="search"] {
 
 
 .form__group {
-  margin-bottom: $form-group-margin-bottom;
+  margin-bottom: $form-group-margin-bottom / 2;
 }
 
 
@@ -129,6 +153,7 @@ input[type="search"] {
 .checkbox {
   position: relative;
   display: block;
+  padding-bottom: 5px;
 
   label {
     padding-left: 35px;
@@ -148,6 +173,11 @@ input[type="search"] {
       background-color: $input-bg;
       transition: all .5s;
     }
+  }
+  .control-error {
+    position: relative;
+    bottom: -5px;
+    left: 36px;
   }
 }
 

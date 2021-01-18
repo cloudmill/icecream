@@ -2,6 +2,10 @@
   height: 41px;
   width: 41px;
   margin: 0 !important;
+  border-radius: 0;
+  background: none;
+  opacity: 1;
+  transition: height, width .5s;
   @media screen and (min-width: $screen-md-min) {
     height: 73px;
     width: 73px;
@@ -9,15 +13,20 @@
   svg {
     height: 41px;
     width: 41px;
+    transition: height, width .5s;
     @media screen and (min-width: $screen-md-min) {
       height: 73px;
       width: 73px;
     }
   }
-  border-radius: 0;
-  background: none;
-  opacity: 1;
-  //transition: height, width .5s;
+
+
+  g {
+    path {
+      stroke: transparent;
+      transition: stroke .5s;
+    }
+  }
 
   &-active {
     height: 70px;
@@ -41,20 +50,19 @@
         stroke: $color
       }
     }
-
-    //border: 5px solid white;
   }
 }
 
 .fullpage-block {
   .image-pack {
     position: relative;
+    z-index: 8;
 
     img {
       position: relative;
       z-index: 10;
       transform: scale(0.5);
-      transition: transform .5s .8s;
+      transition: transform .5s;
 
       &.third,
       &.second,
@@ -67,7 +75,7 @@
         z-index: 7;
         transform: scale(0.5);
         opacity: 0;
-        transition: all .5s 1.4s;
+        //transition: all .5s 1.4s;
       }
 
       &.third {
@@ -114,18 +122,20 @@
       bottom: 0;
       top: 0;
       border-radius: 1000px;
-      background: rgba(white, 0.8);
+      background: rgba(white, 0.6);
       filter: blur(250px);
     }
 
     &.active {
       img {
+        transition: transform .5s .8s;
         transform: scale(1) rotate(0);
 
         &.third,
         &.second,
         &.first {
           transform: scale(0.8);
+          transition: all .5s 1.2s;
           opacity: 1;
           @media screen and (min-width: $screen-md-min) {
             transform: scale(0.9);
@@ -159,12 +169,13 @@
       }
     }
 
+    &.swiper-slide-duplicate-prev,
     &-next {
       img {
         transform: scale(0.5) rotate(20deg);
       }
     }
-
+    &.swiper-slide-duplicate-next,
     &-prev {
       img {
         transform: scale(0.5) rotate(-20deg);
@@ -198,7 +209,32 @@
 }
 
 .desc-block {
+  .slider-image {
+    position: absolute;
+    right: -15px;
+    bottom: 35px;
+    max-width: 44%;
+    img {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity .6s, transform .5s;
+      &.active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    > img:not(:first-child) {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .swiper-container {
+    position: static;
+    overflow: visible;
+  }
   .swiper-slide {
+    width: 100% !important;
     margin-bottom: 30px;
     @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 10px;
@@ -208,7 +244,9 @@
     }
 
     > * {
-      max-width: 375px;
+      transform: translateY(150px) scale(0.8);
+      opacity: 0;
+      transition: opacity .5s .1s, transform .5s;
     }
 
     h4 {
@@ -218,6 +256,14 @@
     p {
       margin: 25px 0;
     }
+  }
+
+  .swiper-slide.hideIt > * {
+    transform: translateY(-150px) scale(0.8);
+  }
+  .swiper-slide-active > * {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 
   .swiper-pagination {
@@ -239,6 +285,7 @@
       line-height: 140%;
       margin-top: 10px !important;
       padding-left: 30px;
+      transition: color .5s;
       @media screen and (min-width: $screen-lg-min) {
         width: 100%;
         font-size: 16px;
@@ -271,6 +318,17 @@
           right: 0;
           bottom: 0;
           margin: auto;
+          transition: background .5s;
+        }
+      }
+
+
+      &:hover {
+        color: $color-type-2a;
+        .circle {
+          &:before {
+            background: $color-type-2a;
+          }
         }
       }
 
@@ -320,6 +378,7 @@
       position: static;
       display: flex;
       align-items: center;
+      justify-content: center;
 
       &-bullet {
         @include bulletType($color-type-2a);
