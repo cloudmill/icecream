@@ -1,0 +1,204 @@
+.recipe {
+    
+
+    &__desc {
+        margin-top: 20px;
+        margin-bottom: 80px;
+        max-width: 780px;
+
+        @media screen and (min-width: $screen-lg-min) {
+            margin-top: 60px;
+        }
+    }
+
+    &__desc-block {
+
+        &:not(:first-child) {
+            margin-top: 60px;
+        }
+
+        @media screen and (min-width: $screen-lg-min) {
+            
+            &:not(:first-child) {
+                margin-top: 80px;
+            }
+        }
+    }
+
+
+    &__text {
+        font-size: 16px;
+        line-height: 140%;
+
+        @media screen and (min-width: $screen-lg-min) {
+            font-size: 18px;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 130%;
+        
+        @media screen and (min-width: $screen-lg-min) {
+            font-size: 30px;
+        }
+
+        &--small {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 140%;
+
+            @media screen and (min-width: $screen-lg-min) {
+                font-size: 30px;
+            }
+        }
+    }
+
+
+    &__list {
+        
+        @media screen and (min-width: $screen-md-min) {
+            display: flex;
+        }
+
+        &--with-title {
+            margin-top: 20px;
+
+            @media screen and (min-width: $screen-lg-min) {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    &__list-part {
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        @media screen and (min-width: $screen-md-min) {
+            width: calc((100% - 40px) / 2);
+
+            &:not(:first-child) {
+                margin-top: 0;
+                margin-left: 40px;
+            }
+        }
+    }
+
+    &__list-item {
+        position: relative;
+        padding-left: 30px;
+
+        &::before {
+            position: absolute;
+            top: 9px;
+            left: 0;
+            content: "";
+            display: block;
+            $size: 10px;
+            width: $size;
+            height: $size;
+            background-color: #5DCBEE;
+            border-radius: 50%;
+        }
+
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
+
+    &__steps {
+
+    }
+
+    &__step {
+
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+
+
+        .recipe__text {
+            margin-top: 10px;
+
+            @media screen and (min-width: $screen-lg-min) {
+                margin-top: 20px;
+            }
+        }
+    }
+
+
+    &__block-aside {
+
+        & > aside {
+            margin-top: 80px;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: calc(100% - (20px * 2));
+
+            @media screen and (min-width: $screen-md-min) {
+                width: 100%;
+            }
+
+            @media screen and (min-width: 1150px) {
+                margin-top: 0;
+                width: 290px;
+            }
+        }
+    }
+
+
+    &__card-slider {
+        margin-top: 70px;
+
+        @media screen and (min-width: $screen-md-min) {
+            margin-top: 80px;
+        }
+
+        @media screen and (min-width: 1150px) {
+            margin-top: 150px;
+        }
+    }
+
+
+    &__top {
+        margin-top: -2.5px;
+        margin-left: -2.5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__tag {
+        margin-top: 2.5px;
+        margin-left: 2.5px;
+
+        display: inline;
+        font-size: 12px;
+        padding: 3px 10px;
+        font-weight: bold;
+        border: 1px solid #F1EFD6;
+        border-radius: 40px;
+
+        &:not(:first-child) {
+            margin-left: 5px;
+        }
+    }
+
+    &__time {
+        margin-top: 2.5px;
+        margin-left: 40px;
+    }
+
+
+    &__slider-top {
+        margin-top: 20px;
+
+        @media screen and (min-width: 1150px) {
+            margin-top: 40px;
+        }
+    }
+}
