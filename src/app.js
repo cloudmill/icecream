@@ -58,15 +58,13 @@ $(document).ready(() => {
 					//
 					setTimeout(() => {
 						slide.removeClass('active');
+						$('.fullpage-title h2').html(getTitle);
+						$('.fullpage-title').addClass('active');
 						setTimeout(() => {
-							$('.fullpage-title h2').html(getTitle);
-							$('.fullpage-title').addClass('active');
-							setTimeout(() => {
-								$('.fullpage-title').removeClass('remove');
-								slide.removeClass('remove');
-							}, 300);
-						}, 500);
-					}, 500);
+							$('.fullpage-title').removeClass('remove');
+							slide.removeClass('remove');
+						}, 600);
+					}, 800);
 				},
 			},
 		};

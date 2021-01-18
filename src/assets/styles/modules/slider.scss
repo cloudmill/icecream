@@ -115,15 +115,15 @@
     text-align: center;
 
     &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      border-radius: 1000px;
-      background: rgba(white, 0.6);
-      filter: blur(250px);
+      //content: '';
+      //position: absolute;
+      //left: 0;
+      //right: 0;
+      //bottom: 0;
+      //top: 0;
+      //border-radius: 1000px;
+      //background: rgba(white, 0.6);
+      //filter: blur(250px);
     }
 
     &.active {
@@ -138,7 +138,7 @@
           transition: all .5s 1.2s;
           opacity: 1;
           @media screen and (min-width: $screen-md-min) {
-            transform: scale(0.9);
+            transform: scale(1.0);
           }
         }
       }
@@ -479,7 +479,7 @@
       background-color: white;
       border-radius: 50%;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
-      
+
       // @media screen and (min-width: $screen-lg-min) {
       //   $size: 90px;
       //   width: $size;
@@ -488,7 +488,7 @@
     }
 
     &:hover {
-      
+
       &::before {
         transform: translate(-50%, -50%) scale(1);
         transition: transform .45s cubic-bezier(0.6, 0.01, 0, 1.38);

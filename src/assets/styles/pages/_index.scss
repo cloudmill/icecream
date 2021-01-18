@@ -75,11 +75,11 @@
     &.active {
       .fullpage-title {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1);
       }
       .fullpage-desc {
         opacity: 1;
-        transform: translate(0, 0);
+        //transform: translate(0, 0);
       }
     }
   }
@@ -94,7 +94,7 @@
 
   &-title {
     opacity: 0;
-    transform: translateY(100px) scale(0.7);
+    transform: scale(0.7);
     transition: all .5s;
     position: absolute;
     top: 120px;
@@ -122,16 +122,16 @@
 
     &.remove {
       opacity: 0 !important;
-      transform: translateY(-100px) scale(0.7) !important;
+      transform:  scale(0.7) !important;
       &.active {
-        transform: translateY(100px) scale(0.7) !important;
+        transform: scale(0.7) !important;
       }
     }
   }
 
   &-desc {
     opacity: 0;
-    transform: translate(-40px, 40px);
+    //transform: translate(-40px, 40px);
     transition: all .5s;
     position: absolute;
     top: 20px;

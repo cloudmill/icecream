@@ -8,7 +8,7 @@ $speed: 1;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 100001;
   transition: opacity .5s, left 0s 1s;
   &.hideIt {
     opacity: 0;
