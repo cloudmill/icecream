@@ -110,10 +110,6 @@
     }
 
 
-    &__steps {
-
-    }
-
     &__step {
 
         &:not(:first-child) {
@@ -191,6 +187,15 @@
     &__time {
         margin-top: 2.5px;
         margin-left: 40px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    &__time-text {
+        margin-left: 12px;
     }
 
 
@@ -199,6 +204,40 @@
 
         @media screen and (min-width: 1150px) {
             margin-top: 40px;
+        }
+    }
+
+
+    &__aside {
+
+        &--mobile {
+            margin-bottom: 80px;
+            
+            @media screen and (min-width: 1150px) {
+                display: none;
+            }
+        }
+        
+        &--desktop {
+            display: none;
+
+            @media screen and (min-width: 1150px) {
+                display: block;
+            }
+        }
+    }
+
+    &__aside-title {
+        margin: 0;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 140%;
+
+        @media screen and (min-width: 1150px) {
+            margin-bottom: 40px;
+            font-size: 22px;
+            line-height: 130%;
         }
     }
 }
