@@ -66,6 +66,7 @@
     "aos": "^2.3.4",
     "browser-detect": "^0.2.28",
     "gsap": "^3.2.6",
+    "inputmask": "^5.0.5",
     "jbox": "^1.2.0",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
