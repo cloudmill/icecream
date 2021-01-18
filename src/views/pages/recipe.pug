@@ -14,7 +14,9 @@ block content
             .recipe__tag
               |Завтраки
             .recipe__time
-              |30 мин
+              img.recipe__time-icon(src="assets/images/icons/time-circle.svg")
+              span.recipe__time-text
+                |30 мин
           .slideshow-container.img.recipe__slider-top
             .slideshow.swiper-container(data-aos='fade-up')
               .swiper-wrapper
@@ -76,6 +78,24 @@ block content
                       |#{'Шаг ' + (index + 1)}
                     p.recipe__text
                       |!{item}
+          .recipe__aside.recipe__aside--mobile
+              h6.recipe__aside-title
+                |Для рецепта нужно
+              .slider-aside.slider-aside--mb--20.slider-aside--maxw--355
+                .swiper-container.slider-aside__swiper-container
+                  .swiper-wrapper
+                    each item in [1, 2, 3]
+                      .swiper-slide.slider-aside__swiper-slide
+                        figure.slider-aside__slide
+                          p.slider-aside__image
+                            img.slider-aside__img(src="assets/images/milk-1.png", alt="")
+                          figcaption.slider-aside__caption
+                            |Молоко пастеризованное гомогенизирование, 1л
+                form.slider-aside__control
+                  button.slider-aside__button.slider-aside__button--prev
+                    img.slider-aside__button-img(src="assets/images/icons/prevArr.svg")
+                  button.slider-aside__button.slider-aside__button--next
+                    img.slider-aside__button-img(src="assets/images/icons/prevArr.svg")
           .row.unionBlock
             .col.col__lg-6.col__xs-12
               a.backLink.btn.btn__lg.btn--full(href='#')
@@ -100,6 +120,24 @@ block content
 
         aside.aside
           .sticky
+            .recipe__aside.recipe__aside--desktop
+              h6.recipe__aside-title
+                |Для рецепта нужно
+              .slider-aside.slider-aside--mb--20
+                .swiper-container.slider-aside__swiper-container
+                  .swiper-wrapper
+                    each item in [1, 2, 3]
+                      .swiper-slide.slider-aside__swiper-slide
+                        figure.slider-aside__slide
+                          p.slider-aside__image
+                            img.slider-aside__img(src="assets/images/milk-1.png", alt="")
+                          figcaption.slider-aside__caption
+                            |Молоко пастеризованное гомогенизирование, 1л
+                form.slider-aside__control
+                  button.slider-aside__button.slider-aside__button--prev
+                    img.slider-aside__button-img(src="assets/images/icons/prevArr.svg")
+                  button.slider-aside__button.slider-aside__button--next
+                    img.slider-aside__button-img(src="assets/images/icons/prevArr.svg")
             .sign-block(data-aos='fade-up')
               h4 Подписатсья на рецепты
                 form(action='' method='POST')

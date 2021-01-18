@@ -75,3 +75,20 @@ if ($('.rollerIt').length) {
 		}
 	});
 }
+
+$('.slider-aside').each(function () {
+	const component = $(this);
+
+	const container = component.find('.swiper-container');
+	const prev = component.find('.slider-aside__button--prev');
+	const next = component.find('.slider-aside__button--next');
+
+	const swiper = new Swiper(container[0], {
+		allowTouchMove: false,
+
+		navigation: {
+			prevEl: prev[0],
+			nextEl: next[0]
+		}
+	});
+});
