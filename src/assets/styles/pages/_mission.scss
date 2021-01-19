@@ -1,3 +1,5 @@
+// MISSION: page
+
 .page-mission {
 
 
@@ -31,7 +33,7 @@
 
 
     &__mission {
-        
+
         @media screen and (min-width: 1150px) {
             display: flex;
         }
@@ -62,6 +64,8 @@
     }
 
 
+    // VALUE: list
+
     &__value-list {
         margin-top: 20px;
 
@@ -70,7 +74,10 @@
         }
     }
 
+    // VALUE: item
+
     &__value-item {
+        padding: 20px;
         background: #FFFFFF;
         border: 1px solid #F1EFD6;
         border-radius: 20px;
@@ -79,7 +86,13 @@
             margin-top: 10px;
         }
 
+        @media screen and (min-width: $screen-md-min) {
+            padding-right: 40px;
+            display: flex;
+        }
+
         @media screen and (min-width: 1150px) {
+            padding: 40px 60px;
             border-radius: 40px;
 
             &:not(:first-child) {
@@ -88,8 +101,17 @@
         }
     }
 
+    // VALUE: image
+
     &__value-image {
+        max-width: 90px;
+        flex-shrink: 0;
+        align-self: flex-start;
         display: flex;
+
+        @media screen and (min-width: 1150px) {
+            max-width: 140px;
+        }
     }
 
     &__value-img {
@@ -97,5 +119,55 @@
         max-height: 100%;
     }
 
-    
+    // VALUE: info
+
+    &__value-info {
+        margin-top: 16px;
+
+        @media screen and (min-width: $screen-md-min) {
+            margin-top: 0;
+            margin-left: 70px;
+        }
+
+        // @media screen and (min-width: 1150px) {
+        @media screen and (min-width: 1580px) {
+            margin-left: 100px;
+            flex-grow: 1;
+            display: flex;
+        }
+    }
+
+    &__value-title {
+        margin: 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 140%;
+
+        @media screen and (min-width: 1150px) {
+            font-size: 22px;
+            line-height: 130%;
+        }
+
+        @media screen and (min-width: 1580px) {
+            width: 33%;
+            max-width: 288px;
+        }
+    }
+
+    &__value-text {
+        margin: 0;
+        margin-top: 10px;
+        max-width: 540px;
+        font-size: 14px;
+        line-height: 140%;
+
+        @media screen and (min-width: 1150px) {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: 1580px) {
+            margin-top: 0;
+            margin-left: 40px;
+        }
+    }
 }
