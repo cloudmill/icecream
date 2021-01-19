@@ -63,6 +63,49 @@
         }
     }
 
+    &__mission-highlight {
+        position: relative;
+        font-weight: bold;
+        white-space: nowrap;
+
+        $offset-x: 2px;
+
+        &::before {
+            position: absolute;
+            z-index: -1;
+            top: 1px;
+            bottom: 0;
+            left: -$offset-x;
+            content: '';
+            display: block;
+            width: 0;
+            background-color: lightgreen; // test
+            border-radius: 7px;
+            transition: width .5s .6s;
+        }
+
+        &--color--blue {
+
+            &::before {
+                background-color: #5DCBEE;
+            }
+        }
+
+        &--color--beige {
+
+            &::before {
+                background-color: #F1EFD6;
+            }
+        }
+
+        &--active {
+
+            &::before {
+                width: calc(100% + (#{$offset-x} * 2));
+            }
+        }
+    }
+
 
     // VALUE: list
 

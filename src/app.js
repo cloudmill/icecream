@@ -166,4 +166,29 @@ $(window).on('load', function() {
 		}, 500);
 	}
 
+
+	// mission page
+
+	if ($('.page-mission').length) {
+		const highlight = {
+			delay: 500,
+			count: 0,
+			timeGap: 300
+		};
+
+		const timer = setTimeout(() => {
+			$('.page-mission__mission-highlight').each(function () {
+				const timer = setTimeout(
+					() => {
+						$(this).addClass('page-mission__mission-highlight--active');
+
+						clearTimeout(timer);
+					},
+					highlight.timeGap * highlight.count++
+				);
+			});
+
+			clearTimeout(timer);
+		}, highlight.delay);
+	}
 });
