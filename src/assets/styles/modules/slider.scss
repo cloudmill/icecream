@@ -18,6 +18,14 @@
       height: 73px;
       width: 73px;
     }
+    &:hover {
+      g {
+        path {
+          //stroke-dasharray: 360;
+          //transition: stroke-dasharray 5s;
+        }
+      }
+    }
   }
 
 
@@ -25,6 +33,14 @@
     path {
       stroke: transparent;
       transition: stroke .5s;
+
+      &.red {
+        stroke: $color-type-2a;
+        stroke-dasharray: 280 280;
+        stroke-dashoffset: 280;
+        stroke-linecap: round;
+        transition: all 0s;
+      }
     }
   }
 
@@ -47,7 +63,7 @@
 
     g {
       path {
-        stroke: $color
+        stroke: $color;
       }
     }
   }
@@ -63,6 +79,9 @@
       z-index: 10;
       transform: scale(0.5);
       transition: transform .5s;
+      &:first-child {
+        z-index: 12;
+      }
 
       &.third,
       &.second,
@@ -79,23 +98,37 @@
       }
 
       &.third {
-        left: -62%;
-        bottom: 12%;
+        left: -45%;
+        bottom: 27%;
+        z-index: 10;
+
+        &--add {
+          bottom: 17%;
+        }
       }
 
       &.second {
-        left: -31%;
+        left: -27%;
+        bottom: 0;
 
         &--add {
-          left: -28%;
+          left: -37%;
+        }
+        &--sec {
+          left: -31%;
         }
       }
 
       &.first {
-        left: 22%;
+        left: 38%;
+        bottom: 0;
 
         &--add {
           left: 30%;
+        }
+        &--sec {
+          left: 34%;
+          bottom: 3%;
         }
       }
     }
@@ -114,6 +147,20 @@
     transition: transform .5s;
     text-align: center;
 
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      opacity: 0;
+      margin: auto;
+      transition: opacity .5s;
+      height: 50px;
+      background: url("../images/animation/shadow.png") no-repeat center;
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -121,12 +168,21 @@
       right: 0;
       bottom: 0;
       top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity .5s;
+      //background: url("../images/animation/blur.svg") no-repeat center / cover;
       border-radius: 1000px;
       background: rgba(white, 0.6);
       filter: blur(250px);
     }
 
     &.active {
+      &:before,
+      &:after {
+        opacity: 1;
+      }
       img {
         transition: transform .5s .8s;
         transform: scale(1) rotate(0);
@@ -147,6 +203,9 @@
     &.remove {
       //transform: scale(0.5);
       //transition: transform .5s !important;
+      &:before {
+        opacity: 0;
+      }
       img {
         &.third,
         &.second,
@@ -204,6 +263,21 @@
 
     &-bullet {
       @include bulletType();
+    }
+
+    &.aos-animate {
+      .swiper-pagination-bullet {
+        &-active {
+          g {
+            path {
+              &.red {
+                stroke-dashoffset: 20;
+                transition: all 5.5s;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

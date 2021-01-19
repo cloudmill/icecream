@@ -38,6 +38,7 @@ $(document).ready(() => {
 	        <g mask="url(#mask${index + 1})">
 	          <rect x="1" y="8" width="117" height="103" fill="url(#pattern${index + 1})"/>
 	          <path d="M34.5585 25.7121L34.6799 25.6318L34.7884 25.5347C44.3035 17.0213 54.912 14.81 64.6793 16.9869C74.5097 19.1779 83.6519 25.8575 89.9784 35.4181C96.373 45.0818 99.1835 54.6584 98.161 63.258C97.146 71.7946 92.319 79.675 82.806 85.97C63.62 98.6657 35.9282 96.2895 23.5607 77.5994C17.248 68.0597 15.3371 58.2215 17.2601 49.276C19.1845 40.3238 24.9982 32.0384 34.5585 25.7121Z" stroke-width="4"/>
+	          <path class="red" d="M34.5585 25.7121L34.6799 25.6318L34.7884 25.5347C44.3035 17.0213 54.912 14.81 64.6793 16.9869C74.5097 19.1779 83.6519 25.8575 89.9784 35.4181C96.373 45.0818 99.1835 54.6584 98.161 63.258C97.146 71.7946 92.319 79.675 82.806 85.97C63.62 98.6657 35.9282 96.2895 23.5607 77.5994C17.248 68.0597 15.3371 58.2215 17.2601 49.276C19.1845 40.3238 24.9982 32.0384 34.5585 25.7121Z" stroke-width="4"/>
 	        </g>
 	        <defs>
 	        <pattern id="pattern${index + 1}" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -175,7 +176,7 @@ $(window).on('load', function() {
 		};
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(function () {
+			$('.page-mission__mission-highlight').each(() => {
 				const timer = setTimeout(
 					() => {
 						$(this).addClass('page-mission__mission-highlight--active');
@@ -192,9 +193,9 @@ $(window).on('load', function() {
 
 
 	// PAGE: about-us
-	
+
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(function () {
+		$('.page-about-us__slider').each(() => {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -203,10 +204,10 @@ $(window).on('load', function() {
 			const next = component.find('.page-about-us__slider-btn--next');
 			const paginationItems = component.find('.page-about-us__slider-pagination-item');
 
-			const swiper = new Swiper(container[0], {
+			const slider = new Swiper(container[0], {
 				allowTouchMove: false,
 				speed: 300,
-				
+
 				navigation: {
 					prevEl: prev[0],
 					nextEl: next[0]
@@ -215,14 +216,14 @@ $(window).on('load', function() {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: function (swiper, current, total) {
+					renderCustom: (sliderSw, current) => {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', function () {
+			paginationItems.on('click', () => {
 				const index = $(this).index();
 				swiper.slideTo(index);
 			});
