@@ -12,11 +12,23 @@
     }
 
 
-    &__block {
-        margin-top: 40px;
+    // common
 
-        @media screen and (min-width: 1150px) {
-            margin-top: 80px;
+    &__block {
+        @mixin margin-top($value) {
+            margin-top: $value;
+
+            @media screen and (min-width: 1150px) {
+                margin-top: $value * 2;
+            }
+        }
+
+        $margin-top: 40px;
+        
+        @include margin-top($margin-top);
+
+        &--large {
+            @include margin-top($margin-top * 2);
         }
     }
 
@@ -28,6 +40,14 @@
 
         @media screen and (min-width: 1150px) {
             font-size: 30px;
+        }
+
+        &--large {
+
+            @media screen and (min-width: 1150px) {
+                font-size: 50px;
+                line-height: 110%;
+            }
         }
     }
 

@@ -167,7 +167,7 @@ $(window).on('load', function() {
 	}
 
 
-	// mission page
+	// PAGE: mission
 
 	if ($('.page-mission').length) {
 		const highlight = {
@@ -190,5 +190,44 @@ $(window).on('load', function() {
 
 			clearTimeout(timer);
 		}, highlight.delay);
+	}
+
+
+	// PAGE: about-us
+	
+	if ($('.page-about-us').length) {
+		$('.page-about-us__slider').each(function () {
+			const component = $(this);
+
+			const container = component.find('.swiper-container');
+			const pagination = component.find('.page-about-us__slider-pagination');
+			const prev = component.find('.page-about-us__slider-btn--prev');
+			const next = component.find('.page-about-us__slider-btn--next');
+			const paginationItems = component.find('.page-about-us__slider-pagination-item');
+
+			const swiper = new Swiper(container[0], {
+				allowTouchMove: false,
+				speed: 300,
+				
+				navigation: {
+					prevEl: prev[0],
+					nextEl: next[0]
+				},
+
+				pagination: {
+					el: pagination[0],
+					type: 'custom',
+					renderCustom: function (swiper, current, total) {
+						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
+						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
+					}
+				}
+			});
+
+			paginationItems.on('click', function () {
+				const index = $(this).index();
+				swiper.slideTo(index);
+			});
+		});
 	}
 });
