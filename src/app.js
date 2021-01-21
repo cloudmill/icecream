@@ -149,7 +149,7 @@ $(window).on('load', function() {
 					new Rellax('.rellax');
 				}
 			}
-		}, 35);
+		}, 16);
 	} else {
 		$('body').css('overflow', 'hidden');
 		setTimeout(() => {
