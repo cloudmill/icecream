@@ -296,7 +296,7 @@
             right: -20px;
             content: "";
             display: block;
-            min-height: 1360px;
+            min-height: calc(200%);
             background-image: url("../images/background-1.svg");
             background-repeat: no-repeat;
             background-position: center top;
