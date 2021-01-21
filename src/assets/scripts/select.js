@@ -1,14 +1,12 @@
 import 'select2';
 
-const baseUrl = 'assets/images/catalog/filter';
-
 function formatState(state) {
 	if (!state.id) {
 		return state.text;
 	}
 
 	const $state = $(
-		'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase() + '.svg" class="img-flag" /> ' + state.text + '</span>'
+		'<span><img src="' + state.element.dataset.img + '" class="img-flag" /> ' + state.text + '</span>'
 	);
 	return $state;
 }
@@ -23,7 +21,7 @@ function formatStateSelection(state, e) {
 	);
 
 	$state.find('span').html(`<span class="title">${title}</span>${state.text}`);
-	$state.find('img').attr('src', baseUrl + '/' + state.element.value.toLowerCase() + '.svg');
+	$state.find('img').attr('src', state.element.dataset.img);
 
 	return $state;
 }
@@ -61,7 +59,6 @@ $('.select-template').on('select2:closing', function(e) {
 $('.reset-filter--js').click(function() {
 	$('.select-template').val('filter-1').trigger('change');
 });
-
 
 
 // main

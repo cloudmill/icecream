@@ -22,10 +22,6 @@ $(document).ready(() => {
 			centeredSlides: true,
 			simulateTouch: false,
 			speed: 1000,
-			// autoplay: {
-			// 	delay: 5000,
-			// 	disableOnInteraction: false,
-			// },
 			loop: true,
 			pagination: {
 				el: '.fullpage-slider .swiper-pagination',
@@ -56,13 +52,15 @@ $(document).ready(() => {
 					const slide = $('.fullpage-slider .swiper-slide:not(.swiper-slide-active)');
 					slide.addClass('remove');
 					activeSlide.addClass('active');
-					//
+					$('.fullpage-slider').removeClass('active');
+
 					setTimeout(() => {
 						slide.removeClass('active');
 						$('.fullpage-title h2').html(getTitle);
 						$('.fullpage-title').addClass('active');
 						setTimeout(() => {
 							$('.fullpage-title').removeClass('remove');
+							$('.fullpage-slider').addClass('active');
 							slide.removeClass('remove');
 						}, 600);
 					}, 800);
@@ -195,7 +193,7 @@ $(window).on('load', function() {
 	// PAGE: about-us
 
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(() => {
+		$('.page-about-us__slider').each(function() {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -216,14 +214,14 @@ $(window).on('load', function() {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: (sliderSw, current) => {
+					renderCustom: function(sliderSw, current) {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', () => {
+			paginationItems.on('click', function() {
 				const index = $(this).index();
 				swiper.slideTo(index);
 			});
