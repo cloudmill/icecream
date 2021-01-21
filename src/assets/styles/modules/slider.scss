@@ -184,7 +184,7 @@
         opacity: 1;
       }
       img {
-        transition: transform .5s .8s;
+        transition: transform .5s .8s, left .3s;
         transform: scale(1) rotate(0);
 
         &.third,
@@ -237,6 +237,7 @@
     &.swiper-slide-duplicate-next,
     &-prev {
       img {
+        left: 30px;
         transform: scale(0.5) rotate(-20deg);
       }
     }
