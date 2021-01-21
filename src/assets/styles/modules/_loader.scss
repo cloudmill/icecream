@@ -17,8 +17,8 @@ $speed: 1;
 }
 
 .index-loader {
-  position: relative;
-  z-index: 1;
+  //position: relative;
+  //z-index: 1;
   //clip-path: circle(50% at 130% 70%);
   //transition: all 2s;
   //&.active {
@@ -93,14 +93,18 @@ $speed: 1;
   .surface {
     max-height: 600px;
     max-width: 600px;
-    height: 40vw;
-    width: 40vw;
+    height: 80vw;
+    width: 80vw;
     background: $waterColor;
     overflow: hidden;
     transform-style: preserve-3d;
     animation:
       surface 13000ms ease-in-out infinite alternate,
       rotateZ 20000ms linear infinite;
+    @media screen and (min-width: $screen-md-min) {
+      height: 40vw;
+      width: 40vw;
+    }
 
     .inner {
       width: 600px;

@@ -325,7 +325,7 @@
     background:
       //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
       url("../images/descs-circle.svg") no-repeat top center / 100% auto,
-      url("../images/descm.svg") no-repeat top right / 104% auto,
+      url("../images/animation/background-m.svg") no-repeat top right / 104% auto,
       #F3F0DA;
     position: relative;
     &:after {
@@ -402,7 +402,8 @@
   }
 
   .swiper-container {
-    margin-top: 53vh;
+    margin-top: 20px;
+    //margin-top: 53vh;
     @media screen and (min-width: $screen-md-min) {
       margin: 0;
     }

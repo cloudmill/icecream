@@ -132,7 +132,7 @@ $(window).on('load', function() {
 							$('.fullpage-desc span:last-child').addClass('active');
 						}, 300);
 					}, 300);
-					// swiper.autoplay.start();
+					swiper.autoplay.start();
 				}, 500);
 
 				setTimeout(() => {

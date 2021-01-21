@@ -95,12 +95,21 @@
         transform: scale(0.5);
         opacity: 0;
         //transition: all .5s 1.4s;
+        //max-width: 80%;
+        //@media screen and (min-width: $screen-md-min) {
+        //  max-width: 100%;
+        //}
       }
 
       &.third {
-        left: -45%;
+        left: -85%;
         bottom: 27%;
         z-index: 10;
+        max-width: 60%;
+        @media screen and (min-width: $screen-md-min) {
+          max-width: 100%;
+          left: -45%;
+        }
 
         &--add {
           bottom: 17%;
@@ -108,27 +117,47 @@
       }
 
       &.second {
-        left: -27%;
+        left: -47%;
         bottom: 0;
+        max-width: 80%;
+        @media screen and (min-width: $screen-md-min) {
+          left: -27%;
+          max-width: 100%;
+        }
 
         &--add {
-          left: -37%;
+          left: -53%;
+          @media screen and (min-width: $screen-md-min) {
+            left: -37%;
+          }
         }
         &--sec {
-          left: -31%;
+          left: -45%;
+          @media screen and (min-width: $screen-md-min) {
+            left: -31%;
+          }
         }
       }
 
       &.first {
-        left: 38%;
+        left: 28%;
         bottom: 0;
+        @media screen and (min-width: $screen-md-min) {
+          left: 38%;
+        }
 
         &--add {
-          left: 30%;
+          left: 20%;
+          @media screen and (min-width: $screen-md-min) {
+            left: 30%;
+          }
         }
         &--sec {
-          left: 34%;
+          left: 24%;
           bottom: 3%;
+          @media screen and (min-width: $screen-md-min) {
+            left: 34%;
+          }
         }
       }
     }
@@ -158,7 +187,10 @@
       margin: auto;
       transition: opacity .5s;
       height: 50px;
-      background: url("../images/animation/shadow.png") no-repeat center;
+      background: url("../images/animation/shadow.png") no-repeat center / 100% auto;
+      @media screen and (min-width: $screen-md-min) {
+        background: url("../images/animation/shadow.png") no-repeat center;
+      }
     }
 
     &:after {
@@ -237,8 +269,10 @@
     &.swiper-slide-duplicate-next,
     &-prev {
       img {
-        left: 30px;
         transform: scale(0.5) rotate(-20deg);
+        @media screen and (min-width: $screen-md-min) {
+          left: 30px;
+        }
       }
     }
   }
@@ -285,10 +319,14 @@
 
 .desc-block {
   .slider-image {
-    position: absolute;
-    right: -15px;
-    bottom: 35px;
-    max-width: 44%;
+    position: relative;
+    margin: 0 - 20px;
+    @media screen and (min-width: $screen-md-min) {
+      position: absolute;
+      right: -15px;
+      bottom: 35px;
+      max-width: 44%;
+    }
     img {
       opacity: 0;
       transform: scale(0.8);
