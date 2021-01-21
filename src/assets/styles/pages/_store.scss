@@ -336,7 +336,6 @@
       background-repeat: no-repeat, no-repeat, no-repeat;
       background-position: center bottom -600px, right -90px bottom -20px, center bottom;
       background-size: 100% auto, 460px auto, cover;
-      border-bottom: 10px solid black;
 
       @media (min-width: $screen-md-min) {
         height: calc(100% + 430px);
