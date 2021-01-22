@@ -4,6 +4,7 @@ import Rellax from 'rellax';
 import Sticky from 'sticky-js';
 import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
+import './assets/scripts/backend.js';
 
 // Styles
 import 'Styles/_app.scss';
