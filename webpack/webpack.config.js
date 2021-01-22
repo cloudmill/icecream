@@ -10,14 +10,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SVGSpriteMapPlugin = require('svg-spritemap-webpack-plugin');
 const ImageMinPlugin = require('imagemin-webpack-plugin').default;
 const ImageMinMozJpeg = require('imagemin-mozjpeg');
-const PurgeCssPlugin = require('purgecss-webpack-plugin');
+// const PurgeCssPlugin = require('purgecss-webpack-plugin');
 const HtmlBeautifyPlugin = require('html-beautify-webpack-plugin');
 
 // Files
 const utils = require('./utils');
-const PATHS = {
-	src: path.join(__dirname, '../src')
-};
+// const PATHS = {
+// 	src: path.join(__dirname, '../src')
+// };
 
 // Configuration
 module.exports = env => {
@@ -233,11 +233,11 @@ module.exports = env => {
 				'window.jQuery': 'jquery'
 			}),
 
-			new PurgeCssPlugin({
-				paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
-				only: ['app'],
-				whitelistPatterns: [/select2/, /my-mfp/, /swiper/], // add plugin's classes to exclude from purge
-			}),
+			// new PurgeCssPlugin({
+			// 	paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
+			// 	only: ['app'],
+			// 	whitelistPatterns: [/select2/, /my-mfp/, /swiper/], // add plugin's classes to exclude from purge
+			// }),
 
 			new WebpackNotifierPlugin({
 				title: 'Noob__ui',
