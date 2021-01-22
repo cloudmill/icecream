@@ -309,6 +309,10 @@
         margin-top: 80px;
       }
     }
+
+    &--z-index--m1 {
+      z-index: -1;
+    }
   }
 
 
@@ -318,9 +322,10 @@
 
 
   &__top {
+    position: relative;
+    z-index: -1;
     margin-top: 40px;
     padding-bottom: 375px;
-    position: relative;
 
     &::before {
       position: absolute;
