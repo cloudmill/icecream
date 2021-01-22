@@ -1,0 +1,161 @@
+block COMPONENTS
+
+  mixin frame(src, alt, mod)
+    .page-store__frame(class = mod ? ('page-store__frame' + mod) : '')
+      .page-store__frame-image
+        img.page-store__frame-img(src=src, alt=alt)
+
+  mixin row(variant)
+    .page-store__row(class = variant ? ('page-store__row' + variant) : '')
+      block
+
+  mixin col
+    .page-store__row-col
+      block
+
+  mixin card(variant)
+    .page-store__card(class = variant ? ('page-store__card' + variant) : '')
+      h3.page-store__title
+        if (!variant)
+          |Интернет–магазин «Омолоко»
+        else
+          |Интернет–магазин «icecream.market»
+      p.page-store__card-text
+        if (!variant)
+          |Доставка продуктов по Москве
+          br
+          |и Московской области
+        else
+          |Доставка нашей продукции 
+          br.page-store__line-break.page-store__line-break--hide--desktop
+          |по Санкт-Петербургу
+          br
+          |и Ленинградской области
+      .page-store__card-buttons
+        a.page-store__card-button(href='tel:' + (!variant ? '88005004833' : '88126112313'))
+          if (!variant)
+            |8 800 500–48–33
+          else
+            |8 812 611-23-13
+        br
+        a(href="#").btn.btn--primary.page-store__btn
+          |Перейти в магазин
+
+
+
+block PARTS
+
+  mixin __next
+    .page-store__block.page-store__block--bottom.page-store__block--z-index--m1(data-aos='fade-up')
+      .nextBlock
+        a.row.between__xs.middle__xs(href='#')
+          .col
+            p
+              |Смотрите также
+            h3
+              |Экскурсия на фабрику «Чистая линия»
+          .col
+            .nextBlock--ico
+              +img('icons/nextArr.svg')
+
+  mixin __text-image
+    .page-store__block(data-aos='fade-up')
+      +row
+        +col
+          p.page-store__title.page-store__title--block--text-image
+            |Нашей продукцией с доставкой можно украсить любой праздник, подобрать ингредиенты для блюд, перекусить в офисе в обеденный перерыв или сделать приятный сюрприз родственникам и друзьям!
+        +col
+          +frame('assets/images/world/store/text-image.jpg', 'image')
+
+  mixin __image
+    .page-store__block(data-aos='fade-up')
+      +frame('assets/images/world/store/mid-image.jpg', 'image', '--centered')
+
+  mixin __text
+    .page-store__block(data-aos='fade-up')
+      +row('--alt')
+        +col
+          p.page-store__title.page-store__title--block--text
+            |Мы гарантируем соблюдение строгих требований к температурным режимам при перевозке продукции «Чистая Линия».
+        +col
+          p.page-store__title.page-store__title--block--text
+            |Доставка продукции осуществляется напрямую с завода.
+
+  mixin __cards
+    .page-store__block.page-store__block--cards(data-aos='fade-up')
+      +row
+        +col
+          +card
+        +col
+          +card('--alt')
+
+  mixin __top
+    .page-store__top(data-aos='fade-up')
+      h2.page-store__title.page-store__title--block--top
+        |В 2016 году были запущены «Омолоко» и icecream.market — фирменные интернет-магазины компании «Чистая Линия»
+      p.page-store__top-text
+        |Теперь мороженое и молочная продукция «Чистая Линия» с коротким сроком хранения доставляются курьерами напрямую с завода!
+        br
+        br
+        |Это значит, что Вы можете получить свежую и натуральную продукцию бренда «Чистая Линия» 
+        br
+        |с прямой доставкой на дом!
+  
+  mixin __nav
+    nav.tab-nav(data-aos='fade-up')
+      .tab-nav__wrapper
+        ul.tab-nav__list
+          -
+            var tabs = [
+              { text: 'О нас' },
+              { text: 'Миссия и ценности' },
+              { text: 'Интернет–магазин', active: true },
+              { text: 'Экскурсия на фабрику' },
+              { text: 'О!Эскимо' },
+              { text: 'Смотровая площадка' }
+            ];
+          each tab in tabs
+            li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
+              a.tab-nav__link(href="#")
+                |#{tab.text}
+
+  mixin __title
+    .mainTitle
+      ul.breadcrumbs
+        li.breadcrumbs__item.page-store__breadcrumbs-item
+          a.breadcrumbs__link(href="#")
+            |Интернет–магазин
+        li.breadcrumbs__item.page-store__breadcrumbs-item
+          a.breadcrumbs__link(href="#")
+            |Мир Чистой Линии
+        li.breadcrumbs__item.active.page-store__breadcrumbs-item
+          a.breadcrumbs__link(href="#")
+            svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+              path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
+              path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
+      h1.mainTitle-text(data-aos='fade-up')
+        |Интернет–магазин
+
+
+
+block STRUCTURE
+
+  mixin __content
+    +__title
+    +__nav
+    +__top
+    +__cards
+    +__text
+    +__image
+    +__text-image
+    +__next
+
+
+
+  .page-store
+    .left-container.page-store__left-container
+      +__content
+    
+
