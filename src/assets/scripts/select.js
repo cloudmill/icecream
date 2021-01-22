@@ -1,4 +1,5 @@
 import 'select2';
+import 'jquery.easing';
 
 function formatState(state) {
 	if (!state.id) {
@@ -33,10 +34,13 @@ $('.select-template').select2({
 	minimumResultsForSearch: Infinity
 });
 
+$('.select-template').on('select2:select', function(e) {
+	$('.catalogFilter--js span').text(e.params.data.text);
+});
 $('.select-template').on('select2:open', function() {
 	$('.select2-dropdown').hide();
 	setTimeout(function() {
-		$('.select2-dropdown').slideDown(500);
+		$('.select2-dropdown').slideDown({ duration: 500, easing: 'easeInOutCubic' });
 	}, 200);
 });
 $('.select-template').on('select2:closing', function(e) {
@@ -99,7 +103,7 @@ $('.select-main').select2({
 $('.select-main').on('select2:open', function() {
 	$('.select2-dropdown').hide();
 	setTimeout(function() {
-		$('.select2-dropdown').slideDown(500);
+		$('.select2-dropdown').slideDown({ duration: 500, easing: 'easeInOutCubic' });
 	}, 200);
 });
 $('.select-main').on('select2:closing', function(e) {

@@ -21,6 +21,11 @@ legend {
   border: 0;
 }
 
+select {
+  outline: none !important;
+  border: none !important;
+}
+
 label {
   display: block;
   max-width: 100%;
@@ -33,6 +38,7 @@ label {
     text-decoration: underline;
     &:hover {
       text-decoration: none;
+      color: $color-type-2a;
     }
   }
 }
@@ -173,6 +179,18 @@ input[type="search"] {
       background-color: $input-bg;
       transition: all .5s;
     }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 25px;
+      opacity: 0;
+      z-index: 3;
+      transition: opacity .5s;
+      background: url('../images/icons/icon-checkbox.svg') center center no-repeat;
+    }
   }
   .control-error {
     position: relative;
@@ -198,8 +216,13 @@ input[type="search"] {
   }
 }
 
-.checkbox input[type="checkbox"]:checked + label:after {
-  background: url('../images/icons/icon-checkbox.svg') center center no-repeat, $color-type-1a;
+.checkbox input[type="checkbox"]:checked + label {
+  &:after {
+    background: $color-type-1a;
+  }
+  &:before {
+    opacity: 1;
+  }
 }
 .radio input[type="radio"]:checked + label:after {
   background: url('../images/icons/icon-radio.png') center center no-repeat, $input-bg;

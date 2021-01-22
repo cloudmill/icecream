@@ -93,8 +93,6 @@ $(window).scroll(() => {
 });
 // scroll
 
-
-
 $(window).on('load', function () {
 
 

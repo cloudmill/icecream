@@ -1,14 +1,14 @@
 aside.aside
-    .sticky
+    .sticky(data-margin-top="40")
         .contacts-block(data-aos='fade-up')
             h4 Контакты для СМИ
-            h5 Жильцов Сергей
-            div: a.icon-link(href='#')
+            h5 Пресс-служба
+            div: a.icon-link(href='tel:79251085090')
                 +img('icons/phone.svg')
-                span 8 812 958-32-32
-            div: a.icon-link(href='#')
+                span +79251085090
+            div: a.icon-link(href='mailto:presschl1@gmail.com')
                 +img('icons/message.svg')
-                span js@icecream-chl.ru
+                span presschl1@gmail.com
         .sign-block(data-aos='fade-up')
             h4 Подписаться на новости
             form(action='' method='POST')
@@ -16,4 +16,4 @@ aside.aside
                 .checkbox.form__group
                     input(type="checkbox", id='sign')
                     label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-                button.btn.btn--primary.btn__sm.btn--full(type='submit') Подписаться
+                button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Подписаться

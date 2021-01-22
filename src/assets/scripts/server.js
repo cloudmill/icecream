@@ -1,8 +1,11 @@
 $('.test--js').click(function() {
-	$('.form-response').addClass('shown');
+	$('.form-response').addClass('shown activated');
 	return false;
 });
 $('.reset--js').click(function() {
 	$('.form-response').removeClass('shown');
-  return false;
+	setTimeout(() => {
+		$('.form-response').removeClass('activated');
+	}, 500);
+	return false;
 });

@@ -50,11 +50,11 @@
       margin-bottom: 20px;
       @media screen and (min-width: $screen-md-min) {
         margin-bottom: 40px;
-        min-width: 25%;
+        width: 25%;
       }
-      @media screen and (min-width: $screen-xl-min) {
-        min-width: 20%;
-      }
+      //@media screen and (min-width: $screen-xl-min) {
+        //min-width: 20%;
+      //}
       &-title {
         font-size: 14px;
         font-weight: normal;
@@ -62,7 +62,7 @@
       }
       &-desc {
         font-weight: bold;
-        font-size: 18px;
+        font-size: 14px;
       }
     }
   }
@@ -73,9 +73,15 @@
       margin-top: 160px;
       margin-bottom: 160px;
     }
+    .text__sm {
+      max-width: 615px;
+    }
     h5 {
       margin-top: 0;
       margin-bottom: 10px;
+      @media screen and (min-width: $screen-lg-min) {
+        font-size: 18px;
+      }
     }
     .row + .row {
       margin-top: 40px;
@@ -118,6 +124,7 @@
         position: relative;
         margin-bottom: 20px;
         img {
+          border-radius: 20px;
           vertical-align: middle;
         }
         span {

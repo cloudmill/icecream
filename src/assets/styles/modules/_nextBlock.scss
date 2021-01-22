@@ -4,6 +4,34 @@
   border-radius: 20px;
   margin-top: 70px;
   margin-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+    background: $color-type-3a;
+    transition: opacity .5s;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+    .nextBlock--ico {
+      &:before {
+        transform: translate3d(-50%,-50%,0) scale(1);
+        transition: transform .45s cubic-bezier(.6,.01,0,1.38);
+      }
+    }
+  }
+  > * {
+    position: relative;
+    z-index: 7;
+  }
   @media screen and (min-width: $screen-md-min) {
     border-radius: 40px;
     margin-top: 100px;
@@ -61,14 +89,6 @@
       margin: 0;
       @media screen and (max-width: $screen-md-max) {
         font-size: 18px;
-      }
-    }
-    &:hover {
-      .nextBlock--ico {
-        &:before {
-          transform: translate3d(-50%,-50%,0) scale(1);
-          transition: transform .45s cubic-bezier(.6,.01,0,1.38);
-        }
       }
     }
   }

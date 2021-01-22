@@ -1,5 +1,5 @@
 aside.aside
-  .sticky
+  .sticky(data-margin-top="40")
     .sign-block(data-aos='fade-up')
       .form-request
         h4 Задать свой вопрос
@@ -9,8 +9,8 @@ aside.aside
           .checkbox.form__group
             input(type="checkbox", id='sign')
             label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-          button.btn.btn--primary.btn__sm.btn--full.test--js(type='submit') Отправить
+          button.btn.btn--primary.btn__sm.btn--full.test--js(type='submit'): span Отправить
       .form-response
         .inner
           h4 Спасибо, мы получили ваш вопрос и опубликуем его на этой странице.
-          button.btn.btn--primary.btn__sm.btn--full.reset--js(type='submit') Отправить еще
+          button.btn.btn--primary.btn__sm.btn--full.reset--js(type='submit'): span Отправить еще

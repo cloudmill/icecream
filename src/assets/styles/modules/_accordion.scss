@@ -9,11 +9,18 @@
     border-radius: 20px;
     margin-bottom: 10px;
     cursor: pointer;
+    transition: all .5s !important;
+    &:hover {
+      background: $base-color-lighten;
+    }
     &.active {
       background: $base-color-lighten;
       .accordion-head {
         &:after {
-          background: url("../images/icons/minus.svg") no-repeat center;
+          opacity: 0;
+        }
+        &:before {
+          opacity: 1;
         }
       }
     }
@@ -38,7 +45,7 @@
         }
       }
       .accordion-body {
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         > div {
           position: relative;
           &:after {
@@ -94,8 +101,25 @@
       top: 0;
       bottom: 0;
       margin: auto;
+      opacity: 1;
       background: url("../images/icons/plus.svg") no-repeat center;
-      transition: background .5s;
+      transition: opacity .5s;
+      @media screen and (min-width: $screen-md-min) {
+        right: 30px;
+      }
+    }
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 20px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 0;
+      background: url("../images/icons/minus.svg") no-repeat center;
+      transition: opacity .5s;
       @media screen and (min-width: $screen-md-min) {
         right: 30px;
       }

@@ -71,8 +71,24 @@
           font-weight: normal;
           a {
             font-weight: bold;
-            text-decoration: underline;
-            display: block;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            &:after {
+              content: '';
+              position: absolute;
+              left: 0;
+              width: 100%;
+              bottom: 0;
+              height: 1px;
+              background: $base-color;
+              transition: width .5s;
+            }
+            &:hover {
+              &:after {
+                width: 0;
+              }
+            }
           }
         }
         .sub {

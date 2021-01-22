@@ -1,10 +1,10 @@
 aside.aside
-    .sticky
+    .sticky(data-margin-top="40")
         .sign-block(data-aos='fade-up')
-            h4 Подписатсья на рецепты
+            h4 Подписаться на рецепты
             form(action='' method='POST')
                 .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
                 .checkbox.form__group
                     input(type="checkbox", id='sign')
                     label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-                button.btn.btn--primary.btn__sm.btn--full(type='submit') Подписаться
+                button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Подписаться
