@@ -87,7 +87,7 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 99;
-  transition: left .5s;
+  transition: all .5s !important;
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
   &::-webkit-scrollbar {

@@ -75,11 +75,11 @@
     &.active {
       .fullpage-title {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: scale(1);
       }
       .fullpage-desc {
         opacity: 1;
-        transform: translate(0, 0);
+        //transform: translate(0, 0);
       }
     }
   }
@@ -90,11 +90,42 @@
     align-items: center;
     position: relative;
     z-index: 9;
+
+    .blur {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      //margin: auto;
+      opacity: 0;
+      transition: opacity .5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //img {
+      //  margin-top: 10vh;
+      //}
+      //width: 100%;
+      //height: 100vh;
+    }
+
+    //&:after {
+    //  content: '';
+    //  width: 100%;
+    //  height: 100vh;
+    //  background: url("../images/animation/blur.svg") no-repeat center / cover;
+    //}
+    &.active {
+      .blur {
+        opacity: 1;
+      }
+    }
   }
 
   &-title {
     opacity: 0;
-    transform: translateY(100px) scale(0.7);
+    transform: scale(0.7);
     transition: all .5s;
     position: absolute;
     top: 120px;
@@ -122,16 +153,16 @@
 
     &.remove {
       opacity: 0 !important;
-      transform: translateY(-100px) scale(0.7) !important;
+      transform:  scale(0.7) !important;
       &.active {
-        transform: translateY(100px) scale(0.7) !important;
+        transform: scale(0.7) !important;
       }
     }
   }
 
   &-desc {
     opacity: 0;
-    transform: translate(-40px, 40px);
+    //transform: translate(-40px, 40px);
     transition: all .5s;
     position: absolute;
     top: 20px;
@@ -294,7 +325,7 @@
     background:
       //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
       url("../images/descs-circle.svg") no-repeat top center / 100% auto,
-      url("../images/descm.svg") no-repeat top right / 104% auto,
+      url("../images/animation/background-m.svg") no-repeat top right / 104% auto,
       #F3F0DA;
     position: relative;
     &:after {
@@ -371,7 +402,8 @@
   }
 
   .swiper-container {
-    margin-top: 53vh;
+    margin-top: 20px;
+    //margin-top: 53vh;
     @media screen and (min-width: $screen-md-min) {
       margin: 0;
     }

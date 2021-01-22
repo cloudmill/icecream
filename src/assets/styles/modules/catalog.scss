@@ -7,6 +7,9 @@
     @media screen and (min-width: $screen-md-min) {
       margin-bottom: 80px;
     }
+    img {
+      border-radius: 20px;
+    }
     &:hover {
       .sea {
         transform: scale(1);

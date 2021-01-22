@@ -35,9 +35,9 @@
 
   a {
     text-decoration: none;
+    transition: color .5s;
     &:hover {
       color: $color-type-2a;
-      transition: color .5s;
     }
   }
 
@@ -60,6 +60,12 @@
     span {
       position: relative;
       z-index: 2;
+      &:first-child:after {
+        transition: width .5s .6s;
+      }
+      &:nth-child(3):after {
+        transition: width .5s .8s;
+      }
       &:after {
         content: '';
         background: $color-type-3a;
@@ -68,11 +74,24 @@
         top: 8px;
         bottom: 0;
         left: 0;
-        right: 0;
+        width: 0;
+        //right: 0;
         z-index: -1;
+        //transition: width .5s;
       }
       &:last-child:after {
         background: $color-type-1a;
+        transition: width .5s 1.0s;
+      }
+    }
+  }
+
+  &.aos-animate {
+    h3 {
+      span {
+        &:after {
+          width: 100%;
+        }
       }
     }
   }

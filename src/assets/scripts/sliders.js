@@ -24,10 +24,13 @@ if ($('.carousel').length) {
 		on: {
 			slideChangeTransitionStart: function(slider) {
 				$('.slider-image img').removeClass('active');
-				const currentSlide = $('.slider-image img')[slider.realIndex];
+				const slide = $('.slider-image');
+				const currentSlideF = $(slide[0]).find('img')[slider.realIndex];
+				const currentSlideS = $(slide[1]).find('img')[slider.realIndex];
 				const previousSlide = $('.carousel .swiper-slide')[slider.previousIndex];
 				$(previousSlide).addClass('hideIt');
-				$(currentSlide).addClass('active');
+				$(currentSlideF).addClass('active');
+				$(currentSlideS).addClass('active');
 
 				setTimeout(() => $(previousSlide).removeClass('hideIt'), 800);
 

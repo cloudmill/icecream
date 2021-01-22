@@ -18,6 +18,14 @@
       height: 73px;
       width: 73px;
     }
+    &:hover {
+      g {
+        path {
+          //stroke-dasharray: 360;
+          //transition: stroke-dasharray 5s;
+        }
+      }
+    }
   }
 
 
@@ -25,6 +33,14 @@
     path {
       stroke: transparent;
       transition: stroke .5s;
+
+      &.red {
+        stroke: $color-type-2a;
+        stroke-dasharray: 280 280;
+        stroke-dashoffset: 280;
+        stroke-linecap: round;
+        transition: all 0s;
+      }
     }
   }
 
@@ -47,7 +63,7 @@
 
     g {
       path {
-        stroke: $color
+        stroke: $color;
       }
     }
   }
@@ -63,6 +79,9 @@
       z-index: 10;
       transform: scale(0.5);
       transition: transform .5s;
+      &:first-child {
+        z-index: 12;
+      }
 
       &.third,
       &.second,
@@ -76,26 +95,69 @@
         transform: scale(0.5);
         opacity: 0;
         //transition: all .5s 1.4s;
+        //max-width: 80%;
+        //@media screen and (min-width: $screen-md-min) {
+        //  max-width: 100%;
+        //}
       }
 
       &.third {
-        left: -62%;
-        bottom: 12%;
+        left: -85%;
+        bottom: 27%;
+        z-index: 10;
+        max-width: 60%;
+        @media screen and (min-width: $screen-md-min) {
+          max-width: 100%;
+          left: -45%;
+        }
+
+        &--add {
+          bottom: 17%;
+        }
       }
 
       &.second {
-        left: -31%;
+        left: -47%;
+        bottom: 0;
+        max-width: 80%;
+        @media screen and (min-width: $screen-md-min) {
+          left: -27%;
+          max-width: 100%;
+        }
 
         &--add {
-          left: -28%;
+          left: -53%;
+          @media screen and (min-width: $screen-md-min) {
+            left: -37%;
+          }
+        }
+        &--sec {
+          left: -45%;
+          @media screen and (min-width: $screen-md-min) {
+            left: -31%;
+          }
         }
       }
 
       &.first {
-        left: 22%;
+        left: 28%;
+        bottom: 0;
+        @media screen and (min-width: $screen-md-min) {
+          left: 38%;
+        }
 
         &--add {
-          left: 30%;
+          left: 20%;
+          @media screen and (min-width: $screen-md-min) {
+            left: 30%;
+          }
+        }
+        &--sec {
+          left: 24%;
+          bottom: 3%;
+          @media screen and (min-width: $screen-md-min) {
+            left: 34%;
+          }
         }
       }
     }
@@ -114,21 +176,47 @@
     transition: transform .5s;
     text-align: center;
 
-    &:after {
+    &:before {
       content: '';
       position: absolute;
+      bottom: -50px;
       left: 0;
       right: 0;
-      bottom: 0;
-      top: 0;
-      border-radius: 1000px;
-      background: rgba(white, 0.6);
-      filter: blur(250px);
+      width: 100%;
+      opacity: 0;
+      margin: auto;
+      transition: opacity .5s;
+      height: 50px;
+      background: url("../images/animation/shadow.png") no-repeat center / 100% auto;
+      @media screen and (min-width: $screen-md-min) {
+        background: url("../images/animation/shadow.png") no-repeat center;
+      }
+    }
+
+    &:after {
+      //content: '';
+      //position: absolute;
+      //left: 0;
+      //right: 0;
+      //bottom: 0;
+      //top: 0;
+      //width: 100%;
+      //height: 100%;
+      //opacity: 0;
+      //transition: opacity .5s;
+      ////background: url("../images/animation/blur.svg") no-repeat center / cover;
+      //border-radius: 1000px;
+      //background: rgba(white, 0.6);
+      //filter: blur(250px);
     }
 
     &.active {
+      &:before,
+      &:after {
+        opacity: 1;
+      }
       img {
-        transition: transform .5s .8s;
+        transition: transform .5s .8s, left .3s;
         transform: scale(1) rotate(0);
 
         &.third,
@@ -138,7 +226,7 @@
           transition: all .5s 1.2s;
           opacity: 1;
           @media screen and (min-width: $screen-md-min) {
-            transform: scale(0.9);
+            transform: scale(1.0);
           }
         }
       }
@@ -147,6 +235,9 @@
     &.remove {
       //transform: scale(0.5);
       //transition: transform .5s !important;
+      &:before {
+        opacity: 0;
+      }
       img {
         &.third,
         &.second,
@@ -179,6 +270,9 @@
     &-prev {
       img {
         transform: scale(0.5) rotate(-20deg);
+        @media screen and (min-width: $screen-md-min) {
+          left: 30px;
+        }
       }
     }
   }
@@ -205,15 +299,34 @@
     &-bullet {
       @include bulletType();
     }
+
+    &.aos-animate {
+      .swiper-pagination-bullet {
+        &-active {
+          g {
+            path {
+              &.red {
+                stroke-dashoffset: 20;
+                transition: all 5.5s;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 .desc-block {
   .slider-image {
-    position: absolute;
-    right: -15px;
-    bottom: 35px;
-    max-width: 44%;
+    position: relative;
+    margin: 0 - 20px;
+    @media screen and (min-width: $screen-md-min) {
+      position: absolute;
+      right: -15px;
+      bottom: 35px;
+      max-width: 44%;
+    }
     img {
       opacity: 0;
       transform: scale(0.8);
@@ -479,7 +592,7 @@
       background-color: white;
       border-radius: 50%;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
-      
+
       // @media screen and (min-width: $screen-lg-min) {
       //   $size: 90px;
       //   width: $size;
@@ -488,7 +601,7 @@
     }
 
     &:hover {
-      
+
       &::before {
         transform: translate(-50%, -50%) scale(1);
         transition: transform .45s cubic-bezier(0.6, 0.01, 0, 1.38);

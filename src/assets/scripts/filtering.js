@@ -1,4 +1,4 @@
-import {showMore} from './showMore';
+// import {showMore} from './showMore';
 import AOS from 'aos';
 
 function filterLogic(value, elem) {
@@ -9,7 +9,8 @@ function filterLogic(value, elem) {
 	list.velocity('slideUp', {duration: 300});
 
 	if (value === '*') {
-		showMore();
+		// showMore();
+		list.velocity('slideDown', {duration: 300});
 	} else {
 		filterList = $(list).filter(function(index, item) {
 			const getTitle = $(item)[0].dataset.text;
