@@ -260,13 +260,17 @@
         z-index: -1;
         top: -140px;
         left: -360px;
-        right: -40px;
+        right: -20px;
         content: "";
         display: block;
         min-height: 1000px;
         background-image: url("../images/background-1.svg");
         background-repeat: no-repeat;
         background-size: 100% auto;
+
+        @media (min-width: $screen-lg-min) {
+          right: -40px;
+        }
 
         @media (min-width: 1320px) {
           top: -200px;
