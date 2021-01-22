@@ -72,11 +72,34 @@
     &--primary {
       color: white;
       border: none;
-      @include gradientAnimation( #F39EA3 0%, #EE7177 100%, .5s );
+      @include gradientAnimation( #F39EA3 0%, #EE7177 100%, .5s);
+      overflow: hidden;
+      img,
+      span {
+        position: relative;
+        z-index: 11;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('../images/animation/btn.svg');
+        background-repeat: repeat-x;
+        background-position: 0 -250%;
+        transition: background-position 1.5s ease;
+      }
       &:hover,
       &:focus {
         color: white;
-        //background: #EE7177;
+        &:after {
+          background-position: 250% 80%;
+        }
+      }
+      &:active {
+
       }
     }
     &--success {

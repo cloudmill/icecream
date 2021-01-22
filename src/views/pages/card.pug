@@ -20,8 +20,8 @@ block content
                 path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
       .card
         .row
-          .col.col__md-6.col__xs-12.last__md(data-aos='fade-left')
-            +img('catalog/card.png')
+          .col.col__md-6.col__xs-12.last__md.rellax-box(data-aos='fade-left')
+            .rellax(data-rellax-speed="2"): +img('catalog/card.png')
           .col.col__md-6.col__xs-12
             .tags(data-aos='fade-up')
               .tags-item Хит
@@ -31,7 +31,7 @@ block content
             h1.mainTitle-text(data-aos='fade-up') Пломбир с кусочками клубники в вафельном стаканчике, 80г
             .col__xl-9(data-aos='fade-up')
               p Попробуйте интересный и необычный вкус ванильного пломбира с клубникой от компании-производителя «Чистая Линия». Теперь хрустящая "Сахарная трубочка" с большой шапочкой глазури "КАКТУС".
-            .card-structure.margbot80.margtop80(data-aos='fade-up')
+            .card-structure.margbot40.margtop80(data-aos='fade-up')
               .card-structure__item
                 .card-structure__item-title Белки
                 .card-structure__item-desc 3 г/100 г
@@ -48,10 +48,10 @@ block content
                 .card-structure__item-title Энергетическая ценность
                 .card-structure__item-desc 273,0 ккал/100 г
         .btn-group(data-aos='fade-up')
-          a.btn.btn--primary(href='#')
+          a.btn.btn--primary.btn-icon(href='#')
             +img('icons/location.svg')
             span Купить в Москве и МО
-          a.btn.btn--primary(href='#')
+          a.btn.btn--primary.btn-icon(href='#')
             +img('icons/location.svg')
             span Купить в Санкт–Петурбурге и ЛО
         .col__xl-10.card-options

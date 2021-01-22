@@ -31,7 +31,7 @@ block content
             option(value='filter-4') Ужины
         .catalogFilter__item.catalogFilter__item--apply
           button.btn.btn--primary.btn--full
-            |Применить
+            span Применить
         .catalogFilter__item
           .btn.btn--info.btn__lg.btn-icon.btn--full.reset-filter--js
             +img('icons/rotate-cw.svg')
@@ -63,7 +63,7 @@ block content
                       |Завтраки
           .row
             .col.col__lg-6.col__xs-12.centered-block(data-aos='fade-up')
-              a.btn.btn--default.btn--full.btn-icon.showMore--js(href='#')
+              a.btn.btn--default.btn--full.btn-icon(href='#')
                 span Показать еще
                 i.sprite.sprite--arr-d
         include ../components/_sidebar-recipes

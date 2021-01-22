@@ -42,6 +42,7 @@ if ($('.carousel').length) {
 if ($('.slideshow').length) {
 	const slideshow = new Swiper('.slideshow', {
 		slidesPerView: 1,
+		loop: true,
 		navigation: {
 			nextEl: '.slideshow-container .swiper-next',
 			prevEl: '.slideshow-container .swiper-prev',
@@ -79,7 +80,7 @@ if ($('.rollerIt').length) {
 	});
 }
 
-$('.slider-aside').each(function () {
+$('.slider-aside').each(function() {
 	const component = $(this);
 
 	const container = component.find('.swiper-container');

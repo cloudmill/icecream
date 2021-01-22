@@ -324,7 +324,7 @@
     @media screen and (min-width: $screen-md-min) {
       position: absolute;
       right: -15px;
-      bottom: 35px;
+      bottom: 135px;
       max-width: 44%;
     }
     img {
@@ -357,9 +357,17 @@
     }
 
     > * {
-      transform: translateY(150px) scale(0.8);
+      transform: translateY(100px) scale(0.8);
       opacity: 0;
       transition: opacity .5s .1s, transform .5s;
+      @media screen and (min-width: $screen-lg-min) {
+        max-width: 380px;
+      }
+    }
+
+    .btn {
+      padding-left: 30px;
+      padding-right: 30px;
     }
 
     h4 {
@@ -372,7 +380,7 @@
   }
 
   .swiper-slide.hideIt > * {
-    transform: translateY(-150px) scale(0.8);
+    transform: translateY(-100px) scale(0.8);
   }
   .swiper-slide-active > * {
     opacity: 1;
@@ -511,6 +519,7 @@
 
   > * {
     cursor: pointer;
+    outline: none !important;
   }
 
   .nextBlock {
@@ -544,7 +553,7 @@
 .slider-aside {
   position: relative;
   max-height: 330px;
-  background-color: #EBFAFF;
+  background-color: $base-color-lighten;
   border-radius: 20px;
 
   &--mb--20 {

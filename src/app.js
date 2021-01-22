@@ -100,7 +100,7 @@ $(window).on('load', function() {
 	const loaderLayer = $('.loader__layer');
 	const getMainUrl = window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html';
 
-	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
+	if (process.env.NODE_ENV === 'production') {
 		setTimeout(function() {
 			window.scrollTo(0, 0);
 		}, 200);

@@ -127,6 +127,7 @@ b { font-weight: 400; }
 // Text size
 .text__sm {
   font-size: $font-size-small;
+  line-height: 1.428;
 }
 .text__md {
   font-size: $font-size-medium;

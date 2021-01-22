@@ -13,7 +13,7 @@
       display: flex;
       position: relative;
       flex-direction: column;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       border: 1px solid transparent;
       @media screen and (min-width: $screen-lg-min) {
         font-size: 18px;
@@ -24,24 +24,19 @@
         padding: 40px;
       }
       &:hover {
-        //.news-list__item {
         background: #D2F0FA;
         &.news-list__item--main {
           background: $color-type-3a;
         }
-        svg {
+        svg.arrow path {
+          fill: white;
+        }
+        svg.hover {
           transform: scale(1);
           @media screen and (min-width: $screen-lg-min) {
             transform: scale(1.4);
           }
-          path:first-child {
-            fill: #5DCBEE;
-          }
-          path:last-child {
-            fill: white;
-          }
         }
-        //}
       }
       &--main {
         background: $gray;
@@ -54,7 +49,7 @@
       &--light {
         background: white;
         border-color: $color-type-3a;
-        path:first-child {
+        svg:nth-child(2) path {
           fill: $gray
         }
         &:hover {
@@ -75,6 +70,29 @@
         position: absolute;
         bottom: 20px;
         right: 20px;
+        .svg-pack {
+          position: relative;
+          display: inline-block;
+        }
+        .arrow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          z-index: 19;
+        }
+        .hover {
+          transform: scale(0);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          z-index: 9;
+        }
         svg {
           transform: scale(0.7);
           @media screen and (min-width: $screen-lg-min) {

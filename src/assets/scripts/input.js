@@ -76,14 +76,14 @@ export function validateField(element, event) {
 	}
 	return result;
 }
-
+/*
 $(document).on('blur', '.input input, .input textarea', function(event) {
 	validateField($(this), event.target.value);
 });
 $(document).on('change', '.checkbox input', function(event) {
 	validateField($(this), event.target.value);
 });
-
+*/
 
 // form
 

@@ -1,20 +1,25 @@
 @font-face {
   font-family: 'Core Sans';
-  src: url('../fonts/subset-CoreSans-Bold.woff2') format('woff2'),
-  url('../fonts/subset-CoreSans-Bold.ttf') format('truetype'),
-  url('../fonts/subset-CoreSans-Bold.svg#CoreSans-Bold') format('svg');
-  font-weight: bold;
+  src: url('../fonts/CoreSans.woff2') format('woff2'),
+    url('../fonts/CoreSans.woff') format('woff'),
+    url('../fonts/CoreSans.ttf') format('truetype'),
+    url('../fonts/CoreSans.svg#CoreSans') format('svg');
+  font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Core Sans';
-  src: url('../fonts/subset-CoreSans.woff2') format('woff2'),
-  url('../fonts/subset-CoreSans.ttf') format('truetype'),
-  url('../fonts/subset-CoreSans.svg#CoreSans') format('svg');
-  font-weight: normal;
+  src: url('../fonts/CoreSans-Bold.woff2') format('woff2'),
+    url('../fonts/CoreSans-Bold.woff') format('woff'),
+    url('../fonts/CoreSans-Bold.ttf') format('truetype'),
+    url('../fonts/CoreSans-Bold.svg#CoreSans-Bold') format('svg');
+  font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
+
 
 @font-face {
   font-family: 'fontello';
