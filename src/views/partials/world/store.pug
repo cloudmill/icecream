@@ -46,7 +46,7 @@ block COMPONENTS
 block PARTS
 
   mixin __next
-    .page-store__block.page-store__block--bottom
+    .page-store__block.page-store__block--bottom(data-aos='fade-up')
       .nextBlock
         a.row.between__xs.middle__xs(href='#')
           .col
@@ -59,7 +59,7 @@ block PARTS
               +img('icons/nextArr.svg')
 
   mixin __text-image
-    .page-store__block
+    .page-store__block(data-aos='fade-up')
       +row
         +col
           p.page-store__title.page-store__title--block--text-image
@@ -68,11 +68,11 @@ block PARTS
           +frame('assets/images/world/store/text-image.jpg', 'image')
 
   mixin __image
-    .page-store__block
+    .page-store__block(data-aos='fade-up')
       +frame('assets/images/world/store/mid-image.jpg', 'image', '--centered')
 
   mixin __text
-    .page-store__block
+    .page-store__block(data-aos='fade-up')
       +row('--alt')
         +col
           p.page-store__title.page-store__title--block--text
@@ -82,19 +82,18 @@ block PARTS
             |Доставка продукции осуществляется напрямую с завода.
 
   mixin __cards
-    .page-store__block.page-store__block--cards
+    .page-store__block.page-store__block--cards(data-aos='fade-up')
       +row
         +col
           +card
         +col
           +card('--alt')
 
-  //-
   mixin __top
     .page-store__top
-      h2.page-store__title.page-store__title--block--top
+      h2.page-store__title.page-store__title--block--top(data-aos='fade-up')
         |В 2016 году были запущены «Омолоко» и icecream.market — фирменные интернет-магазины компании «Чистая Линия»
-      p.page-store__top-text
+      p.page-store__top-text(data-aos='fade-up')
         |Теперь мороженое и молочная продукция «Чистая Линия» с коротким сроком хранения доставляются курьерами напрямую с завода!
         br
         br
