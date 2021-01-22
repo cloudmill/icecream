@@ -10,13 +10,14 @@ import './assets/scripts/backend.js';
 import 'Styles/_app.scss';
 
 
+
 let swiper;
 let settings;
 
 $(document).ready(() => {
 	const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-	// require('Scripts/slidersClass');
 	require('Scripts/sliders');
+
 	if ($('.fullpage-slider').length) {
 		settings = {
 			slidesPerView: 2,
@@ -45,7 +46,7 @@ $(document).ready(() => {
 				},
 			},
 			on: {
-				slideChangeTransitionStart: function() {
+				slideChangeTransitionStart: function () {
 					$('.fullpage-title').removeClass('active');
 					$('.fullpage-title').addClass('remove');
 					const getTitle = $('.fullpage-slider .swiper-slide-active').data('title');
@@ -70,12 +71,12 @@ $(document).ready(() => {
 		};
 		swiper = new Swiper('.fullpage-slider', settings);
 	}
+
 	require('Scripts/header');
 	require('Scripts/showMore');
 	require('Scripts/filtering');
 	require('Scripts/select');
 	require('Scripts/popup');
-
 
 	if (screenWidth > 1150 && $('.sticky').length) {
 		const sticky = new Sticky('.sticky');
@@ -86,83 +87,13 @@ $(document).ready(() => {
 });
 
 
-// load
-// $(document).load(() => {});
-// load
 
 // scroll
 $(window).scroll(() => {
 });
 // scroll
 
-$(window).on('load', function() {
-	let counter = 0;
-	const loaderCounter = $('.loader span');
-	const loaderLayer = $('.loader__layer');
-	const getMainUrl = window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html';
-
-	if (process.env.NODE_ENV === 'production') {
-		setTimeout(function() {
-			window.scrollTo(0, 0);
-		}, 200);
-	}
-	console.log(getMainUrl);
-
-	if ($('.summerdream').length) {
-		$('body').css('overflow', 'hidden');
-		// swiper.destroy();
-
-		const loaderTimer = setInterval(() => {
-			counter++;
-			loaderCounter.text(counter);
-			loaderLayer.css('width', counter + '%');
-			if (counter === 100) {
-				clearInterval(loaderTimer);
-
-				$('body').css('overflow', 'visible');
-				$('.summerdream').addClass('hidden');
-				// $('.index-loader').addClass('active');
-
-				setTimeout(() => {
-					$('.fullpage-block').addClass('active');
-					$('.summerdream').addClass('hideIt');
-					$('.fullpage-desc span:first-child').addClass('active');
-					setTimeout(() => {
-						$('.fullpage-desc span:nth-child(3)').addClass('active');
-						setTimeout(() => {
-							$('.fullpage-desc span:last-child').addClass('active');
-						}, 300);
-					}, 300);
-					swiper.autoplay.start();
-				}, 500);
-
-				setTimeout(() => {
-					AOS.init({offset: 50});
-				}, 500);
-
-				// setTimeout(() => {
-				// 	$('.index-loader').addClass('hidden');
-				//
-				// }, 2000);
-
-				if ($('.rellax').length) {
-					// eslint-disable-next-line no-new
-					new Rellax('.rellax');
-				}
-			}
-		}, 16);
-	} else {
-		$('body').css('overflow', 'hidden');
-		setTimeout(() => {
-			$('.loading').addClass('hideIt');
-			$('body').css('overflow', 'visible');
-			AOS.init({offset: 50});
-			if ($('.rellax').length) {
-				// eslint-disable-next-line no-new
-				new Rellax('.rellax');
-			}
-		}, 500);
-	}
+$(window).on('load', function () {
 
 
 	// PAGE: mission
@@ -175,7 +106,7 @@ $(window).on('load', function() {
 		};
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(() => {
+			$('.page-mission__mission-highlight').each(function () {
 				const timer = setTimeout(
 					() => {
 						$(this).addClass('page-mission__mission-highlight--active');
@@ -194,7 +125,7 @@ $(window).on('load', function() {
 	// PAGE: about-us
 
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(function() {
+		$('.page-about-us__slider').each(function () {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -203,7 +134,7 @@ $(window).on('load', function() {
 			const next = component.find('.page-about-us__slider-btn--next');
 			const paginationItems = component.find('.page-about-us__slider-pagination-item');
 
-			const slider = new Swiper(container[0], {
+			const swiper = new Swiper(container[0], {
 				allowTouchMove: false,
 				speed: 300,
 
@@ -215,17 +146,177 @@ $(window).on('load', function() {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: function(sliderSw, current) {
+					renderCustom: function (swiper, current, total) {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', function() {
+			paginationItems.on('click', function () {
 				const index = $(this).index();
 				swiper.slideTo(index);
 			});
 		});
 	}
 });
+
+
+
+// MAIN PAGE: loader
+
+$(() => {
+	const loaderCounter = $('.loader span');
+	const loaderLayer = $('.loader__layer');
+	
+	const getMainUrl = window.location.pathname === '/' || window.location.pathname === '/index' || window.location.pathname === '/index.html';
+	console.log(getMainUrl);
+	
+	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
+		setTimeout(function () {
+			window.scrollTo(0, 0);
+		}, 200);
+	}
+
+
+	if ($('.summerdream').length) {
+		$('.index-loader').css('display', 'none');
+		$('body').css('overflow', 'hidden');
+
+
+		// параметры прелоадера
+		const
+			// информация об изображениях
+			img = {
+				elem: $('img'),
+				count: $('img').length
+			},
+			// информация о загрузке изображений
+			load = {
+				counter: 0,
+				startTime: null,
+				endTime: null,
+				time: null,
+				progress: null,
+				TAIL: {
+					MIN_TIME: 200,
+					MAX_TIME: 500,
+					PARTS: 5,
+					BREAKPOINT: 0.6 + 0.2 * Math.random()
+				}
+			}
+
+		// загрузка одного изображения (тэг img)
+		img.elem.on('load', () => {
+			load.counter++
+
+			if (!load.startTime) {
+				load.startTime = (new Date()).getTime()
+			}
+
+			load.progress = load.counter / img.count
+			load.progress = (load.progress < load.TAIL.BREAKPOINT) ? load.progress : load.TAIL.BREAKPOINT
+
+			preloaderUpdate(load.progress * 0.5)
+		})
+
+		// загрузка всей страницы (всех изображений)
+		$(window).on('load', () => {
+			load.progress = (load.progress <= 0) ? load.TAIL.BREAKPOINT : load.progress
+
+			if (load.progress >= 1) {
+				preloaderClose()
+			} else {
+				load.endTime = (new Date()).getTime()
+
+				load.time = load.endTime - load.startTime
+				load.time = (load.time > 0) ? load.time : 0
+
+				const tail = {
+					time: null,
+					partCounter: 0,
+					partTime: null,
+					interval: null
+				}
+
+				tail.time = (load.time / load.progress) * (1 - load.progress)
+				tail.time = (tail.time < load.TAIL.MAX_TIME) ? ((tail.time < load.TAIL.MIN_TIME) ? load.TAIL.MIN_TIME : tail.time) : load.TAIL.MAX_TIME
+
+				tail.partCounter = 0
+				tail.partTime = tail.time / load.TAIL.PARTS
+				tail.interval = setInterval(() => {
+					tail.partCounter++
+
+					if (tail.partCounter < load.TAIL.PARTS) {
+						preloaderUpdate(load.progress + (1 - load.progress) / load.TAIL.PARTS * tail.partCounter)
+					} else {
+						preloaderClose()
+
+						clearInterval(tail.interval)
+					}
+				}, tail.partTime);
+			}
+		})
+
+		// обновление прелоадера (отображение прогресса)
+		function preloaderUpdate(loadProgress) {
+			const loadProgressPercent = Math.round(loadProgress * 100)
+
+			loaderCounter.text(loadProgressPercent);
+			loaderLayer.css('width', loadProgressPercent + '%');
+		}
+
+		// закрытие прелоадера
+		function preloaderClose() {
+			$('.index-loader').css('display', '');
+			loaderCounter.text('100');
+			loaderLayer.css('width', '100%');
+
+
+			// OLD CODE START
+
+			$('body').css('overflow', 'visible');
+			$('.summerdream').addClass('hidden');
+
+			setTimeout(() => {
+				$('.fullpage-block').addClass('active');
+				$('.summerdream').addClass('hideIt');
+				$('.fullpage-desc span:first-child').addClass('active');
+				setTimeout(() => {
+					$('.fullpage-desc span:nth-child(3)').addClass('active');
+					setTimeout(() => {
+						$('.fullpage-desc span:last-child').addClass('active');
+					}, 300);
+				}, 300);
+				swiper.autoplay.start();
+			}, 500);
+
+			setTimeout(() => {
+				AOS.init({ offset: 50 });
+			}, 500);
+
+			if ($('.rellax').length) {
+				// eslint-disable-next-line no-new
+				new Rellax('.rellax');
+			}
+
+			// OLD CODE END
+		}
+
+
+	} else {
+		$('body').css('overflow', 'hidden');
+
+		setTimeout(() => {
+			$('.loading').addClass('hideIt');
+			$('body').css('overflow', 'visible');
+
+			AOS.init({ offset: 50 });
+
+			if ($('.rellax').length) {
+				// eslint-disable-next-line no-new
+				new Rellax('.rellax');
+			}
+		}, 500);
+	}
+})

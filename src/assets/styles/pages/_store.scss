@@ -260,13 +260,18 @@
         z-index: -1;
         top: -140px;
         left: -360px;
-        right: -40px;
+        right: -20px;
         content: "";
         display: block;
         min-height: 1000px;
         background-image: url("../images/background-1.svg");
         background-repeat: no-repeat;
         background-size: 100% auto;
+        pointer-events: none;
+
+        @media (min-width: $screen-lg-min) {
+          right: -40px;
+        }
 
         @media (min-width: 1320px) {
           top: -200px;
@@ -335,74 +340,36 @@
       right: -20px;
       content: "";
       display: block;
-      height: calc(100% + 350px);
+      height: calc(100% + 400px);
       background-color: black;
       background-image: url("../images/world/top-transition.svg"), url("../images/world/top-image-1.png"), url("../images/world/top-background.svg");
       background-repeat: no-repeat, no-repeat, no-repeat;
-      background-position: center bottom -600px, right -90px bottom -20px, center bottom;
-      background-size: 100% auto, 460px auto, cover;
+      background-position: center bottom -380px, right -93px bottom 0px, center bottom;
+      background-size: 768px auto, 460px auto, cover;
+      pointer-events: none;
 
       @media (min-width: $screen-md-min) {
-        height: calc(100% + 430px);
+        height: calc(100% + 500px);
+        background-position: center bottom -515px, right -85px bottom -10px, center bottom;
+        background-size: 1024px auto, 460px auto, cover;
       }
 
       @media (min-width: $screen-lg-min) {
         left: -340px;
         right: -40px;
-        height: calc(100% + 430px);
-      }
-
-      @media (min-width: 0) {
-        background-position: center bottom -140px, right -90px bottom -20px, center bottom;
-      }
-
-      @for $breakpoint from 8 through 1 {
-        @media (min-width: #{768px - ((768px - 375px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 32) + (25px * $breakpoint)},
-          right -90px bottom -20px,
-          center bottom;
-        }
-      }
-
-      @for $breakpoint from 8 through 1 {
-        @media (min-width: #{1024px - ((1024px - 768px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 24) + (17px * $breakpoint)},
-          right -90px bottom -20px,
-          center bottom;
-        }
-      }
-
-      @for $breakpoint from 8 through 1 {
-        @media (min-width: #{1366px - ((1366px - 1024px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 16) + (17px * $breakpoint)},
-          right -90px bottom -20px,
-          center bottom;
-        }
-      }
-
-      @for $breakpoint from 8 through 1 {
-        @media (min-width: #{1680px - ((1680px - 1366px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-940px + 17px * 8) + (17px * $breakpoint)},
-          right -220px bottom -40px,
-          center bottom;
-        }
-      }
-
-      @for $breakpoint from 8 through 1 {
-        @media (min-width: #{1920 - ((1920px - 1680px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{-940px + (17px * $breakpoint)},
-          right -250px bottom -110px,
-          center bottom;
-        }
+        background-position: center bottom -690px, right -85px bottom -10px, center bottom;
+        background-size: 1366px auto, 460px auto, cover;
       }
 
       @media (min-width: $screen-xl-min) {
         left: -360px;
-        background-size: 100% auto, 865px auto, cover;
+        background-position: center bottom -850px, right -215px bottom -80px, center bottom;
+        background-size: 1680px auto, 870px auto, cover;
       }
 
       @media (min-width: 1680px) {
-        background-size: 100% auto, 995px auto, cover;
+        background-position: center bottom -970px, right -250px bottom -70px, center bottom;
+        background-size: 1920px auto, 995px auto, cover;
       }
     }
 
@@ -414,8 +381,6 @@
       margin-top: 80px;
       padding-bottom: 210px;
     }
-
-
   }
 
   &__top-text {
