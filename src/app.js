@@ -175,7 +175,7 @@ $(window).on('load', function() {
 		};
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(() => {
+			$('.page-mission__mission-highlight').each(function () {
 				const timer = setTimeout(
 					() => {
 						$(this).addClass('page-mission__mission-highlight--active');
@@ -203,7 +203,7 @@ $(window).on('load', function() {
 			const next = component.find('.page-about-us__slider-btn--next');
 			const paginationItems = component.find('.page-about-us__slider-pagination-item');
 
-			const slider = new Swiper(container[0], {
+			const swiper = new Swiper(container[0], {
 				allowTouchMove: false,
 				speed: 300,
 
