@@ -353,31 +353,41 @@
 
       @for $breakpoint from 8 through 1 {
         @media (min-width: #{768px - ((768px - 375px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 32) + (25px * $breakpoint)}, right -90px bottom -20px, center bottom;
+          background-position: center bottom #{(-910px + 17px * 32) + (25px * $breakpoint)},
+          right -90px bottom -20px,
+          center bottom;
         }
       }
 
       @for $breakpoint from 8 through 1 {
         @media (min-width: #{1024px - ((1024px - 768px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 24) + (17px * $breakpoint)}, right -90px bottom -20px, center bottom;
+          background-position: center bottom #{(-910px + 17px * 24) + (17px * $breakpoint)},
+          right -90px bottom -20px,
+          center bottom;
         }
       }
 
       @for $breakpoint from 8 through 1 {
         @media (min-width: #{1366px - ((1366px - 1024px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-910px + 17px * 16) + (17px * $breakpoint)}, right -90px bottom -20px, center bottom;
+          background-position: center bottom #{(-910px + 17px * 16) + (17px * $breakpoint)},
+          right -90px bottom -20px,
+          center bottom;
         }
       }
 
       @for $breakpoint from 8 through 1 {
         @media (min-width: #{1680px - ((1680px - 1366px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{(-940px + 17px * 8) + (17px * $breakpoint)}, right -220px bottom -40px, center bottom;
+          background-position: center bottom #{(-940px + 17px * 8) + (17px * $breakpoint)},
+          right -220px bottom -40px,
+          center bottom;
         }
       }
 
       @for $breakpoint from 8 through 1 {
         @media (min-width: #{1920 - ((1920px - 1680px) / 8 * $breakpoint)}) {
-          background-position: center bottom #{-940px + (17px * $breakpoint)}, right -250px bottom -110px, center bottom;
+          background-position: center bottom #{-940px + (17px * $breakpoint)},
+          right -250px bottom -110px,
+          center bottom;
         }
       }
 
@@ -414,6 +424,15 @@
       margin-top: 40px;
       max-width: 490px;
       font-size: 18px;
+    }
+  }
+
+
+  &__breadcrumbs-item {
+
+    &::before {
+      background: white;
+      border-radius: 50%;
     }
   }
 }
