@@ -143,8 +143,9 @@ block content
               form(action='' method='POST')
                 .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
                 .checkbox.form__group
-                  input(type="checkbox", id='sign')
+                  input(type="checkbox", id='sign', required)
                   label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+                  .control-error
                 button.btn.btn--primary.btn__sm.btn--full(type='submit'): span Подписаться
       .card-slider.recipe__card-slider
         .row(data-aos='fade-up')

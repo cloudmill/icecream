@@ -7,9 +7,10 @@ aside.aside
           .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
           .form__group: +fieldTextarea('theme', 'Тема вопроса', '5', true)
           .checkbox.form__group
-            input(type="checkbox", id='sign')
+            input(type="checkbox", id='sign', required)
             label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-          button.btn.btn--primary.btn__sm.btn--full.test--js(type='submit'): span Отправить
+            .control-error
+          button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Отправить
       .form-response
         .inner
           h4 Спасибо, мы получили ваш вопрос и опубликуем его на этой странице.
