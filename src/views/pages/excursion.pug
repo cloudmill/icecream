@@ -104,23 +104,33 @@ block content
               .excursion__frame
                 figure.excursion__image
                   img.excursion__image-img(src='assets/images/world/excursion/photo-1.jpg')
-            .excursion__row-col.excursion__row-col--max-w--465
-              h3.excursion__title
-                |Вы узнаете тайны производства мороженого
-              p.excursion__text.excursion__caption
-                |Например, как пломбир заполняет стаканчики или эскимо покрывается глазурью.
+            .excursion__row-col
+              .excursion__wrapper.excursion__wrapper--max-w--465
+                h3.excursion__title
+                  |Вы узнаете тайны производства мороженого
+                p.excursion__text.excursion__caption
+                  |Например, как пломбир заполняет стаканчики или эскимо покрывается глазурью.
     section.excursion__mid
       .left-container
-        .excursion__block(data-aos='fade-up')
-          .excursion__row
-            .excursion__row-col.excursion__row-col--max-w--465
+        .excursion__row-reverse
+          .excursion__row-reverse-col
+            .excursion__wrapper.excursion__wrapper--max-w--465
               h3.excursion__title
                 |Конечно же, всех гостей ждет дегустация!
               p.excursion__text.excursion__caption
                 |В том числе нежнейшего свежего мороженого (до заморозки), которое можно попробовать только на фабрике.
-            .excursion__row-col.excursion__row-col--max-w--465
+          .excursion__row-reverse-col
+            .excursion__wrapper.excursion__wrapper--max-w--465
               h3.excursion__title
                 |В финале экскурсии вас ждут приятные сувениры, а также подарок
               p.excursion__text.excursion__caption
                 |Сертификат на 1 коробку Российского эскимо, который Вы сможете реализовать через наш интернет-магазин omoloko.ru.
-
+        .excursion__photo-circles
+          .excursion__row-reverse
+            .excursion__row-reverse-col
+              ul.excursion__photo-circles-list
+                li.excursion__photo-circles-item.excursion__frame
+                  img(src="assets/images/world/excursion/photo-circle-1.jpg", alt="")
+                li.excursion__photo-circles-item.excursion__frame
+                  img(src="assets/images/world/excursion/photo-circle-2.jpg", alt="")
+            .excursion__row-reverse-col
