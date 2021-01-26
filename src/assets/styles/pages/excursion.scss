@@ -1,0 +1,478 @@
+.excursion {
+
+
+  // MAIN-TITLE
+
+  &__mainTitle {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 50px;
+    }
+  }
+
+
+  // TAB-NAV
+
+  &__tab-nav {
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: -40px;
+      width: calc(100% + (40px * 2));
+    }
+  }
+
+  &__tab-nav-wrapper {
+
+    @media (min-width: $screen-lg-min) {
+      padding: 0 40px;
+    }
+  }
+
+
+  // TOP
+
+  &__top {
+    padding-bottom: 120px;
+    min-height: 940px;
+    background-color: lightskyblue;
+    background-image: url("../images/world/top-transition.svg"),
+      url("../images/animation/slide-2.png"),
+      url("../images/world/top-background.svg");
+    background-repeat: no-repeat,
+      no-repeat,
+      no-repeat;
+    background-position: center bottom,
+      right bottom,
+      center bottom;
+    background-size: 100% auto,
+      460px auto,
+      cover;
+    border-top: 1px solid transparent;
+
+    @media (min-width: $screen-md-min) {
+      min-height: 650px;
+      background-size: 100% auto,
+        340px auto,
+        cover;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      min-height: 940px;
+      background-size: 100% auto,
+        620px auto,
+        cover;
+    }
+  }
+
+  &__top-content {
+    margin-top: 40px;
+
+    @media (min-width: $screen-md-min) {
+      max-width: 50%;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 80px;
+      max-width: 492px;
+    }
+  }
+
+  &__top-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 30px;
+      line-height: 130%;
+    }
+  }
+
+  &__top-text {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 18px;
+    }
+  }
+
+
+  // TOP-MID
+
+  &__top-mid {
+    margin-top: 40px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 150px;
+    }
+  }
+
+
+  // LIST
+
+  &__list {
+    margin: 0;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+    }
+  }
+
+  &__list-item {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - (20px * 3)) / 4);
+
+      &:nth-child(even) {
+        padding-top: 30px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: calc((100% - (40px * 3)) / 4);
+
+      &:nth-child(even) {
+        padding-top: 80px;
+      }
+
+      &:not(:first-child) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  &__list-title {
+    margin: 0;
+    display: flex;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+    // white-space: nowrap;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__list-text {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 10px;
+    }
+  }
+
+  &__list-image {
+    display: flex;
+  }
+
+  &__list-img {
+    max-width: 80%;
+
+    @media (min-width: $screen-lg-min) {
+      max-width: 100%;
+    }
+  }
+
+
+  // BLOCK
+
+  &__block {
+    margin-top: 80px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 140px;
+    }
+  }
+
+
+  // FRAME
+
+  &__frame {
+    border-radius: 20px;
+    overflow: hidden;
+
+    @media (min-width: $screen-lg-min) {
+      border-radius: 40px;
+    }
+  }
+
+
+  // CARD
+
+  &__card {
+    background-color: #EBFAFF;
+
+    @media (min-width: $screen-md-min) {
+      max-height: 290px;
+      display: flex;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      max-height: 470px;
+    }
+  }
+
+  &__card-col {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - 20px) / 2);
+      display: flex;
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 20px;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: calc((100% - 40px) / 2);
+
+      &:not(:first-child) {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  &__card-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      $offset: -1px;
+      top: $offset;
+      bottom: $offset;
+      left: $offset;
+      right: $offset;
+      content: "";
+      display: block;
+      background-image: url("../images/world/excursion/frame-1.svg");
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: 100% auto;
+
+      @media (min-width: $screen-md-min) {
+        background-image: url("../images/world/excursion/frame-2.svg");
+        background-position: left center;
+        background-size: auto 100%;
+      }
+    }
+
+    @media (min-width: $screen-md-min) {
+      max-height: none;
+    }
+  }
+
+  &__card-image {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  &__card-img {
+    min-width: 100%;
+  }
+
+  &__card-info {
+    padding: 40px 20px 0;
+
+    @media (min-width: $screen-md-min) {
+      padding: 40px 0 40px 20px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding: 60px 0 60px 80px;
+    }
+  }
+
+  &__card-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 30px;
+      line-height: 130%;
+    }
+  }
+
+  &__card-list {
+    margin: 0;
+    margin-top: 30px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 60px;
+      display: flex;
+    }
+  }
+
+  &__card-item {
+    display: flex;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      width: calc((100% - 40px) / 2);
+      display: block;
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  &__card-item-image {
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  &__card-item-img {
+    flex-shrink: 0;
+    $size: 46px;
+    max-width: $size;
+    max-height: $size;
+
+    @media (min-width: $screen-lg-min) {
+      $size: 75px;
+      max-width: $size;
+      max-height: $size;
+    }
+  }
+
+  &__card-item-text {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: 0;
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 140%;
+    }
+  }
+
+
+  // ROW
+
+  &__row {
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__row-col {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - 40px) / 2);
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 40px;
+      }
+    }
+
+    &--flex {
+      display: flex;
+    }
+
+    &--max-w--465 {
+      max-width: 465px;
+    }
+  }
+
+
+  // IMAGE
+
+  &__image {
+    display: flex;
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+
+  // TITLE
+
+  &__title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+
+  // TEXT
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 16px;
+    }
+  }
+
+
+  // CAPTION
+
+  &__caption {
+    margin-top: 10px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 20px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 40px;
+    }
+  }
+}
