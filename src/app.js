@@ -24,10 +24,17 @@ $(document).ready(() => {
 		const sticky = new Sticky('.sticky');
 	}
 
+	$('.backLink').mouseover(function() {
+	  const getBtnWidth = $(this).width();
+	  const getArrWidth = $(this).find('.nextBlock--ico').width();
+		$(this).find('.nextBlock--ico').css('left', -(getBtnWidth / 2 - getArrWidth * 2.5));
+	}).mouseleave(function() {
+		$(this).find('.nextBlock--ico').css('left', 0);
+	});
+
 	require('Scripts/input');
 	require('Scripts/server');
 });
-
 
 
 // scroll
@@ -35,7 +42,7 @@ $(window).scroll(() => {
 });
 // scroll
 
-$(window).on('load', function () {
+$(window).on('load', function() {
 
 
 	// PAGE: mission
@@ -48,7 +55,7 @@ $(window).on('load', function () {
 		};
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(function () {
+			$('.page-mission__mission-highlight').each(function() {
 				const timer = setTimeout(
 					() => {
 						$(this).addClass('page-mission__mission-highlight--active');
@@ -67,7 +74,7 @@ $(window).on('load', function () {
 	// PAGE: about-us
 
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(function () {
+		$('.page-about-us__slider').each(function() {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -88,14 +95,14 @@ $(window).on('load', function () {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: function (swiper, current, total) {
+					renderCustom: function(swiper, current, total) {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', function () {
+			paginationItems.on('click', function() {
 				const index = $(this).index();
 				swiper.slideTo(index);
 			});
@@ -114,7 +121,7 @@ $(() => {
 	console.log(getMainUrl);
 
 	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
-		setTimeout(function () {
+		setTimeout(function() {
 			window.scrollTo(0, 0);
 		}, 200);
 	}
@@ -131,77 +138,77 @@ $(() => {
 			img = {
 				elem: $('img'),
 				count: $('img').length
-			},
+			};
 			// информация о загрузке изображений
-			load = {
-				counter: 0,
-				startTime: null,
-				endTime: null,
-				time: null,
-				progress: null,
-				TAIL: {
-					MIN_TIME: 200,
-					MAX_TIME: 500,
-					PARTS: 5,
-					BREAKPOINT: 0.6 + 0.2 * Math.random()
-				}
+		const load = {
+			counter: 0,
+			startTime: null,
+			endTime: null,
+			time: null,
+			progress: null,
+			TAIL: {
+				MIN_TIME: 200,
+				MAX_TIME: 500,
+				PARTS: 5,
+				BREAKPOINT: 0.6 + 0.2 * Math.random()
 			}
+		};
 
 		// загрузка одного изображения (тэг img)
 		img.elem.on('load', () => {
-			load.counter++
+			load.counter++;
 
 			if (!load.startTime) {
-				load.startTime = (new Date()).getTime()
+				load.startTime = (new Date()).getTime();
 			}
 
-			load.progress = load.counter / img.count
-			load.progress = (load.progress < load.TAIL.BREAKPOINT) ? load.progress : load.TAIL.BREAKPOINT
+			load.progress = load.counter / img.count;
+			load.progress = (load.progress < load.TAIL.BREAKPOINT) ? load.progress : load.TAIL.BREAKPOINT;
 
-			preloaderUpdate(load.progress * 0.5)
-		})
+			preloaderUpdate(load.progress * 0.5);
+		});
 
 		// загрузка всей страницы (всех изображений)
 		$(window).on('load', () => {
-			load.progress = (load.progress <= 0) ? load.TAIL.BREAKPOINT : load.progress
+			load.progress = (load.progress <= 0) ? load.TAIL.BREAKPOINT : load.progress;
 
 			if (load.progress >= 1) {
-				preloaderClose()
+				preloaderClose();
 			} else {
-				load.endTime = (new Date()).getTime()
+				load.endTime = (new Date()).getTime();
 
-				load.time = load.endTime - load.startTime
-				load.time = (load.time > 0) ? load.time : 0
+				load.time = load.endTime - load.startTime;
+				load.time = (load.time > 0) ? load.time : 0;
 
 				const tail = {
 					time: null,
 					partCounter: 0,
 					partTime: null,
 					interval: null
-				}
+				};
 
-				tail.time = (load.time / load.progress) * (1 - load.progress)
-				tail.time = (tail.time < load.TAIL.MAX_TIME) ? ((tail.time < load.TAIL.MIN_TIME) ? load.TAIL.MIN_TIME : tail.time) : load.TAIL.MAX_TIME
+				tail.time = (load.time / load.progress) * (1 - load.progress);
+				tail.time = (tail.time < load.TAIL.MAX_TIME) ? ((tail.time < load.TAIL.MIN_TIME) ? load.TAIL.MIN_TIME : tail.time) : load.TAIL.MAX_TIME;
 
-				tail.partCounter = 0
-				tail.partTime = tail.time / load.TAIL.PARTS
+				tail.partCounter = 0;
+				tail.partTime = tail.time / load.TAIL.PARTS;
 				tail.interval = setInterval(() => {
-					tail.partCounter++
+					tail.partCounter++;
 
 					if (tail.partCounter < load.TAIL.PARTS) {
-						preloaderUpdate(load.progress + (1 - load.progress) / load.TAIL.PARTS * tail.partCounter)
+						preloaderUpdate(load.progress + (1 - load.progress) / load.TAIL.PARTS * tail.partCounter);
 					} else {
-						preloaderClose()
+						preloaderClose();
 
-						clearInterval(tail.interval)
+						clearInterval(tail.interval);
 					}
 				}, tail.partTime);
 			}
-		})
+		});
 
 		// обновление прелоадера (отображение прогресса)
 		function preloaderUpdate(loadProgress) {
-			const loadProgressPercent = Math.round(loadProgress * 100)
+			const loadProgressPercent = Math.round(loadProgress * 100);
 
 			loaderCounter.text(loadProgressPercent);
 			loaderLayer.css('width', loadProgressPercent + '%');
@@ -259,4 +266,4 @@ $(() => {
 			}
 		}, 500);
 	}
-})
+});

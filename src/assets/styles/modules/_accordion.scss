@@ -9,7 +9,7 @@
     border-radius: 20px;
     margin-bottom: 10px;
     cursor: pointer;
-    transition: all .5s !important;
+    //transition: all .5s !important;
     &:hover {
       background: $base-color-lighten;
     }
@@ -32,6 +32,7 @@
         @media screen and (min-width: $screen-md-min) {
           display: flex;
         }
+        &:before,
         &:after {
           top: 33px;
           bottom: auto;
@@ -46,8 +47,22 @@
       }
       .accordion-body {
         padding-bottom: 30px;
+        max-height: 0;
+        overflow: hidden;
+        display: block;
+        transition: max-height .5s;
+        &.shown {
+          max-height: 1000px;
+        }
         > div {
           position: relative;
+          padding: 10px 20px 0;
+          @media screen and (min-width: $screen-md-min) {
+            padding: 10px 80px 0 150px;
+          }
+          @media screen and (min-width: $screen-xl-min) {
+            padding: 10px 150px 0;
+          }
           &:after {
             //content: '...';
             position: absolute;
@@ -126,9 +141,7 @@
     }
   }
   &-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .5s;
+    display: none;
     div {
       padding: 10px 20px 30px;
       @media screen and (min-width: $screen-md-min) {
@@ -137,9 +150,6 @@
       @media screen and (min-width: $screen-xl-min) {
         padding: 10px 150px 30px;
       }
-    }
-    &.shown {
-      max-height: 1000px;
     }
   }
 }

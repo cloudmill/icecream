@@ -1,16 +1,35 @@
 import AOS from 'aos';
 
 
-$('.accordion__item').click(function() {
+$('.accordion__item--sm').click(function() {
 	$('.accordion-body').removeClass('shown');
 	if ($(this).hasClass('active')) {
+		$('.accordion__item').removeClass('active');
 		$(this).removeClass('active').find('.accordion-body').removeClass('shown');
 		setTimeout(() => {
 			$(this).find('.accordion-body').removeClass('ellipses');
 		}, 350);
 	} else {
+		$('.accordion__item').removeClass('active');
 		$(this).removeClass('active');
 		$(this).addClass('active').find('.accordion-body').addClass('shown ellipses');
+	}
+
+	setTimeout(() => {
+		AOS.refresh({
+			offset: 50,
+		});
+	}, 400);
+	return false;
+});
+$('.accordion__item--js').click(function() {
+	if ($(this).hasClass('active')) {
+		$('.accordion__item').removeClass('active');
+		$(this).removeClass('active').find('.accordion-body').slideUp();
+	} else {
+		$('.accordion__item').removeClass('active').find('.accordion-body').slideUp();
+		$(this).removeClass('active');
+		$(this).addClass('active').find('.accordion-body').slideDown();
 	}
 
 	setTimeout(() => {
