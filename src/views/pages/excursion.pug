@@ -114,13 +114,13 @@ block content
       .left-container
         .excursion__row-reverse
           .excursion__row-reverse-col
-            .excursion__wrapper.excursion__wrapper--max-w--465
+            .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
               h3.excursion__title
                 |Конечно же, всех гостей ждет дегустация!
               p.excursion__text.excursion__caption
                 |В том числе нежнейшего свежего мороженого (до заморозки), которое можно попробовать только на фабрике.
           .excursion__row-reverse-col
-            .excursion__wrapper.excursion__wrapper--max-w--465
+            .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
               h3.excursion__title
                 |В финале экскурсии вас ждут приятные сувениры, а также подарок
               p.excursion__text.excursion__caption
@@ -128,9 +128,33 @@ block content
         .excursion__photo-circles
           .excursion__row-reverse
             .excursion__row-reverse-col
-              ul.excursion__photo-circles-list
+              ul.excursion__photo-circles-list(data-aos='fade-up')
                 li.excursion__photo-circles-item.excursion__frame
                   img(src="assets/images/world/excursion/photo-circle-1.jpg", alt="")
                 li.excursion__photo-circles-item.excursion__frame
                   img(src="assets/images/world/excursion/photo-circle-2.jpg", alt="")
             .excursion__row-reverse-col
+    section.excursion__bottom
+      .left-container
+        .excursion__row.excursion__row--ai--end
+          .excursion__row-col.excursion__row-col--flex
+            figure.excursion__bottom-image(data-aos='fade-up')
+              img.excursion__bottom-bg-img(src="assets/images/world/excursion/notebook-shadow.png")
+              img.excursion__bottom-img(src="assets/images/world/excursion/notebook.png")
+          .excursion__row-col
+            .excursion__bottom-info(data-aos='fade-up')
+              h3.excursion__bottom-title
+                |Узнать подробную информацию и записаться онлайн можно на сайте #[a.excursion__bottom-link(href="#") chlclub.ru]
+              a.btn.btn--primary.excursion__bottom-button(href="#")
+                span
+                  |Узнать подробнее
+        .excursion__block
+          .nextBlock.page-about-us__nextBlock(data-aos='fade-up')
+            a.row.between__xs.middle__xs(href='#')
+              .col
+                p Смотрите также
+                h3 О! Эскимо
+              .col
+                .nextBlock--ico
+                  +img('icons/nextArr.svg')
+
