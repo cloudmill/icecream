@@ -1,0 +1,193 @@
+extends ../layouts/master
+
+
+
+block header
+  include ../partials/_header
+
+block footer
+  include ../partials/_footer-no-transition
+
+
+
+block content
+  main.oeskimo.outlook.excursion
+    section.oeskimo__top.excursion__top
+      .left-container
+        .mainTitle.excursion__mainTitle
+          ul.breadcrumbs
+            li.breadcrumbs__item.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                |О!Эскимо
+            li.breadcrumbs__item.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                |Мир Чистой Линии
+            li.breadcrumbs__item.active.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
+                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
+          h1.mainTitle-text(data-aos='fade-up')
+            |О!Эскимо
+        nav.tab-nav.excursion__tab-nav(data-aos='fade-up')
+          .tab-nav__wrapper.excursion__tab-nav-wrapper
+            ul.tab-nav__list
+              -
+                var tabs = [
+                  { text: 'О нас' },
+                  { text: 'Миссия и ценности' },
+                  { text: 'Интернет–магазин' },
+                  { text: 'Экскурсия на фабрику' },
+                  { text: 'О!Эскимо', active: true },
+                  { text: 'Смотровая площадка' }
+                ];
+              each tab in tabs
+                li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
+                  a.tab-nav__link(href="#")
+                    |#{tab.text}
+        .excursion__top-content(data-aos='fade-up')
+          h2.excursion__top-title
+            |«О!Эскимо» — это уникальный
+            br
+            |проект, вдохновленный процессом глазирования мороженого
+            br
+            |на заводе «Чистая Линия» в 2016 году
+          p.excursion__top-text
+            |Проект представляет собой сеть точек витрин-конструкторов по производству мороженого, на которых профессиональный мороженщик во вкусу покупателя окунает мороженое на палочке в натуральную шоколадную глазурь.
+    section.excursion__top-mid
+      .left-container
+        ul.excursion__list(data-aos='fade-up')
+          li.excursion__list-item
+            h3.excursion__list-title
+              figure.excursion__list-image
+                img.excursion__list-img(src='assets/images/infinity-1.svg')
+            p.excursion__list-text
+              |Время посещения неограниченно
+          li.excursion__list-item
+            h3.excursion__list-title
+              figure.excursion__list-image
+                img.excursion__list-img(src='assets/images/tower-1.svg')
+            p.excursion__list-text
+              |Фабрика находится в Москва-Сити,
+              br
+              |в башне «Федерация. Восток»
+          li.excursion__list-item
+            h3.excursion__list-title
+              |0+
+            p.excursion__list-text
+              |Дети до 5 лет проходят бесплатно
+          li.excursion__list-item
+            h3.excursion__list-title
+              |от 700 ₽
+            p.excursion__list-text
+              |Стоимость посещения
+        .excursion__block
+          .excursion__row(data-aos='fade-up')
+            .excursion__row-col
+              .excursion__wrapper.excursion__wrapper--max-w--465
+                h3.excursion__title.excursion__title--small
+                  |На смотровой площадке находится самая высокая в мире фабрика мороженого «Чистая Линия». 
+            .excursion__row-col
+              .excursion__wrapper.excursion__wrapper--max-w--465
+                p.excursion__text
+                  |Посетители площадки могут наблюдать за производством и дегустировать продукцию мороженое в неограниченном количестве!
+        .excursion__block
+          .excursion__wrapper.excursion__wrapper--center
+            .excursion__frame(data-aos='fade-up')
+              figure.excursion__image
+                img.excursion__img(src="assets/images/world/outlook/photo-1.jpg")
+        .excursion__block
+          .excursion__row
+            .excursion__row-col
+              .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
+                h3.excursion__title
+                  |А ещё в PANORAMA360 расположена самая высокая в мире фабрика шоколада «Чистая Линия».
+                p.excursion__text.excursion__caption
+                  |Каждый посетитель может увидеть и узнать, как из какао-бобов получаются конфеты и орехи в шоколаде, а затем продегустировать продукцию фабрики.
+            .excursion__row-col.excursion__row-col--flex
+              .excursion__frame(data-aos='fade-up')
+                figure.excursion__image
+                  img.excursion__image-img(src='assets/images/world/outlook/photo-2.jpg')
+    section.excursion__mid
+      .left-container
+        .excursion__row(data-aos='fade-up')
+          .excursion__row-col
+            h3.excursion__title
+              |Также на площадке доступны 7 развлекательных зон!
+        ul.outlook__list
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-1.jpg")
+              p.outlook__list-text
+                |Фабрики мороженого и шоколада с неограниченной дегустацией
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-2.jpg")
+              p.outlook__list-text
+                |Музей мороженого
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-3.jpg")
+              p.outlook__list-text
+                |Проекционное шоу
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-4.jpg")
+              p.outlook__list-text
+                |Сувенирный магазин
+          li.outlook__list-item.outlook__list-item--ghost
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-5.jpg")
+              p.outlook__list-text
+                |Ресторан «360»
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-6.jpg")
+              p.outlook__list-text
+                |AR-квест на смартфонах для изучения достопримечательностей Москвы и создания коллекции из Башен ММДЦ «Москва-Сити».
+          li.outlook__list-item(data-aos='fade-up')
+              .outlook__list-image
+                .excursion__frame
+                  figure.excursion__image
+                    img.excursion__img(src="assets/images/world/outlook/list-item-7.jpg")
+              p.outlook__list-text
+                |Интерактивный гид
+    section.excursion__bottom
+      .left-container
+        .excursion__row.excursion__row--ai--end
+          .excursion__row-col.excursion__row-col--flex
+            figure.excursion__bottom-image(data-aos='fade-up')
+              img.excursion__bottom-bg-img(src="assets/images/world/excursion/notebook-shadow.png")
+              img.excursion__bottom-img(src="assets/images/world/oeskimo/notebook.png")
+          .excursion__row-col
+            .excursion__bottom-info(data-aos='fade-up')
+              h3.excursion__bottom-title
+                |Более подробная информация о покупке франшизы на сайте #[a.excursion__bottom-link(href="#") profi.oeskimo.ru]
+              a.btn.btn--primary.excursion__bottom-button(href="#")
+                span
+                  |Узнать подробнее
+        .excursion__block
+          .nextBlock.page-about-us__nextBlock(data-aos='fade-up')
+            a.row.between__xs.middle__xs(href='#')
+              .col
+                p Смотрите также
+                h3 Смотровая площадка PANORAMA360
+              .col
+                .nextBlock--ico
+                  +img('icons/nextArr.svg')
+
