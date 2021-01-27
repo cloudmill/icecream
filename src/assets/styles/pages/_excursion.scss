@@ -490,6 +490,16 @@
       font-size: 50px;
       line-height: 110%;
     }
+
+    &--small {
+      font-size: 18px;
+      line-height: 140%;
+
+      @media (min-width: $screen-lg-min) {
+        font-size: 30px;
+        line-height: 130%;
+      }
+    }
   }
 
 
@@ -527,6 +537,11 @@
 
     &--max-w--465 {
       max-width: 465px;
+    }
+
+    &--center {
+      display: flex;
+      justify-content: center;
     }
   }
 
