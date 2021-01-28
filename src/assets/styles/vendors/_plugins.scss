@@ -124,6 +124,8 @@ $items:
   .select2-selection--single {
     background: $base-color-lighten;
     border-color: $base-color-lighten;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
     transition: background .5s .3s, border-color .5s .3s, border-radius .2s .4s;
   }
   .select2-selection__arrow {
@@ -131,10 +133,21 @@ $items:
   }
 }
 .select2-dropdown {
+  position: relative;
   background: #D2F0FA;
   border-color: #D2F0FA;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+
+  /*&:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    top: -10px;
+    background: #D2F0FA;
+  }*/
 
   &--above {
     border-radius: 0;

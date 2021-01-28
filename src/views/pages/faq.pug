@@ -7,6 +7,19 @@ block content
   main.page-faq
     .left-container
       +title('Вопрос–ответ', ['Вопрос–ответ', 'Покупателю'])
+      nav.tab-nav.news__tab-nav(data-aos='fade-up')
+        .tab-nav__wrapper.excursion__tab-nav-wrapper
+          ul.tab-nav__list
+            -
+              var tabs = [
+                {text: 'Вопрос-ответ', active: true},
+                {text: 'Отзывы'},
+                {text: 'Интересное'},
+              ];
+            each tab in tabs
+              li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
+                a.tab-nav__link(href="#")
+                  | #{tab.text}
       .block-aside(data-sticky-container)
         .faq
           .moreDetail--js

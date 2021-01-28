@@ -18,12 +18,16 @@ block content
             p Также выявляется наличие консервантов — сорбиновой и бензойной кислоты, массовая доля общего фосфора, кислотность.
             p К мороженому пломбир, изгоготовленному по ГОСТу, предъявляются высокие требования. В нем не должно быть растительных жиров, жирность должна быть не менее 12%, а содержание сахара – минимум 14%. Если в составе мороженого пломбир по итогам экспертизы выявляются растительные жиры, образец включается в черный список Росконтроля за фальсификацию.
           .slideshow-container.img
-            .slideshow.swiper-container(data-aos='fade-up')
+            .swiper-container.main-slider(
+              data-aos='fade-up'
+              data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]'
+            )
               .swiper-wrapper
                 - for (let i = 1; i < 4; i++)
                   .swiper-slide
+                    .slide-bgimg(style='background-image:url(assets/images/interests/big-1.jpg')
                     +img('interests/big-1.jpg')
-            .swiper-tools(data-aos='fade-up')
+            .swiper-tools
               .swiper-button.hidden__sm.hidden__xs
                 .swiper-prev.nextBlock--ico
                   +img('icons/prevArr.svg')

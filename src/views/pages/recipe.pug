@@ -18,10 +18,14 @@ block content
               span.recipe__time-text
                 |30 мин
           .slideshow-container.img.recipe__slider-top
-            .slideshow.swiper-container(data-aos='fade-up')
+            .swiper-container.main-slider(
+              data-aos='fade-up'
+              data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]'
+            )
               .swiper-wrapper
                 - for (let i = 1; i < 4; i++)
                   .swiper-slide
+                    .slide-bgimg(style='background-image:url(assets/images/interests/big-1.jpg')
                     +img('interests/big-1.jpg')
             .swiper-tools
               .swiper-button.hidden__sm.hidden__xs

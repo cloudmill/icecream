@@ -28,10 +28,14 @@ block content
             h4 Первое место
             p Первое место заняли шербеты в баночках: вишневый, смородиновый и со вкусом зеленого яблока. Калорийность этих продуктов 126 ккал на 100 г. Так как баночки по 70 г, то в одной упаковке 88,2 ккал.
           .slideshow-container.img
-            .slideshow.swiper-container(data-aos='fade-up')
+            .swiper-container.main-slider(
+              data-aos='fade-up'
+              data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]'
+            )
               .swiper-wrapper
                 - for (let i = 1; i < 4; i++)
                   .swiper-slide
+                    .slide-bgimg(style='background-image:url(assets/images/interests/big-1.jpg')
                     +img('interests/big-1.jpg')
             .swiper-tools
               .swiper-button.hidden__sm.hidden__xs

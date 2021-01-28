@@ -48,14 +48,16 @@ $('.select-template').on('select2:closing', function(e) {
 	setTimeout(function() {
 		$('.select2').addClass('closing');
 		$('.select2-dropdown').slideUp(500, function() {
-			$('.select-template').select2('destroy');
-			$('.select-template').select2({
-				selectOnClose: true,
-				templateResult: formatState,
-				templateSelection: formatStateSelection,
-				minimumResultsForSearch: Infinity
-			});
-			$('.select-template').removeClass('closing');
+			setTimeout(function() {
+				$('.select-template').select2('destroy');
+				$('.select-template').select2({
+					selectOnClose: true,
+					templateResult: formatState,
+					templateSelection: formatStateSelection,
+					minimumResultsForSearch: Infinity
+				});
+				$('.select-template').removeClass('closing');
+			}, 500);
 		});
 	}, 0);
 });
