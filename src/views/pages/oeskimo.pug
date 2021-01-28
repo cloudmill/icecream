@@ -56,118 +56,83 @@ block content
             |на заводе «Чистая Линия» в 2016 году
           p.excursion__top-text
             |Проект представляет собой сеть точек витрин-конструкторов по производству мороженого, на которых профессиональный мороженщик во вкусу покупателя окунает мороженое на палочке в натуральную шоколадную глазурь.
-    section.excursion__top-mid
+    
+    section.oeskimo__mid
       .left-container
-        ul.excursion__list(data-aos='fade-up')
-          li.excursion__list-item
-            h3.excursion__list-title
-              figure.excursion__list-image
-                img.excursion__list-img(src='assets/images/infinity-1.svg')
-            p.excursion__list-text
-              |Время посещения неограниченно
-          li.excursion__list-item
-            h3.excursion__list-title
-              figure.excursion__list-image
-                img.excursion__list-img(src='assets/images/tower-1.svg')
-            p.excursion__list-text
-              |Фабрика находится в Москва-Сити,
-              br
-              |в башне «Федерация. Восток»
-          li.excursion__list-item
-            h3.excursion__list-title
-              |0+
-            p.excursion__list-text
-              |Дети до 5 лет проходят бесплатно
-          li.excursion__list-item
-            h3.excursion__list-title
-              |от 700 ₽
-            p.excursion__list-text
-              |Стоимость посещения
-        .excursion__block
-          .excursion__row(data-aos='fade-up')
-            .excursion__row-col
-              .excursion__wrapper.excursion__wrapper--max-w--465
-                h3.excursion__title.excursion__title--small
-                  |На смотровой площадке находится самая высокая в мире фабрика мороженого «Чистая Линия». 
-            .excursion__row-col
-              .excursion__wrapper.excursion__wrapper--max-w--465
-                p.excursion__text
-                  |Посетители площадки могут наблюдать за производством и дегустировать продукцию мороженое в неограниченном количестве!
-        .excursion__block
-          .excursion__wrapper.excursion__wrapper--center
-            .excursion__frame(data-aos='fade-up')
-              figure.excursion__image
-                img.excursion__img(src="assets/images/world/outlook/photo-1.jpg")
-        .excursion__block
-          .excursion__row
-            .excursion__row-col
-              .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
-                h3.excursion__title
-                  |А ещё в PANORAMA360 расположена самая высокая в мире фабрика шоколада «Чистая Линия».
-                p.excursion__text.excursion__caption
-                  |Каждый посетитель может увидеть и узнать, как из какао-бобов получаются конфеты и орехи в шоколаде, а затем продегустировать продукцию фабрики.
-            .excursion__row-col.excursion__row-col--flex
-              .excursion__frame(data-aos='fade-up')
+        
+        .oeskimo__taste
+          h3.oeskimo__taste-title
+            |На сегодняшний день 
+            br.oeskimo__br--only-desktop
+            |в «О!Эскимо» представлено 
+            br.oeskimo__br--only-desktop
+            |7 вкусов
+          ul.oeskimo__taste-list
+            li.oeskimo__taste-item.oeskimo__taste-item--ghost
+            li.oeskimo__taste-item.oeskimo__taste-item--ghost
+            -
+              var items = [
+                'Ваниль',
+                'Шоколад',
+                'Крем–брюле',
+                'Клубника',
+                'Птичье молоко',
+                'Апельсин',
+                'Мегаладон',
+              ]
+            each item, index in items
+              li.oeskimo__taste-item(class = index === 6 ? 'oeskimo__taste-item--new' : '')
+                figure.oeskimo__taste-image
+                  .oeskimo__taste-img-wrap
+                    .oeskimo__taste-img-container
+                      img.oeskimo__taste-img(src=`assets/images/world/oeskimo/taste-${index + 1}.png`)
+                h4.oeskimo__taste-item-title
+                  |#{item}
+
+        .oeskimo__find
+          h3.oeskimo__find-title
+          .oeskimo__find-map
+
+        .oeskimo__franchise
+          .oeskimo__franchise-col
+            h3.oeskimo__franchise-title
+              |Франшиза О!Эскимо
+            .oeskimo__franchise-text-wrap
+              p.oeskimo__franchise-text
+                |О!Эскимо предлагает всем желающим приобрести франшизу, присоединиться
+                br
+                |к команде и открыть островок О!Эскимо
+                br
+                |в торговых и бизнес-центрах.
+              p.oeskimo__franchise-text
+                |Компания возьмет на себя всю организацию
+                br
+                |по поставкам готового мороженого, продавцу останется лишь окунуть его в глазурь.
+            .oeskimo__franchise-image
+              .excursion__frame
                 figure.excursion__image
-                  img.excursion__image-img(src='assets/images/world/outlook/photo-2.jpg')
-    section.excursion__mid
-      .left-container
-        .excursion__row(data-aos='fade-up')
-          .excursion__row-col
-            h3.excursion__title
-              |Также на площадке доступны 7 развлекательных зон!
-        ul.outlook__list
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-1.jpg")
-              p.outlook__list-text
-                |Фабрики мороженого и шоколада с неограниченной дегустацией
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-2.jpg")
-              p.outlook__list-text
-                |Музей мороженого
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-3.jpg")
-              p.outlook__list-text
-                |Проекционное шоу
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-4.jpg")
-              p.outlook__list-text
-                |Сувенирный магазин
-          li.outlook__list-item.outlook__list-item--ghost
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-5.jpg")
-              p.outlook__list-text
-                |Ресторан «360»
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-6.jpg")
-              p.outlook__list-text
-                |AR-квест на смартфонах для изучения достопримечательностей Москвы и создания коллекции из Башен ММДЦ «Москва-Сити».
-          li.outlook__list-item(data-aos='fade-up')
-              .outlook__list-image
-                .excursion__frame
-                  figure.excursion__image
-                    img.excursion__img(src="assets/images/world/outlook/list-item-7.jpg")
-              p.outlook__list-text
-                |Интерактивный гид
-    section.excursion__bottom
+                  img.excursion__image-img(src='assets/images/world/oeskimo/photo-1.jpg')
+          .oeskimo__franchise-col
+            .oeskimo__franchise-list-wrap
+              ul.oeskimo__franchise-list
+                -
+                  var items = [
+                    { title: '1 000 000 ₽', text: 'Паушальный взнос' },
+                    { title: '3%', text: 'Роялти от оборота в месяц' },
+                    { title: '600 000 ₽', text: 'Следующие точки' }
+                  ]
+                each item in items
+                  li.oeskimo__franchise-item
+                    h4.oeskimo__franchise-item-title
+                      |#{item.title}
+                    p.oeskimo__franchise-item-text
+                      |#{item.text}
+            .oeskimo__franchise-image.oeskimo__franchise-image--center
+              .excursion__frame
+                figure.excursion__image
+                  img.excursion__image-img(src='assets/images/world/oeskimo/photo-2.png')
+
+    section.oeskimo__bottom.excursion__bottom
       .left-container
         .excursion__row.excursion__row--ai--end
           .excursion__row-col.excursion__row-col--flex
