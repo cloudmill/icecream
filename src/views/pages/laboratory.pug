@@ -1,160 +1,93 @@
-extends ../layouts/master
-
+extends ../layouts/master.pug
 
 
 block header
-  include ../partials/_header
+  include ../partials/_header.pug
 
 block footer
-  include ../partials/_footer
-
+  include ../partials/_footer.pug
 
 
 block content
-  main.factory
-    section.factory__top
-      .left-container
-        .mainTitle.excursion__mainTitle
-          ul.breadcrumbs
-            li.breadcrumbs__item.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                |Экскурсия на фабрику «Чистая линия»
-            li.breadcrumbs__item.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                |Мир Чистой Линии
-            li.breadcrumbs__item.active.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
-                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
-          h1.mainTitle-text(data-aos='fade-up')
-            |Экскурсия на фабрику «Чистая линия»
-        nav.tab-nav.excursion__tab-nav(data-aos='fade-up')
-          .tab-nav__wrapper.excursion__tab-nav-wrapper
-            ul.tab-nav__list
-              -
-                var tabs = [
-                  { text: 'О нас' },
-                  { text: 'Миссия и ценности' },
-                  { text: 'Интернет–магазин' },
-                  { text: 'Экскурсия на фабрику', active: true },
-                  { text: 'О!Эскимо' },
-                  { text: 'Смотровая площадка' }
-                ];
-              each tab in tabs
-                li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
-                  a.tab-nav__link(href="#")
-                    |#{tab.text}
-        .excursion__top-content(data-aos='fade-up')
-          h2.excursion__top-title
-            |Хотите собственными глазами увидеть, как изготавливается натуральное мороженое?
-          p.excursion__top-text
-            |Тогда приглашаем на экскурсию по нашей фабрике! Экскурсии проводятся ежедневно для групп, и по субботам для индивидуальных посетителей.
-    section.excursion__top-mid
-      .left-container
-        ul.excursion__list(data-aos='fade-up')
-          li.excursion__list-item
-            h3.excursion__list-title
-              |1,5 часа
-            p.excursion__list-text
-              |Продолжительность экскурсии
-          li.excursion__list-item
-            h3.excursion__list-title
-              |5+
-            p.excursion__list-text
-              |На фабрику допускаются дети от 5 лет
-          li.excursion__list-item
-            h3.excursion__list-title
-              |2300 ₽
-            p.excursion__list-text
-              |Стоимость экскурсии за человека для школьных групп и для экскурсантов сборных групп
-          li.excursion__list-item
-            h3.excursion__list-title
-              figure.excursion__list-image
-                img.excursion__list-img(src='assets/images/pin-1.svg')
-            p.excursion__list-text
-              |Фабрика находится в Московской области, в г. Долгопрудный
-        .excursion__block(data-aos='fade-up')
-          .excursion__frame
-            .excursion__card
-              .excursion__card-col
-                .excursion__card-info
-                  h3.excursion__card-title
-                    |На экскурсии вы увидите и узнаете все этапы производства:
-                  ul.excursion__card-list
-                    li.excursion__card-item
-                      figure.excursion__card-item-image
-                        img.excursion__card-item-img(src='assets/images/question-1.svg')
-                      p.excursion__card-item-text
-                        |Как ингредиенты поступают на фабрику
-                    li.excursion__card-item
-                      figure.excursion__card-item-image
-                        img.excursion__card-item-img(src='assets/images/question-1.svg')
-                      p.excursion__card-item-text
-                        |Как происходит их смешивание, фризерование, созревание, формовка.
-              .excursion__card-col
-                .excursion__card-image-wrapper
-                  figure.excursion__card-image
-                    img.excursion__card-img(src='assets/images/world/excursion/card-1.jpg')
-        .excursion__block(data-aos='fade-up')
-          .excursion__row
-            .excursion__row-col.excursion__row-col--flex
-              .excursion__frame
-                figure.excursion__image
-                  img.excursion__image-img(src='assets/images/world/excursion/photo-1.jpg')
-            .excursion__row-col
-              .excursion__wrapper.excursion__wrapper--max-w--465
-                h3.excursion__title
-                  |Вы узнаете тайны производства мороженого
-                p.excursion__text.excursion__caption
-                  |Например, как пломбир заполняет стаканчики или эскимо покрывается глазурью.
-    section.excursion__mid
-      .left-container
-        .excursion__row-reverse
-          .excursion__row-reverse-col
-            .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
-              h3.excursion__title
-                |Конечно же, всех гостей ждет дегустация!
-              p.excursion__text.excursion__caption
-                |В том числе нежнейшего свежего мороженого (до заморозки), которое можно попробовать только на фабрике.
-          .excursion__row-reverse-col
-            .excursion__wrapper.excursion__wrapper--max-w--465(data-aos='fade-up')
-              h3.excursion__title
-                |В финале экскурсии вас ждут приятные сувениры, а также подарок
-              p.excursion__text.excursion__caption
-                |Сертификат на 1 коробку Российского эскимо, который Вы сможете реализовать через наш интернет-магазин omoloko.ru.
-        .excursion__photo-circles
-          .excursion__row-reverse
-            .excursion__row-reverse-col
-              ul.excursion__photo-circles-list(data-aos='fade-up')
-                li.excursion__photo-circles-item.excursion__frame
-                  img(src="assets/images/world/excursion/photo-circle-1.jpg", alt="")
-                li.excursion__photo-circles-item.excursion__frame
-                  img(src="assets/images/world/excursion/photo-circle-2.jpg", alt="")
-            .excursion__row-reverse-col
-    section.excursion__bottom
-      .left-container
-        .excursion__row.excursion__row--ai--end
-          .excursion__row-col.excursion__row-col--flex
-            figure.excursion__bottom-image(data-aos='fade-up')
-              img.excursion__bottom-bg-img(src="assets/images/world/excursion/notebook-shadow.png")
-              img.excursion__bottom-img(src="assets/images/world/excursion/notebook.png")
-          .excursion__row-col
-            .excursion__bottom-info(data-aos='fade-up')
-              h3.excursion__bottom-title
-                |Узнать подробную информацию и записаться онлайн можно на сайте #[a.excursion__bottom-link(href="#") chlclub.ru]
-              a.btn.btn--primary.excursion__bottom-button(href="#")
-                span
-                  |Узнать подробнее
-        .excursion__block
-          .nextBlock.page-about-us__nextBlock(data-aos='fade-up')
-            a.row.between__xs.middle__xs(href='#')
-              .col
-                p Смотрите также
-                h3 О! Эскимо
-              .col
-                .nextBlock--ico
-                  +img('icons/nextArr.svg')
-
+  main.laboratory
+    .left-container
+      .mainTitle
+        ul.breadcrumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")
+              |Лаборатория
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#")
+              |Производство
+          li.breadcrumbs__item.active
+            a.breadcrumbs__link(href="/")
+              svg(width='23' height='22' viewbox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5958 0.578664C11.9567 0.295897 12.4637 0.294803 12.8259 0.576012L22.6131 8.17601C23.0493 8.51474 23.1283 9.14295 22.7896 9.57917C22.4509 10.0154 21.8227 10.0944 21.3865 9.75568L12.2153 2.63406L7.6165 6.23701C7.18176 6.57762 6.55321 6.5013 6.2126 6.06655C5.87199 5.6318 5.94831 5.00326 6.38306 4.66265L11.5958 0.578664Z' fill='#5DCBEE')
+                path(fill-rule='evenodd' clip-rule='evenodd' d='M20.9998 10.9659C20.4475 10.9659 19.9998 11.4137 19.9998 11.9659V19.6342H4.99978V16.2219C4.99978 15.6696 4.55206 15.2219 3.99978 15.2219C3.4475 15.2219 2.99978 15.6696 2.99978 16.2219V20.6342C2.99978 21.1865 3.4475 21.6342 3.99978 21.6342H20.9998C21.5521 21.6342 21.9998 21.1865 21.9998 20.6342V11.9659C21.9998 11.4137 21.5521 10.9659 20.9998 10.9659Z' fill='#5DCBEE')
+                path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
+        h1.mainTitle-text(data-aos='fade-up')
+          |Лаборатория
+      nav.tab-nav(data-aos='fade-up')
+        .tab-nav__wrapper
+          ul.tab-nav__list
+            -
+              var tabs = [
+                'Завод',
+                { text: 'Лаборатория' },
+                'Мороженое',
+                'Шоколад',
+                'Молочная продукция',
+                'Безопасность и качество'
+              ];
+            each tab in tabs
+              li.tab-nav__item(class = tab.text ? 'tab-nav__item--active' : '')
+                a.tab-nav__link(href="javascript:void(0)")
+                  |#{tab.text ? tab.text : tab}     
+      p.laboratory__top(data-aos='fade-up')
+        |Каждый ингредиент, который мы используем в производстве,
+        br
+        |а также готовая продукция проходят проверку на безопасность
+        br
+        |и соответствие регламентирующих качество норм, установленных межгосударственным стандартом — ГОСТ
+     
+      .laboratory__list-wrap
+        h2.laboratory__list-title(data-aos='fade-up')
+          |Этапы контроля качества
+        ul.laboratory__list
+          -
+            var items = [
+              {
+                title: 'Исследование',
+                text: 'При поступлении на производство все ингредиенты нашей продукции проходят серьезные лабораторные исследования на выявление соответствия нормам.<br>Мы используем те же стандарты безопасности, что<br>и контролирующие органы, поэтому на производство допускаем продукты исключительно высшего класса.'
+              },
+              {
+                title: 'Текущий контроль',
+                text: 'Мы следим за соблюдением качества продукции<br>на всех этапах производства для того, чтобы убедиться в безопасности реализации каждого шага и вовремя выявить нарушения.'
+              },
+              {
+                title: 'Проверка',
+                text: 'По завершению производства продукция оказывается на итоговой проверке, где мы, а также независимые эксперты оцениваем состав и безопасность продукта. Мы возвращаем на доработку или отправляем<br>на утилизацию все, что не соответствует стандартам безопасности.'
+              },
+              {
+                title: 'Контроль',
+                text: 'Сотрудники нашей компании ежедневно внимательно следят за отзывами и мнением покупателей, для того чтобы быть уверенными, что продукция компании «Чистая Линия» не только соответствует всем требованиям безопасности, но и отвечает предпочтениям наших клиентов.'
+              }
+            ]  
+          each item, index in items
+            li.laboratory__card.laboratory__list-item(data-aos='fade-up')
+              figure.laboratory__card-image
+                img.laboratory__card-img(src = `assets/images/production/laboratory/card-${index + 1}.png`)
+              .laboratory__card-info
+                h3.laboratory__card-title
+                  |!{item.title}
+                p.laboratory__card-text
+                  |!{item.text}
+          
+      .nextBlock(data-aos='fade-up')
+        a.row.between__xs.middle__xs(href='#')
+          .col
+            p Смотрите также
+            h3 Производство мороженого
+          .col
+            .nextBlock--ico
+              +img('icons/nextArr.svg')
