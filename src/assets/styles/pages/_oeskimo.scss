@@ -1,0 +1,360 @@
+.oeskimo {
+
+
+  // TOP
+
+  &__top {
+    background-image: url("../images/world/top-transition.svg"),
+      url("../images/animation/slide-4.png"),
+      url("../images/world/top-background.svg");
+  }
+
+
+  // BOTTOM
+
+  &__bottom {
+    margin-top: 40px;
+    background-color: white;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 80px;
+    }
+  }
+
+
+  // BR
+
+  &__br {
+
+    &--only-desktop {
+      display: none;
+
+      @media (min-width: $screen-lg-min) {
+        display: inline;
+      }
+    }
+  }
+
+
+  // LIST
+
+  &__taste {
+    margin-top: 60px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 160px;
+      max-width: 1270px;
+    }
+  }
+
+  &__taste-title {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: calc(-211px - 40px);
+      $col-width: 2;
+      max-width: calc(211px * #{$col-width} + 40px * #{$col-width - 1});
+      height: 211px;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 130%;
+    }
+  }
+
+  &__taste-list {
+    margin: 0;
+    margin-top: -40px;
+    margin-left: -30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: -40px;
+    }
+  }
+
+  &__taste-item {
+    margin-top: 40px;
+    margin-left: 30px;
+    position: relative;
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: 40px;
+    }
+
+    &--ghost {
+      display: none;
+      visibility: hidden;
+      width: 211px;
+
+      @media (min-width: $screen-lg-min) {
+        display: block;
+      }
+    }
+
+    &--new {
+
+
+      .oeskimo__taste-image {
+
+        &::before {
+          position: absolute;
+          z-index: 2;
+          top: 4px;
+          left: 24px;
+          content: "";
+          display: block;
+          width: 54px;
+          height: 31px;
+          background-image: url("../images/world/oeskimo/new.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+
+          @media (min-width: $screen-lg-min) {
+            top: 6px;
+            left: 30px;
+            width: 72px;
+            height: 39px;
+          }
+        }
+      }
+    }
+  }
+
+  &__taste-image {
+    position: relative;
+    $size: 160px;
+    width: $size;
+    height: $size;
+    background-color: #F9F4EC;
+    border-radius: 50%;
+    overflow: hidden;
+
+    $bg-colors: (1: #F9F4EC,
+        2: #F7EBE8,
+        3: #F9EFE3,
+        4: #FFEBEB,
+        5: #FAF9F2,
+        6: #FFF4E3,
+        7: #E6F6FF,
+      );
+
+    @each $bg-color,
+    $index in $bg-colors {
+
+      &:nth-child(#{$index}) {
+        background-color: $bg-color;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      $size: 211px;
+      width: $size;
+      height: $size;
+    }
+  }
+
+  &__taste-img-wrap {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+  }
+
+  &__taste-img-container {
+    display: flex;
+  }
+
+  &__taste-img {
+    max-width: 75%;
+
+    @media (min-width: $screen-lg-min) {
+      max-width: none;
+    }
+  }
+
+  &__taste-item-title {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      bottom: 20px;
+    }
+  }
+
+
+  // FRANCHISE
+
+  &__franchise {
+    margin-top: 80px;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 160px;
+    }
+  }
+
+  &__franchise-col {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - 40px) / 2);
+
+      &:not(:first-child) {
+        margin-top: 0;
+        margin-left: 40px;
+      }
+    }
+
+    @media (min-width: $screen-lg-min) {
+      $first-col: 35%;
+
+      &:first-child {
+        padding-bottom: 155px;
+        width: $first-col;
+      }
+
+      &:last-child {
+        width: calc(100% - #{$first-col} - 40px);
+      }
+    }
+  }
+
+  &__franchise-title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 40px;
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__franchise-text-wrap {
+    margin-bottom: 40px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__franchise-text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 140%;
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 18px;
+    }
+  }
+
+  &__franchise-image {
+    display: flex;
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &__franchise-list-wrap {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: $screen-md-min) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__franchise-list {
+    margin: 0;
+  }
+
+  &__franchise-item {
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+
+  &__franchise-item-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__franchise-item-text {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  }
+
+
+  // FIND
+
+  &__find {
+    margin-top: 80px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 160px;
+    }
+  }
+
+  &__find-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__find-map {
+    margin-top: 40px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 80px;
+    }
+  }
+}

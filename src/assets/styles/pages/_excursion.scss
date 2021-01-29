@@ -609,7 +609,7 @@
     background-color: #EBFAFF;
     background-image: url("../images/world/excursion/bottom-transition.svg"), url("../images/world/excursion/bottom-background.svg");
     background-repeat: no-repeat, no-repeat;
-    background-position: center bottom, center top;
+    background-position: center bottom -1px, center top;
     background-size: 100% auto, cover;
 
     @media (min-width: $screen-lg-min) {

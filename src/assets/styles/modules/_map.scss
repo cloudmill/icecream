@@ -1,0 +1,113 @@
+.map {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+
+  @media (min-width: $screen-md-min) {
+    display: flex;
+    align-items: stretch;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    border-radius: 40px;
+  }
+
+  // control
+
+  &__control {
+    padding: 20px;
+    flex-shrink: 0;
+    background-color: #5DCBEE;
+    border-radius: 20px;
+
+    @media (min-width: $screen-md-min) {
+      width: 350px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      border-radius: 40px;
+    }
+  }
+
+  &__select-wrapper {
+    height: 50px;
+    background-color: #EBFAFF;
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (min-width: $screen-lg-min) {
+      height: 80px;
+      border-radius: 20px;
+    }
+  }
+
+  &__list-wrapper {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+
+    @media (min-width: $screen-lg-min) {
+      border-radius: 20px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    max-height: 230px;
+    overflow: auto;
+
+    @media (min-width: $screen-md-min) {
+      max-height: 260px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      max-height: 410px;
+    }
+  }
+
+  &__item {
+    padding: 20px 20px 20px 0;
+    border-bottom: 1px solid #F1EFD6;
+    cursor: pointer;
+
+    &:first-child {
+      border-top: 1px solid #F1EFD6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__address {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 140%;
+  }
+
+  // map
+
+  &__wrapper {
+    flex-grow: 1;
+  }
+
+  &__container {
+    height: 300px;
+
+    @media (min-width: $screen-md-min) {
+      height: 100%;
+    }
+  }
+
+  // clusterer
+
+  &__clusterer {
+    font-weight: bold;
+    color: red;
+  }
+}

@@ -1,0 +1,199 @@
+extends ../layouts/master
+
+
+
+block header
+  include ../partials/_header
+
+block footer
+  include ../partials/_footer-no-transition
+
+
+
+block content
+  main.oeskimo.outlook.excursion
+    section.oeskimo__top.excursion__top
+      .left-container
+        .mainTitle.excursion__mainTitle
+          ul.breadcrumbs
+            li.breadcrumbs__item.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                |О!Эскимо
+            li.breadcrumbs__item.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                |Мир Чистой Линии
+            li.breadcrumbs__item.active.page-store__breadcrumbs-item
+              a.breadcrumbs__link(href="#")
+                svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
+                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
+          h1.mainTitle-text(data-aos='fade-up')
+            |О!Эскимо
+        nav.tab-nav.excursion__tab-nav(data-aos='fade-up')
+          .tab-nav__wrapper.excursion__tab-nav-wrapper
+            ul.tab-nav__list
+              -
+                var tabs = [
+                  { text: 'О нас' },
+                  { text: 'Миссия и ценности' },
+                  { text: 'Интернет–магазин' },
+                  { text: 'Экскурсия на фабрику' },
+                  { text: 'О!Эскимо', active: true },
+                  { text: 'Смотровая площадка' }
+                ];
+              each tab in tabs
+                li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
+                  a.tab-nav__link(href="#")
+                    |#{tab.text}
+        .excursion__top-content(data-aos='fade-up')
+          h2.excursion__top-title
+            |«О!Эскимо» — это уникальный
+            br
+            |проект, вдохновленный процессом глазирования мороженого
+            br
+            |на заводе «Чистая Линия» в 2016 году
+          p.excursion__top-text
+            |Проект представляет собой сеть точек витрин-конструкторов по производству мороженого, на которых профессиональный мороженщик во вкусу покупателя окунает мороженое на палочке в натуральную шоколадную глазурь.
+    
+    section.oeskimo__mid
+      .left-container
+        
+        .oeskimo__taste
+          h3.oeskimo__taste-title
+            |На сегодняшний день 
+            br.oeskimo__br--only-desktop
+            |в «О!Эскимо» представлено 
+            br.oeskimo__br--only-desktop
+            |7 вкусов
+          ul.oeskimo__taste-list
+            li.oeskimo__taste-item.oeskimo__taste-item--ghost
+            li.oeskimo__taste-item.oeskimo__taste-item--ghost
+            -
+              var items = [
+                'Ваниль',
+                'Шоколад',
+                'Крем–брюле',
+                'Клубника',
+                'Птичье молоко',
+                'Апельсин',
+                'Мегаладон',
+              ]
+            each item, index in items
+              li.oeskimo__taste-item(class = index === 6 ? 'oeskimo__taste-item--new' : '')
+                figure.oeskimo__taste-image
+                  .oeskimo__taste-img-wrap
+                    .oeskimo__taste-img-container
+                      img.oeskimo__taste-img(src=`assets/images/world/oeskimo/taste-${index + 1}.png`)
+                h4.oeskimo__taste-item-title
+                  |#{item}
+
+        .oeskimo__find
+          h3.oeskimo__find-title
+            |Найти и поробовать О!Эскимо  
+          
+          .map.oeskimo__find-map
+            .map__control
+              .map__select-wrapper
+                select.map__select.js--select(data-theme = 'default', name = 'city')
+                  each option in [1, 2, 3]
+                    option(value = option, selected = (option === 3) ? true : false)
+                      |#{`Город-${option}`}
+              .map__list-wrapper
+                ul.map__list
+                  -
+                    var items = [
+                      {
+                        title: '«Аутлет Белая дача Котельники»',
+                        address: 'Новорязанское шоссе, 8',
+                      },
+                      {
+                        title: 'БЦ «Алгоритм»',
+                        address: 'Волоколамский 1 проезд, 10, строение 1',
+                      },
+                      {
+                        title: 'БЦ «Диапазон»',
+                        address: 'БЦ «Диапазон», улица академика<br>Пилюгина 22',
+                      },
+                      {
+                        title: 'БЦ «Интеграл»',
+                        address: 'БЦ «Интеграл», пр. Завода Серп и Молот, 10',
+                      },
+                      {
+                        title: '«Аутлет Белая дача Котельники»',
+                        address: 'Новорязанское шоссе 8',
+                      },
+                    ]
+                  each item in items
+                    li.map__item.js--item
+                      h4.map__title
+                        |!{item.title}
+                      address.map__address
+                        |!{item.address}
+            .map__wrapper
+              #map.map__container
+                    
+        .oeskimo__franchise
+          .oeskimo__franchise-col
+            h3.oeskimo__franchise-title
+              |Франшиза О!Эскимо
+            .oeskimo__franchise-text-wrap
+              p.oeskimo__franchise-text
+                |О!Эскимо предлагает всем желающим приобрести франшизу, присоединиться
+                br
+                |к команде и открыть островок О!Эскимо
+                br
+                |в торговых и бизнес-центрах.
+              p.oeskimo__franchise-text
+                |Компания возьмет на себя всю организацию
+                br
+                |по поставкам готового мороженого, продавцу останется лишь окунуть его в глазурь.
+            .oeskimo__franchise-image
+              .excursion__frame
+                figure.excursion__image
+                  img.excursion__image-img(src='assets/images/world/oeskimo/photo-1.jpg')
+          .oeskimo__franchise-col
+            .oeskimo__franchise-list-wrap
+              ul.oeskimo__franchise-list
+                -
+                  var items = [
+                    { title: '1 000 000 ₽', text: 'Паушальный взнос' },
+                    { title: '3%', text: 'Роялти от оборота в месяц' },
+                    { title: '600 000 ₽', text: 'Следующие точки' }
+                  ]
+                each item in items
+                  li.oeskimo__franchise-item
+                    h4.oeskimo__franchise-item-title
+                      |#{item.title}
+                    p.oeskimo__franchise-item-text
+                      |#{item.text}
+            .oeskimo__franchise-image.oeskimo__franchise-image--center
+              .excursion__frame
+                figure.excursion__image
+                  img.excursion__image-img(src='assets/images/world/oeskimo/photo-2.png')
+
+    section.oeskimo__bottom.excursion__bottom
+      .left-container
+        .excursion__row.excursion__row--ai--end
+          .excursion__row-col.excursion__row-col--flex
+            figure.excursion__bottom-image(data-aos='fade-up')
+              img.excursion__bottom-bg-img(src="assets/images/world/excursion/notebook-shadow.png")
+              img.excursion__bottom-img(src="assets/images/world/oeskimo/notebook.png")
+          .excursion__row-col
+            .excursion__bottom-info(data-aos='fade-up')
+              h3.excursion__bottom-title
+                |Более подробная информация о покупке франшизы на сайте #[a.excursion__bottom-link(href="#") profi.oeskimo.ru]
+              a.btn.btn--primary.excursion__bottom-button(href="#")
+                span
+                  |Узнать подробнее
+        .excursion__block
+          .nextBlock.page-about-us__nextBlock(data-aos='fade-up')
+            a.row.between__xs.middle__xs(href='#')
+              .col
+                p Смотрите также
+                h3 Смотровая площадка PANORAMA360
+              .col
+                .nextBlock--ico
+                  +img('icons/nextArr.svg')
+

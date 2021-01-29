@@ -102,6 +102,14 @@ $('.select-main').select2({
 	theme: 'main'
 });
 
+$('.map__select').select2({
+	selectOnClose: true,
+	templateResult: formatStateMain,
+	templateSelection: formatStateSelectionMain,
+	minimumResultsForSearch: Infinity,
+	theme: 'main'
+});
+
 $('.select-main').on('select2:open', function() {
 	$('.select2-dropdown').hide();
 	setTimeout(function() {
