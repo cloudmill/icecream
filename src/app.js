@@ -5,6 +5,7 @@ import Sticky from 'sticky-js';
 import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
 import './assets/scripts/backend.js';
+import './assets/scripts/map.js';
 
 // Styles
 import 'Styles/_app.scss';

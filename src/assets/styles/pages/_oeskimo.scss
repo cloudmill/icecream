@@ -217,7 +217,7 @@
 
     @media (min-width: $screen-md-min) {
       width: calc((100% - 40px) / 2);
-      
+
       &:not(:first-child) {
         margin-top: 0;
         margin-left: 40px;
@@ -324,6 +324,37 @@
     @media (min-width: $screen-lg-min) {
       margin-top: 10px;
       font-size: 18px;
+    }
+  }
+
+
+  // FIND
+
+  &__find {
+    margin-top: 80px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 160px;
+    }
+  }
+
+  &__find-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__find-map {
+    margin-top: 40px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 80px;
     }
   }
 }

@@ -91,8 +91,49 @@ block content
 
         .oeskimo__find
           h3.oeskimo__find-title
-          .oeskimo__find-map
-
+            |Найти и поробовать О!Эскимо  
+          
+          .map.oeskimo__find-map
+            .map__control
+              .map__select-wrapper
+                select.map__select.js--select(data-theme = 'default', name = 'city')
+                  each option in [1, 2, 3]
+                    option(value = option, selected = (option === 3) ? true : false)
+                      |#{`Город-${option}`}
+              .map__list-wrapper
+                ul.map__list
+                  -
+                    var items = [
+                      {
+                        title: '«Аутлет Белая дача Котельники»',
+                        address: 'Новорязанское шоссе, 8',
+                      },
+                      {
+                        title: 'БЦ «Алгоритм»',
+                        address: 'Волоколамский 1 проезд, 10, строение 1',
+                      },
+                      {
+                        title: 'БЦ «Диапазон»',
+                        address: 'БЦ «Диапазон», улица академика<br>Пилюгина 22',
+                      },
+                      {
+                        title: 'БЦ «Интеграл»',
+                        address: 'БЦ «Интеграл», пр. Завода Серп и Молот, 10',
+                      },
+                      {
+                        title: '«Аутлет Белая дача Котельники»',
+                        address: 'Новорязанское шоссе 8',
+                      },
+                    ]
+                  each item in items
+                    li.map__item.js--item
+                      h4.map__title
+                        |!{item.title}
+                      address.map__address
+                        |!{item.address}
+            .map__wrapper
+              #map.map__container
+                    
         .oeskimo__franchise
           .oeskimo__franchise-col
             h3.oeskimo__franchise-title
