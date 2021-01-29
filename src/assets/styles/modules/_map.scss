@@ -107,7 +107,11 @@
   // clusterer
 
   &__clusterer {
+    position: relative;
+    top: 5px;
     font-weight: bold;
-    color: red;
+    font-size: 22px;
+    line-height: 130%;
+    color: #DC1C26;
   }
 }

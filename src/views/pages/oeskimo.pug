@@ -96,7 +96,7 @@ block content
           .map.oeskimo__find-map
             .map__control
               .map__select-wrapper
-                select.map__select.js--select(data-theme = 'default', name = 'city')
+                select.map__select.js--select(data-theme = 'default', name = 'city', data-title = 'Город')
                   each option in [1, 2, 3]
                     option(value = option, selected = (option === 3) ? true : false)
                       |#{`Город-${option}`}
