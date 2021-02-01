@@ -7,16 +7,29 @@ block content
   main.page-news
     .left-container
       +title('Пресс–релизы', ['Пресс–релизы'])
-      ul.filter.filter--js
-        li.active(data-text='*') Все
-        li(data-text='2020') 2020
-        li(data-text='2019') 2019
-        li(data-text='2018') 2018
-        li(data-text='2017') 2017
-        li(data-text='2016') 2016
-        li.last.hidden__xs
-          +img('icons/rotate-cw.svg')
-          span Сбросить
+      .press-nav
+        nav.tab-nav.press__tab-nav(data-aos='fade-up')
+          .tab-nav__wrapper.press__tab-nav-wrapper
+            ul.tab-nav__list
+              -
+                var tabs = [
+                  {text: 'Новости'},
+                  {text: 'Пресс–релизы', active: true},
+                ];
+              each tab in tabs
+                li.tab-nav__item(class = tab.active ? 'tab-nav__item--active' : '')
+                  a.tab-nav__link(href="#")
+                    | #{tab.text}
+        ul.filter.filter--js
+          li.active(data-text='*') Все
+          li(data-text='2020') 2020
+          li(data-text='2019') 2019
+          li(data-text='2018') 2018
+          li(data-text='2017') 2017
+          li(data-text='2016') 2016
+          li.last.hidden__xs
+            +img('icons/rotate-cw.svg')
+            span Сбросить
       ul.filter.filter--js.visible__sm.visible__xs
         li.last
           +img('icons/rotate-cw.svg')
@@ -39,7 +52,7 @@ block content
               +newsList()
           .row
             .col.col__xl-8.col__md-6.col__xs-12.ml-auto.margtop70(data-aos='fade-up')
-              a.btn.btn--default.btn--full.btn-icon(href='#')
+              a.btn.btn--default.btn--full.btn-icon.btn--js(href='#')
                 span Показать еще
                 i.sprite.sprite--arr-d
         include ../components/_sidebar

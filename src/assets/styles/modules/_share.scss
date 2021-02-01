@@ -21,7 +21,8 @@
   &-text {
     @media screen and (min-width: $screen-md-min) {
       width: 45%;
-      padding-left: 100px;
+      text-align: right;
+      //padding-left: 100px;
     }
   }
   &-soc {

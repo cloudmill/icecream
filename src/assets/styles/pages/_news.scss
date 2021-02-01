@@ -6,6 +6,12 @@
   .mainTitle {
     margin-bottom: 30px;
   }
+  .aside {
+    margin-top: 50px;
+    @media screen and (min-width: $screen-xl-min) {
+      margin-top: 0;
+    }
+  }
 }
 .page-interesting,
 .page-news {

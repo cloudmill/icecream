@@ -120,11 +120,14 @@
   }
   .nextBlock {
     &--ico {
+      position: relative;
+      left: 0;
+      transition: left .4s cubic-bezier(.6, .01, 0, 1.38);
       height: 48px;
       width: 48px;
       &:before {
-        width: 70px;
-        height: 70px;
+        width: 58px;
+        height: 58px;
       }
     }
   }
