@@ -64,8 +64,7 @@ block content
         .production__card-image-wrap
           .production__card-image
             img.production__card-img(src = 'assets/images/production/production/card.png')
-
-      .production__slider
+      .production__slider(data-aos='fade-up')
         .my-slider.production__slider-thumbs
           .my-slider__wrapper
             each slide in [1, 2, 3]
@@ -101,7 +100,35 @@ block content
             img.production__slider-btn-icon(src = 'assets/images/icons/nextArr.svg')
           button.production__slider-btn.production__slider-btn--next
             img.production__slider-btn-icon(src = 'assets/images/icons/nextArr.svg')
-
+    .production__features
+      .left-container
+        ul.production__features-list
+          li.production__features-item(data-aos='fade-up')
+            figure.production__features-image.production__features-image--order
+              img.production__features-img(src = 'assets/images/production/production/feature-1.png')
+            .production__features-info
+              h3.production__features-title
+                |Дальше по трубам смесь мороженого поступает во фризер — сердце каждого производства мороженого
+              p.production__features-text
+                |На фабрике «Чистая Линия» работают более 60 таких машин! Специальные дозирующие насосы под давлением подают в морозильный цилиндр смесь мороженого и воздух – в пропорции 1:1. Примерно через 5 минут молочная смесь превращается в мороженое и выходит из фризера при температуре — 5 градусов.
+          li.production__features-item(data-aos='fade-up')
+            figure.production__features-image
+              img.production__features-img(src = 'assets/images/production/production/feature-2.png')
+            .production__features-info
+              h3.production__features-title
+                |Далее — шоковая заморозка
+              p.production__features-text
+                |После того, как мороженое расфасовано, оно поступает на шоковую заморозку - сверхбыструю, скоростную заморозку, которая позволяет сохранить уникальные вкусовые качества продукта даже после многих месяцев хранения. Непрерывная цепь, соединенная в кольцо, имеет общую длину около 240 метров и проходит по сложному тракту внутри морозильной камеры. Каждая порция находится в морозильной камере от 25 до 50 минут, температура в морозильной камере – минус 42 градуса, а температура мороженого на выходе с конвейера – минус 22 градуса.
+          li.production__features-item(data-aos='fade-up')
+            .production__features-info.production__features-info--invert
+              h3.production__features-title
+                |Готовое мороженое упаковывается в герметичную индивидуальную упаковку, после чего — в коробки по 20 порций
+              p.production__features-text
+                |Круглые сутки со склада идёт отгрузка готовой продукции! Большегрузные рефрижераторы везут мороженое в самые дальние уголки нашей страны и за рубеж, в Москву и Московскую область, чтобы в каждом магазине рядом с вами всегда было мороженое Чистая Линия!
+            .production__features-frame
+                figure.production__features-frame-image
+                  img.production__features-frame-img(src = 'assets/images/production/production/feature-3.jpg')
+    .left-container
       .nextBlock(data-aos='fade-up')
         a.row.between__xs.middle__xs(href='#')
           .col
