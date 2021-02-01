@@ -50,15 +50,9 @@ block content
         .production__top-col(data-aos='fade-up')
           p.production__top-text
             |Туда, с фабрики, ежедневно в круглосуточном режиме ездят наши молоковозы — машины, оснащенные современным оборудованием, чтобы доставить молоко на производство максимально свежим.
-      
       .production__frame.production__frame--center.production__block(data-aos='fade-up')
         figure.production__frame-container
           img(src = 'assets/images/production/production/picture.jpg')
-      
-
-
-
-
       .production__card.production__block(data-aos='fade-up')
         .production__card-info
           p.production__card-title
@@ -70,25 +64,44 @@ block content
         .production__card-image-wrap
           .production__card-image
             img.production__card-img(src = 'assets/images/production/production/card.png')
-      
-      
-      
+
       .production__slider
-        //- thumbs
-        .production__slider-thumbs-wrap
-          .production__slider-thumbs.swiper-container
-            .swiper-wrapper
-              each index in [1, 2, 3]
-                .swiper-slide
-                  .production__slider-thumb
-                    figure.production__slider-thumb-image
-                      img.production__slider-thumb-img(src = `assets/images/production/production/thumb-${index}.png`)
-                    span.production__slider-thumb-mark
-                      |#{index}
-        //- main
-        .production__slider-main-wrap
-          .production__slider-main.swiper-container
-      
+        .my-slider.production__slider-thumbs
+          .my-slider__wrapper
+            each slide in [1, 2, 3]
+              .my-slider__container
+                .my-slider__slide.production__slider-thumb
+                  figure.production__slider-thumb-image
+                    img.production__slider-thumb-img(src = `assets/images/production/production/thumb-${slide}.png`)
+                  span.production__slider-thumb-mark
+                    |#{slide}
+        .swiper-container.production__slider-main
+          .swiper-wrapper
+            .swiper-slide
+              h3.production__slider-main-title
+                |На первом этапе обработки,
+                br
+                |в циркуляторе, мы прогреваем молоко до +40 градусов
+              p.production__slider-main-text
+                |Дальше, соблюдая очередность, температурный и временной режимы, добавляем в него необходимый по рецептуре объем  сливок, сахара, сгущенного и сухого молока, натуральный стабилизатор, получаемый из рожкового дерева или красных водорослей, и масло, после чего, через мощные фильтры отправляем в пастеризатор. В пастеризаторе мы доводим молоко до 75 градусов, и, избавляя от опасных микроорганизмов, пастеризуем полчаса.
+            .swiper-slide
+              h3.production__slider-main-title
+                |После гомогенизации смесь мороженого поступает
+                br
+                |в высокоскоростной пластинчатый охладитель
+              p.production__slider-main-text
+                |В нем смесь мороженого меньше чем за минуту охлаждается до температуры +4 градуса. После этого по трубам она поступает в танки хранения смеси минимум на 4 часа для созревания.
+            .swiper-slide
+              h3.production__slider-main-title
+                |Проходя через фильтры, после пастеризации, молоко отправляется в гомогенизатор
+              p.production__slider-main-text
+                |Там, при помощи давления мы равномерно разбиваем и распределяем шарики жира по всей молочной массе, проверяя качество процесса на специальном  микроскопе, увеличивая картинку в 40 тыс. раз.
+        .production__slider-control
+          button.production__slider-btn.production__slider-btn--prev
+            img.production__slider-btn-icon(src = 'assets/images/icons/nextArr.svg')
+          button.production__slider-btn.production__slider-btn--next
+            img.production__slider-btn-icon(src = 'assets/images/icons/nextArr.svg')
+
       .nextBlock(data-aos='fade-up')
         a.row.between__xs.middle__xs(href='#')
           .col

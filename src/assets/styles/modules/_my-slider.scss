@@ -1,0 +1,35 @@
+.my-slider {
+  $transition: 750ms;
+
+  overflow: hidden;
+  
+  &__wrapper {
+    height: 250px;
+    display: flex;
+    transition: $transition;
+    
+    @media (min-width: $screen-lg-min) {
+      height: 450px;
+    }
+  }
+  
+  &__container {
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: $transition;
+  }
+
+  &__slide {
+    transform-origin: left top;
+    $size: 250px;
+    width: $size;
+    height: $size;
+    transition: $transition;
+    
+    @media (min-width: $screen-lg-min) {
+      $size: 450px;
+      width: $size;
+      height: $size;
+    }
+  }
+}
