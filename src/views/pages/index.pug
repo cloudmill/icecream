@@ -6,7 +6,9 @@ block header
 block content
   main.page-main
     .fullpage-block
-      .fullpage-slider.swiper-container
+      .fullpage-slider.swiper-container(
+        data-image-pagination='["assets/images/pagin-1.png", "assets/images/pagin-2.png", "assets/images/pagin-3.png"]'
+      )
         .fullpage-desc
           | Только #[span &nbsp;натуральное&nbsp;] #[br] #[span &nbsp;мороженое&nbsp;] может быть #[br] #[span &nbsp;вкусным&nbsp;]
         .fullpage-title

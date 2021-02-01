@@ -1,4 +1,9 @@
 .news {
+  &__tab-nav {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  
   &-list {
     &__item {
       display: block;

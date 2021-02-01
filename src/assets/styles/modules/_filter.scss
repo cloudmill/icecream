@@ -19,9 +19,13 @@
 		cursor: pointer;
 		@media screen and (min-width: $screen-md-min) {
 			font-size: 18px;
-			padding: 28px 37px;
 			border-radius: 20px;
 			font-weight: bold;
+      padding: 20px;
+		}
+		@media screen and (min-width: $screen-xl-min) {
+			padding: 27px 20px;
+      width: 90px;
 		}
 		&:hover,
 		&.active {
