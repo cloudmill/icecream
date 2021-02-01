@@ -96,3 +96,17 @@ $('.slider-aside').each(function() {
 		}
 	});
 });
+
+if ($('.production__slider') !== 0) {
+	const speed = 750;
+	
+	const thumbs = new Swiper('.production__slider-thumbs', {
+		speed,
+		// loop: true,
+		slidesPerView: 'auto',
+		slidesPerGroup: 1,
+		slidesPerView: 3,
+		// slidesPerGroup: 1,
+		// allowTouchMove: false
+	});
+}
