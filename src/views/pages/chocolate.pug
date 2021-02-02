@@ -1,0 +1,143 @@
+extends ../layouts/master.pug
+
+
+block header
+  include ../partials/_header.pug
+
+block footer
+  .milk
+    include ../partials/_footer-alt.pug
+
+
+block content
+  main.milk.page-store
+    .milk__top.milk__top--chocolate
+      .left-container
+        .mainTitle
+          ul.breadcrumbs
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#")
+                |Производство шоколада
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#")
+                |Производство
+            li.breadcrumbs__item.active
+              a.breadcrumbs__link(href="/")
+                svg(width='23' height='22' viewbox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5958 0.578664C11.9567 0.295897 12.4637 0.294803 12.8259 0.576012L22.6131 8.17601C23.0493 8.51474 23.1283 9.14295 22.7896 9.57917C22.4509 10.0154 21.8227 10.0944 21.3865 9.75568L12.2153 2.63406L7.6165 6.23701C7.18176 6.57762 6.55321 6.5013 6.2126 6.06655C5.87199 5.6318 5.94831 5.00326 6.38306 4.66265L11.5958 0.578664Z' fill='#5DCBEE')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M20.9998 10.9659C20.4475 10.9659 19.9998 11.4137 19.9998 11.9659V19.6342H4.99978V16.2219C4.99978 15.6696 4.55206 15.2219 3.99978 15.2219C3.4475 15.2219 2.99978 15.6696 2.99978 16.2219V20.6342C2.99978 21.1865 3.4475 21.6342 3.99978 21.6342H20.9998C21.5521 21.6342 21.9998 21.1865 21.9998 20.6342V11.9659C21.9998 11.4137 21.5521 10.9659 20.9998 10.9659Z' fill='#5DCBEE')
+                  path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
+          h1.mainTitle-text(data-aos='fade-up')
+            |Производство шоколада
+        nav.tab-nav(data-aos='fade-up')
+          .tab-nav__wrapper
+            ul.tab-nav__list
+              -
+                var tabs = [
+                  'Завод',
+                  'Лаборатория',
+                  'Мороженое',
+                  { text: 'Шоколад' },
+                  'Молочная продукция',
+                  'Безопасность и качество'
+                ];
+              each tab in tabs
+                li.tab-nav__item(class = tab.text ? 'tab-nav__item--active' : '')
+                  a.tab-nav__link(href="javascript:void(0)")
+                    |#{tab.text ? tab.text : tab}     
+        .milk__top-content
+          .milk__top-info(data-aos='fade-up')
+            h2.milk__top-title
+              |Первым этапом обработки является обжарка
+            p.milk__top-text
+              |Сырые какао-бобы сорта Trinitario (тринитарио) доставляем прямо из Перу. В современной печи, при постоянном перемешивании и при помощи горячего воздуха мы обжариваем их до необходимого состояния, после чего отправляем на помол.
+              br
+              br
+              |В мельнице какао-бобы разламываются специальными ребристыми валами, мякоть попадает в отдельную емкость, а шелуха мощным потоком воздуха выносится в специальный мешок.
+          figure.milk__top-image(data-aos='fade-up')
+            img.milk__top-img(src = 'assets/images/production/chocolate/top.png')
+    .milk__mid.milk__mid--chocolate
+      .left-container
+        ul.milk__mid-list
+          li.milk__mid-item
+            figure.milk__mid-image.milk__mid-image--jc--start(data-aos='fade-up')
+              img.milk__mid-img(src = 'assets/images/production/chocolate/mid-1.png')
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
+                |После этого мякоть перемалывается в разных машинах еще минимум два раза, прежде чем она превратится в жидкую сметанообразную какао-массу
+              p.milk__mid-text
+                |Половина от этой массы моментально попадает под мощный пресс.
+                br
+                br
+                |Пресс выжимает какао масло из получившейся смеси, и это масло вновь попадает в мельницу к другой половине массы.
+                br
+                br
+                |Таким образом, шоколад «Чистая Линия» содержит в себе двойную порцию самого вкусного, богатого микроэлементами и витаминами какао-масла.
+          li.milk__mid-item
+            figure.milk__mid-image.milk__mid-image--order.milk__mid-image--jc--start(data-aos='fade-up')
+              img.milk__mid-img(src = 'assets/images/production/chocolate/mid-2.png')
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
+                |Шоколад почти готов
+              p.milk__mid-text
+                |Осталось лишь добавить в него молоко и сахар. Готовый молочный шоколад попадает в машину темперирования, откуда, тонкими струйками он разливается в наши фирменные формочки.
+                br
+                br
+                |Это тот самый шоколад, который можно продегустировать бесплатно на смотровой площадке PANORAMA360 на 89 этаже в Башне «Федерация.Восток» прямо с фабрики.
+          li.milk__mid-item.milk__mid-item--ai--end
+            figure.milk__mid-image.milk__mid-image--jc--start(data-aos='fade-up')
+              img.milk__mid-img(src = 'assets/images/production/chocolate/mid-3.png')
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
+                |Финальные штрихи
+              p.milk__mid-text
+                |Для производства нашего фирменного угощения, мы загружаем в крутящийся барабан другого устройства следующие основы: фундук, миндаль, черную смородину, клюкву, вишню, крыжовник и кешью.
+                br
+                br
+                |Там в течение 6 часов под давлением в виде пара подается шоколад, а холодный воздух постоянно остужает получившееся угощение.
+                br
+                br
+                |Готовое лакомство мы упаковываем в фирменные коробочки и отправляем в магазин на территории PANORAMA360, а также в логистический центр, откуда наши курьеры доставляют их прямо к вам домой.
+    .milk__bottom
+      .left-container
+        h3.milk__title.milk__title--bottom(data-aos='fade-up')
+          |Заказать орешки и ягоды в шоколаде вы можете на официальном сайте нашего интернет–магазина
+        .milk__cards(data-aos='fade-up')
+          .page-store__row
+            each variant in ['', '--alt']
+              .page-store__row-col
+                .page-store__card(class = variant ? ('page-store__card' + variant) : '')
+                  h3.page-store__title
+                    if (!variant)
+                      |Интернет–магазин «Омолоко»
+                    else
+                      |Интернет–магазин «icecream.market»
+                  p.page-store__card-text
+                    if (!variant)
+                      |Доставка продуктов по Москве
+                      br
+                      |и Московской области
+                    else
+                      |Доставка нашей продукции
+                      br.page-store__line-break.page-store__line-break--hide--desktop
+                      |по Санкт-Петербургу
+                      br
+                      |и Ленинградской области
+                  .page-store__card-buttons
+                    a.page-store__card-button(href='tel:' + (!variant ? '88005004833' : '88126112313'))
+                      if (!variant)
+                        |8 800 500–48–33
+                      else
+                        |8 812 611-23-13
+                    br
+                    a(href="#").btn.btn--primary.page-store__btn
+                      span Перейти в магазин
+        .milk__next.nextBlock(data-aos='fade-up')
+          a.row.between__xs.middle__xs(href='#')
+            .col
+              p Смотрите также
+              h3 Производство молочной продукции
+            .col
+              .nextBlock--ico
+                +img('icons/nextArr.svg')
+              
