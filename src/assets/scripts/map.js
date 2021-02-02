@@ -1,78 +1,106 @@
 $(() => {
-
   if ($('.map').length) {
-
     ymaps.ready(() => {
-      console.log('ymaps ready');
-
-      // пример координаты
-      const coordinates = [55.75490826960838, 37.70814996984293];
+      shopsEvent();
 
       // инициализация карты
       const ymap = new ymaps.Map('map', {
-        center: [0, 0],
-        zoom: 5,
+        center: [66.413951, 94.241942],
+        zoom: 3,
         controls: []
       });
-
-      // создание метки
-      const placemark = new ymaps.Placemark(coordinates, null, {
-        iconLayout: 'default#image',
-        iconImageHref: 'assets/images/map-placemark.svg',
-        iconImageSize: [43, 53],
-        iconImageOffset: [-21.5, -53]
-      });
-
-      setTimeout(() => {
-        // добавление метки на карту
-        ymap.geoObjects.add(placemark);
-        // центрирование карты:
-        // вариант 1
-        // ymap.setCenter(coordinates, 15);
-        // вариант 2 (с анимацией полета)
-        ymap.panTo(coordinates);
-      }, 2000);
 
       // шаблон контента метки кластера
       const contentLayout = ymaps.templateLayoutFactory.createClass(
         '<div class="map__clusterer">{{ properties.geoObjects.length }}</div>'
       );
+
+      //HTML шаблон балуна, того самого всплывающего блока, который появляется при щелчке на карту
+      let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
+          '<address class="address-map" >'+
+          '<p><b>$[properties.name]</b>'+
+          '<br/>'+
+          '<ul class="balloon-info" >'+
+          '<li><strong>Адрес:&nbsp;</strong>$[properties.address]</li>'+
+          '</ul>'+
+          '</address>'
+      );
+
       // создание кластера меток
       const clusterer = new ymaps.Clusterer({
         clusterIcons: [
           {
-            href: 'assets/images/map-cluster.svg',
+            href: '/local/templates/main/assets/images/map-cluster.svg',
             size: [43, 53],
             offset: [-21.5, -53]
           }
         ],
         clusterIconContentLayout: contentLayout
       });
+     
+      let placemark = {};
 
-      // метки для кластера
-      const geoObjects = [];
-      for (let i = 0; i < 10; i++) {
-        geoObjects.push(new ymaps.Placemark([coordinates[0] + (-2 + Math.random() * 4), coordinates[1] + (-2 + Math.random() * 4)], null, {
+      $('[data-type=shop_select]').each(function() {
+        let x = $(this).attr('data-coord-x'),
+          y = $(this).attr('data-coord-y'),
+          id = $(this).attr('data-id');
+
+        // создание метки
+        placemark[id] = new ymaps.Placemark([x, y], {
+          name: $(this).attr('data-name'),
+          address: $(this).attr('data-address'),
+        }, {
+          balloonContentLayout: myBalloonLayout,
+          balloonOffset: [5,0],
+          balloonCloseButton: true,
+          balloonMinWidth: 150,
+          balloonMaxWidth:200,
+          balloonMinHeught:150,
+          balloonMaxHeught:200,
           iconLayout: 'default#image',
-          iconImageHref: 'assets/images/map-placemark.svg',
+          iconImageHref: '/local/templates/main/assets/images/map-placemark.svg',
           iconImageSize: [43, 53],
           iconImageOffset: [-21.5, -53]
-        }));
-      }
+        });
 
-      // добавление меток в кластер
-      clusterer.add(geoObjects);
+        // добавление меток в кластер
+        clusterer.add(placemark[id]);
+      });
+
       // добавление кластера на карту
       ymap.geoObjects.add(clusterer);
 
-      setTimeout(() => {
-        // позиционирование карты на области (область, охватывающая метки кластера)
-        ymap.setBounds(clusterer.getBounds(), {
-          checkZoomRange: true
-        });
-      }, 4000);
+      // setTimeout(() => {
+      //   // позиционирование карты на области (область, охватывающая метки кластера)
+      //   ymap.setBounds(clusterer.getBounds(), {
+      //     checkZoomRange: true
+      //   });
+      // }, 4000);
+
     });
-
+    
+    function shopsEvent() {
+      $('[data-type=region_select]').on('select2:select', function() {
+        let container = $(this).parents('[data-type=map_container]'),
+          shops = container.find('[data-type=shop_select]'),
+          shopsBlock = container.find('[data-type=shops_block]'),
+          region = $(this).val();
+          
+        $.ajax({
+          type: 'post',
+          url: '/world/oeskimo/',
+          data: {
+            ajax: true,
+            region: region,
+          },
+          success: function(data) {
+            let shopsResponse = $(data).find('[data-type=shop_select]');
+              
+            shops.remove();
+            shopsBlock.append(shopsResponse);
+          }
+        });
+      });
+    }
   }
-
 });
