@@ -252,6 +252,14 @@
       }
     }
 
+    &--small {
+      margin-top: 40px;
+
+      @media (min-width: $screen-lg-min) {
+        margin-top: 80px;
+      }
+    }
+
     &--bottom {
       position: relative;
 

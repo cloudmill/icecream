@@ -5,11 +5,12 @@ block header
   include ../partials/_header.pug
 
 block footer
-  include ../partials/_footer.pug
+  .milk
+    include ../partials/_footer-alt.pug
 
 
 block content
-  main.milk
+  main.milk.page-store
     .milk__top
       .left-container
         .mainTitle
@@ -45,41 +46,84 @@ block content
                   a.tab-nav__link(href="javascript:void(0)")
                     |#{tab.text ? tab.text : tab}     
         .milk__top-content
-          .milk__top-info
+          .milk__top-info(data-aos='fade-up')
             h2.milk__top-title
               |Производство молочной продукции начинается на нашей лаборатории, где пробы молока, только что поступившего с хозяйств, проходит тщательную проверку
             p.milk__top-text
               |В лаборатории мы проверяем его на чистоту, плотность, кислотность, массовую долю жира, наличие антибиотиков и другие важные показатели.
               br
               |Если молоко соответствует всем необходимым нормам качества, оно отправляется на производство.
-          figure.milk__top-image
+          figure.milk__top-image(data-aos='fade-up')
             img.milk__top-img(src = 'assets/images/production/milk/top.png')
     .milk__mid
       .left-container
         ul.milk__mid-list
           li.milk__mid-item
-            .milk__frame-wrapper
+            .milk__frame-wrapper(data-aos='fade-up')
               figure.milk__frame
                 img.milk__frame-img(src = 'assets/images/production/milk/item-1.png')
-            .milk__mid-info
-              h3.milk__mid-title
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
                 |На производстве молоко проходит все этапы очищения, нормализации, сепарации и гомогенизации - процесса раздробления жировых шариков. Благодаря качественной гомогенизации в продукции «Чистая Линия» не образуется отстой жира
           li.milk__mid-item
-            .milk__frame-wrapper
+            .milk__frame-wrapper.milk__frame-wrapper--order(data-aos='fade-up')
               figure.milk__frame
                 img.milk__frame-img(src = 'assets/images/production/milk/item-2.png')
-            .milk__mid-info
-              h3.milk__mid-title
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
                 |Следующим этапом производства всех молочных продуктов является пастеризация
               p.milk__mid-text
                 |Температура пастеризации молока зависит вида продукции, на который расходуется молоко. По такому же принципу, в молоко добавляют нужную закваску и сквашивают ее, в среднем, от 4 до 12 часов. Только после этого каждый вид продукции проходит свой уникальный процесс, в соответствии с собственной рецептурой.
           li.milk__mid-item
-            figure.milk__mid-image
-              img.milk__mid-img(src = 'assets/images/production/milk/item-2.png')
-            .milk__mid-info
-              h3.milk__mid-title
+            figure.milk__mid-image(data-aos='fade-up')
+              img.milk__mid-img(src = 'assets/images/production/milk/item-3.png')
+            .milk__mid-info(data-aos='fade-up')
+              h3.milk__title.milk__title--mid
                 |Финальная проверка
               p.milk__mid-text
                 |Прежде чем отправиться к покупателю, готовая молочная продукция проходит заключительную проверку, где проверяются ее физико-химические показатели и кислотность в нашей, а также в независимой сертифицированной лаборатории.
                 br
                 |После того, как мы убедимся, что все показатели в норме, продукция поступит в наш логистический центр, откуда на машинах, оборудованных современными холодильными камерами, она попадет к вам на стол.
+    .milk__bottom
+      .left-container
+        h3.milk__title.milk__title--bottom(data-aos='fade-up')
+          |Заказать орешки и ягоды в шоколаде вы можете на официальном сайте нашего интернет–магазина
+        .milk__cards(data-aos='fade-up')
+          .page-store__row
+            each variant in ['', '--alt']
+              .page-store__row-col
+                .page-store__card(class = variant ? ('page-store__card' + variant) : '')
+                  h3.page-store__title
+                    if (!variant)
+                      |Интернет–магазин «Омолоко»
+                    else
+                      |Интернет–магазин «icecream.market»
+                  p.page-store__card-text
+                    if (!variant)
+                      |Доставка продуктов по Москве
+                      br
+                      |и Московской области
+                    else
+                      |Доставка нашей продукции
+                      br.page-store__line-break.page-store__line-break--hide--desktop
+                      |по Санкт-Петербургу
+                      br
+                      |и Ленинградской области
+                  .page-store__card-buttons
+                    a.page-store__card-button(href='tel:' + (!variant ? '88005004833' : '88126112313'))
+                      if (!variant)
+                        |8 800 500–48–33
+                      else
+                        |8 812 611-23-13
+                    br
+                    a(href="#").btn.btn--primary.page-store__btn
+                      span Перейти в магазин
+        .milk__next.nextBlock(data-aos='fade-up')
+          a.row.between__xs.middle__xs(href='#')
+            .col
+              p Смотрите также
+              h3 Безопасность и качество
+            .col
+              .nextBlock--ico
+                +img('icons/nextArr.svg')
+              
