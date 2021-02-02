@@ -77,6 +77,20 @@ $(() => {
       //   });
       // }, 4000);
 
+      $('[data-type=shop_select]').on('click', function () {
+        let coordinates = [];
+          coordinateX = $(this).attr('data-coord-x'),
+          coordinateY = $(this).attr('data-coord-y');
+          
+        coordinates.push(coordinateX);
+        coordinates.push(coordinateY);
+
+        console.log([coordinates]);
+        ymap.panTo([coordinates], {
+          flying: true,
+          checkZoomRange: true,
+        });
+      });
     });
     
     function shopsEvent() {
