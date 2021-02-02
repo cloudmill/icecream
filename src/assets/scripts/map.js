@@ -77,19 +77,21 @@ $(() => {
       //   });
       // }, 4000);
 
-      $('[data-type=shop_select]').on('click', function () {
+      $(document).on('click', '[data-type=shop_select]', function () {
         let coordinates = [];
           coordinateX = $(this).attr('data-coord-x'),
-          coordinateY = $(this).attr('data-coord-y');
+          coordinateY = $(this).attr('data-coord-y'),
+          id = $(this).attr('data-id');
           
         coordinates.push(coordinateX);
         coordinates.push(coordinateY);
 
-        console.log([coordinates]);
         ymap.panTo([coordinates], {
           flying: true,
           checkZoomRange: true,
         });
+        ymap.setCenter(coordinates, 15);
+        placemark[id].balloon.open();
       });
     });
     
