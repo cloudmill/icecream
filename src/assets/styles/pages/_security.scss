@@ -175,7 +175,102 @@
 
 .security {
 
-  
+
+  // POINT
+
+  &__point {
+    width: 220px;
+    flex-shrink: 0;
+  }
+
+  &__point-image {
+    height: 137px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBFAFF;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__point-img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__point-text {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+
+  // POINTS
+
+  &__points {
+    margin-top: 100px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 80px;
+    }
+  }
+
+  &__points-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+
+    @media (min-width: $screen-md-min) {
+      max-width: 335px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      max-width: 552px;
+      font-size: 30px;
+      line-height: 130%;
+    }
+  }
+
+  &__points-list {
+    margin: 0;
+    margin-left: -40px;
+
+    @media (min-width: $screen-md-min) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-left: -80px;
+    }
+  }
+
+  &__points-item {
+    margin: 0;
+    margin-top: 40px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+    // border: 1px solid black; // test
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - (40px * 3)) / 3);
+      display: block;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 60px;
+      margin-left: 80px;
+      width: calc((100% - (80px * 3)) / 3);
+      display: flex;
+    }
+  }
+
+
   // FEATURE
 
   &__feature {
@@ -231,7 +326,7 @@
   &__feature-image {
     display: flex;
   }
-  
+
   &__feature-img {
     display: block;
     max-width: 75%;
