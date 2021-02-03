@@ -128,6 +128,35 @@ block content
                 li.tab-nav__item(class = tab.text ? 'tab-nav__item--active' : '')
                   a.tab-nav__link(href="javascript:void(0)")
                     |#{tab.text ? tab.text : tab}     
+        section.security__features
+          h2.security__features-title
+            |В основе нашей работы — безопасность потребителей и окружающей среды
+          .security__container
+            ul.security__features-list
+              li.security__features-item
+                .security__feature
+                  img.security__feature-background(src='assets/images/production/security/feature-bg.svg')
+                  h3.security__feature-title
+                    |&gt;18 лет
+                  p.security__feature-text
+                    |Придерживаемся самых высоких стандартов
+              li.security__features-item
+                .security__feature
+                  img.security__feature-background(src='assets/images/production/security/feature-bg.svg')
+                  h3.security__feature-title
+                    .security__feature-image-wrapper
+                      figure.security__feature-image
+                        img.security__feature-img(src='assets/images/production/security/feature.svg')
+                  p.security__feature-text
+                    |Тщательно анализируем каждый ингридиент, прежде чем он попадет в наши продукты
+              li.security__features-item
+                .security__feature
+                  img.security__feature-background(src='assets/images/production/security/feature-bg.svg')
+                  h3.security__feature-title
+                    |&gt;500
+                  p.security__feature-text
+                    |Ученых и специалистов для этого  работают в компании           
+        
     .security__bottom
       .left-container
         h2.security__bottom-title(data-aos='fade-up')
