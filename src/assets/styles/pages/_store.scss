@@ -20,6 +20,7 @@
   }
 
   &__frame-img {
+    display: block;
 
     @each $prop in max-width,
     max-height {
@@ -27,6 +28,17 @@
     }
 
     object-fit: contain;
+
+    &--factory {
+      
+      @media (min-width: $screen-xl-min) {
+        max-width: 240px;
+      }
+  
+      @media (min-width: 1680px) {
+        max-width: none;
+      }
+    }
   }
 
 

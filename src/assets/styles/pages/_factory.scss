@@ -1,0 +1,137 @@
+.factory {
+
+
+  // TOP
+
+  &__top {
+    min-height: 100vh;
+    background: linear-gradient(90.09deg, #FCF9E8 0.74%, #F4F0CD 32.76%, #F8F6E9 99.88%);
+  }
+
+
+  // TOP-MID
+
+  &__top-mid {
+    padding-top: 40px;
+
+    @media (min-width: $screen-xl-min) {
+      padding-top: 120px;
+    }
+
+    @media (min-width: 1680px) {
+      padding-top: 150px;
+    }
+  }
+
+  &__top-mid-slider {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+
+    @media (min-width: $screen-xl-min) {
+      font-size: 50px;
+      line-height: 110%;
+    }
+  }
+
+  &__top-mid-slider {
+    margin-top: 40px;
+
+    @media (min-width: $screen-xl-min) {
+      margin-top: 80px;
+    }
+  }
+
+  &__top-mid-photos {
+    margin-top: 80px;
+
+    @media (min-width: $screen-xl-min) {
+      margin-top: 160px;
+    }
+  }
+
+  &__top-mid-photos-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 140%;
+
+    @media (min-width: $screen-md-min) {
+      max-width: 335px;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      max-width: 460px;
+      font-size: 30px;
+      line-height: 130%;
+    }
+  }
+
+  &__top-mid-photos-list {
+    margin: 0;
+    margin-top: 40px;
+
+    @media (min-width: $screen-md-min) {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      margin-top: 100px;
+    }
+
+    @media (min-width: 1680px) {
+      margin-top: 160px;
+    }
+  }
+
+  &__top-mid-photos-item {
+    margin: 0;
+    // border: 1px solid black; // test
+
+    @media (min-width: $screen-md-min) {
+      width: calc((100% - 20px) / 2);
+    }
+
+    @media (min-width: $screen-xl-min) {
+      width: calc((100% - 40px) / 2);
+    }
+
+    &:not(:first-child) {
+      margin-top: 20px;
+
+      @media (min-width: $screen-md-min) {
+        margin-top: 0;
+      }
+    }
+
+    &--up {
+
+      @media (min-width: $screen-md-min) {
+        position: relative;
+        bottom: 185px;
+      }
+
+      @media (min-width: $screen-xl-min) {
+        bottom: auto;
+        top: -200px;
+      }
+
+      @media (min-width: 1680px) {
+        top: -245px;
+      }
+    }
+  }
+  
+  &__top-mid-frame {
+    justify-content: center;
+
+    @media (min-width: $screen-md-min) {
+      justify-content: flex-end;
+    }
+  }
+}
