@@ -176,6 +176,51 @@
 .security {
 
 
+  // DOCS
+
+  &__docs {
+    margin-top: 80px;
+
+    @media (min-width: $screen-lg-min) {
+      margin-top: 160px;
+    }
+
+
+    // ?
+
+    .catalog__item {
+      margin: 0;
+
+
+      .img {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+
+        .image {
+          border: 6px solid #F1EFD6;
+          border-radius: 9px;
+
+
+          img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__docs-image {
+    display: flex;
+
+    border: 6px solid #F1EFD6;
+    border-radius: 9px;
+  }
+
+
   // POINT
 
   &__point {

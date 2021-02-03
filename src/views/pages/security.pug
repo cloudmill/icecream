@@ -129,18 +129,18 @@ block content
                   a.tab-nav__link(href="javascript:void(0)")
                     |#{tab.text ? tab.text : tab}     
         section.security__features
-          h2.security__features-title
+          h2.security__features-title(data-aos='fade-up')
             |В основе нашей работы — безопасность потребителей и окружающей среды
           .security__container
             ul.security__features-list
-              li.security__features-item
+              li.security__features-item(data-aos='fade-up')
                 .security__feature
                   img.security__feature-background(src='assets/images/production/security/feature-background.svg')
                   h3.security__feature-title
                     |&gt;18 лет
                   p.security__feature-text
                     |Придерживаемся самых высоких стандартов
-              li.security__features-item
+              li.security__features-item(data-aos='fade-up')
                 .security__feature
                   img.security__feature-background(src='assets/images/production/security/feature-background.svg')
                   h3.security__feature-title
@@ -149,7 +149,7 @@ block content
                         img.security__feature-img(src='assets/images/production/security/feature.svg')
                   p.security__feature-text
                     |Тщательно анализируем каждый ингридиент, прежде чем он попадет в наши продукты
-              li.security__features-item
+              li.security__features-item(data-aos='fade-up')
                 .security__feature
                   img.security__feature-background(src='assets/images/production/security/feature-background.svg')
                   h3.security__feature-title
@@ -157,42 +157,61 @@ block content
                   p.security__feature-text
                     |Ученых и специалистов для этого  работают в компании           
         section.security__points
-          h2.security__points-title
+          h2.security__points-title(data-aos='fade-up')
             |Получены разрешения 
             br
             |от контролирующих органов, которые занимаются вопросами безопасности продукции
           .security__container
             ul.security__points-list
-              li.security__points-item
+              li.security__points-item(data-aos='fade-up')
                 .security__point
                   figure.security__point-image
                     img.security__point-img(src='assets/images/production/security/point-1.jpg')
                   p.security__point-text
                     |Агентство по санитарному надзору за качеством пищевых продуктов и медикаментов
-              li.security__points-item      
+              li.security__points-item(data-aos='fade-up')      
                 .security__point
                   figure.security__point-image
                     img.security__point-img(src='assets/images/production/security/point-2.png')
                   p.security__point-text
                     |Агентство по охране окружающей среды EPA в США
-              li.security__points-item
+              li.security__points-item(data-aos='fade-up')
                 .security__point
                   figure.security__point-image
                     img.security__point-img(src='assets/images/production/security/point-3.png')
                   p.security__point-text
                     |Всемирная организация здравоохранения
-              li.security__points-item
+              li.security__points-item(data-aos='fade-up')
                 .security__point
                   figure.security__point-image
                     img.security__point-img(src='assets/images/production/security/point-4.png')
                   p.security__point-text
                     |Росстандарт
-              li.security__points-item
+              li.security__points-item(data-aos='fade-up')
                 .security__point
                   figure.security__point-image
                     img.security__point-img(src='assets/images/production/security/point-5.png')
                   p.security__point-text
                     |Роспотребнадзор
+        section.security__docs
+          .card-slider
+            .row(data-aos='fade-up')
+              .col.col__lg-4.col__xs-12.flex
+                h2 Сертификаты
+                .swiper-button.hidden__sm.hidden__xs
+                  .swiper-prev.nextBlock--ico
+                    +img('icons/prevArr.svg')
+                  .swiper-next.nextBlock--ico
+                    +img('icons/nextArr.svg')
+              .col.col__lg-8.col__xs-12
+                .rollerIt.swiper-container
+                  .swiper-wrapper
+                    each item in [1, 2, 3, 1, 2]
+                      .swiper-slide
+                        a.catalog__item(href='#')
+                          figure.img
+                            .image
+                              img(src=`assets/images/production/security/doc-${item}.png`)
     .security__bottom
       .left-container
         h2.security__bottom-title(data-aos='fade-up')
