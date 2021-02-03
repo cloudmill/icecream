@@ -10,7 +10,7 @@ block footer
 
 
 block content
-  main.factory.page-about-us.page-store
+  main.factory.page-about-us.page-store.security
     .factory__top
       .left-container
         .mainTitle
@@ -47,9 +47,9 @@ block content
                     |#{tab.text ? tab.text : tab}          
     section.factory__top-mid
       .left-container
-        h2.factory__top-mid-title
+        h2.factory__top-mid-title(data-aos='fade-up')
           |История завода
-        .factory__top-mid-slider
+        .factory__top-mid-slider(data-aos='fade-up')
           .page-about-us__slider
             .swiper-container.page-about-us__swiper-container
               .swiper-wrapper.page-about-us__swiper-wrapper
@@ -68,19 +68,55 @@ block content
               button.page-about-us__slider-btn.page-about-us__slider-btn--next
                 img.page-about-us__slider-btn-icon(src='assets/images/icons/prevArr.svg')
         .factory__top-mid-photos
-          h2.factory__top-mid-photos-title
+          h2.factory__top-mid-photos-title(data-aos='fade-up')
             |Производственные процессы с молоком происходят автоматически, без участия человека, что обеспечивает высокое качество продукции
           ul.factory__top-mid-photos-list
-            li.factory__top-mid-photos-item.factory__top-mid-photos-item--up
+            li.factory__top-mid-photos-item.factory__top-mid-photos-item--up(data-aos='fade-up')
               .page-store__frame
                 figure.page-store__frame-image
                   img.page-store__frame-img(src='assets/images/production/factory/photo-1.jpg', alt='')
-            li.factory__top-mid-photos-item
+            li.factory__top-mid-photos-item(data-aos='fade-up')
               .factory__top-mid-frame.page-store__frame
                 figure.page-store__frame-image
                   img.page-store__frame-img.page-store__frame-img--factory(src='assets/images/production/factory/photo-2.jpg', alt='')
-    .factory__mid
-    .factory__bottom
+    section.factory__mid
+      .left-container
+        ul.security__features-list
+          li.security__features-item(data-aos='fade-up')
+            .security__feature
+              img.security__feature-background(src='assets/images/production/factory/feature-background.svg')
+              h3.security__feature-title
+                |&gt;1000
+              p.security__feature-text
+                |человек работает на производстве
+          li.security__features-item(data-aos='fade-up')
+            .security__feature
+              img.security__feature-background(src='assets/images/production/factory/feature-background.svg')
+              h3.security__feature-title
+                |&gt;100
+              p.security__feature-text
+                |Видов мороженого производится
+          li.security__features-item(data-aos='fade-up')
+            .security__feature
+              img.security__feature-background(src='assets/images/production/factory/feature-background.svg')
+              h3.security__feature-title
+                |&gt;20 000 м#[sup 2]
+              p.security__feature-text
+                |Общая площадь завода, складов и офиса
+        .factory__mid-row
+          .factory__mid-col(data-aos='fade-up')
+            p.factory__mid-text.factory__mid-text--large
+              |Завод «Чистая Линия» оснащён передовым оборудованием, которое постоянно обновляется
+          .factory__mid-col(data-aos='fade-up')
+            p.factory__mid-text
+              |Производство работает круглосуточно и каждую ночь более 700 грузовиков-рефрижераторов отправляются с готовой продукцией в Москву, Московскую область и самые дальние уголки нашей страны и зарубеж! 
+        .factory__mid-image(data-aos='fade-up')
+          .page-store__frame.page-store__frame--centered
+            figure.page-store__frame-image
+              img.page-store__frame-img(src='assets/images/production/factory/mid.jpg', alt='')
+        p.factory__mid-paragraph(data-aos='fade-up')
+          |Мы хотим, чтобы в каждом магазине рядом с вами всегда было мороженое «Чистая Линия»!
+    section.factory__bottom
 
 
 
