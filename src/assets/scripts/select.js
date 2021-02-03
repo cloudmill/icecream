@@ -62,11 +62,6 @@ $('.select-template').on('select2:closing', function(e) {
 	}, 0);
 });
 
-$('.reset-filter--js').click(function() {
-	$('.select-template').val('filter-1').trigger('change');
-});
-
-
 // main
 
 function formatStateMain(state) {
@@ -132,8 +127,4 @@ $('.select-main').on('select2:closing', function(e) {
 			$('.select-main').removeClass('closing');
 		});
 	}, 0);
-});
-
-$('.reset-filter--js').click(function() {
-	$('.select-main').val('filter-1').trigger('change');
 });
