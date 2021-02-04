@@ -63,19 +63,16 @@ $(() => {
           iconImageOffset: [-21.5, -53]
         });
 
+        placemark[id].events.add('click', function(e) {
+          ymap.setCenter(placemark[id].geometry.getCoordinates(), 15);
+        });
+
         // добавление меток в кластер
         clusterer.add(placemark[id]);
       });
 
       // добавление кластера на карту
       ymap.geoObjects.add(clusterer);
-
-      // setTimeout(() => {
-      //   // позиционирование карты на области (область, охватывающая метки кластера)
-      //   ymap.setBounds(clusterer.getBounds(), {
-      //     checkZoomRange: true
-      //   });
-      // }, 4000);
 
       $(document).on('click', '[data-type=shop_select]', function () {
         let coordinates = [];
@@ -93,30 +90,30 @@ $(() => {
         ymap.setCenter(coordinates, 15);
         placemark[id].balloon.open();
       });
-    });
-    
-    function shopsEvent() {
-      $('[data-type=region_select]').on('select2:select', function() {
-        let container = $(this).parents('[data-type=map_container]'),
-          shops = container.find('[data-type=shop_select]'),
-          shopsBlock = container.find('[data-type=shops_block]'),
-          region = $(this).val();
-          
-        $.ajax({
-          type: 'post',
-          url: '/world/oeskimo/',
-          data: {
-            ajax: true,
-            region: region,
-          },
-          success: function(data) {
-            let shopsResponse = $(data).find('[data-type=shop_select]');
-              
-            shops.remove();
-            shopsBlock.append(shopsResponse);
-          }
+
+      function shopsEvent() {
+        $('[data-type=region_select]').on('select2:select', function() {
+          let container = $(this).parents('[data-type=map_container]'),
+            shops = container.find('[data-type=shop_select]'),
+            shopsBlock = container.find('[data-type=shops_block]'),
+            region = $(this).val();
+            
+          $.ajax({
+            type: 'post',
+            url: '/world/oeskimo/',
+            data: {
+              ajax: true,
+              region: region,
+            },
+            success: function(data) {
+              let shopsResponse = $(data).find('[data-type=shop_select]');
+                
+              shops.remove();
+              shopsBlock.append(shopsResponse);
+            }
+          });
         });
-      });
-    }
+      }
+    });
   }
 });
