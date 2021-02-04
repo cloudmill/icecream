@@ -9,9 +9,9 @@ block footer
     include ../partials/_footer-alt.pug
 
 
-block content
-  main.factory.page-about-us.page-store.security
-    .factory__top
+block content 
+  main.factory.factory__main.page-about-us.page-store.security
+    section.factory__top
       .left-container
         .mainTitle
           ul.breadcrumbs
@@ -45,6 +45,22 @@ block content
                 li.tab-nav__item(class = tab.text ? 'tab-nav__item--active' : '')
                   a.tab-nav__link(href="javascript:void(0)")
                     |#{tab.text ? tab.text : tab}          
+        .factory__top-content(data-aos='fade-up')
+          .factory__top-info
+            h2.factory__top-info-title
+              |Заботимся о вкусе, качестве
+              br
+              |продукции, а также о здоровье
+              br
+              |покупателей
+            p.factory__top-info-text
+              |Продукция производится из натуральных ингредиентов, без использования химических добавок, заменителей, усилителей вкуса или ГМО.
+          .factory__top-composition
+            figure.factory__top-composition-image
+              img.factory__top-composition-img(src='assets/images/production/factory/top-house.png')
+              img.factory__top-composition-img.factory__top-composition-img--ground(src='assets/images/production/factory/top-ground.png')
+              img.factory__top-composition-img.factory__top-composition-img--cloud(src='assets/images/production/factory/top-cloud.svg')
+      img.factory__top-transition(src="assets/images/production/factory/top-transition.png")
     section.factory__top-mid
       .left-container
         h2.factory__top-mid-title(data-aos='fade-up')
@@ -135,9 +151,3 @@ block content
             .col
               .nextBlock--ico
                 +img('icons/nextArr.svg')
-          
-
-        
-
-
-
