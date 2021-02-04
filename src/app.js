@@ -51,14 +51,26 @@ $(window).on('load', function() {
 	if ($('.page-mission').length) {
 		const highlight = {
 			delay: 500,
+			minWidth: null,
 			count: 0,
 			timeGap: 300
 		};
+
+		$('.page-mission__mission-highlight').each(function() {
+			if (highlight.minWidth === null || $(this).width() < highlight.minWidth) {
+				highlight.minWidth = $(this).width();
+			}
+		});
 
 		const timer = setTimeout(() => {
 			$('.page-mission__mission-highlight').each(function() {
 				const timer = setTimeout(
 					() => {
+						const highlightWidth = $(this).width();
+						const transitionDuration = parseFloat(getComputedStyle($(this)[0]).transitionDuration);
+						const correctTransitionDuration = transitionDuration * (highlightWidth / highlight.minWidth);
+						$(this).css('transition', correctTransitionDuration + 's');
+						
 						$(this).addClass('page-mission__mission-highlight--active');
 
 						clearTimeout(timer);
