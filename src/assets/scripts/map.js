@@ -94,7 +94,7 @@ $(() => {
       function shopsEvent() {
         $('[data-type=region_select]').on('select2:select', function() {
           let container = $(this).parents('[data-type=map_container]'),
-            shops = container.find('[data-type=shop_select]'),
+            shopsContainer = container.find('[data-type=shops_container]'),
             shopsBlock = container.find('[data-type=shops_block]'),
             region = $(this).val();
             
@@ -106,10 +106,10 @@ $(() => {
               region: region,
             },
             success: function(data) {
-              let shopsResponse = $(data).find('[data-type=shop_select]');
+              let shopsBlockResponse = $(data).find('[data-type=shops_block]');
                 
-              shops.remove();
-              shopsBlock.append(shopsResponse);
+              shopsBlock.remove();
+              shopsContainer.append(shopsBlockResponse);
             }
           });
         });
