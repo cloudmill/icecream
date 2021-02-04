@@ -2,7 +2,7 @@
     margin-left: -20px;
     width: calc(100% + (20px * 2));
     display: flex;
-    overflow-x: auto;
+    // overflow-x: auto; deprecated
 
     @media screen and (min-width: 1150px) {
         margin-left: -40px;
@@ -23,6 +23,7 @@
         margin: 0;
         padding: 0 20px;
         display: flex;
+        flex-wrap: wrap;
         align-items: flex-end;
         background: #FFFFFF;
         border: 1px solid #F1EFD6;
@@ -51,8 +52,8 @@
             border-radius: 2px;
         }
 
-        &:not(:first-child) {
-            margin-left: 20px;
+        &:not(:last-child) {
+            margin-right: 20px;
         }
 
         &--active {
@@ -69,8 +70,8 @@
 
         @media screen and (min-width: 1150px) {
 
-            &:not(:first-child) {
-                margin-left: 76px;
+            &:not(:last-child) {
+                margin-right: 76px;
             }
         }
     }
