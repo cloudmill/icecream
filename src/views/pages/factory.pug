@@ -117,7 +117,27 @@ block content
         p.factory__mid-paragraph(data-aos='fade-up')
           |Мы хотим, чтобы в каждом магазине рядом с вами всегда было мороженое «Чистая Линия»!
     section.factory__bottom
+      .left-container
+        .factory__bottom-top(data-aos='fade-up')
+          h2.factory__bottom-top-title
+            |Объемы продаж
+          p.factory__bottom-top-text
+            |Килограммов продукции
+        figure.factory__bottom-graph(data-aos='fade-up')
+          img.factory__bottom-graph-img(src='assets/images/production/factory/graph-mobile.svg')
+          img.factory__bottom-graph-img.factory__bottom-graph-img--tablet(src='assets/images/production/factory/graph-tablet.svg')
+          img.factory__bottom-graph-img.factory__bottom-graph-img--desktop(src='assets/images/production/factory/graph-desktop.svg')
+        .factory__next.nextBlock(data-aos='fade-up')
+          a.row.between__xs.middle__xs(href='#')
+            .col
+              p Смотрите также
+              h3 Лаборатория
+            .col
+              .nextBlock--ico
+                +img('icons/nextArr.svg')
+          
 
+        
 
 
 
