@@ -1,0 +1,33 @@
+extends ../layouts/master.pug
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page-404
+    .left-container
+      .page-404__wrapper
+        section.page-404__container
+          h1.page-404__title
+            |404
+          .page-404__content
+            p.page-404__text
+              |Такой страницы больше не существует :(
+              br
+              |Куда дальше?
+            nav.page-404__nav
+              ul.page-404__menu
+                -
+                  var items = [
+                    "Главная",
+                    "Морожение",
+                    "Мир Чистой Линии",
+                    "Контакты"
+                  ]
+                each item in items
+                  li.page-404__menu-item
+                    a(href='#').page-404__menu-link
+                      |#{item}
+                      
+block footer
+  include ../partials/_footer.pug
