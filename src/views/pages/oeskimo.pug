@@ -125,8 +125,8 @@ block content
                         address: 'Новорязанское шоссе 8',
                       },
                     ]
-                  each item in items
-                    li.map__item.js--item
+                  each item, index in items
+                    li.map__item.js--item(class = !index ? 'map__item--active' : '')
                       h4.map__title
                         |!{item.title}
                       address.map__address
