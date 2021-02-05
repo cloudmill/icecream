@@ -1,78 +1,67 @@
-$(() => {
+// $(() => {
+//   if ($('.map').length !== 0) {
+//     ymaps.ready(() => {
+//       console.log('ymaps ready');
 
-  if ($('.map').length) {
+//       const coordinates = [55.75490826960838, 37.70814996984293];
 
-    ymaps.ready(() => {
-      console.log('ymaps ready');
+//       const ymap = new ymaps.Map('map', {
+//         center: coordinates,
+//         zoom: 15,
+//         controls: []
+//       });
 
-      // пример координаты
-      const coordinates = [55.75490826960838, 37.70814996984293];
+//       const balloonLayoutClass = ymaps.templateLayoutFactory.createClass(
+//         `
+//           <div class="map__balloon-wrapper">
+//             $[[options.contentLayout]]
+//           </div>
+//         `,
+//         {
+//           build: function () {
+//             this.constructor.superclass.build.call(this);
 
-      // инициализация карты
-      const ymap = new ymaps.Map('map', {
-        center: [0, 0],
-        zoom: 5,
-        controls: []
-      });
+//             this._$element = $('.map__balloon-wrapper', this.getParentElement());
 
-      // создание метки
-      const placemark = new ymaps.Placemark(coordinates, null, {
-        iconLayout: 'default#image',
-        iconImageHref: 'assets/images/map-placemark.svg',
-        iconImageSize: [43, 53],
-        iconImageOffset: [-21.5, -53]
-      });
+//             this.applyElementOffset();
+//           },
+//           applyElementOffset: function () {
+//             this._$element.css({
+//               left: -(this._$element[0].offsetWidth / 2),
+//               top: -(this._$element[0].offsetHeight)
+//             });
+//           },
+//         }
+//       )
+//     );
 
-      setTimeout(() => {
-        // добавление метки на карту
-        ymap.geoObjects.add(placemark);
-        // центрирование карты:
-        // вариант 1
-        // ymap.setCenter(coordinates, 15);
-        // вариант 2 (с анимацией полета)
-        ymap.panTo(coordinates);
-      }, 2000);
+//     const balloonContentLayoutClass = ymaps.templateLayoutFactory.createClass(
+//       `
+//           <div class="map__balloon">
+//             <h6 class="map__balloon-title">
+//               {{ properties.title }}
+//             </h6>
+//             <address class="map__balloon-address">
+//               {{ properties.address }}
+//             </address>
+//           </div>
+//         `
+//     );
 
-      // шаблон контента метки кластера
-      const contentLayout = ymaps.templateLayoutFactory.createClass(
-        '<div class="map__clusterer">{{ properties.geoObjects.length }}</div>'
-      );
-      // создание кластера меток
-      const clusterer = new ymaps.Clusterer({
-        clusterIcons: [
-          {
-            href: 'assets/images/map-cluster.svg',
-            size: [43, 53],
-            offset: [-21.5, -53]
-          }
-        ],
-        clusterIconContentLayout: contentLayout
-      });
+//     const placemark = new ymaps.Placemark(coordinates, {
+//       title: '«Аутлет Белая дача Котельники»',
+//       address: 'Новорязанское шоссе, 8',
+//     }, {
+//       iconLayout: 'default#image',
+//       iconImageHref: 'assets/images/map-placemark.svg',
+//       iconImageSize: [43, 53],
+//       iconImageOffset: [-21.5, -53],
+//       balloonLayout: balloonLayoutClass,
+//       balloonContentLayout: balloonContentLayoutClass,
+//       balloonPanelMaxMapArea: 0,
+//     });
 
-      // метки для кластера
-      const geoObjects = [];
-      for (let i = 0; i < 10; i++) {
-        geoObjects.push(new ymaps.Placemark([coordinates[0] + (-2 + Math.random() * 4), coordinates[1] + (-2 + Math.random() * 4)], null, {
-          iconLayout: 'default#image',
-          iconImageHref: 'assets/images/map-placemark.svg',
-          iconImageSize: [43, 53],
-          iconImageOffset: [-21.5, -53]
-        }));
-      }
-
-      // добавление меток в кластер
-      clusterer.add(geoObjects);
-      // добавление кластера на карту
-      ymap.geoObjects.add(clusterer);
-
-      setTimeout(() => {
-        // позиционирование карты на области (область, охватывающая метки кластера)
-        ymap.setBounds(clusterer.getBounds(), {
-          checkZoomRange: true
-        });
-      }, 4000);
-    });
-
-  }
-
-});
+//     ymap.geoObjects.add(placemark);
+//   });
+//   }
+// });
