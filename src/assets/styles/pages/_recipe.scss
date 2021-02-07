@@ -186,12 +186,16 @@
 
     &__time {
         margin-top: 2.5px;
-        margin-left: 40px;
+        margin-left: 20px;
         display: flex;
         align-items: center;
         font-weight: bold;
         font-size: 12px;
         line-height: 15px;
+
+        @media (min-width: $screen-lg-min) {
+            margin-left: 40px;
+        }
     }
 
     &__time-text {
