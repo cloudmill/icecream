@@ -670,7 +670,10 @@
       height:100%;
       background-position:center;
       background-size:cover;
-      // border-radius: 40px;
+      border-radius: 40px;
     }
+  }
+  &.swiper-container {
+    border-radius: 40px;
   }
 }
