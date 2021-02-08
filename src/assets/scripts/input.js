@@ -87,6 +87,7 @@ $(document).on('change', '.checkbox input', function(event) {
 });
 */
 
+
 // form
 
 // eslint-disable-next-line consistent-return
@@ -109,8 +110,9 @@ $('.form--js').click(function(e) {
 	const type = form.attr('data-type');
 	const curForm = $(this);
 	let url = null;
-	
-	if (window.location.pathname == '/contacts/') {
+	let data;
+
+	if (window.location.pathname === '/contacts/') {
 		url = '/local/templates/main/include/ajax/contact/contact.php';
 		data = {
 			name: name.val(),
