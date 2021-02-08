@@ -12,19 +12,27 @@ block content
         +img('icons/plus-sq.svg')
       .catalogFilter
         .catalogFilter__item
-          select.select.select-main(data-title='Тип блюда')
+          select.select.select-template(data-title='Тип блюда', data-theme='default only-text')
+            option(value='filter-1') Все
+            option(value='filter-2') Завтраки
+            option(value='filter-3') Обеды
+            option(value='filter-4') Ужины
+            option(value='filter-5') Все
+            option(value='filter-6') Завтраки
+            option(value='filter-7') Обеды
+            option(value='filter-8') Ужины
+            option(value='filter-9') Все
+            option(value='filter-10') Завтраки
+            option(value='filter-11') Обеды
+            option(value='filter-12') Ужины
+        .catalogFilter__item
+          select.select.select-template(data-title='Продукт', data-theme='default only-text')
             option(value='filter-1') Все
             option(value='filter-2') Завтраки
             option(value='filter-3') Обеды
             option(value='filter-4') Ужины
         .catalogFilter__item
-          select.select.select-main(data-title='Продукт')
-            option(value='filter-1') Все
-            option(value='filter-2') Завтраки
-            option(value='filter-3') Обеды
-            option(value='filter-4') Ужины
-        .catalogFilter__item
-          select.select.select-main(data-title='Время готовки')
+          select.select.select-template(data-title='Время готовки', data-theme='default only-text')
             option(value='filter-1') Все
             option(value='filter-2') Завтраки
             option(value='filter-3') Обеды
