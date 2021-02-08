@@ -85,7 +85,7 @@ block content
           .recipe__aside.recipe__aside--mobile
               h6.recipe__aside-title
                 |Для рецепта нужно
-              .slider-aside.slider-aside--mb--20.slider-aside--maxw--355
+              a.slider-aside.slider-aside--mb--20.slider-aside--maxw--355(href='#')
                 .swiper-container.slider-aside__swiper-container
                   .swiper-wrapper
                     each item in [1, 2, 3]
@@ -127,7 +127,7 @@ block content
             .recipe__aside.recipe__aside--desktop
               h6.recipe__aside-title
                 |Для рецепта нужно
-              .slider-aside.slider-aside--mb--20
+              a.slider-aside.slider-aside--mb--20(href='#')
                 .swiper-container.slider-aside__swiper-container
                   .swiper-wrapper
                     each item in [1, 2, 3]
@@ -143,14 +143,19 @@ block content
                   button.slider-aside__button.slider-aside__button--next
                     img.slider-aside__button-img(src="assets/images/icons/prevArr.svg")
             .sign-block(data-aos='fade-up')
-              h4 Подписатсья на рецепты
-              form(action='' method='POST')
-                .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
-                .checkbox.form__group
-                  input(type="checkbox", id='sign', required)
-                  label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-                  .control-error
-                button.btn.btn--primary.btn__sm.btn--full(type='submit'): span Подписаться
+              .form-request
+                h4 Подписаться на рецепты
+                form(action='' method='POST')
+                  .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
+                  .checkbox.form__group
+                    input(type="checkbox", id='sign', required)
+                    label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+                    .control-error
+                  button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Подписаться
+              .form-response
+                .inner
+                  h4 Спасибо, подписка оформлена
+                  button.btn.btn--primary.btn__sm.btn--full.reset--js(type='submit'): span Подписаться еще
       .card-slider.recipe__card-slider
         .row(data-aos='fade-up')
           .col.col__lg-4.col__xs-12.flex

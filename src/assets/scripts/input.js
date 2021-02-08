@@ -60,7 +60,8 @@ export function validateField(element, event) {
 	if (checkbox && isRequired) {
 	  console.log(element.prop('checked'));
 		if (element.prop('checked')) {
-			element.closest('.checkbox').removeClass('error');
+			// element.closest('.checkbox').removeClass('error');
+			element.closest('.checkbox').find(errorBlock).text('');
 			result = true;
 		} else {
 			// element.closest('.checkbox').addClass('error');
