@@ -1,7 +1,7 @@
 import AOS from 'aos';
 
 
-$('.accordion__item--sm').click(function () {
+$(document).on('click', '.accordion__item--sm', function () {
 	$('.accordion-body').removeClass('shown');
 	if ($(this).hasClass('active')) {
 		$('.accordion__item').removeClass('active');
