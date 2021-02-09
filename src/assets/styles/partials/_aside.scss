@@ -6,6 +6,10 @@
   .control {
     height: 50px;
     border-color: $color-type-3a;
+    
+    &--textarea {
+      height: 100px;
+    }
   }
 }
 

@@ -51,9 +51,9 @@ mixin fieldInput(type, name, id, label, placeholder, required)
     .control-error
 
 //- form-textarea
-mixin fieldTextarea(name, placeholder, rows, required)
+mixin fieldTextarea(name, placeholder, rows, required, classes)
   .control-body.input
-    textarea.control(name=name, placeholder=placeholder, rows=rows,  required=required)
+    textarea.control(class=classes, name=name, placeholder=placeholder, rows=rows,  required=required)
     .control-error
 
 //- form-checkbox

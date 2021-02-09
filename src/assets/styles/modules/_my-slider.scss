@@ -1,7 +1,8 @@
 .my-slider {
+  border: 1px solid black; // test
   $transition: 750ms;
 
-  overflow: hidden;
+  // overflow: hidden;
   
   &__wrapper {
     height: 250px;
@@ -14,6 +15,7 @@
   }
   
   &__container {
+    border: 1px solid black; // test
     margin-right: 20px;
     flex-shrink: 0;
     transition: $transition;

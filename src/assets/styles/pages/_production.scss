@@ -147,17 +147,22 @@
   $thumbs-part: 0.6;
 
   &__slider-thumbs {
+    margin: 0 -20px;
+    padding-left: 20px;
 
     @media (min-width: $screen-md-min) {
       order: 1;
       $margin-left: 40px;
       margin-left: $margin-left;
+      margin-right: -20px;
+      padding: 0;
       width: calc((100% - #{$margin-left}) * #{$thumbs-part});
     }
 
     @media (min-width: $screen-lg-min) {
       $margin-left: 170px;
       margin-left: $margin-left;
+      margin-right: -40px;
       width: calc((100% - #{$margin-left}) * #{$thumbs-part});
     }
   }
@@ -260,6 +265,7 @@
 
   &__slider-main {
     margin-top: 40px;
+    margin-left: 0;
 
     @media (min-width: $screen-md-min) {
       margin-top: 0;
