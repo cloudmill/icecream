@@ -6,6 +6,7 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
 import './assets/scripts/backend.js';
 import './assets/scripts/map.js';
+import'jquery';
 
 // Styles
 import 'Styles/_app.scss';
@@ -25,11 +26,11 @@ $(document).ready(() => {
 		const sticky = new Sticky('.sticky');
 	}
 
-	$('.backLink').mouseover(function() {
-	  const getBtnWidth = $(this).width();
-	  const getArrWidth = $(this).find('.nextBlock--ico').width();
+	$('.backLink').mouseover(function () {
+		const getBtnWidth = $(this).width();
+		const getArrWidth = $(this).find('.nextBlock--ico').width();
 		$(this).find('.nextBlock--ico').css('left', -(getBtnWidth / 2 - getArrWidth * 2.5));
-	}).mouseleave(function() {
+	}).mouseleave(function () {
 		$(this).find('.nextBlock--ico').css('left', 0);
 	});
 
@@ -43,7 +44,7 @@ $(window).scroll(() => {
 });
 // scroll
 
-$(window).on('load', function() {
+$(window).on('load', function () {
 
 
 	// PAGE: mission
@@ -56,21 +57,21 @@ $(window).on('load', function() {
 			timeGap: 300
 		};
 
-		$('.page-mission__mission-highlight').each(function() {
+		$('.page-mission__mission-highlight').each(function () {
 			if (highlight.minWidth === null || $(this).width() < highlight.minWidth) {
 				highlight.minWidth = $(this).width();
 			}
 		});
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(function() {
+			$('.page-mission__mission-highlight').each(function () {
 				const timer = setTimeout(
 					() => {
 						const highlightWidth = $(this).width();
 						const transitionDuration = parseFloat(getComputedStyle($(this)[0]).transitionDuration);
 						const correctTransitionDuration = transitionDuration * (highlightWidth / highlight.minWidth);
 						$(this).css('transition', correctTransitionDuration + 's');
-						
+
 						$(this).addClass('page-mission__mission-highlight--active');
 
 						clearTimeout(timer);
@@ -87,7 +88,7 @@ $(window).on('load', function() {
 	// PAGE: about-us
 
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(function() {
+		$('.page-about-us__slider').each(function () {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -108,14 +109,14 @@ $(window).on('load', function() {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: function(swiper, current, total) {
+					renderCustom: function (swiper, current, total) {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', function() {
+			paginationItems.on('click', function () {
 				const index = $(this).index();
 				swiper.slideTo(index);
 			});
@@ -134,7 +135,7 @@ $(() => {
 	console.log(getMainUrl);
 
 	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
-		setTimeout(function() {
+		setTimeout(function () {
 			window.scrollTo(0, 0);
 		}, 200);
 	}
@@ -152,7 +153,7 @@ $(() => {
 				elem: $('img'),
 				count: $('img').length
 			};
-			// информация о загрузке изображений
+		// информация о загрузке изображений
 		const load = {
 			counter: 0,
 			startTime: null,
@@ -278,5 +279,41 @@ $(() => {
 				new Rellax('.rellax');
 			}
 		}, 500);
+	}
+});
+
+// tab-nav
+$(window).on('load', () => {
+	if ($('.tab-nav').length !== 0) {
+		const $el = $('.tab-nav');
+		const $elCopy = $el.clone();
+		const $elCopyContainer = $('.left-container--tab-nav');
+		
+		$elCopyContainer.append($elCopy);
+
+		let isSticky = false;
+		if ($(window).scrollTop() + 40 >= $el.position().top) {
+			isSticky = true;
+			toggle();
+		}
+
+		$(window).on('scroll', function () {
+			if (isSticky) {
+				if ($(window).scrollTop() + 40 < $el.position().top) {
+					isSticky = false;
+					toggle();
+				}
+			} else {
+				if ($(window).scrollTop() + 40 >= $el.position().top) {
+					isSticky = true;
+					toggle();
+				}
+			}
+		});
+
+		function toggle() {
+			$el.toggleClass('tab-nav--sticky');
+			$elCopyContainer.toggleClass('left-container--sticky');
+		}
 	}
 });

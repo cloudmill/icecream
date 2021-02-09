@@ -155,4 +155,22 @@ body {
   @media screen and (min-width: $screen-xl-min) {
     padding-left: 360px;
   }
+  
+  &--tab-nav {
+    position: fixed;
+    z-index: 100000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &--sticky {
+    visibility: visible;
+    opacity: 1;
+  }
 }
