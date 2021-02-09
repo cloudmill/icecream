@@ -167,6 +167,7 @@ body {
     padding-bottom: 40px;
     visibility: hidden;
     opacity: 0;
+    pointer-events: none;
   }
 
   &--sticky {

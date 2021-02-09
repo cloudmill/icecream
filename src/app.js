@@ -289,6 +289,7 @@ $(window).on('load', () => {
 		const $elCopy = $el.clone();
 		const $elCopyContainer = $('.left-container--tab-nav');
 		
+		$elCopy.css('pointer-events', 'all');
 		$elCopyContainer.append($elCopy);
 
 		let isSticky = false;
