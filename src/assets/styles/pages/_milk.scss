@@ -230,7 +230,7 @@
       margin-top: 80px;
 
       @media (min-width: $screen-lg-min) {
-        padding-top: 160px;
+        // padding-top: 160px; deprecated
       }
     }
 

@@ -13,6 +13,10 @@
 
     @media (min-width: $screen-lg-min) {
       width: calc((100% - 100px) / 2);
+
+      &--mt--110 {
+        margin-top: 110px;
+      }
     }
   }
 
@@ -25,9 +29,8 @@
       border-radius: 40px;
     }
   }
-  
-  &__features-frame-img {  
-  }
+
+  &__features-frame-img {}
 
 
   // FEATURES
@@ -318,6 +321,8 @@
   }
 
   &__slider-btn {
+    position: relative;
+    z-index: 0;
     $size: 56px;
     width: $size;
     height: $size;
@@ -328,11 +333,16 @@
     border: 2px solid #F1EFD6;
     border-radius: 50%;
     cursor: pointer;
+    transition: 0.5s;
 
     @media (min-width: $screen-lg-min) {
       $size: 80px;
       width: $size;
       height: $size;
+    }
+
+    &:hover {
+      background-color: #F1EFD6;
     }
 
     &:not(:first-child) {
