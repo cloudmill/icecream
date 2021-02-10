@@ -117,25 +117,26 @@
     background-color: $base-color-lighten;
     background-image: url("../images/world/store/phone-1.png");
     background-repeat: no-repeat;
-    background-size: 390px auto;
-    background-position: right -240px bottom -90px;
+    background-size: 190px auto;
+    background-position: right -60px bottom 10px;
     border-radius: 20px;
 
     @media (min-width: $screen-md-min) {
       min-height: 290px;
-      background-position: right -220px bottom -45px;
+      background-position: right -35px bottom 60px;
     }
 
     @media (min-width: $screen-lg-min) {
       padding: 30px 40px;
       min-height: 360px;
-      background-position: right -375px bottom -145px;
-      background-size: auto auto;
+      // background-position: right -375px bottom -145px;
+      // background-size: auto auto;
       border-radius: 40px;
     }
 
-    @media (min-width: 1680px) {
-      background-position: right -250px bottom -125px;
+    @media (min-width: $screen-xl-min) {
+      background-position: right -5px bottom 0px;
+      background-size: 300px auto;
     }
 
     &--alt {
@@ -172,11 +173,16 @@
     font-size: 16px;
     line-height: 140%;
     text-decoration: none;
+    transition: 0.5s;
 
     @media (min-width: $screen-lg-min) {
       margin-top: 50px;
       padding: 0 30px;
       font-size: 18px;
+    }
+
+    &:hover {
+      color: #EF747A;
     }
   }
 

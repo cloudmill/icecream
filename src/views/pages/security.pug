@@ -125,10 +125,8 @@ block content
                   .swiper-wrapper
                     each item in [1, 2, 3, 1, 2]
                       .swiper-slide
-                        a.catalog__item(href='#')
-                          figure.img
-                            .image
-                              img(src=`assets/images/production/security/doc-${item}.png`)
+                        a.security__doc(href='#')
+                          img.security__doc-img(src=`assets/images/production/security/doc-${item}.png`)
     .security__bottom
       .left-container
         h2.security__bottom-title(data-aos='fade-up')

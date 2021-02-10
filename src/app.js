@@ -100,6 +100,7 @@ $(window).on('load', function () {
 			const swiper = new Swiper(container[0], {
 				allowTouchMove: false,
 				speed: 300,
+				loop: true,
 
 				navigation: {
 					prevEl: prev[0],

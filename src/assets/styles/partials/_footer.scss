@@ -18,6 +18,12 @@
   @media screen and (min-width: $screen-xl-min) {
     padding-left: 360px;
   }
+
+  &--alt {
+    position: relative;
+    background-size: cover;
+  }
+  
   &-inner {
     padding: 40px 20px;
     background: white;

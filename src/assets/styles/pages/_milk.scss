@@ -228,14 +228,20 @@
 
     &:not(:first-child) {
       margin-top: 80px;
-
-      @media (min-width: $screen-lg-min) {
-        // padding-top: 160px; deprecated
-      }
     }
 
     &--ai--end {
       align-items: flex-end;
+    }
+
+    &--large-margin {
+        
+      &:not(:first-child) {
+
+        @media (min-width: $screen-lg-min) {
+          margin-top: 160px;
+        }
+      }
     }
   }
 
