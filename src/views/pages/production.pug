@@ -67,14 +67,15 @@ block content
             img.production__card-img(src = 'assets/images/production/production/card.png')
       .production__slider(data-aos='fade-up')
         .my-slider.production__slider-thumbs
-          .my-slider__wrapper
-            each slide in [1, 2, 3]
-              .my-slider__container
-                .my-slider__slide.production__slider-thumb
-                  figure.production__slider-thumb-image
-                    img.production__slider-thumb-img(src = `assets/images/production/production/thumb-${slide}.png`)
-                  span.production__slider-thumb-mark
-                    |#{slide}
+          .my-slider__main
+            .my-slider__wrapper
+              each slide in [1, 2, 3]
+                .my-slider__container
+                  .my-slider__slide.production__slider-thumb
+                    figure.production__slider-thumb-image
+                      img.production__slider-thumb-img(src = `assets/images/production/production/thumb-${slide}.png`)
+                    span.production__slider-thumb-mark
+                      |#{slide}
         .swiper-container.production__slider-main
           .swiper-wrapper
             .swiper-slide
