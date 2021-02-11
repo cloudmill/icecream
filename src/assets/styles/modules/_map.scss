@@ -61,9 +61,10 @@
 
   &__list-wrapper {
     margin-top: 10px;
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     background-color: white;
     border-radius: 10px;
+    overflow: hidden;
 
     @media (min-width: $screen-lg-min) {
       border-radius: 20px;
@@ -72,8 +73,21 @@
 
   &__list {
     margin: 0;
+    padding-left: 20px;
     max-height: 230px;
     overflow: auto;
+    scrollbar-color: #5DCBEE #EBFAFF;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #EBFAFF;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #5DCBEE;
+      border-radius: 2px;
+    }
 
     @media (min-width: $screen-md-min) {
       max-height: 260px;
@@ -85,12 +99,47 @@
   }
 
   &__item {
+    position: relative;
+    z-index: 0;
     padding: 20px 20px 20px 0;
     border-bottom: 1px solid #F1EFD6;
     cursor: pointer;
 
+    &::before {
+      position: absolute;
+      z-index: -1;
+      top: -1px;
+      bottom: -1px;
+      left: -20px;
+      right: 0;
+      content: "";
+      display: block;
+      background-color: transparent;
+      transition: 0.5s;
+    }
+
     &:first-child {
       border-top: 1px solid #F1EFD6;
+    }
+
+    &:hover {
+
+      &::before {
+        background-color: #F8F6E9;
+      }
+    }
+
+    &--active {
+      &::before {
+        background-color: #EBFAFF;
+      }
+
+      &:hover {
+
+        &::before {
+          background-color: #EBFAFF;
+        }
+      }
     }
   }
 

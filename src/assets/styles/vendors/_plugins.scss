@@ -68,7 +68,7 @@ $items:
   border-color: $base-color-lighten;
   height: auto;
   transition: background .5s, border-color .5s, border-radius .2s .1s;
-  @media screen and (min-width: $screen-md-min) {
+  @media screen and (min-width: $screen-lg-min) {
     padding: 15px 20px;
     border-radius: 20px;
   }
@@ -90,7 +90,7 @@ $items:
       font-weight: bold;
       display: flex;
       align-items: center;
-      @media screen and (min-width: $screen-md-min) {
+      @media screen and (min-width: $screen-lg-min) {
         font-size: 18px;
       }
       span {
@@ -100,7 +100,7 @@ $items:
         display: block;
         font-size: 12px;
         font-weight: 400;
-        @media screen and (min-width: $screen-md-min) {
+        @media screen and (min-width: $screen-lg-min) {
           font-size: 14px;
         }
       }
@@ -129,7 +129,7 @@ $items:
     border-bottom-right-radius: $border-radius !important;
     transition: background .5s .3s, border-color .5s .3s, border-radius .2s .4s;
 
-    @media (min-width: $screen-md-min) {
+    @media (min-width: $screen-lg-min) {
       $border-radius: 20px;
       border-bottom-left-radius: $border-radius !important;
       border-bottom-right-radius: $border-radius !important;
@@ -168,7 +168,7 @@ $items:
 }
 .select2-results__option {
   padding: 3px 0 3px 10px;
-  @media screen and (min-width: $screen-md-min) {
+  @media screen and (min-width: $screen-lg-min) {
     padding: 8px 0 8px 20px;
   }
   > span {
@@ -181,7 +181,7 @@ $items:
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: transparent;
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       font-size: 18px;
     }
     img {
