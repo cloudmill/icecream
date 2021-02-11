@@ -1,4 +1,4 @@
-$('.test--js').click(function() {
+$('.form--js').click(function() {
 	$('.form-response').addClass('shown activated');
 	return false;
 });

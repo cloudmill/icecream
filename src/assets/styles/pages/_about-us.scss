@@ -178,32 +178,30 @@
         user-select: none;
         cursor: pointer;
 
-        &::before {
+        &:before {
+            content: "";
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            content: "";
-            display: block;
-            $size: 90px;
-            width: $size;
-            height: $size;
+            transform: translate3d(-50%, -50%, 0) scale(0);
             background-color: white;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0, 1);
+            z-index: -1;
+            transition: transform .45s cubic-bezier(.4, 0, 0, 1);
 
-            @media screen and (min-width: 1150px) {
-                $size: 110px;
-                width: $size;
-                height: $size;
+            @media screen and (min-width: $screen-lg-min) {
+                width: 108px;
+                height: 108px;
             }
         }
 
         &:hover {
 
-            &::before {
-                transform: translate(-50%, -50%) scale(1);
-                transition: transform .45s cubic-bezier(0.6, 0.01, 0, 1.38);
+            &:before {
+                transform: translate3d(-50%, -50%, 0) scale(1);
+                transition: transform 0.45s cubic-bezier(.6, .01, 0, 1.38);
             }
         }
 
@@ -213,13 +211,6 @@
 
         &--next {
             transform: rotate(180deg);
-        }
-
-        &.swiper-button-disabled {
-
-            &::before {
-                transform: translate(-50%, -50%) scale(0);
-            }
         }
 
         @media screen and (min-width: 1150px) {
@@ -296,7 +287,7 @@
             right: -20px;
             content: "";
             display: block;
-            min-height: calc(200%);
+            min-height: 1000px;
             background-image: url("../images/background-1.svg");
             background-repeat: no-repeat;
             background-position: center top;
@@ -309,6 +300,7 @@
             @media screen and (min-width: $screen-lg-min) {
                 left: -340px;
                 right: -40px;
+                min-height: 1300px;
             }
 
             @media screen and (min-width: 1150px) {

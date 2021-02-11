@@ -9,7 +9,7 @@
 
     &--chocolate {
       position: relative;
-      z-index: -1;
+      z-index: 1;
       padding-bottom: 120px;
 
       @media (min-width: $screen-lg-min) {
@@ -205,6 +205,8 @@
     }
 
     &--chocolate {
+      position: relative;
+      z-index: 2;
       padding-top: 160px;
       background-image: url("../images/production/chocolate/mid.svg");
 
@@ -226,14 +228,20 @@
 
     &:not(:first-child) {
       margin-top: 80px;
-
-      @media (min-width: $screen-lg-min) {
-        padding-top: 160px;
-      }
     }
 
     &--ai--end {
       align-items: flex-end;
+    }
+
+    &--large-margin {
+        
+      &:not(:first-child) {
+
+        @media (min-width: $screen-lg-min) {
+          margin-top: 160px;
+        }
+      }
     }
   }
 
@@ -306,6 +314,11 @@
       padding-top: 200px;
       padding-bottom: calc(200px + 160px);
     }
+
+    &--chocolate {
+      position: relative;
+      z-index: 3;
+    }
   }
 
 
@@ -335,6 +348,8 @@
   // FOOTER
 
   .page-footer {
+    position: relative;
+    z-index: 4;
     margin-top: -200px;
     background-size: cover;
   }

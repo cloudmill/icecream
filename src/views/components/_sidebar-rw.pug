@@ -6,7 +6,7 @@ aside.aside
         form(action='' method='POST')
           .form__group: +fieldInput('text', 'name', 'name', '', 'Имя', true)
           .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
-          .form__group: +fieldTextarea('theme', 'Тема вопроса', '5', true)
+          .form__group: +fieldTextarea('theme', 'Текст отзыва', '5', true, 'control--textarea')
           .checkbox.form__group
             input(type="checkbox", id='sign', required)
             label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]

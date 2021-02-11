@@ -534,9 +534,11 @@
 
 .slider-aside {
   position: relative;
-  max-height: 330px;
+  // max-height: 330px; deprecated
+  display: block;
   background-color: $base-color-lighten;
   border-radius: 20px;
+  text-decoration: none;
 
   &--mb--20 {
     margin-bottom: 20px;
@@ -568,6 +570,7 @@
     background-color: white;
     border: none;
     border-radius: 50%;
+    cursor: pointer;
 
     &::before {
       position: absolute;
@@ -669,5 +672,8 @@
       background-size:cover;
       border-radius: 40px;
     }
+  }
+  &.swiper-container {
+    border-radius: 40px;
   }
 }

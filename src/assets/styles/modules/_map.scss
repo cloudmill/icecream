@@ -31,21 +31,40 @@
 
   &__select-wrapper {
     height: 50px;
-    background-color: #EBFAFF;
-    border-radius: 10px;
-    overflow: hidden;
 
     @media (min-width: $screen-lg-min) {
       height: 80px;
-      border-radius: 20px;
     }
+
+
+    // .select2-selection {
+    //   height: 50px;
+    //   padding: 8px 10px;
+
+
+    //   &__rendered {
+
+        
+    //     & > span {
+    //       font-weight: bold !important;
+    //       font-size: 14px !important;
+    //       line-height: 17px !important;
+    //     }
+    //   }
+    // }
+
+    // .title {
+    //   font-size: 12px !important;
+    //   line-height: 140% !important;
+    // }
   }
 
   &__list-wrapper {
     margin-top: 10px;
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     background-color: white;
     border-radius: 10px;
+    overflow: hidden;
 
     @media (min-width: $screen-lg-min) {
       border-radius: 20px;
@@ -54,8 +73,21 @@
 
   &__list {
     margin: 0;
+    padding-left: 20px;
     max-height: 230px;
     overflow: auto;
+    scrollbar-color: #5DCBEE #EBFAFF;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+      background-color: #EBFAFF;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #5DCBEE;
+      border-radius: 2px;
+    }
 
     @media (min-width: $screen-md-min) {
       max-height: 260px;
@@ -67,12 +99,47 @@
   }
 
   &__item {
+    position: relative;
+    z-index: 0;
     padding: 20px 20px 20px 0;
     border-bottom: 1px solid #F1EFD6;
     cursor: pointer;
 
+    &::before {
+      position: absolute;
+      z-index: -1;
+      top: -1px;
+      bottom: -1px;
+      left: -20px;
+      right: 0;
+      content: "";
+      display: block;
+      background-color: transparent;
+      transition: 0.5s;
+    }
+
     &:first-child {
       border-top: 1px solid #F1EFD6;
+    }
+
+    &:hover {
+
+      &::before {
+        background-color: #F8F6E9;
+      }
+    }
+
+    &--active {
+      &::before {
+        background-color: #EBFAFF;
+      }
+
+      &:hover {
+
+        &::before {
+          background-color: #EBFAFF;
+        }
+      }
     }
   }
 
@@ -113,5 +180,34 @@
     font-size: 22px;
     line-height: 130%;
     color: #DC1C26;
+  }
+
+
+  // balloon
+
+  &__balloon-wrapper {}
+
+  &__balloon {
+    padding: 20px;
+    width: 270px;
+    min-height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 14px 20px rgba(187, 183, 160, 0.3);
+    overflow: hidden;
+  }
+
+  &__balloon-title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__balloon-address {
+    margin: 0;
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 140%;
   }
 }
