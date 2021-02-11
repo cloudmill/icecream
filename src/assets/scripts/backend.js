@@ -77,20 +77,24 @@ function changeFilterCatalog() {
         filterOptions = container.find('[data-type=change_filter_catalog] option'),
         selectKind = container.find('[data-type-title=kind]'),
         selectFlavors = container.find('[data-type-title=flavors]');
+
+        filterSelects.each(function() {
+            if ($(this).attr('data-type-title') == 'kind') {
+                kind = $(this).val();
+            }
             
-        if ($(this).attr('data-type-title') == 'kind') {
-            kind = $(this).val();
-        }
-        
-        if ($(this).attr('data-type-title') == 'flavors') {
-            flavors = $(this).val();
-        }
+            if ($(this).attr('data-type-title') == 'flavors') {
+                flavors = $(this).val();
+            }
+        });
         
         data = {
             ajax: true,
             kind: kind,
             flavors: flavors,
         };
+
+        console.log(data);
 
         catalogFilterAjax(data);
     });
@@ -169,18 +173,20 @@ function changeFilterRecipes() {
         productsBlockSelect = container.find('[data-title-type=products]'),
         timeBlockSelect = container.find('[data-title-type=time]'),
         pagenavBlock = container.find('[data-type=pagenav_block]');
+
+        filterSelects.each(function () {
+            if ($(this).attr('data-title-type') == 'type') {
+                type = $(this).val();
+            }
             
-        if ($(this).attr('data-title-type') == 'type') {
-            type = $(this).val();
-        }
-        
-        if ($(this).attr('data-title-type') == 'products') {
-            products = $(this).val();
-        }
-        
-        if ($(this).attr('data-title-type') == 'time') {
-            time = $(this).val();
-        }
+            if ($(this).attr('data-title-type') == 'products') {
+                products = $(this).val();
+            }
+            
+            if ($(this).attr('data-title-type') == 'time') {
+                time = $(this).val();
+            }
+        });
 
         data = {
             ajax: true,
