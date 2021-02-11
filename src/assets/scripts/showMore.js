@@ -1,7 +1,7 @@
 import AOS from 'aos';
 
 
-$('.accordion__item--sm').click(function() {
+$(document).on('click', '.accordion__item--sm', function () {
 	$('.accordion-body').removeClass('shown');
 	if ($(this).hasClass('active')) {
 		$('.accordion__item').removeClass('active');
@@ -22,7 +22,7 @@ $('.accordion__item--sm').click(function() {
 	}, 400);
 	return false;
 });
-$('.accordion__item--js').click(function() {
+$(document).on('click', '.accordion__item--js', function () {
 	if ($(this).hasClass('active')) {
 		$('.accordion__item').removeClass('active');
 		$(this).removeClass('active').find('.accordion-body').slideUp();
@@ -48,14 +48,14 @@ export function showMore() {
 	const button = $('.showMore--js');
 	const numInList = list.length;
 	button.hide();
-	list.velocity('slideUp', {duration: 300});
+	list.velocity('slideUp', { duration: 300 });
 	const spliceNum = num || 8;
 	if (numInList > spliceNum) {
 		button.show();
 	}
 	list.slice(0, spliceNum).slideDown();
 
-	button.click(function() {
+	button.click(function () {
 		const showing = list.filter(':visible').length;
 		list.slice(showing - 1, showing + numToShow).slideDown();
 		const nowShowing = list.filter(':visible').length;

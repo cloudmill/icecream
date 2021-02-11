@@ -88,6 +88,7 @@ $(document).on('change', '.checkbox input', function(event) {
 });
 */
 
+
 // form
 
 // eslint-disable-next-line consistent-return
@@ -105,21 +106,32 @@ $('.form--js').click(function(e) {
 	const form = $(this).closest('form');
 	const name = form.find('input[name=name]');
 	const email = form.find('input[name=email]');
+	const phone = form.find('input[name=phone]');
 	const message = form.find('textarea[name=content]');
+	const type = form.attr('data-type');
 	const curForm = $(this);
+	let url = null;
+	let data;
+
+	if (window.location.pathname === '/contacts/') {
+		url = '/local/templates/main/include/ajax/contact/contact.php';
+		data = {
+			name: name.val(),
+			email: email.val(),
+			text: message.val(),
+			phone: phone.val(),
+			type: type,
+		};
+	}
 
 	$.ajax({
 		type: 'POST',
-		url: 'send.php',
+		url: url,
 		dataType: 'json',
-		data: ({
-			'name': name.val(),
-			'email': email.val(),
-			'message': message.val()
-		}),
+		data: data,
 		success: function(a) {
 			console.log(a.success);
-			if (a.success === 'true') {
+			if (a.success === true) {
 				curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
 			}
 		}

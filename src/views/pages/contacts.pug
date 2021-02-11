@@ -57,21 +57,25 @@ block content
               h3 Мы в социальных сетях
               include ../components/social
           .col.col__lg-6.col__xs-12(data-aos='fade-up')
-            h3 Связаться с нами
-            form.contacts-form(action='', method='POST')
-              .contacts-form__col
-                .form__group: +fieldInput('text', 'name', 'name', '', 'Имя', true)
-                .form__group: +fieldInput('email', 'email', 'email', '', 'E-mail', true)
-                .form__group: +fieldInput('text', 'phone', 'phone', '', 'Телефон', true)
-              .contacts-form__col
-                .form__group: +fieldTextarea('question', 'Ваш вопрос или пожелание', '8', true)
-              .contacts-form__col.margtop10
-                .control-body.checkbox
-                  input(type="checkbox", id='sign', required)
-                  label(for='sign') Согласен на обработку персональных #[br] данных в соответствии с #[a(href='#') политикой #[br] конфиденциальности]
-                  .control-error
-              .contacts-form__col.margtop10
-                button.btn.btn--primary.btn--full.form--js(type='submit'): span Отправить
+            .form-inner
+              h3 Связаться с нами
+              form.contacts-form(action='', method='POST')
+                .contacts-form__col
+                  .form__group: +fieldInput('text', 'name', 'name', '', 'Имя', true)
+                  .form__group: +fieldInput('email', 'email', 'email', '', 'E-mail', true)
+                  .form__group: +fieldInput('text', 'phone', 'phone', '', 'Телефон', true)
+                .contacts-form__col
+                  .form__group: +fieldTextarea('question', 'Ваш вопрос или пожелание', '8', true)
+                .contacts-form__col.margtop10
+                  .control-body.checkbox
+                    input(type="checkbox", id='sign', required)
+                    label(for='sign') Согласен на обработку персональных #[br] данных в соответствии с #[a(href='#') политикой #[br] конфиденциальности]
+                    .control-error
+                .contacts-form__col.margtop10
+                  button.btn.btn--primary.btn--full.form--js(type='submit'): span Отправить
+            .form-send
+              h3 Спасибо, мы получили ваше обращение и в ближайшее время свяжемся с вами.
+              .form__group.form-back--js(data-aos='fade-up'): button.btn.btn--primary.btn--full: span Отправить еще
         .contacts-social.hidden__lg.hidden__xl(data-aos='fade-up')
           h3 Мы в социальных сетях
           include ../components/social
