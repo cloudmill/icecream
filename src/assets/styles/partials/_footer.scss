@@ -140,6 +140,36 @@
       padding-top: 80px;
     }
   }
+
+  .col {
+    
+    &--gap {
+
+      @media (max-width: #{$screen-md-min - 1px}) {   
+        @each $index in (1, 2) { 
+          &:nth-child(#{$index}) {
+            padding-right: 35px;
+          }
+        }
+      }
+
+      @media (min-width: $screen-md-min) and (max-width: #{$screen-lg-min - 1px}) {   
+        @each $index in (1, 2, 3) { 
+          &:nth-child(#{$index}) {
+            padding-right: 35px;
+          }
+        }
+      }
+
+      @media (min-width: $screen-lg-min) {   
+        @each $index in (1, 3) { 
+          &:nth-child(#{$index}) {
+            padding-right: 35px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .footer {

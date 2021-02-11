@@ -124,9 +124,16 @@ $items:
   .select2-selection--single {
     background: $base-color-lighten;
     border-color: $base-color-lighten;
-    border-bottom-left-radius: 20px !important;
-    border-bottom-right-radius: 20px !important;
+    $border-radius: 10px;
+    border-bottom-left-radius: $border-radius !important;
+    border-bottom-right-radius: $border-radius !important;
     transition: background .5s .3s, border-color .5s .3s, border-radius .2s .4s;
+
+    @media (min-width: $screen-md-min) {
+      $border-radius: 20px;
+      border-bottom-left-radius: $border-radius !important;
+      border-bottom-right-radius: $border-radius !important;
+    }
   }
   .select2-selection__arrow {
     transform: rotate(0);
