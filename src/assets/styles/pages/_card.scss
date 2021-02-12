@@ -158,4 +158,9 @@
       border-radius: 40px;
     }
   }
+  img {
+    @media (min-width: 1680px) {
+      max-width: 600px;
+    }
+  }
 }

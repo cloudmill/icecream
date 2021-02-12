@@ -2,17 +2,19 @@
   $transition: 750ms;
 
   overflow: hidden;
-  
+
+  &__main {}
+
   &__wrapper {
     height: 250px;
     display: flex;
     transition: $transition;
-    
+
     @media (min-width: $screen-lg-min) {
       height: 450px;
     }
   }
-  
+
   &__container {
     margin-right: 20px;
     flex-shrink: 0;
@@ -25,7 +27,7 @@
     width: $size;
     height: $size;
     transition: $transition;
-    
+
     @media (min-width: $screen-lg-min) {
       $size: 450px;
       width: $size;
