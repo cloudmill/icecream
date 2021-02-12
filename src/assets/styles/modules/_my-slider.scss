@@ -2,6 +2,11 @@
   $transition: 750ms;
 
   overflow: hidden;
+
+  
+  &__main {
+    border: 1px solid black;
+  }
   
   &__wrapper {
     height: 250px;
