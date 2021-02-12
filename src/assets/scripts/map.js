@@ -64,6 +64,14 @@ $(() => {
         });
 
         placemark[id].events.add('click', function(e) {
+          let mainContainer = $(this).parents('[data-type=map_container]'),
+            regionItems = mainContainer.find('[data-type=shop_select]');
+
+
+          console.log(mainContainer);
+          if (regionItems.attr('data-id') == id) {
+            regionItems.addClass('map__item--active').siblings().removeClass('map__item--active');
+          }
           ymap.setCenter(placemark[id].geometry.getCoordinates(), 15);
         });
 
@@ -79,6 +87,8 @@ $(() => {
           coordinateX = $(this).attr('data-coord-x'),
           coordinateY = $(this).attr('data-coord-y'),
           id = $(this).attr('data-id');
+
+        $(this).addClass('map__item--active').siblings().removeClass('map__item--active');
           
         coordinates.push(coordinateX);
         coordinates.push(coordinateY);
