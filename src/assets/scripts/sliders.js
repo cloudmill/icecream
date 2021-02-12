@@ -164,10 +164,12 @@ if ($('.production__slider').length !== 0) {
 	const speed = 750;
 	const count = $('.my-slider__container').length;
 	const buffer = 6;
-	let wrapper_pos = 0;
-	let main_pos = -(
+	let is_transition = false;
+	let main_pos = 0;
+	let wrapper_pos = -(
 		(((buffer / 2) * count) - 1) * sizes[2]
 		+ sizes[1]
+		+ gap * ((buffer / 2) * count)
 	);
 
 	// ресайз
@@ -206,11 +208,12 @@ if ($('.production__slider').length !== 0) {
 		$(this).css('width', `${cur_size}px`);
 		$(this).find('.my-slider__slide').css('transform', `scale(${cur_scale})`);
 	});
-	$('.my-slider__main').css('transform', `translateX(${main_pos}px)`);
+	$('.my-slider__wrapper').css('transform', `translateX(${wrapper_pos}px)`);
 
 	// инициализация swiper'a
 	const swiper = new Swiper('.production__slider-main', {
 		speed,
+		loop: true,
 		allowTouchMove: false,
 		effect: 'fade',
 		fadeEffect: {
@@ -223,28 +226,71 @@ if ($('.production__slider').length !== 0) {
 	// управление
 	// предыдущий
 	$('.production__slider-btn--prev').on('click', () => {
-		$('.my-slider__container').each(function () {
-			const cur_index = $(this).index();
-			const cur_prop_index = Math.abs(((buffer / 2) * count) - cur_index);
-			const cur_size = sizes[cur_prop_index] ? sizes[cur_prop_index] : sizes[2];
-			const cur_scale = scales[cur_prop_index] ? scales[cur_prop_index] : scales[2];
-			$(this).css('width', `${cur_size}px`);
-			$(this).find('.my-slider__slide').css('transform', `scale(${cur_scale})`);
-		});
+		if (!is_transition) {
+			is_transition = true;
 
-		swiper.slidePrev();
+			$('.my-slider__container').each(function () {
+				const cur_index = $(this).index();
+				const cur_prop_index = Math.abs((((buffer / 2) * count) - 1) - cur_index);
+				const cur_size = sizes[cur_prop_index] ? sizes[cur_prop_index] : sizes[2];
+				const cur_scale = scales[cur_prop_index] ? scales[cur_prop_index] : scales[2];
+				$(this).css('width', `${cur_size}px`);
+				$(this).find('.my-slider__slide').css('transform', `scale(${cur_scale})`);
+			});
+
+			wrapper_pos += sizes[2] + gap;
+			$('.my-slider__wrapper').css('transform', `translateX(${wrapper_pos}px)`);
+
+			swiper.slidePrev();
+
+			const timeout = setTimeout(() => {
+				$('.my-slider__container')
+					.last()
+					.detach()
+					.prependTo($('.my-slider__wrapper'));
+
+				main_pos -= sizes[2] + gap;
+				$('.my-slider__main').css('transform', `translateX(${main_pos}px)`);
+
+				is_transition = false;
+
+				clearTimeout(timeout);
+			}, speed);
+		}
 	});
 
 	// следующий
 	$('.production__slider-btn--next').on('click', () => {
-		if (!mySliderIsTransition && mySliderIndex < 2) {
-			mySliderUpdate(++mySliderIndex, mySliderPos -= MY_SLIDER_MIN_SIZE + MY_SLIDER_GAP);
-			mySliderIsTransition = true;
-			const mySliderTransitionTimeout = setTimeout(() => {
-				mySliderIsTransition = false;
-				clearTimeout(mySliderTransitionTimeout);
-			}, MY_SLIDER_SPEED);
-			mainSlider.slideNext();
+		if (!is_transition) {
+			is_transition = true;
+
+			$('.my-slider__container').each(function () {
+				const cur_index = $(this).index();
+				const cur_prop_index = Math.abs((((buffer / 2) * count) + 1) - cur_index);
+				const cur_size = sizes[cur_prop_index] ? sizes[cur_prop_index] : sizes[2];
+				const cur_scale = scales[cur_prop_index] ? scales[cur_prop_index] : scales[2];
+				$(this).css('width', `${cur_size}px`);
+				$(this).find('.my-slider__slide').css('transform', `scale(${cur_scale})`);
+			});
+
+			wrapper_pos -= sizes[2] + gap;
+			$('.my-slider__wrapper').css('transform', `translateX(${wrapper_pos}px)`);
+
+			swiper.slideNext();
+
+			const timeout = setTimeout(() => {
+				$('.my-slider__container')
+					.first()
+					.detach()
+					.appendTo($('.my-slider__wrapper'));
+
+				main_pos += sizes[2] + gap;
+				$('.my-slider__main').css('transform', `translateX(${main_pos}px)`);
+
+				is_transition = false;
+
+				clearTimeout(timeout);
+			}, speed);
 		}
 	});
 }
