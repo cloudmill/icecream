@@ -17,13 +17,13 @@ $(() => {
 
       //HTML шаблон балуна, того самого всплывающего блока, который появляется при щелчке на карту
       let myBalloonLayout = ymaps.templateLayoutFactory.createClass(
-          '<address class="address-map" >'+
-          '<p><b>$[properties.name]</b>'+
-          '<br/>'+
-          '<ul class="balloon-info" >'+
-          '<li><strong>Адрес:&nbsp;</strong>$[properties.address]</li>'+
-          '</ul>'+
-          '</address>'
+        '<address class="address-map" >' +
+        '<p><b>$[properties.name]</b>' +
+        '<br/>' +
+        '<ul class="balloon-info" >' +
+        '<li><strong>Адрес:&nbsp;</strong>$[properties.address]</li>' +
+        '</ul>' +
+        '</address>'
       );
 
       // создание кластера меток
@@ -37,10 +37,10 @@ $(() => {
         ],
         clusterIconContentLayout: contentLayout
       });
-     
+
       let placemark = {};
 
-      $('[data-type=shop_select]').each(function() {
+      $('[data-type=shop_select]').each(function () {
         let x = $(this).attr('data-coord-x'),
           y = $(this).attr('data-coord-y'),
           id = $(this).attr('data-id');
@@ -51,19 +51,19 @@ $(() => {
           address: $(this).attr('data-address'),
         }, {
           balloonContentLayout: myBalloonLayout,
-          balloonOffset: [5,0],
+          balloonOffset: [5, 0],
           balloonCloseButton: true,
           balloonMinWidth: 150,
-          balloonMaxWidth:200,
-          balloonMinHeught:150,
-          balloonMaxHeught:200,
+          balloonMaxWidth: 200,
+          balloonMinHeught: 150,
+          balloonMaxHeught: 200,
           iconLayout: 'default#image',
           iconImageHref: '/local/templates/main/assets/images/map-placemark.svg',
           iconImageSize: [43, 53],
           iconImageOffset: [-21.5, -53]
         });
 
-        placemark[id].events.add('click', function(e) {
+        placemark[id].events.add('click', function (e) {
           let item = $('.map__item[data-id=' + id + ']');
           $('[data-type=shop_select]').removeClass('map__item--active');
           item.addClass('map__item--active');
@@ -80,12 +80,12 @@ $(() => {
 
       $(document).on('click', '[data-type=shop_select]', function () {
         let coordinates = [];
-          coordinateX = $(this).attr('data-coord-x'),
+        coordinateX = $(this).attr('data-coord-x'),
           coordinateY = $(this).attr('data-coord-y'),
           id = $(this).attr('data-id');
 
         $(this).addClass('map__item--active').siblings().removeClass('map__item--active');
-          
+
         coordinates.push(coordinateX);
         coordinates.push(coordinateY);
 
@@ -97,13 +97,32 @@ $(() => {
         placemark[id].balloon.open();
       });
 
+      $(document).on('change', '[data-type=region_select]', function () {
+        let title = $('[data-type=region_select] option:selected').text(),
+          coord = [];
+        console.log(title);
+        ymaps.geocode(title, { results: 1 }).then(
+          function (res) {
+            var MyGeoObj = res.geoObjects.get(0);
+            coord.push(MyGeoObj.geometry.getCoordinates()[0]);
+            coord.push(MyGeoObj.geometry.getCoordinates()[1]);
+
+            ymap.panTo([coord], {
+              flying: true,
+              checkZoomRange: true,
+            });
+            ymap.setCenter(coord, 10);
+            console.log(coord.value);
+          });
+      });
+
       function shopsEvent() {
-        $('[data-type=region_select]').on('select2:select', function() {
+        $('[data-type=region_select]').on('select2:select', function () {
           let container = $(this).parents('[data-type=map_container]'),
             shopsContainer = container.find('[data-type=shops_container]'),
             shopsBlock = container.find('[data-type=shops_block]'),
             region = $(this).val();
-            
+
           $.ajax({
             type: 'post',
             url: '/world/oeskimo/',
@@ -111,9 +130,30 @@ $(() => {
               ajax: true,
               region: region,
             },
-            success: function(data) {
+            success: function (data) {
               let shopsBlockResponse = $(data).find('[data-type=shops_block]');
-                
+
+              shopsBlock.remove();
+              shopsContainer.append(shopsBlockResponse);
+            }
+          });
+        });
+        $('[data-type=region_select]').on('select2:select', function () {
+          let container = $(this).parents('[data-type=map_container]'),
+            shopsContainer = container.find('[data-type=shops_container]'),
+            shopsBlock = container.find('[data-type=shops_block]'),
+            region = $(this).val();
+
+          $.ajax({
+            type: 'post',
+            url: '/world/oeskimo/',
+            data: {
+              ajax: true,
+              region: region,
+            },
+            success: function (data) {
+              let shopsBlockResponse = $(data).find('[data-type=shops_block]');
+
               shopsBlock.remove();
               shopsContainer.append(shopsBlockResponse);
             }
