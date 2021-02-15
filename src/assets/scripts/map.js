@@ -64,14 +64,10 @@ $(() => {
         });
 
         placemark[id].events.add('click', function(e) {
-          let mainContainer = $(this).parents('[data-type=map_container]'),
-            regionItems = mainContainer.find('[data-type=shop_select]');
+          let item = $('.map__item[data-id=' + id + ']');
+          $('[data-type=shop_select]').removeClass('map__item--active');
+          item.addClass('map__item--active');
 
-
-          console.log(mainContainer);
-          if (regionItems.attr('data-id') == id) {
-            regionItems.addClass('map__item--active').siblings().removeClass('map__item--active');
-          }
           ymap.setCenter(placemark[id].geometry.getCoordinates(), 15);
         });
 
