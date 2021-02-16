@@ -99,45 +99,32 @@ $(() => {
 
       $(document).on('change', '[data-type=region_select]', function () {
         let title = $('[data-type=region_select] option:selected').text(),
-          coord = [];
-        console.log(title);
+          coord = [],
+          zoom = null;
+
         ymaps.geocode(title, { results: 1 }).then(
           function (res) {
             var MyGeoObj = res.geoObjects.get(0);
-            coord.push(MyGeoObj.geometry.getCoordinates()[0]);
-            coord.push(MyGeoObj.geometry.getCoordinates()[1]);
 
+            if (title != 'Все') {
+              coord.push(MyGeoObj.geometry.getCoordinates()[0]);
+              coord.push(MyGeoObj.geometry.getCoordinates()[1]);
+              zoom = 10;
+            } else {
+              coord = [66.413951, 94.241942];
+              zoom = 3;
+            }
+            
             ymap.panTo([coord], {
               flying: true,
               checkZoomRange: true,
             });
-            ymap.setCenter(coord, 10);
-            console.log(coord.value);
-          });
+            ymap.setCenter(coord, zoom);
+          }
+        );
       });
 
       function shopsEvent() {
-        $('[data-type=region_select]').on('select2:select', function () {
-          let container = $(this).parents('[data-type=map_container]'),
-            shopsContainer = container.find('[data-type=shops_container]'),
-            shopsBlock = container.find('[data-type=shops_block]'),
-            region = $(this).val();
-
-          $.ajax({
-            type: 'post',
-            url: '/world/oeskimo/',
-            data: {
-              ajax: true,
-              region: region,
-            },
-            success: function (data) {
-              let shopsBlockResponse = $(data).find('[data-type=shops_block]');
-
-              shopsBlock.remove();
-              shopsContainer.append(shopsBlockResponse);
-            }
-          });
-        });
         $('[data-type=region_select]').on('select2:select', function () {
           let container = $(this).parents('[data-type=map_container]'),
             shopsContainer = container.find('[data-type=shops_container]'),
