@@ -1,10 +1,8 @@
 .tab-nav {
     margin-left: -20px;
     width: calc(100% + (20px * 2));
-    // display: flex;
-    // overflow-x: auto; deprecated
 
-    @media screen and (min-width: 1150px) {
+    @media screen and (min-width: $screen-xl-min) {
         margin-left: -40px;
         width: calc(100% + (40px * 2));
     }
@@ -18,7 +16,7 @@
     &__wrapper {
         padding: 0 20px;
 
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: $screen-xl-min) {
             padding: 0 40px;
         }
     }
@@ -34,7 +32,7 @@
         border: 1px solid #F1EFD6;
         border-radius: 10px;
 
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: $screen-xl-min) {
             padding: 0 40px;
             border-radius: 20px;
         }
@@ -85,7 +83,7 @@
             }
         }
 
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: $screen-xl-min) {
 
             &:not(:last-child) {
                 margin-right: 76px;
@@ -103,7 +101,7 @@
         text-decoration: none;
         white-space: nowrap;
 
-        @media screen and (min-width: 1150px) {
+        @media screen and (min-width: $screen-xl-min) {
             padding: 20px 0;
             font-size: 18px;
             line-height: 22px;
