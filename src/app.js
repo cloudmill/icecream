@@ -289,7 +289,7 @@ $(window).on('load', () => {
 		const $el = $('.tab-nav');
 		const $elCopy = $el.clone();
 		const $elCopyContainer = $('.left-container--tab-nav');
-		
+
 		$elCopy.css('pointer-events', 'all');
 		$elCopyContainer.append($elCopy);
 
@@ -315,6 +315,7 @@ $(window).on('load', () => {
 
 		function toggle() {
 			$el.toggleClass('tab-nav--sticky');
+
 			$elCopyContainer.toggleClass('left-container--sticky');
 		}
 	}

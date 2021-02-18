@@ -46,7 +46,7 @@ block COMPONENTS
 block PARTS
 
   mixin __next
-    .page-store__block.page-store__block--bottom.page-store__block--z-index--m1(data-aos='fade-up')
+    .page-store__block.page-store__block--bottom(data-aos='fade-up')
       .nextBlock
         a.row.between__xs.middle__xs(href='#')
           .col
@@ -54,12 +54,12 @@ block PARTS
               |Смотрите также
             h3
               |Экскурсия на фабрику «Чистая линия»
-          .col
+          .col  
             .nextBlock--ico
               +img('icons/nextArr.svg')
 
   mixin __text-image
-    .page-store__block(data-aos='fade-up')
+    .page-store__block.page-store__block--front(data-aos='fade-up')
       +row
         +col
           p.page-store__title.page-store__title--block--text-image
@@ -155,6 +155,7 @@ block STRUCTURE
 
 
   .page-store
+    .left-container.left-container--tab-nav
     .left-container.page-store__left-container
       +__content
 
