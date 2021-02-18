@@ -6,7 +6,8 @@ import Swiper from 'swiper/swiper-bundle.min';
 import 'velocity-animate';
 import './assets/scripts/backend.js';
 import './assets/scripts/map.js';
-import'jquery';
+import './assets/scripts/tab-nav.js';
+import 'jquery';
 
 // Styles
 import 'Styles/_app.scss';
@@ -283,40 +284,3 @@ $(() => {
 	}
 });
 
-// tab-nav
-$(window).on('load', () => {
-	if ($('.tab-nav').length !== 0) {
-		const $el = $('.tab-nav');
-		const $elCopy = $el.clone();
-		const $elCopyContainer = $('.left-container--tab-nav');
-
-		$elCopy.css('pointer-events', 'all');
-		$elCopyContainer.append($elCopy);
-
-		let isSticky = false;
-		if ($(window).scrollTop() + 40 >= $el.position().top) {
-			isSticky = true;
-			toggle();
-		}
-
-		$(window).on('scroll', function () {
-			if (isSticky) {
-				if ($(window).scrollTop() + 40 < $el.position().top) {
-					isSticky = false;
-					toggle();
-				}
-			} else {
-				if ($(window).scrollTop() + 40 >= $el.position().top) {
-					isSticky = true;
-					toggle();
-				}
-			}
-		});
-
-		function toggle() {
-			$el.toggleClass('tab-nav--sticky');
-
-			$elCopyContainer.toggleClass('left-container--sticky');
-		}
-	}
-});
