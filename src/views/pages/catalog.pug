@@ -128,7 +128,8 @@ block content
                   each tag in item.tags
                     .tags-item= tag
                 .catalog-img
-                  +img(item.img)
+                  .catalog-img-wrapper
+                    +img(item.img)
                   .sea
                     .surface
                 .catalog-desc: p= item.name
@@ -143,11 +144,11 @@ block content
         .btn-group(data-aos='fade-up')
           a.btn.btn--primary(href='#')
             +img('icons/location.svg')
-            span Купить в Москве и МО
+            span.page-catalog__button-text Купить в Москве и МО
           a.btn.btn--primary(href='#')
             +img('icons/location.svg')
-            span Купить в Санкт–Петурбурге и ЛО
+            span.page-catalog__button-text Купить в Санкт–Петурбурге и ЛО
 
 
 block footer
-  include ../partials/_footer.pug
+  include ../partials/_footer-alt.pug

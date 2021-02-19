@@ -59,7 +59,7 @@
       }
     }
     &.active,
-    &:hover {
+    &:active {
       path.circle {
         stroke: $base-color-main;
         fill: $base-color-main;
