@@ -2,9 +2,21 @@
 // Modules -> Breadcrumbs
 // --------------------------------------------------
 
+.breadcrumbs-wrapper {
+  display: flex;
+  overflow-x: auto;
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}
+
 @if $use-breadcrumb == true {
   .breadcrumbs {
     padding: 0;
+    flex-shrink: 0;
     margin-top: 40px;
     margin-bottom: 10px;
     list-style: none;
@@ -33,6 +45,7 @@
       align-items: center;
       &:before {
         content: "";
+        pointer-events: none;
         margin-right: 20px;
         margin-left: 20px;
         display: inline-block;

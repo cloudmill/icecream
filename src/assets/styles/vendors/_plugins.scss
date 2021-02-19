@@ -84,6 +84,7 @@ $items:
   }
   .select2-selection__rendered {
     padding: 0;
+    padding-right: 30px;
     > span {
       width: 100%;
       font-size: 14px;
@@ -219,6 +220,10 @@ $items:
   span {
     background: none;
   }
+}
+.select2-selection-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .swiper-pagination-bullet {

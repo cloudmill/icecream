@@ -31,7 +31,7 @@ function formatStateSelection(state, e) {
 		);
 	} else {
 		$state = $(
-			'<span><span></span></span>'
+			'<span><span class="select2-selection-text"></span></span>'
 		);
 	}
 

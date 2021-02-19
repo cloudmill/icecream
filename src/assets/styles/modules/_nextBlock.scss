@@ -5,6 +5,7 @@
   margin-top: 70px;
   margin-bottom: 80px;
   position: relative;
+  z-index: 0;
   overflow: hidden;
   &:after {
     content: '';

@@ -15,20 +15,21 @@ block content
     section.outlook__top.excursion__top
       .left-container
         .mainTitle.excursion__mainTitle
-          ul.breadcrumbs
-            li.breadcrumbs__item.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                |Смотровая площадка PANORAMA360
-            li.breadcrumbs__item.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                |Мир Чистой Линии
-            li.breadcrumbs__item.active.page-store__breadcrumbs-item
-              a.breadcrumbs__link(href="#")
-                svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
-                  path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
-                  path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
+          .breadcrumbs-wrapper
+            ul.breadcrumbs
+              li.breadcrumbs__item.page-store__breadcrumbs-item
+                a.breadcrumbs__link(href="#")
+                  |Смотровая площадка PANORAMA360
+              li.breadcrumbs__item.page-store__breadcrumbs-item
+                a.breadcrumbs__link(href="#")
+                  |Мир Чистой Линии
+              li.breadcrumbs__item.active.page-store__breadcrumbs-item
+                a.breadcrumbs__link(href="#")
+                  svg(width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M7 5.5L12.2128 1.41602L22 9.01602" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(d="M21 12.0161V20.6843H14.7368H10.2632H4V16.272" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" fill="white")
+                    path(d="M5.00733 7.75741C5.3787 7.42317 5.3787 6.84084 5.00733 6.5066C4.68734 6.2186 4.20157 6.2186 3.88158 6.50659L0.825886 9.2567C0.384504 9.65395 0.384504 10.3461 0.825886 10.7433L3.88158 13.4934C4.20157 13.7814 4.68734 13.7814 5.00733 13.4934C5.3787 13.1592 5.3787 12.5768 5.00733 12.2426L3.40446 10.8H11.2C11.6418 10.8 12 10.4418 12 10C12 9.55818 11.6418 9.20002 11.2 9.20002H3.40446L5.00733 7.75741Z" stroke="white")
           h1.mainTitle-text(data-aos='fade-up')
             |Смотровая площадка PANORAMA360
         nav.tab-nav.excursion__tab-nav(data-aos='fade-up')
@@ -49,9 +50,7 @@ block content
                     |#{tab.text}
         .excursion__top-content(data-aos='fade-up')
           h2.excursion__top-title
-            |PANORAMA360 — это самая высокая смотровая площадка в Европе, расположенная на 89 этаже
-            br
-            |в Башне «Федерация.Восток»
+            |PANORAMA360 — это самая высокая смотровая площадка в Европе, расположенная на 89 этаже в Башне «Федерация.Восток»
           p.excursion__top-text
             |С высоты 327 метров открываются захватывающие виды на панораму Москвы и основные достопримечательности столицы: Кремль, Лужники, МГУ, Останкинскую Телебашню, Здание МИД, Дом Правительства и другие.
     section.excursion__top-mid
