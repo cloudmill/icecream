@@ -148,6 +148,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   overflow: hidden;
+
   @media screen and (min-width: $screen-xl-min) {
     padding-right: 40px;
     padding-left: 360px;
@@ -170,5 +171,11 @@ body {
   &--sticky {
     visibility: visible;
     opacity: 1;
+  }
+
+  &--overflow {
+    &--visible {
+      overflow: visible;
+    }
   }
 }

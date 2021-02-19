@@ -12,6 +12,17 @@
       margin-top: 0;
     }
   }
+
+  
+  // MAIN-TITLE
+
+  &__mainTitle {
+    margin-bottom: 40px !important;
+
+    @media screen and (min-width: $screen-xl-min) {
+      margin-bottom: 60px !important;
+    }
+  }
 }
 .page-interesting,
 .page-news {
