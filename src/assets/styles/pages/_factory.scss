@@ -426,6 +426,10 @@
   .security__features-list {
     margin: 0;
     padding: 100px 0;
+
+    @media (min-width: $screen-md-min) {
+      padding-top: 120px;
+    }
   }
 
 
