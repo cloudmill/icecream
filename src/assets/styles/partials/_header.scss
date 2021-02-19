@@ -99,6 +99,17 @@
   @media screen and (min-width: $screen-md-min) {
     padding: 160px 30px 40px;
   }
+  &--index-page {
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 40px 30px;
+      overflow-y: auto;
+      top: 40px;
+      left: -1000px;
+      bottom: 40px;
+      left: 40px;
+      border-radius: 20px;
+    }
+  }
   @media screen and (min-width: $screen-xl-min) {
     padding: 40px 30px;
     overflow-y: auto;

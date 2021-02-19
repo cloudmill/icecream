@@ -430,6 +430,10 @@
     @media (min-width: $screen-md-min) {
       padding-top: 120px;
     }
+
+    @media (min-width: $screen-xl-min) {
+      padding-top: 100px;
+    }
   }
 
 
@@ -536,5 +540,41 @@
     @media (min-width: $screen-xl-min) {
       margin-top: 160px;
     }
+  }
+
+
+  // PHOTO
+
+  &__photo {
+    &--1 {
+      max-width: 335px;
+
+      @media (min-width: $screen-xl-min) {
+        max-width: 510px;
+      }
+
+      @media (min-width: 1680px) {
+        max-width: 616px;
+      }
+    }
+
+    &--2 {
+      max-width: 288px;
+
+      @media (min-width: $screen-xl-min) {
+        margin-top: 240px;
+        margin-top: 10px;
+      }
+
+      @media (min-width: 1680px) {
+        max-width: 288px;
+      }
+    }
+  }
+
+  &__photo-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain;
   }
 }
