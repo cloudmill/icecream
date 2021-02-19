@@ -33,6 +33,7 @@
 
     &__list {
         display: flex;
+        justify-content: space-between;
         
         margin: 0;
         padding: 0 20px;
@@ -91,7 +92,7 @@
         @media screen and (min-width: $screen-xl-min) {
 
             &:not(:first-child) {
-                margin-left: 76px;
+                margin-left: 15px;
             }
         }
     }

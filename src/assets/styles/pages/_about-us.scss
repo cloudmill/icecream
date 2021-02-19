@@ -73,13 +73,24 @@
         padding: 0 20px 25px;
         min-height: 120px;
         display: flex;
+        flex-wrap: wrap;
         align-items: flex-end;
         background-image: url("../images/slider-wave.svg");
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: auto 280%;
 
-        @media screen and (min-width: 1150px) {
+        // @media screen and (min-width: 1150px) {
+        //     margin-top: 80px;
+        //     padding: 0 120px;
+        //     min-height: 144px;
+        //     justify-content: space-between;
+        // }
+
+        @media screen and (min-width: $screen-xl-min) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
             margin-top: 80px;
             padding: 0 120px;
             min-height: 144px;
@@ -96,7 +107,7 @@
         position: relative;
         font-weight: bold;
         font-size: 16px;
-        line-height: 140%;
+        line-height: 130%;
         cursor: pointer;
         user-select: none;
         transition: 0.3s;
@@ -115,34 +126,54 @@
             transition: inherit;
         }
 
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
+        &:not(:last-child) {
+            margin-right: 10px;
 
-        &--active {
-            font-size: 22px;
-            line-height: 130%;
-            color: #5DCBEE;
-
-            &::before {
-                opacity: 1;
+            @media screen and (min-width: $screen-md-min) {
+                margin-right: 20px;
             }
         }
 
-        @media screen and (min-width: 1150px) {
-            padding-bottom: 25px;
-            font-size: 30px;
+        @media screen and (min-width: $screen-md-min) {
+            line-height: 140%;
+        }
+
+        @media screen and (min-width: $screen-xl-min) {
+            font-size: 22px;
             line-height: 130%;
+            padding-bottom: 25px;
 
             &::before {
                 top: auto;
                 bottom: 0;
             }
+        }
 
-            &--active {
-                font-size: 80px;
+        // @media screen and (min-width: 1680px) {
+        //     font-size: 50px;
+        // }
+
+        &--active {
+            font-size: 18px;
+            color: #5DCBEE;
+
+            &::before {
+                opacity: 1;
+            }
+
+            @media screen and (min-width: $screen-md-min) {
+                font-size: 22px;
+                line-height: 130%;
+            }
+
+            @media screen and (min-width: $screen-xl-min) {
+                font-size: 50px;
                 line-height: 110%;
             }
+
+            // @media screen and (min-width: 1680px) {
+            //     font-size: 80px;
+            // }
         }
     }
 

@@ -120,7 +120,7 @@ $(window).on('load', function () {
 
 			paginationItems.on('click', function () {
 				const index = $(this).index();
-				swiper.slideTo(index);
+				swiper.slideTo(index + 1);
 			});
 		});
 	}
