@@ -43,10 +43,11 @@ label {
   }
 }
 
-input[type] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+input,
+textarea {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 input[type="search"] {
