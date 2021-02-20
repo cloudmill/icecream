@@ -120,11 +120,34 @@ $('.form--js').on('click', function(e) {
 			name: name.val(),
 			email: email.val(),
 			text: message.val(),
+		};
+	}
+
+	if (window.location.pathname === '/press-center/news/' || window.location.pathname === '/press-center/press/' || window.location.pathname === '/for-buyer/interesting/') {
+		url = '/local/templates/main/include/ajax/side/subscribe.php';
+		data = {
+			email: email.val(),
+		};
+	}
+
+	if (window.location.pathname === '/for-buyer/faq/') {
+		url = '/local/templates/main/include/ajax/side/faq.php';
+		data = {
+			email: email.val(),
+			text: message.val(),
+		};
+	}
+
+	if (window.location.pathname === '/for-buyer/reviews/') {
+		url = '/local/templates/main/include/ajax/side/review.php';
+		data = {
+			name: name.val(),
+			email: email.val(),
+			text: message.val(),
 			phone: phone.val(),
 			type: type,
 		};
 	}
-
 	// открытие формы ответа
 	// контакты
 	const mediaQuery = matchMedia('(min-width: 1024px)');
