@@ -1,7 +1,7 @@
 import Inputmask from 'inputmask';
 import AOS from 'aos';
 
-Inputmask({'mask': '+7 (999) 999-99-99'}).mask('input[name=phone]');
+Inputmask({ 'mask': '+7 (999) 999-99-99' }).mask('input[name=phone]');
 
 // валидация
 
@@ -19,7 +19,7 @@ export function validateField(element, event) {
 	const checkbox = element.attr('type') === 'checkbox';
 	const value = event;
 	const tmpval = element.val();
-	
+
 	let result;
 
 	if (tmpval === '') {
@@ -87,12 +87,12 @@ export function validateField(element, event) {
 	return result;
 }
 
-$('.form--js').on('click', function(e) {
+$('.form--js').on('click', function (e) {
 	e.preventDefault();
-	
+
 	// валидация каждого поля формы
 	const result = [];
-	$(this).closest('form').find('input, textarea').each(function() {
+	$(this).closest('form').find('input, textarea').each(function () {
 		const input = $(this)[0];
 		result.push(validateField($(this), input.value));
 	});
@@ -155,7 +155,41 @@ $('.form--js').on('click', function(e) {
 		url: url,
 		dataType: 'json',
 		data: data,
-		success: function(a) {
+		success: function (a) {
+			console.log(a.success);
+			
+			// открытие формы ответа
+			// контакты
+			const mediaQuery = matchMedia('(min-width: 1024px)');
+			if (mediaQuery.matches) {
+				curForm.closest('.form-inner').css('visibility', 'hidden').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+			} else {
+				curForm.closest('.form-inner').css('display', 'none').next().css('display', 'flex');
+			}
+			AOS.refresh();
+			$('.form-back--js').one('click', function() {
+				const form = $(this).closest('form');
+				form.trigger('reset');
+				form.find('input').parent().removeClass('input--filled');
+				if (mediaQuery.matches) {
+					$(this).closest('.form-send').hide().prev().css('visibility', '').css('opacity', 1);
+				} else {
+					$(this).closest('.form-send').hide().prev().css('display', '');
+				}
+				AOS.refresh();
+				return false;
+			});
+			// подписка, формы боковой панели
+			$('.form-response').addClass('shown activated');
+			$('.reset--js').one('click', function() {
+				$('.form-response').removeClass('shown');
+				setTimeout(() => {
+					$('.form-response').removeClass('activated');
+				}, 500);
+				return false;
+			});
+
+			/*
 			if (a.success === true) {
 				// открытие формы ответа
 				// контакты
@@ -188,6 +222,7 @@ $('.form--js').on('click', function(e) {
 					return false;
 				});
 			}
+			*/
 		}
 	});
 });

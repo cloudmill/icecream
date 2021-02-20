@@ -155,17 +155,24 @@
 							<div class="sticky" data-margin-top="40">
 								<div class="img-block visible__lg visible__xl"><img src="assets/images/interests/int-1.jpg" alt="" /></div>
 								<div class="sign-block" data-aos="fade-up">
-									<h4>Подписаться на новые статьи</h4>
-									<form action="" method="POST">
-										<div class="form__group">
-											<div class="control-body input"><input class="control" type="email" name="email" id="email" placeholder="E–mail" required="required" />
-												<div class="control-error"></div>
+									<div class="form-request">
+										<h4>Подписаться на новые статьи</h4>
+										<form action="" method="POST">
+											<div class="form__group">
+												<div class="control-body input"><input class="control" type="email" name="email" id="email" placeholder="E–mail" required="required" />
+													<div class="control-error"></div>
+												</div>
 											</div>
+											<div class="checkbox form__group"><input type="checkbox" id="sign" required><label for="sign">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label>
+												<div class="control-error"></div>
+											</div><button class="btn btn--primary btn__sm btn--full form--js" type="submit"><span>Подписаться</span></button>
+										</form>
+									</div>
+									<div class="form-response">
+										<div class="inner">
+											<h4>Спасибо, подписка оформлена</h4><button class="btn btn--primary btn__sm btn--full reset--js" type="submit"><span>Подписаться еще</span></button>
 										</div>
-										<div class="checkbox form__group"><input type="checkbox" id="sign" required><label for="sign">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label>
-											<div class="control-error"></div>
-										</div><button class="btn btn--primary btn__sm btn--full form--js" type="submit"><span>Подписаться</span></button>
-									</form>
+									</div>
 								</div>
 							</div>
 						</aside>
