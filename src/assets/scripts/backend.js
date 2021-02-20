@@ -102,7 +102,7 @@ function changeFilterCatalog() {
 function catalogFilterAjax(data) {
     $.ajax({
         type: 'post',
-        url: '/catalog/',
+        url: window.location.pathname,
         dataType: 'html',
         data: data,
         success: function(data) {
@@ -201,7 +201,7 @@ function changeFilterRecipes() {
 function recipesFilterAjax(data) {
     $.ajax({
         type: 'post',
-        url: '/recipes/',
+        url: window.location.pathname,
         dataType: 'html',
         data: data,
         success: function(data) {
