@@ -120,6 +120,8 @@ $('.form--js').on('click', function(e) {
 			name: name.val(),
 			email: email.val(),
 			text: message.val(),
+			phone: phone.val(),
+			type: type,
 		};
 	}
 
