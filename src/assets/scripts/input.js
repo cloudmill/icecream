@@ -108,10 +108,10 @@ $('.form--js').on('click', function(e) {
 	const email = form.find('input[name=email]');
 	const phone = form.find('input[name=phone]');
 	const message = form.find('textarea[name=content]');
-	const type = form.attr('data-type');
+	const type = form.attr('data-type-title');
 	const curForm = $(this);
-	let url = null;
-	let data;
+	let url = null,
+		data = null;
 
 	if (window.location.pathname === '/contacts/') {
 		url = '/local/templates/main/include/ajax/contact/contact.php';
@@ -143,4 +143,26 @@ $('.form--js').on('click', function(e) {
 		}, 500);
 		return false;
 	});
+
+	// AJAX
+	/*
+	$.ajax({
+		type: 'POST',
+		url: url,
+		dataType: 'json',
+		data: data,
+		success: function(a) {
+			if (a.success === true) {
+				curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+				$('.form-back--js').one('click', function() {
+					const form = $(this).closest('form');
+					form.trigger('reset');
+					form.find('input').parent().removeClass('input--filled');
+					$(this).closest('.form-send').hide().prev().css('opacity', 1);
+					return false;
+				});
+			}
+		}
+	});
+	*/
 });
