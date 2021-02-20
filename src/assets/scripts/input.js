@@ -126,7 +126,7 @@ $('.form--js').on('click', function(e) {
 
 	// открытие формы ответа
 	// контакты
-	curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+	curForm.closest('.form-inner').css('display', 'none').next().slideDown(500).css('display', 'flex');
 	$('.form-back--js').one('click', function() {
 		const form = $(this).closest('form');
 		form.trigger('reset');
