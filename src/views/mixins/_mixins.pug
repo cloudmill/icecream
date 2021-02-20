@@ -31,10 +31,10 @@ mixin title(title, items, classes)
 //- menu
 mixin menu(items)
   ul.main-nav
-    each item in items
+    each item, index in items
       - var parent  = ''
       - if(item.subitems !== false) parent='main-nav__item--parent'
-      li.main-nav__item(class=parent)
+      li.main-nav__item(class = (index !== 0) ? parent : (parent + ((parent !== '') ? '' : ' ') + 'main-nav__item--active'))
         a.main-nav__link(href=item.href, title=item.title)= item.title
         - if(item.subitems !== false)
           ul.sub-nav

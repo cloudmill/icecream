@@ -101,7 +101,7 @@ $('.form--js').click(function(e) {
 	});
 	const isNONValid = result.includes(false);
 	if (isNONValid) {
-		return false;
+		// return false; отключение валидации для демонстрации формы ответа
 	}
 	const form = $(this).closest('form');
 	const name = form.find('input[name=name]');
@@ -124,6 +124,9 @@ $('.form--js').click(function(e) {
 		};
 	}
 
+	curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+	
+	/*
 	$.ajax({
 		type: 'POST',
 		url: url,
@@ -136,6 +139,7 @@ $('.form--js').click(function(e) {
 			}
 		}
 	});
+	*/
 });
 
 
