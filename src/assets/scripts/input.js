@@ -58,7 +58,7 @@ export function validateField(element, event) {
 	}
 
 	if (checkbox && isRequired) {
-	  console.log(element.prop('checked'));
+	  console.log('form validation: ', element.prop('checked'));
 		if (element.prop('checked')) {
 			// element.closest('.checkbox').removeClass('error');
 			element.closest('.checkbox').find(errorBlock).text('');
@@ -101,7 +101,7 @@ $('.form--js').click(function(e) {
 	});
 	const isNONValid = result.includes(false);
 	if (isNONValid) {
-		// return false; отключение валидации для демонстрации формы ответа
+		return false;
 	}
 	const form = $(this).closest('form');
 	const name = form.find('input[name=name]');
@@ -125,7 +125,23 @@ $('.form--js').click(function(e) {
 	}
 
 	curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
-	
+	$('.form-back--js').one('click', function() {
+		const form = $(this).closest('form');
+		form.trigger('reset');
+		form.find('input').parent().removeClass('input--filled');
+		$(this).closest('.form-send').hide().prev().css('opacity', 1);
+		return false;
+	});
+
+	$('.form-response').addClass('shown activated');
+	$('.reset--js').one('click', function() {
+		$('.form-response').removeClass('shown');
+		setTimeout(() => {
+			$('.form-response').removeClass('activated');
+		}, 500);
+		return false;
+	});
+
 	/*
 	$.ajax({
 		type: 'POST',
@@ -141,13 +157,3 @@ $('.form--js').click(function(e) {
 	});
 	*/
 });
-
-
-$('.form-back--js').click(function() {
-	const form = $(this).closest('form');
-	form.trigger('reset');
-	form.find('input').parent().removeClass('input--filled');
-	$(this).closest('.form-send').hide().prev().css('opacity', 1);
-	return false;
-});
-// form

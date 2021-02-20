@@ -1,3 +1,4 @@
+/*
 $('.form--js').click(function() {
 	$('.form-response').addClass('shown activated');
 	return false;
@@ -9,3 +10,4 @@ $('.reset--js').click(function() {
 	}, 500);
 	return false;
 });
+*/

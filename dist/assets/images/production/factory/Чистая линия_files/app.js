@@ -1750,6 +1750,7 @@ $(document).on('change', '.checkbox input', function(event) {
 // form
 // eslint-disable-next-line consistent-return
 
+/*
 $('.form--js').click(function (e) {
   e.preventDefault();
   var result = [];
@@ -1804,7 +1805,10 @@ $('.form-back--js').click(function () {
   form.find('input').parent().removeClass('input--filled');
   $(this).closest('.form-send').hide().prev().css('opacity', 1);
   return false;
-}); // form
+}); 
+*/
+
+// form
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
