@@ -1,4 +1,5 @@
 import Inputmask from 'inputmask';
+import AOS from 'aos';
 
 Inputmask({'mask': '+7 (999) 999-99-99'}).mask('input[name=phone]');
 
@@ -126,12 +127,23 @@ $('.form--js').on('click', function(e) {
 
 	// открытие формы ответа
 	// контакты
-	curForm.closest('.form-inner').css('display', 'none').next().slideDown(500).css('display', 'flex');
+	const mediaQuery = matchMedia('(min-width: 1024px)');
+	if (mediaQuery.matches) {
+		curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+	} else {
+		curForm.closest('.form-inner').css('display', 'none').next().css('display', 'flex');
+	}
+	AOS.refresh();
 	$('.form-back--js').one('click', function() {
 		const form = $(this).closest('form');
 		form.trigger('reset');
 		form.find('input').parent().removeClass('input--filled');
-		$(this).closest('.form-send').hide().prev().css('opacity', 1);
+		if (mediaQuery.matches) {
+			$(this).closest('.form-send').hide().prev().css('opacity', 1);
+		} else {
+			$(this).closest('.form-send').hide().prev().css('display', '');
+		}
+		AOS.refresh();
 		return false;
 	});
 	// подписка, формы боковой панели
@@ -145,7 +157,6 @@ $('.form--js').on('click', function(e) {
 	});
 
 	// AJAX
-	/*
 	$.ajax({
 		type: 'POST',
 		url: url,
@@ -164,5 +175,4 @@ $('.form--js').on('click', function(e) {
 			}
 		}
 	});
-	*/
 });

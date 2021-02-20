@@ -4,6 +4,7 @@
 
 .mobile {
   &-head {
+    pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +38,7 @@
     }
   }
   &__nav {
+    pointer-events: all;
     cursor: pointer;
     svg {
       @media screen and (min-width: 900px) {
