@@ -9,10 +9,11 @@
 
   &__tab-nav {
     margin: 0 40px 40px 0;
-    width: auto;
+    width: 100%;
     overflow-x: visible;
     @media screen and (min-width: $screen-xl-min) {
       margin: 0 40px 0 0;
+      width: auto;
     }
     &-wrapper {
       padding: 0;

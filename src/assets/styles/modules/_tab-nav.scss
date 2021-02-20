@@ -19,6 +19,21 @@
         visibility: hidden;
     }
 
+    $tab-nav: &;
+    &--alt {
+        #{$tab-nav}__list {
+            justify-content: flex-start;
+        }
+
+        #{$tab-nav}__item {
+            &:not(:first-child) {
+                @media (min-width: $screen-xl-min) {
+                    margin-left: 40px;
+                }
+            }
+        }
+    }
+
     
     &__wrapper {
         padding: 0 20px;
@@ -33,7 +48,6 @@
 
     &__list {
         display: flex;
-        justify-content: space-between;
         
         margin: 0;
         padding: 0 20px;
@@ -44,6 +58,7 @@
 
         @media screen and (min-width: $screen-xl-min) {
             padding: 0 40px;
+            justify-content: space-between;
             border-radius: 20px;
         }
     }
