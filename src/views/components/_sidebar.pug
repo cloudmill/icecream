@@ -10,11 +10,16 @@ aside.aside
                 +img('icons/message.svg')
                 span presschl1@gmail.com
         .sign-block(data-aos='fade-up')
-            h4 Подписаться на новости
-            form(action='' method='POST')
-                .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
-                .checkbox.form__group
-                    input(type="checkbox", id='sign', required)
-                    label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
-                    .control-error
-                button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Подписаться
+            .form-request
+                h4 Подписаться на новости
+                form(action='' method='POST')
+                    .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
+                    .checkbox.form__group
+                        input(type="checkbox", id='sign', required)
+                        label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+                        .control-error
+                    button.btn.btn--primary.btn__sm.btn--full.form--js(type='submit'): span Подписаться
+            .form-response
+                .inner
+                    h4 Спасибо, подписка оформлена
+                    button.btn.btn--primary.btn__sm.btn--full.reset--js(type='submit'): span Подписаться еще
