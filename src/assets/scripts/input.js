@@ -100,7 +100,7 @@ $('.form--js').on('click', function(e) {
 	// результат валидации формы
 	const isNONValid = result.includes(false);
 	if (isNONValid) {
-		return false;
+		// return false;
 	}
 
 	// сбор данных формы
@@ -129,7 +129,7 @@ $('.form--js').on('click', function(e) {
 	// контакты
 	const mediaQuery = matchMedia('(min-width: 1024px)');
 	if (mediaQuery.matches) {
-		curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+		curForm.closest('.form-inner').css('visibility', 'hidden').css('opacity', 0).next().slideDown(500).css('display', 'flex');
 	} else {
 		curForm.closest('.form-inner').css('display', 'none').next().css('display', 'flex');
 	}
@@ -139,7 +139,7 @@ $('.form--js').on('click', function(e) {
 		form.trigger('reset');
 		form.find('input').parent().removeClass('input--filled');
 		if (mediaQuery.matches) {
-			$(this).closest('.form-send').hide().prev().css('opacity', 1);
+			$(this).closest('.form-send').hide().prev().css('visibility', '').css('opacity', 1);
 		} else {
 			$(this).closest('.form-send').hide().prev().css('display', '');
 		}
