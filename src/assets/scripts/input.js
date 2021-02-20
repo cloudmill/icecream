@@ -100,7 +100,7 @@ $('.form--js').on('click', function(e) {
 	// результат валидации формы
 	const isNONValid = result.includes(false);
 	if (isNONValid) {
-		// return false;
+		return false;
 	}
 
 	// сбор данных формы
@@ -148,36 +148,6 @@ $('.form--js').on('click', function(e) {
 			type: type,
 		};
 	}
-	// открытие формы ответа
-	// контакты
-	const mediaQuery = matchMedia('(min-width: 1024px)');
-	if (mediaQuery.matches) {
-		curForm.closest('.form-inner').css('visibility', 'hidden').css('opacity', 0).next().slideDown(500).css('display', 'flex');
-	} else {
-		curForm.closest('.form-inner').css('display', 'none').next().css('display', 'flex');
-	}
-	AOS.refresh();
-	$('.form-back--js').one('click', function() {
-		const form = $(this).closest('form');
-		form.trigger('reset');
-		form.find('input').parent().removeClass('input--filled');
-		if (mediaQuery.matches) {
-			$(this).closest('.form-send').hide().prev().css('visibility', '').css('opacity', 1);
-		} else {
-			$(this).closest('.form-send').hide().prev().css('display', '');
-		}
-		AOS.refresh();
-		return false;
-	});
-	// подписка, формы боковой панели
-	$('.form-response').addClass('shown activated');
-	$('.reset--js').one('click', function() {
-		$('.form-response').removeClass('shown');
-		setTimeout(() => {
-			$('.form-response').removeClass('activated');
-		}, 500);
-		return false;
-	});
 
 	// AJAX
 	$.ajax({
@@ -187,12 +157,34 @@ $('.form--js').on('click', function(e) {
 		data: data,
 		success: function(a) {
 			if (a.success === true) {
-				curForm.closest('.form-inner').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+				// открытие формы ответа
+				// контакты
+				const mediaQuery = matchMedia('(min-width: 1024px)');
+				if (mediaQuery.matches) {
+					curForm.closest('.form-inner').css('visibility', 'hidden').css('opacity', 0).next().slideDown(500).css('display', 'flex');
+				} else {
+					curForm.closest('.form-inner').css('display', 'none').next().css('display', 'flex');
+				}
+				AOS.refresh();
 				$('.form-back--js').one('click', function() {
 					const form = $(this).closest('form');
 					form.trigger('reset');
 					form.find('input').parent().removeClass('input--filled');
-					$(this).closest('.form-send').hide().prev().css('opacity', 1);
+					if (mediaQuery.matches) {
+						$(this).closest('.form-send').hide().prev().css('visibility', '').css('opacity', 1);
+					} else {
+						$(this).closest('.form-send').hide().prev().css('display', '');
+					}
+					AOS.refresh();
+					return false;
+				});
+				// подписка, формы боковой панели
+				$('.form-response').addClass('shown activated');
+				$('.reset--js').one('click', function() {
+					$('.form-response').removeClass('shown');
+					setTimeout(() => {
+						$('.form-response').removeClass('activated');
+					}, 500);
 					return false;
 				});
 			}
