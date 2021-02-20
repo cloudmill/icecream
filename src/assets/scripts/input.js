@@ -90,6 +90,8 @@ export function validateField(element, event) {
 $('.form--js').on('click', function (e) {
 	e.preventDefault();
 
+	let path = window.location.pathname.split('/');
+
 	// валидация каждого поля формы
 	const result = [];
 	$(this).closest('form').find('input, textarea').each(function () {
@@ -125,7 +127,7 @@ $('.form--js').on('click', function (e) {
 		};
 	}
 
-	if (window.location.pathname === '/press-center/news/' || window.location.pathname === '/press-center/press/' || window.location.pathname === '/for-buyer/interesting/') {
+	if (window.location.pathname === '/press-center/news/' || window.location.pathname === '/press-center/press/' || window.location.pathname === '/for-buyer/interesting/' || window.location.pathname === '/recipes/' || path[1] == 'recipes' || path[2] == 'news') {
 		url = '/local/templates/main/include/ajax/side/subscribe.php';
 		data = {
 			email: email.val(),
