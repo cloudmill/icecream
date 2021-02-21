@@ -22,6 +22,7 @@ $(document).ready(() => {
 	require('Scripts/filtering');
 	require('Scripts/select');
 	require('Scripts/popup');
+	require('Scripts/ref');
 
 	if (screenWidth > 1150 && $('.sticky').length) {
 		const sticky = new Sticky('.sticky');

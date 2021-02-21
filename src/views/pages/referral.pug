@@ -1,0 +1,359 @@
+extends ../layouts/master.pug
+
+block pageName
+  - pageName = "ref"
+
+block header
+  include ../partials/_header.pug
+
+block content
+  main.page-referral.referral
+    .left-container
+      .mainTitle
+        .breadcrumbs-wrapper
+          +img('referral/milk.svg')
+          ul.breadcrumbs(data-aos='fade-left')
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Реферальная программа
+            li.breadcrumbs__item.active
+              a.breadcrumbs__link(href="/")
+                svg(width='23' height='22' viewbox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5958 0.578664C11.9567 0.295897 12.4637 0.294803 12.8259 0.576012L22.6131 8.17601C23.0493 8.51474 23.1283 9.14295 22.7896 9.57917C22.4509 10.0154 21.8227 10.0944 21.3865 9.75568L12.2153 2.63406L7.6165 6.23701C7.18176 6.57762 6.55321 6.5013 6.2126 6.06655C5.87199 5.6318 5.94831 5.00326 6.38306 4.66265L11.5958 0.578664Z' fill='#5DCBEE')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M20.9998 10.9659C20.4475 10.9659 19.9998 11.4137 19.9998 11.9659V19.6342H4.99978V16.2219C4.99978 15.6696 4.55206 15.2219 3.99978 15.2219C3.4475 15.2219 2.99978 15.6696 2.99978 16.2219V20.6342C2.99978 21.1865 3.4475 21.6342 3.99978 21.6342H20.9998C21.5521 21.6342 21.9998 21.1865 21.9998 20.6342V11.9659C21.9998 11.4137 21.5521 10.9659 20.9998 10.9659Z' fill='#5DCBEE')
+                  path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
+      .referral__main
+        .referral__title.text--center(data-aos='fade-up')
+          h1(data-aos='fade-up') Начни зарабатывать #[br] онлайн прямо сейчас!
+          h3(data-aos='fade-up') Реферальная программа
+          a.btn.btn--primary.myModal(data-aos='fade-up'): span Хочу в проект
+        .referral-img(data-aos='fade-up'): +img('referral/stepper.svg')
+      .referral__container
+        .referral__video
+          img#play(src='assets/images/referral/play.svg', alr='')
+          video#video(poster="assets/images/referral/slider.jpg" muted loop)
+            source(src="assets/images/video/video.mp4")
+        .referral__billet(data-aos='fade-up')
+          .referral__billet-item
+            .referral__billet-head 19 #[span лет]
+            .referral__billet-body на рынке
+          .referral__billet-item
+            .referral__billet-head >50 #[span млн]
+            .referral__billet-body клиентов
+          .referral__billet-item
+            .referral__billet-head >180
+            .referral__billet-body видов ассортимента #[br] продукции
+      .referral__list
+        h2(data-aos='fade-up') #[a(href='#', target='_blank') Омолоко] — эксклюзивный #[br] интернет-магазин
+        .row
+          .col.col__lg-6.col__xs-12
+            .referral__list-item(data-aos='fade-up')
+              .referral__list-img: +img('referral/shop-1.svg')
+              .referral__list-txt Только свежая продукция! Ночью готовим, утром доставляем
+            .referral__list-item(data-aos='fade-up')
+              .referral__list-img: +img('referral/shop-2.svg')
+              .referral__list-txt Бесплатная доставка от 1 000 руб. по Москве и всей Московской области
+          .col.col__lg-6.col__xs-12
+            .referral__list-item(data-aos='fade-up')
+              .referral__list-img: +img('referral/shop-3.svg')
+              .referral__list-txt Максимальные требования к качеству продукции во время производства (ГОСТ+)
+            .referral__list-item(data-aos='fade-up')
+              .referral__list-img: +img('referral/shop-4.svg')
+              .referral__list-txt Гарантируем соблюдение строгих требований к температурным режимам при перевозке продукции «Чистая Линия»
+            .referral__list-item(data-aos='fade-up')
+              .referral__list-img: +img('referral/shop-5.svg')
+              .referral__list-txt Нашей продукцией с доставкой можно украсить любой праздник, подобрать ингредиенты для блюд, перекусить в офисе в обеденный перерыв или сделать приятный сюрприз родственникам и друзьям!
+    .referral__calc
+      .left-container
+        h2(data-aos='fade-up') Калькулятор доходов
+        .referral__calc-block
+          .row
+            .col.col__lg-6.col__xs-12(data-aos='fade-up')
+              h5 Количество первых заказов клиентов #[br] (привлечённых за месяц)
+              output
+              input(type="range" min="0" max="1000" step="10" value="250" data-rangeslider)
+            .col.col__lg-6.col__xs-12(data-aos='fade-up')
+              h5 Сумма одного заказа, руб.
+              output
+              input(type="range" min="0" max="12000" step="100" value="2500" data-rangeslider)
+          .text--center
+            h3 Ваш доход, руб.
+          .result__block.result__block--js(data-aos='fade-up')
+            .row.middle__xs
+              .col.col__md-4.col__xs-12
+                p До 250 заказов
+                b 10% вознаграждение
+              .col.col__md-8.col__xs-12
+                .result
+                  span 62 500
+          .result__block.result__block--js.result__block--red(data-aos='fade-up')
+            .row.middle__xs
+              .col.col__md-4.col__xs-12
+                p 250 заказов
+                b 10% вознаграждение #[span.br-style] + iPhone 12 ProMax
+              .col.col__md-8.col__xs-12
+                .result
+                  span 62 500
+                  | +
+                  .small iPhone 12 #[span.br-style]ProMax
+          .result__block.result__block--js.result__block--bl(data-aos='fade-up')
+            .row.middle__xs
+              .col.col__md-4.col__xs-12
+                p 5000 заказов
+                b 10% вознаграждение #[span.br-style] + Mercedes Benz
+              .col.col__md-8.col__xs-12
+                .result
+                  span 62 500
+                  | +
+                  .small Mercedes-#[span.br-style]Benz
+    .left-container
+      .referral__info
+        h2(data-aos='fade-up') Условия
+        .row.referral__info-block
+          .col.col__lg-6.col__xs-12(data-aos='fade-up')
+            .referral__info-item
+              .percent 10%
+              span вознаграждение c каждого заказа #[span.br-style] привлеченных вами клиентов
+          .col.col__lg-6.col__xs-12(data-aos='fade-up')
+            .referral__info-item.referral__info-item--red
+              .percent 10%
+              span скидка для ваших #[span.br-style] клиентов
+        .row.between__xs
+          .col.col_xl-5.col__lg-6.col__xs-12
+            h2(data-aos='fade-up') Участникам программы
+            .referral__info-list
+              .referral__info-list-item(data-aos='fade-up')
+                .img: +img('referral/program-1.svg')
+                .desc
+                  h4 Академия «Чистая Линия»
+                  p Получи сертификат эксперта молочной продукции и мороженого, а также звание «Молочного сомелье»
+              .referral__info-list-item(data-aos='fade-up')
+                .img: +img('referral/program-2.svg')
+                .desc
+                  h4 Обучение на заводе «Чистая Линия»
+                  p Пройди двухдневный интенсив и узнай все тонкости производства молочной продукции и мороженого от крупнейшего российского производителя
+              .referral__info-list-item(data-aos='fade-up')
+                .img: +img('referral/program-3.svg')
+                .desc
+                  h4 Вступление в закрытый клуб #[span.br-style] «Чистая Линия»
+                  p Узнавай первым об акциях интернет-магазина, получай эксклюзивные призы и продукцию на дом в подарок
+          .col.col__lg-6.col__xs-12
+            h2(data-aos='fade-up') Ваши бонусы
+            .referral__info-bonus
+              .referral__info-bonus-item.referral__info-bonus-item--bl(data-aos='fade-up')
+                p 250 заказов
+                h4 iPhone 12 ProMax
+              .referral__info-bonus-item.referral__info-bonus-item--red(data-aos='fade-up')
+                p 5000 заказов
+                h4 Mercedes–Benz
+      .referral__programm
+        h2(data-aos='fade-up') Как присоединиться #[span.br-style] к реферальной программе?
+        .row
+          .col.col__lg-4.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 1
+              .referral__programm-ico: +img('referral/step-1.svg')
+              .referral__programm-text
+                span Зарегистрируйтесь в личном #[span.br-style] кабинете
+                br
+                a.inline-link(href='#') Зарегистрироваться
+          .col.col__lg-4.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 2
+              .referral__programm-ico: +img('referral/step-2.svg')
+              .referral__programm-text
+                span Получите персональный #[span.br-style] промокод, который будет #[span.br-style] идентифицировать вас и&nbsp;предоставлять 10% скидку #[span.br-style] клиенту
+          .col.col__lg-4.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 3
+              .referral__programm-ico: +img('referral/step-3.svg')
+              .referral__programm-text
+                span Расскажите своим #[span.br-style] близким/друзьям/родственникам #[span.br-style] об&nbsp;интернет-магазине  «Чистая #[span.br-style] линия» – omoloko.ru. Мы не #[span.br-style] ограничиваем методы #[span.br-style] распространения информации!
+          .col.col__lg-4.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 4
+              .referral__programm-ico: +img('referral/step-4.svg')
+              .referral__programm-text
+                span Отслеживайте ваши результаты #[span.br-style] в&nbsp;личном кабинете менеджера. #[span.br-style] Статистика будет обновляться #[span.br-style] ежедневно
+          .col.col__lg-5.col__xs-12(data-aos='fade-up')
+            .referral__programm-item.referral__programm-item--bl
+              .referral__programm-num 5
+              .referral__programm-ico: +img('referral/step-5.svg')
+              .referral__programm-text
+                span Целевое действие: первый заказ #[span.br-style] через приложение или сайт #[span.br-style] Омолоко по&nbsp;вашему #[span.br-style] индивидуальному промокоду
+    .referral__faq
+      .left-container
+        .row
+          .col.col__lg-6.col__xs-12
+            h2(data-aos='fade-up') Участники программы
+            .referral__faq-users
+              .referral__faq-users-item(data-aos='fade-up')
+                .referral__faq-users_top
+                  .referral__faq-users-ava
+                    +maskAva('referral/user-1.jpg', 'pattern0', 'image0')
+                  .referral__faq-users-info
+                    .referral__faq-users-name Саакян Жанна
+                    .referral__faq-users-age 24 года, Москва
+                    .referral__faq-users-orders
+                      .referral__faq-users-order
+                        p Заказов
+                        .summ 235
+                      .referral__faq-users-order
+                        p На сумму, руб.
+                        .summ 1 450 000
+                .referral__faq-users_bot.row
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-graph
+                      .referral__faq-users-graph_t
+                        div График доходности, руб.
+                        div 2020
+                      .referral__faq-users-graph_m
+                        .graphs
+                          .graphs-item(style='height: 40px')
+                            span
+                          .graphs-item(style='height: 70px')
+                            span
+                      .referral__faq-users-graph_b
+                        .lists
+                          .lists-item
+                            div Июнь
+                            b 35 700
+                          .lists-item
+                            div Июль
+                            b 109 300
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-salary
+                      div
+                        div Заработок, руб.
+                        .summ 145 000
+              .referral__faq-users-item(data-aos='fade-up')
+                .referral__faq-users_top
+                  .referral__faq-users-ava
+                    +maskAva('referral/user-2.jpg', 'pattern2', 'image2')
+                  .referral__faq-users-info
+                    .referral__faq-users-name Захарова Екатерина
+                    .referral__faq-users-age 32 года, Москва
+                    .referral__faq-users-orders
+                      .referral__faq-users-order
+                        p Заказов
+                        .summ 315
+                      .referral__faq-users-order
+                        p На сумму, руб.
+                        .summ 2 047 500
+                .referral__faq-users_bot.row
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-graph
+                      .referral__faq-users-graph_t
+                        div График доходности, руб.
+                        div 2020
+                      .referral__faq-users-graph_m
+                        .graphs
+                          .graphs-item(style='height: 24px')
+                            span
+                          .graphs-item(style='height: 44px')
+                            span
+                          .graphs-item(style='height: 70px')
+                            span
+                      .referral__faq-users-graph_b
+                        .lists
+                          .lists-item
+                            div Июнь
+                            b 32 600
+                          .lists-item
+                            div Июль
+                            b 64 350
+                          .lists-item
+                            div Август
+                            b 107 800
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-salary
+                      div
+                        div Заработок, руб.
+                        .summ 204 750
+              .referral__faq-users-item(data-aos='fade-up')
+                .referral__faq-users_top
+                  .referral__faq-users-ava
+                    +maskAva('referral/user-3.jpg', 'pattern3', 'image3')
+                  .referral__faq-users-info
+                    .referral__faq-users-name Аксенов Евгений
+                    .referral__faq-users-age 35 года, Москва
+                    .referral__faq-users-orders
+                      .referral__faq-users-order
+                        p Заказов
+                        .summ 89
+                      .referral__faq-users-order
+                        p На сумму, руб.
+                        .summ 578 500
+                .referral__faq-users_bot.row
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-graph
+                      .referral__faq-users-graph_t
+                        div График доходности, руб.
+                        div 2020
+                      .referral__faq-users-graph_m
+                        .graphs
+                          .graphs-item(style='height: 40px')
+                            span
+                          .graphs-item(style='height: 70px')
+                            span
+                      .referral__faq-users-graph_b
+                        .lists
+                          .lists-item
+                            div Июнь
+                            b 21 350
+                          .lists-item
+                            div Июль
+                            b 36 500
+                  .col.col__md-6.col__xs-12
+                    .referral__faq-users-salary
+                      div
+                        div Заработок, руб.
+                        .summ 57 850
+          .col.col__lg-6.col__xs-12
+            h2(data-aos='fade-up') FAQ
+            -
+              let items = [
+                {
+                  title: 'Где можно купить ваше мороженое?'
+                },
+                {
+                  title: 'Почему мороженое «Радуга» таких цветов? Используются ли там красители?'
+                },
+                {
+                  title: 'Почему вы используете сухое молоко и в каких количествах?'
+                },
+                {
+                  title: 'Какой срок годности у мороженого?'
+                },
+                {
+                  title: 'Действительно ли используете только натуральные продукты, без консервантов и красителей?'
+                },
+                {
+                  title: 'Почему у вас написано, что мороженое без растительных жиров, а в составе рожка они есть?'
+                },
+                {
+                  title: 'Содержит ли ваше мороженое ГМО или какие-нибудь химические добавки?'
+                },
+                {
+                  title: 'Какое сырье используется для изготовления мороженого?'
+                },
+                {
+                  title: 'Как мороженое «Чистая линия» доставляется в кафе и магазины?'
+                }
+              ]
+            .accordion
+              each item in items
+                .accordion__item.accordion__item--js(data-aos='fade-up')
+                  .accordion-head= item.title
+                  .accordion-body: div Мы в рецептуре закладываем сухое обезжиренное молоко по причине полноты СОМО (сухой обезжиренный молочный остаток), который предусмотрен ГОСТ. Но его там очень мало (2%) т.к. основными компонентами являются натуральное молоко (60,7%), сгущеное молоко (12%), сливки (8%), сливочное масло (8%). Состав каждого продукта можно найти на omoloko.ru
+        .referral__pop
+          h2(data-aos='fade-up') Оставь заявку и узнай как они #[span.br-style] добились таких результатов!
+          a.btn.btn--primary.myModal(data-aos='fade-up'): span Хочу в проект
+    .referral__last
+      .left-container
+        .text--center
+          h2 Присоединяйся к нам! #[br] Остался всего 1 шаг
+          h5 Зарегистрируйся в личном кабинете #[br] по ссылке и получи доступ прямо сейчас.
+          a.btn.btn--primary.myModal(data-aos='fade-up'): span Хочу в проект
+
+block footer
+  include ../partials/_footer.pug

@@ -1,0 +1,18 @@
+div#grabMe.popup(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .form-request
+    h3 Оставить заявку
+    form(action='' method='POST')
+      .form__group: +fieldInput('text', 'name', 'name', '', 'ФИО', true)
+      .form__group: +fieldInput('text', 'birth', 'birth', '', 'Дата рождения', true)
+      .form__group: +fieldInput('text', 'phone', 'phone', '', 'Телефон', true)
+      .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
+      .checkbox.form__group.col__md-8
+        input(type="checkbox", id='sign', required)
+        label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+        .control-error
+      button.btn.btn--primary.btn--full.form--js(type='submit'): span Отправить
+  .form-response
+    .inner
+      h3 Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
+      button.btn.btn--primary.btn--full.close-popup--js: span Закрыть
