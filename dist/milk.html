@@ -36,6 +36,42 @@
 
 	<body class="page-main">
 		<!--[if lt IE 10]><p class="browsehappy">Данный сайт построен на передовых, современных технологиях и не поддерживает Ваш браузер. Настоятельно рекомендуем выбрать и установить любой из &nbsp;<a href="http://browsehappy.com/" target="_blank">современных браузеров.</a> Это бесплатно и займет всего несколько минут.</p><![endif]-->
+		<div class="popup" id="grabMe" style="display: none">
+			<div class="close-popup close-popup--js"><img src="assets/images/icons/close.svg" alt="" /></div>
+			<div class="form-request">
+				<h3>Оставить заявку</h3>
+				<form action="" method="POST">
+					<div class="form__group">
+						<div class="control-body input"><input class="control" type="text" name="name" id="name" placeholder="ФИО" required="required" />
+							<div class="control-error"></div>
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="control-body input"><input class="control" type="text" name="birth" id="birth" placeholder="Дата рождения" required="required" />
+							<div class="control-error"></div>
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="control-body input"><input class="control" type="text" name="phone" id="phone" placeholder="Телефон" required="required" />
+							<div class="control-error"></div>
+						</div>
+					</div>
+					<div class="form__group">
+						<div class="control-body input"><input class="control" type="email" name="email" id="email" placeholder="E–mail" required="required" />
+							<div class="control-error"></div>
+						</div>
+					</div>
+					<div class="checkbox form__group col__md-8"><input type="checkbox" id="sign" required><label for="sign">Согласен на обработку персональных данных в соответствии с <a href="#">политикой конфиденциальности</a></label>
+						<div class="control-error"></div>
+					</div><button class="btn btn--primary btn--full form--js" type="submit"><span>Отправить</span></button>
+				</form>
+			</div>
+			<div class="form-response">
+				<div class="inner">
+					<h3>Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.</h3><button class="btn btn--primary btn--full close-popup--js"><span>Закрыть</span></button>
+				</div>
+			</div>
+		</div>
 		<div class="loading"></div>
 		<div class="mobile-head">
 			<div class="mobile__nav mobile-nav--js"><svg width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg">
