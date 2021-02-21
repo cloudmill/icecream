@@ -337,11 +337,9 @@ if ($('.main-slider').length) {
 			progress: function () {
 				const swiper = this;
 				for (let i = 0; i < swiper.slides.length; i++) {
-					console.log(swiper.slides[i].progress);
 					const slideProgress = swiper.slides[i].progress;
 					const innerOffset = swiper.width * interleaveOffset;
 					const innerTranslate = slideProgress * innerOffset;
-					console.log(innerTranslate);
 
 					swiper.slides[i].querySelector('.slide-bgimg').style.transform =
 						'translateX(' + innerTranslate + 'px)';

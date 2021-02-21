@@ -43,6 +43,12 @@ label {
   }
 }
 
+input,
+textarea {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
 
 input[type="search"] {
   @include box-sizing(border-box);

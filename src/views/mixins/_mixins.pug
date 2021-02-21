@@ -13,8 +13,8 @@ mixin newsList(classList)
         svg.hover(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
           path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='#5DCBEE')
 
-mixin title(title, items)
-  .mainTitle
+mixin title(title, items, classes)
+  .mainTitle(class = classes ? classes : '')
     .breadcrumbs-wrapper
       ul.breadcrumbs(data-aos='fade-left')
         each item in items
@@ -32,10 +32,10 @@ mixin title(title, items)
 //- menu
 mixin menu(items)
   ul.main-nav
-    each item in items
+    each item, index in items
       - var parent  = ''
       - if(item.subitems !== false) parent='main-nav__item--parent'
-      li.main-nav__item(class=parent)
+      li.main-nav__item(class = (index !== 0) ? parent : (parent + ((parent !== '') ? '' : ' ') + 'main-nav__item--active'))
         a.main-nav__link(href=item.href, title=item.title)= item.title
         - if(item.subitems !== false)
           ul.sub-nav

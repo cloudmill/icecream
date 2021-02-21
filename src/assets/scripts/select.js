@@ -2,11 +2,9 @@ import 'select2';
 import 'jquery.easing';
 
 function formatState(state) {
-	if (!state.id) {
-		return state.text;
-	}
 	let $state;
-	if (state.element.dataset.img !== undefined) {
+
+	if (state.element !== undefined && state.element.dataset.img !== undefined) {
 		$state = $(
 			'<span><img src="' + state.element.dataset.img + '" class="img-flag" /> ' + state.text + '</span>'
 		);
@@ -15,17 +13,15 @@ function formatState(state) {
 			'<span>' + state.text + '</span>'
 		);
 	}
+	
 	return $state;
 }
 
 function formatStateSelection(state, e) {
-	if (!state.id) {
-		return state.text;
-	}
 	const title = $(e.prevObject).closest('.select2').prev().data('title');
 	
 	let $state;
-	if (state.element.dataset.img !== undefined) {
+	if (state.element !== undefined && state.element.dataset.img !== undefined) {
 		$state = $(
 			'<span><img class="img-flag" /> <span></span></span>'
 		);

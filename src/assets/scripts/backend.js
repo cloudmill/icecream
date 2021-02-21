@@ -2,7 +2,6 @@ $(function() {
     showMore();
     changeFilterCatalog();
     changeFilterRecipes();
-    contactForm();
 });
 
 function showMore() {
@@ -103,7 +102,7 @@ function changeFilterCatalog() {
 function catalogFilterAjax(data) {
     $.ajax({
         type: 'post',
-        url: '/catalog/',
+        url: window.location.pathname,
         dataType: 'html',
         data: data,
         success: function(data) {
@@ -202,7 +201,7 @@ function changeFilterRecipes() {
 function recipesFilterAjax(data) {
     $.ajax({
         type: 'post',
-        url: '/recipes/',
+        url: window.location.pathname,
         dataType: 'html',
         data: data,
         success: function(data) {
@@ -226,30 +225,5 @@ function recipesFilterAjax(data) {
                 $(this).val($(this).find('[selected]').val()).trigger('change');
             });
         }
-    });
-}
-
-function contactForm() {
-    $('[data-type=contact_form]').on('submit', function(e) {
-        e.preventDefault();
-        
-        let form = $(this),
-            data = {
-                name: form.find("input[name='name']").val(),
-                mail: form.find("input[name='email']").val(),
-                phone: form.find("input[name='phone']").val(),
-                text: form.find("textarea[name='question']").val(),
-                type: form.attr('data-type-title'),
-            };
-        
-        $.ajax({
-            type: 'post',
-            url: '/local/templates/main/include/ajax/contact/contact.php',
-            dataType: 'json',
-            data: data,
-            success: function(data) {
-                
-            }
-        });
     });
 }

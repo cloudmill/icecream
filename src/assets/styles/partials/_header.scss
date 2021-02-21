@@ -4,11 +4,12 @@
 
 .mobile {
   &-head {
+    pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -37,6 +38,7 @@
     }
   }
   &__nav {
+    pointer-events: all;
     cursor: pointer;
     svg {
       @media screen and (min-width: 900px) {
@@ -59,7 +61,7 @@
       }
     }
     &.active,
-    &:hover {
+    &:active {
       path.circle {
         stroke: $base-color-main;
         fill: $base-color-main;
@@ -98,6 +100,17 @@
   }
   @media screen and (min-width: $screen-md-min) {
     padding: 160px 30px 40px;
+  }
+  &--index-page {
+    @media screen and (min-width: $screen-lg-min) {
+      padding: 40px 30px;
+      overflow-y: auto;
+      top: 40px;
+      left: -1000px;
+      bottom: 40px;
+      left: 40px;
+      border-radius: 20px;
+    }
   }
   @media screen and (min-width: $screen-xl-min) {
     padding: 40px 30px;

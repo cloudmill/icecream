@@ -1,18 +1,26 @@
-//
-// Modules -> Navs
-// --------------------------------------------------
-
 .main-menu {
+  $menu: &;
+
+  margin-bottom: 40px;
+
   font-weight: bold;
   font-size: 30px;
-  margin-bottom: 40px;
   line-height: 1;
-  li {
+
+  &__item {
     margin-top: 15px;
+
+    &--active {
+      & > #{$menu}__link {
+        @extend #{$menu}__link:hover;
+      }
+    }
   }
-  a {
+
+  &__link {
     color: $base-color-light;
     text-decoration: none;
+
     &:hover {
       color: $color-type-2a;
     }
@@ -20,6 +28,8 @@
 }
 
 .main-nav {
+  $nav: &;
+
   margin-bottom: 20px;
   padding-left: 0;
   list-style: none;
@@ -27,18 +37,29 @@
   &__item {
     position: relative;
     display: block;
+
     font-weight: bold;
+
+    &--active {
+      & > #{$nav}__link {
+        @extend #{$nav}__link:hover;
+      }
+    }
   }
+
   &__link {
     position: relative;
     padding: $nav-link-padding;
-    text-decoration: none;
     display: block;
+
+    text-decoration: none;
     color: $base-color-light;
+
     &:hover {
       color: $color-type-2a;
     }
   }
+
   img {
     max-width: none;
   }

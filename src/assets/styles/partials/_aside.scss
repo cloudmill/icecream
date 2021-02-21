@@ -77,26 +77,50 @@
   }
 }
 
+// форма "связаться с нами"
+// блок
+.form-connect {
+  margin-top: -11px;
+  position: relative;
+  z-index: 0;
+}
+// форма ввода
+.form-inner {}
+// форма ответа
 .form-send {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
   display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  @media screen and (min-width: $screen-md-min) {
+
+  @media screen and (min-width: $screen-lg-min) {
+    $padding-horizontal: 15px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $padding-horizontal;
+    right: $padding-horizontal;
     justify-content: space-between;
   }
-  .form__group {
-    margin-left: auto;
-  }
+
   h3 {
-    padding-top: 40px;
-    @media screen and (min-width: $screen-md-min) {
-      padding-top: 0;
+    margin-bottom: 40px !important;
+    max-width: 335px;
+
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 571px;
+    }
+  }
+
+  .form__group {
+    margin: 0;
+    margin-left: auto;
+    width: 100%;
+    max-width: 354px;
+
+    @media screen and (min-width: $screen-lg-min) {
+      max-width: 318px;
     }
   }
 }

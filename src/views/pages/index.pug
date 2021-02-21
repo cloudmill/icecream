@@ -1,10 +1,31 @@
 extends ../layouts/masterMain.pug
 
 block header
-  include ../partials/_header.pug
+  .mobile-head
+    .mobile__nav.mobile-nav--js
+      svg(width="84" height="84" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg")
+        path.circle(d="M16.4448 58.2975C11.8338 51.3341 10.3097 44.0928 11.5764 37.4205C12.8432 30.7473 16.9116 24.5904 23.5833 19.8164C24.3815 19.2453 25.1617 18.6412 25.9184 18.0216C33.0115 12.2144 40.8795 10.8275 48.1243 12.6126C55.3831 14.4013 62.0496 19.3843 66.6779 26.3739C71.4427 33.5696 73.6052 40.8026 72.8218 47.3871C72.0402 53.9559 68.3179 59.9565 61.1549 64.6932C46.7887 74.1931 25.8689 72.5297 16.4448 58.2975Z" fill="white" stroke="#F1EFD6")
+        path.text(d="M33.5176 46.9714H31.7949V40.1082L29.2109 44.032H28.4043L25.834 40.0945V46.9714H24.1113V37.1687H25.6836L28.8145 41.9812L31.9316 37.1687H33.5176V46.9714ZM36.4844 43.9363C36.5208 44.4923 36.7168 44.9252 37.0723 45.2351C37.4277 45.545 37.929 45.7 38.5762 45.7C39.0046 45.7 39.4238 45.6453 39.834 45.5359C40.2533 45.4174 40.6771 45.2306 41.1055 44.9753L41.3105 46.4246C40.9277 46.6615 40.4948 46.8393 40.0117 46.9578C39.5286 47.0763 39.041 47.1355 38.5488 47.1355C37.8379 47.1355 37.2363 47.0352 36.7441 46.8347C36.252 46.6251 35.8509 46.3471 35.541 46.0007C35.2311 45.6453 35.0078 45.2351 34.8711 44.7703C34.7344 44.2963 34.666 43.795 34.666 43.2664C34.666 42.7468 34.748 42.2546 34.9121 41.7898C35.0762 41.3158 35.3086 40.9057 35.6094 40.5593C35.9193 40.213 36.2975 39.9395 36.7441 39.739C37.1908 39.5294 37.7012 39.4246 38.2754 39.4246C38.8314 39.4246 39.3236 39.5248 39.752 39.7253C40.1895 39.9259 40.5586 40.1993 40.8594 40.5457C41.1602 40.892 41.388 41.3067 41.543 41.7898C41.6979 42.2638 41.7754 42.7742 41.7754 43.321C41.7754 43.4213 41.7754 43.5216 41.7754 43.6218C41.7754 43.713 41.7663 43.8178 41.748 43.9363H36.4844ZM39.998 42.5964C39.9707 42.0769 39.8021 41.6622 39.4922 41.3523C39.1823 41.0333 38.7676 40.8738 38.248 40.8738C37.7012 40.8738 37.2682 41.0378 36.9492 41.366C36.6302 41.6941 36.4616 42.1042 36.4434 42.5964H39.998ZM42.7051 39.5886H44.4277V42.2546H47.5039V39.5886H49.2266V46.9714H47.5039V43.6628H44.4277V46.9714H42.7051V39.5886ZM56.4453 45.7C56.9648 45.7 57.3522 45.4721 57.6074 45.0164C57.8535 44.5424 57.9766 43.9636 57.9766 43.28C57.9766 43.0248 57.9492 42.7559 57.8945 42.4734C57.849 42.1817 57.7624 41.9174 57.6348 41.6804C57.5163 41.4434 57.3568 41.2475 57.1562 41.0925C56.9648 40.9376 56.7188 40.8601 56.418 40.8601C56.1081 40.8601 55.8529 40.9376 55.6523 41.0925C55.4609 41.2475 55.3105 41.4434 55.2012 41.6804C55.0918 41.9174 55.0143 42.1772 54.9688 42.4597C54.9323 42.7423 54.9141 43.0157 54.9141 43.28C54.9141 43.9636 55.0371 44.5424 55.2832 45.0164C55.5111 45.4721 55.8984 45.7 56.4453 45.7ZM56.418 47.1355C55.9167 47.1355 55.4746 47.058 55.0918 46.9031C54.7181 46.739 54.3991 46.5111 54.1348 46.2195C53.8704 45.9369 53.6608 45.5997 53.5059 45.2078C53.36 44.8158 53.2689 44.3875 53.2324 43.9226H52.3848V46.9714H50.6621V39.5886H52.3848V42.5281H53.2461C53.3008 42.0815 53.4056 41.6713 53.5605 41.2976C53.7246 40.9148 53.9388 40.5867 54.2031 40.3132C54.4766 40.0307 54.7956 39.8119 55.1602 39.657C55.5339 39.502 55.9622 39.4246 56.4453 39.4246C57.0104 39.4246 57.4935 39.5294 57.8945 39.739C58.3047 39.9486 58.6419 40.2312 58.9062 40.5867C59.1706 40.9421 59.3665 41.3523 59.4941 41.8171C59.6217 42.282 59.6855 42.7696 59.6855 43.28C59.6855 43.7996 59.6172 44.2963 59.4805 44.7703C59.3529 45.2442 59.1569 45.6544 58.8926 46.0007C58.6191 46.3562 58.2773 46.6342 57.8672 46.8347C57.457 47.0352 56.974 47.1355 56.418 47.1355Z" fill="#17A3D0")
+        path.close(fill-rule="evenodd" clip-rule="evenodd" d="M47.6275 35.3138C48.018 35.7043 48.018 36.3375 47.6275 36.728L37.728 46.6275C37.3374 47.018 36.7043 47.018 36.3137 46.6275C35.9232 46.237 35.9232 45.6038 36.3137 45.2133L46.2132 35.3138C46.6038 34.9233 47.2369 34.9233 47.6275 35.3138Z" fill="white")
+        path.close(fill-rule="evenodd" clip-rule="evenodd" d="M36.3137 35.3138C36.7042 34.9233 37.3374 34.9233 37.7279 35.3138L47.6274 45.2133C48.0179 45.6038 48.0179 46.237 47.6274 46.6275C47.2369 47.018 46.6037 47.018 46.2132 46.6275L36.3137 36.728C35.9232 36.3375 35.9232 35.7043 36.3137 35.3138Z" fill="white")
+  .mobile__logo
+    a(href="/")
+      img(src="assets/images/logom.svg", alt="Чистая линия")
+  header.page-header.page-header--index-page(data-aos='fade-right')
+    svg.bubble(width="18" height="251" viewBox="0 0 18 251" fill="none" xmlns="http://www.w3.org/2000/svg")
+      path(fill-rule="evenodd" clip-rule="evenodd" d="M-0.0491123 98.2068L0.762514 0C0.762514 0 1.41758 54.0288 4.59133 79.1288C6.34367 92.9874 10.5078 103.776 13.1972 109.612C16.0996 114.208 17.7793 119.654 17.7793 125.491C17.7793 131.309 16.1111 136.737 13.2271 141.323C10.5387 147.144 6.35016 157.961 4.59133 171.871C1.41758 196.971 0.762514 251 0.762514 251L-0.0492554 152.776C-3.70738 154.381 -7.74988 155.271 -12.0004 155.271C-28.4472 155.271 -41.78 141.938 -41.78 125.491C-41.78 109.044 -28.4472 95.7117 -12.0004 95.7117C-7.74982 95.7117 -3.70728 96.6022 -0.0491123 98.2068Z" fill="#F1EFD6")
+    .page-header__logo
+      a(href="/")
+        img(src="assets/images/logo.svg", alt="Чистая линия")
+    include ../components/_navbar
+    a.page-header__link(href='#')
+      +img('ava.png')
+      span Битва пломбиров
+
+
 
 block content
-  main.page-main
+  main.page-main.index-page
     .fullpage-block
       .fullpage-slider.swiper-container(
         data-image-pagination='["assets/images/pagin-1.png", "assets/images/pagin-2.png", "assets/images/pagin-3.png"]'
@@ -43,7 +64,7 @@ block content
             p.text__lg(data-aos='fade-up') Не используем химические добавки, #[br] заменители, усилители вкуса или ГМО.
             a.btn.btn--primary(href='#', data-aos='fade-up'): span Миссия
             a.btn.btn--primary(href='#', data-aos='fade-up'): span Производство
-        .hidden__md.hidden__lg.hidden__xl(data-aos='fade-up'): +img('house-mob.svg')
+        .hidden__md.hidden__lg.hidden__xl(data-aos='fade-up'): +img('house-mob.png')
         .rellax-box.hidden__xs.hidden__sm
           .rellax(data-rellax-speed="0")
             svg(width='1680' height='179' viewbox='0 0 1680 179' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -53,20 +74,20 @@ block content
               path.cloud-4(d='M442.011 88H499C499 88 492.53 73.24 476.7 78.4617C476.7 78.4617 466.307 65.1638 457.635 76.7212C457.635 76.7212 441.529 75.9553 442.011 88Z' fill='white')
               path.cloud-3(d='M1529 107H1582C1582 107 1575.12 92.3003 1563.88 98.958C1563.88 98.958 1554.07 89.4659 1544.74 99.8809C1544.74 99.8809 1531.45 96.1236 1529 107Z' fill='white')
               path.cloud-2(d='M345 178H398C398 178 391.12 163.3 379.879 169.958C379.879 169.958 370.069 160.466 360.737 170.881C360.737 170.881 347.452 167.124 345 178Z' fill='white')
-          .rellax(data-rellax-speed="2"): +img('animation/house1.svg')
+          .rellax(data-rellax-speed="2"): +img('animation/house1.png')
           .rellax(data-rellax-speed="3"): +img('animation/grass.svg')
     .sert-block.rellax-box
-      .left-container.rellax(data-rellax-speed="2")
+      .left-container.left-container--index-page.rellax(data-rellax-speed="2")
         .row.between__xs
           .col.col__lg-4.col__md-5.col__xs-12(data-aos='fade-up')
             h4(data-aos='fade-up') Следим за качеством #[span.br-style] и подтверждаем #[span.br-style] это многочисленными #[span.br-style] наградами
             a.inline-link(href='#') Все награды
           .col.col__lg-8.col__md-7.col__xs-12.gallery(data-aos='fade-up')
-            a(href='assets/images/sert-1.png', data-jbox-image="gallery1"): +img('sert-1.png')
-            a(href='assets/images/sert-2.png', data-jbox-image="gallery1"): +img('sert-2.png')
-            a(href='assets/images/sert-3.png', data-jbox-image="gallery1"): +img('sert-3.png')
+            a(href="#"): +img('sert-1.png')
+            a(href="#"): +img('sert-2.png')
+            a(href="#"): +img('sert-3.png')
     .desc-block.desc-block-inner
-      .left-container
+      .left-container.left-container--index-page.left-container--overflow--visible
         .row
           .col.col__md-6.col__xs-12
             h2(data-aos='fade-up') Мир Чистой Линии
@@ -80,7 +101,7 @@ block content
                 - let parent  = ''
                 - if(i == 1) parent='active'
                 img(src='assets/images/animation/slide-' + i + '.png', alt='', class=parent)
-          .col.col__md-6.col__xs-12
+          .col.col__md-6.col__xs-12.index-page__slider
             .carousel.swiper-container(data-aos='fade-up')
               .swiper-wrapper
                 .swiper-slide
@@ -101,13 +122,13 @@ block content
                   a.btn.btn--primary(href='#'): span Подробнее
               .swiper-pagination(data-aos='fade-up')
       .rellax-box
-        .slider-image.hidden__xs.hidden__sm.rellax(data-rellax-speed="-1")
+        .slider-image.hidden__xs.hidden__sm
           - for (let i = 1; i < 5; i++)
             - let parent  = ''
             - if(i == 1) parent='active'
             img(src='assets/images/animation/slide-' + i + '.png', alt='', class=parent)
     .news-block
-      .left-container
+      .left-container.left-container--index-page
         .row.margbot80
           .col.col__lg-6.col__xs-12
             .row.between__xs.middle__xs(data-aos='fade-up')
@@ -124,4 +145,4 @@ block content
 
 
 block footer
-  include ../partials/_footer.pug
+  include ../partials/_footer-alt.pug

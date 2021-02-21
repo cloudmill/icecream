@@ -194,7 +194,11 @@ $items:
   background-color: transparent;
 }
 .select2-container--default .select2-results > .select2-results__options {
-  max-height: 300px;
+  max-height: 312px;
+
+  @media screen and (min-width: $screen-lg-min) {
+    max-height: 310px;
+  }
 }
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background: transparent;

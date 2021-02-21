@@ -3,18 +3,22 @@
 // --------------------------------------------------
 
 .accordion {
+
   &__item {
     background: white;
     border: 1px solid #DAEFFB;
     border-radius: 20px;
+
     margin-bottom: 10px;
+
     cursor: pointer;
-    //transition: all .5s !important;
+    transition: all .5s !important;
     &:hover {
       background: $base-color-lighten;
     }
     &.active {
       background: $base-color-lighten;
+      
       .accordion-head {
         &:after {
           opacity: 0;
@@ -24,6 +28,7 @@
         }
       }
     }
+
     &--sm {
       padding-bottom: 15px;
       .accordion-head {
@@ -98,6 +103,7 @@
       }
     }
   }
+
   &-head {
     font-size: 18px;
     font-weight: bold;
@@ -140,6 +146,7 @@
       }
     }
   }
+
   &-body {
     display: none;
     div {
