@@ -93,8 +93,6 @@ function changeFilterCatalog() {
             flavors: flavors,
         };
 
-        console.log(data);
-
         catalogFilterAjax(data);
     });
 }
@@ -117,7 +115,7 @@ function catalogFilterAjax(data) {
             selectKind.append(selectKindResponse);
             selectFlavors.append(selectFlavorsResonse);
             filterBlock.after(itemsResponse);
-            itemsBlock.after(pagenavResponse);
+            itemsResponse.after(pagenavResponse);
 
             filterSelects.each(function () {
                 $(this).val($(this).find('[selected]').val()).trigger('change');
@@ -217,9 +215,8 @@ function recipesFilterAjax(data) {
             typeBlockSelect.append(selectTypeResponse);
             productsBlockSelect.append(selectProductsResponse);
             timeBlockSelect.append(selectTimeResponse);
-            
             appendItems.append(itemsResponse);
-            itemsBlock.after(pagenavResponse);
+            itemsResponse.after(pagenavResponse);
             
             filterSelects.each(function () {
                 $(this).val($(this).find('[selected]').val()).trigger('change');
