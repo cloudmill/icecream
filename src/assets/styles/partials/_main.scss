@@ -35,7 +35,7 @@ body {
     padding-top: 110px;
     margin-bottom: 70px;
   }
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $screen-lgx-min) {
     padding-top: 0;
     margin-bottom: 90px;
   }
@@ -148,7 +148,7 @@ body {
   padding-right: 20px;
   overflow: hidden;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: $screen-lgx-min) {
     padding-right: 40px;
     padding-left: 360px;
   }
