@@ -29,7 +29,10 @@ block content
         .referral-img(data-aos='fade-up'): +img('referral/stepper.svg')
       .referral__container
         .referral__video
-          img#play(src='assets/images/referral/play.svg', alr='')
+          svg#play(width="194" height="194" viewBox="0 0 194 194" fill="none" xmlns="http://www.w3.org/2000/svg")
+            circle(opacity="0.3" cx="97" cy="97" r="97" fill="#17A3D0")
+            circle(cx="97" cy="97" r="72" fill="#17A3D0")
+            path(d="M112.5 93.1699C115.833 95.0944 115.833 99.9056 112.5 101.83L90.75 114.388C87.4167 116.312 83.25 113.906 83.25 110.057L83.25 84.9426C83.25 81.0936 87.4167 78.688 90.75 80.6125L112.5 93.1699Z" fill="white")
           video#video(poster="assets/images/referral/slider.jpg" muted loop)
             source(src="assets/images/video/video.mp4")
         .referral__billet(data-aos='fade-up')
@@ -68,7 +71,7 @@ block content
         .referral__calc-block
           .row
             .col.col__lg-6.col__xs-12(data-aos='fade-up')
-              h5 Количество первых заказов клиентов #[br] (привлечённых за месяц)
+              h5 Количество первых заказов клиентов #[span.br-style-lg] (привлечённых за месяц)
               output
               input(type="range" min="0" max="1000" step="10" value="250" data-rangeslider)
             .col.col__lg-6.col__xs-12(data-aos='fade-up')
@@ -84,7 +87,7 @@ block content
                 b 10% вознаграждение
               .col.col__md-8.col__xs-12
                 .result
-                  span 62 500
+                  span.sum 62 500
           .result__block.result__block--js.result__block--red(data-aos='fade-up')
             .row.middle__xs
               .col.col__md-4.col__xs-12
@@ -92,7 +95,7 @@ block content
                 b 10% вознаграждение #[span.br-style] + iPhone 12 ProMax
               .col.col__md-8.col__xs-12
                 .result
-                  span 62 500
+                  span.sum 62 500
                   | +
                   .small iPhone 12 #[span.br-style]ProMax
           .result__block.result__block--js.result__block--bl(data-aos='fade-up')
@@ -102,7 +105,7 @@ block content
                 b 10% вознаграждение #[span.br-style] + Mercedes Benz
               .col.col__md-8.col__xs-12
                 .result
-                  span 62 500
+                  span.sum 62 500
                   | +
                   .small Mercedes-#[span.br-style]Benz
     .left-container
@@ -112,7 +115,7 @@ block content
           .col.col__lg-6.col__xs-12(data-aos='fade-up')
             .referral__info-item
               .percent 10%
-              span вознаграждение c каждого заказа #[span.br-style] привлеченных вами клиентов
+              span вознаграждение c каждого заказа #[span.br-style-lg]привлеченных вами клиентов
           .col.col__lg-6.col__xs-12(data-aos='fade-up')
             .referral__info-item.referral__info-item--red
               .percent 10%

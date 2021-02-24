@@ -83,6 +83,12 @@ body {
   @media screen and (min-width: $screen-lg-min) {
     display: block;
   }
+  &-lg {
+    margin: 0 !important;
+    @media screen and (min-width: 1380px) {
+      display: block;
+    }
+  }
 }
 
 .mobile-flex {
