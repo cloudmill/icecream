@@ -28,15 +28,14 @@ body {
   }
 }
 
-
 .mainTitle {
   margin-bottom: 40px;
   padding-top: 60px;
-  @media screen and (min-width: $screen-md-min) {
+  @media screen and (min-width: $mobile-head-logo-size-breakpoint) {
     padding-top: 110px;
     margin-bottom: 70px;
   }
-  @media screen and (min-width: $screen-lg-min) {
+  @media screen and (min-width: 1280px) {
     padding-top: 0;
     margin-bottom: 90px;
   }
