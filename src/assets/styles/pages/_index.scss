@@ -131,10 +131,10 @@
     text-align: right;
     z-index: 9;
     top: 120px;
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $screen-mdx-min) {
       top: 140px;
     }
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: $screen-lgx-min) {
       top: 40px;
     }
 
@@ -179,10 +179,10 @@
       transform: scale(1) !important;
 
       top: 120px;
-      @media screen and (min-width: 900px) {
+      @media screen and (min-width: $screen-mdx-min) {
         top: 140px;
       }
-      @media screen and (min-width: $screen-lg-min) {
+      @media screen and (min-width: $screen-lgx-min) {
         top: 40px;
       }
     }
@@ -203,11 +203,11 @@
     @media screen and (min-width: $screen-md-min) {
       display: block;
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: $screen-mdx-min) {
       top: 40px;
       left: 140px;
     }
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: $screen-lgx-min) {
       font-size: 1.6vw;
       left: 100px;
     }
