@@ -31,7 +31,7 @@ body {
 .mainTitle {
   margin-bottom: 40px;
   padding-top: 60px;
-  @media screen and (min-width: $mobile-head-logo-size-breakpoint) {
+  @media screen and (min-width: $screen-mdx-min) {
     padding-top: 110px;
     margin-bottom: 70px;
   }

@@ -7,7 +7,7 @@
   font-size: 30px;
   line-height: 1;
 
-  @media (min-width: 1680px) {
+  @media (min-width: $screen-xxl-min) {
     margin-bottom: 30px;
   }
 
@@ -15,7 +15,7 @@
     &:not(:first-child) {
       margin-top: 10px;
 
-      @media (min-width: 1680px) {
+      @media (min-width: $screen-xxl-min) {
         margin-top: 15px;
       }
     }
@@ -34,7 +34,7 @@
     color: $base-color-light;
     text-decoration: none;
 
-    @media (min-width: 1680px) {
+    @media (min-width: $screen-xxl-min) {
       font-size: 30px;
     }
 
@@ -73,7 +73,7 @@
     font-size: 14px;
     line-height: 17px;
 
-    @media (min-width: 1680px) {
+    @media (min-width: $screen-xxl-min) {
       padding: (15px / 2) 0;
 
       font-size: 18px;
