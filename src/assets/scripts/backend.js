@@ -12,15 +12,14 @@ function showMore() {
             itemsContainer = container.find('[data-type=items_block]'),
             url = $(this).attr('data-url'),
             pagenav = container.find('[data-type=pagenav_block]');
+            data = JSON.parse(container.find('[data-type=show_more_click]').attr('data-filter'));
         
         if (url !== undefined) {
             $.ajax({
                 type: 'POST',
                 url: url,
                 dataType: 'html',
-                data: {
-                    ajax: true
-                },
+                data: data,
                 success: function (data) {
                     pagenav.remove();
 
