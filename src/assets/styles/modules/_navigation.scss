@@ -1,25 +1,42 @@
 .main-menu {
   $menu: &;
 
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   font-weight: bold;
   font-size: 30px;
   line-height: 1;
 
+  @media (min-width: 1680px) {
+    margin-bottom: 30px;
+  }
+
   &__item {
-    margin-top: 15px;
+    &:not(:first-child) {
+      margin-top: 10px;
+
+      @media (min-width: 1680px) {
+        margin-top: 15px;
+      }
+    }
 
     &--active {
-      & > #{$menu}__link {
+      &>#{$menu}__link {
         @extend #{$menu}__link:hover;
       }
     }
   }
 
   &__link {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 100%;
     color: $base-color-light;
     text-decoration: none;
+
+    @media (min-width: 1680px) {
+      font-size: 30px;
+    }
 
     &:hover {
       color: $color-type-2a;
@@ -41,7 +58,7 @@
     font-weight: bold;
 
     &--active {
-      & > #{$nav}__link {
+      &>#{$nav}__link {
         @extend #{$nav}__link:hover;
       }
     }
@@ -49,8 +66,19 @@
 
   &__link {
     position: relative;
-    padding: $nav-link-padding;
+    padding: (10px / 2) 0;
     display: block;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+
+    @media (min-width: 1680px) {
+      padding: (15px / 2) 0;
+
+      font-size: 18px;
+      line-height: 22px;
+    }
 
     text-decoration: none;
     color: $base-color-light;
