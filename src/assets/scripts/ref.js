@@ -28,6 +28,6 @@ $(document).on('input', 'input[type="range"]', function(e) {
 	const regexp = /\B(?=(\d{3})+(?!\d))/g;
 	const values = $(this).closest('.referral__calc-block').find('output');
 	const res = values[0].innerText * values[1].innerText * 0.1;
-	$('.result__block--js .result span').text(res.toString().replace(regexp, ' '));
+	$('.result__block--js .result .sum').text(res.toString().replace(regexp, ' '));
 });
 
