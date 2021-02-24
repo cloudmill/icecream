@@ -12,7 +12,16 @@ function showMore() {
             itemsContainer = container.find('[data-type=items_block]'),
             url = $(this).attr('data-url'),
             pagenav = container.find('[data-type=pagenav_block]');
+            data = null;
+            path = window.location.pathname.split('/');
+
+        if (path[1] == 'catalog' || path[1] == 'recipes') {
             data = JSON.parse(container.find('[data-type=show_more_click]').attr('data-filter'));
+        } else {
+            data = {
+                ajax: true,
+            }
+        }
         
         if (url !== undefined) {
             $.ajax({
