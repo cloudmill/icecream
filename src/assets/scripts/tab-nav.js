@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
     if ($('.tab-nav').length !== 0) {
 		// медиа запрос
-		const mediaQuery = window.matchMedia('( min-width: 1024px )');
+		const mediaQuery = window.matchMedia('( min-width: 1280px )');
 
 		if (mediaQuery.matches) {
 			// фиксация компонента tab-nav при скролле страницы
