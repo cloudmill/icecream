@@ -40,8 +40,9 @@ $headings-color:                      inherit !default;
 
 
 //- Grid
-$mobile-head-logo-size-breakpoint:    900px;
+$screen-mdx-min:                      900px;
 $screen-lgx-min:                      1280px;
+$screen-xxl-min:                      1680px;
 
 $screen-sm:                           480px;
 $screen-sm-min:                       $screen-sm;
