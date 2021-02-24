@@ -15,7 +15,7 @@
     top: 0;
     padding: 10px;
     z-index: 101;
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: 1280px) {
       display: none;
     }
   }
@@ -28,7 +28,7 @@
       top: 20px;
       right: 20px;
     }
-    @media screen and (min-width: $screen-lg-min) {
+    @media screen and (min-width: 1280px) {
       display: none;
     }
     img {
