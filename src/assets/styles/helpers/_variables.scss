@@ -1,7 +1,6 @@
 //
 // Variables
 
-
 //- Variables -> Base
 $base-font-family:                    "Core Sans", Arial, sans-serif !default;
 $base-font-family-serif:              "Times New Roman", serif !default;
@@ -41,6 +40,8 @@ $headings-color:                      inherit !default;
 
 
 //- Grid
+$mobile-head-logo-size-breakpoint:    900px;
+
 $screen-sm:                           480px;
 $screen-sm-min:                       $screen-sm;
 $screen-phone:                        $screen-sm-min;
