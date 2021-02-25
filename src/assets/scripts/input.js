@@ -154,7 +154,7 @@ $('.form--js').on('click', function (e) {
 		};
 	}
 
-	if (path[1] == 'referral') {
+	if (path[1] == 'ref') {
 		url = '/local/templates/main/include/ajax/contact/application.php';
 		data = {
 			name: name.val(),
