@@ -9,11 +9,6 @@
         display: none;
     }
 
-    @media (min-width: $screen-lg-min) {
-        margin-left: -40px;
-        width: calc(100% + (40px * 2));
-    }
-
     @media screen and (min-width: $screen-xl-min) {
         margin-left: -40px;
         width: calc(100% + (40px * 2));
