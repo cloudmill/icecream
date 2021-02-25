@@ -5,6 +5,7 @@
 .breadcrumbs-wrapper {
   display: flex;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   width: calc(100% + 20px);
   
   scrollbar-width: none;
