@@ -5,6 +5,7 @@
 .breadcrumbs-wrapper {
   display: flex;
   overflow-x: auto;
+  width: calc(100% + 20px);
   
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -16,6 +17,7 @@
 @if $use-breadcrumb == true {
   .breadcrumbs {
     padding: 0;
+    padding-right: 20px;
     flex-shrink: 0;
     margin-top: 40px;
     margin-bottom: 10px;
