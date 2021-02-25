@@ -12,6 +12,10 @@
   &::-webkit-scrollbar{
     display: none;
   }
+
+  @media (min-width: $screen-lg-min) {
+    justify-content: flex-end;
+  }
 }
 
 @if $use-breadcrumb == true {
