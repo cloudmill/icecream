@@ -92,7 +92,8 @@
     }
   }
 
-  &.aos-animate {
+  &.aos-animate,
+  .aos-animate {
     h3 {
       span {
         &:after {
