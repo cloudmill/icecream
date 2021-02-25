@@ -14,8 +14,11 @@
       url("../images/referral/main-back.jpg") no-repeat center / cover;
     @media (min-width: $screen-lg-min) {
       height: 100vh;
+    }
+    @media (min-width: 1600px) {
+      height: 100vh;
       background:
-        url("../images/referral/path.svg") no-repeat center bottom / 100% auto,
+        url("../images/referral/path.svg") no-repeat center bottom -1px / 100% auto,
         url("../images/referral/main-back.jpg") no-repeat center / cover;
     }
   }
@@ -67,7 +70,7 @@
   }
 
   &__main {
-    color: white;
+    color: #F8F6E9;
     position: relative;
     h1 {
       margin-top: 0;
@@ -127,8 +130,19 @@
       z-index: 99;
       margin: auto;
       width: 69px;
+      transition: transform .5s;
       @media (min-width: $screen-md-min) {
         width: auto;
+      }
+      circle {
+        transition: fill .5s;
+      }
+      &:hover {
+        transform: scale(1.1);
+
+        circle {
+          fill: $color-type-2a;
+        }
       }
     }
   }
@@ -205,7 +219,7 @@
       font-size: 18px;
       line-height: 140%;
       margin-bottom: 40px;
-      @media (min-width: $screen-xl-min) {
+      @media (min-width: 1400px) {
         padding-right: 60px;
       }
     }
@@ -228,13 +242,23 @@
 
   &__calc {
     padding-top: 80px;
-    @media (min-width: $screen-md-min) {
-      padding-top: 160px;
-    }
     background:
       url("../images/referral/path2.svg") no-repeat top -100px center,
       url("../images/referral/path1.svg") no-repeat bottom -1px center,
       linear-gradient(239deg, #A0E8FF -6.4%, #DFF7FF 97.93%);
+    @media (min-width: $screen-md-min) {
+      padding-top: 160px;
+    }
+
+    @media (min-width: $screen-lg-min) {
+      padding-top: 160px;
+    }
+    @media (min-width: 1600px) {
+      background:
+        url("../images/referral/path2.svg") no-repeat top -100px center / 100% auto,
+        url("../images/referral/path1.svg") no-repeat bottom -1px center / 100% auto,
+        linear-gradient(239deg, #A0E8FF -6.4%, #DFF7FF 97.93%);
+    }
 
     .left-container {
       padding-bottom: 60px;
@@ -252,7 +276,8 @@
     &-block {
       @media screen and (min-width: $screen-md-min) {
         background: linear-gradient(94.44deg, rgba(#FFFFFF, 0.2) 7.46%, rgba(255, 255, 255, 0.2) 95.81%);
-        box-shadow: 0px 24px 84px rgba(95, 184, 213, 0.8);
+        //box-shadow: 0px 24px 84px rgba(95, 184, 213, 0.8);
+        box-shadow: 0px 24px 84px 0px #5FB8D4;
         border-radius: 60px;
         padding: 30px;
       }
@@ -260,6 +285,9 @@
         padding: 60px;
       }
       @media (min-width: $screen-xl-min) {
+        padding: 60px 40px;
+      }
+      @media (min-width: 1400px) {
         padding: 60px 160px;
       }
 
@@ -309,7 +337,7 @@
     padding: 10px 20px;
     color: white;
     @media (min-width: $screen-md-min) {
-      padding: 30px;
+      padding: 14px 30px;
     }
     b {
       font-weight: 700;
@@ -323,14 +351,15 @@
       padding-bottom: 80px;
       @media (min-width: $screen-md-min) {
         background: url("../images/referral/item-1.png") no-repeat right 25px bottom / auto 100%, $color-type-2a;
-        padding-bottom: 0;
+        padding-bottom: 14px;
       }
     }
     &--bl {
       background: url("../images/referral/item-2.png") no-repeat center bottom -20px / 80% auto, #6CD8F9;
       padding-bottom: 80px;
       @media (min-width: $screen-md-min) {
-        background: url("../images/referral/item-2.png") no-repeat right -90px bottom 20px / auto 100%, #6CD8F9;
+        background: url("../images/referral/item-2.png") no-repeat right -60px bottom 8px / auto 107%, #6CD8F9;
+        padding-bottom: 14px;
       }
     }
 
@@ -502,10 +531,10 @@
   &__programm {
     margin-bottom: 60px;
     @media (min-width: $screen-md-min) {
-      margin-bottom: 100px;
+      //margin-bottom: 100px;
     }
     @media (min-width: $screen-xl-min) {
-      margin-bottom: 160px;
+      margin-bottom: 80px;
     }
     h2 {
       margin-top: 0;
@@ -585,7 +614,7 @@
     @media (min-width: $screen-md-min) {
       padding-top: 160px;
       background:
-        url("../images/referral/path2.svg") no-repeat top -100px center, #F8F6E9;
+        url("../images/referral/path2.svg") no-repeat top -100px center / 100% auto, #F8F6E9;
     }
 
     h2 {
@@ -593,6 +622,12 @@
       margin-bottom: 40px;
       @media (min-width: $screen-md-min) {
         margin-bottom: 80px;
+      }
+      @media (min-width: $screen-xl-min) {
+        font-size: 45px;
+      }
+      @media (min-width: 1400px) {
+        font-size: 50px;
       }
     }
 
@@ -705,7 +740,12 @@
           display: flex;
           width: 100%;
           justify-content: space-between;
-          padding: 10px 20px;
+          padding: 10px;
+          font-size: 11px;
+          @media (min-width: 1400px) {
+            font-size: 14px;
+            padding: 10px 20px;
+          }
         }
         &_m {
           margin-top: auto;
@@ -739,7 +779,7 @@
         .summ {
           font-size: 40px;
           line-height: 1.1;
-          @media (min-width: $screen-xl-min) {
+          @media (min-width: 1400px) {
             font-size: 50px;
           }
         }
@@ -813,9 +853,9 @@
         url("../images/referral/bot-back.png") no-repeat top center / cover,
         #F8F6E9;
     }
-    @media screen and (min-width: $screen-xl-min) {
+    @media screen and (min-width: 1600px) {
       background:
-        url("../images/referral/path3.svg") no-repeat bottom -50px center,
+        url("../images/referral/path3.svg") no-repeat bottom -50px center / 100% auto,
         url("../images/referral/bot-back.png") no-repeat top center / 100% auto,
         #F8F6E9;
     }

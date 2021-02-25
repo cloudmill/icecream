@@ -12,15 +12,23 @@ function showMore() {
             itemsContainer = container.find('[data-type=items_block]'),
             url = $(this).attr('data-url'),
             pagenav = container.find('[data-type=pagenav_block]');
+            data = null;
+            path = window.location.pathname.split('/');
+
+        if (path[1] == 'catalog' || path[1] == 'recipes') {
+            data = JSON.parse(container.find('[data-type=show_more_click]').attr('data-filter'));
+        } else {
+            data = {
+                ajax: true,
+            }
+        }
         
         if (url !== undefined) {
             $.ajax({
                 type: 'POST',
                 url: url,
                 dataType: 'html',
-                data: {
-                    ajax: true
-                },
+                data: data,
                 success: function (data) {
                     pagenav.remove();
 
@@ -93,8 +101,6 @@ function changeFilterCatalog() {
             flavors: flavors,
         };
 
-        console.log(data);
-
         catalogFilterAjax(data);
     });
 }
@@ -117,7 +123,7 @@ function catalogFilterAjax(data) {
             selectKind.append(selectKindResponse);
             selectFlavors.append(selectFlavorsResonse);
             filterBlock.after(itemsResponse);
-            itemsBlock.after(pagenavResponse);
+            itemsResponse.after(pagenavResponse);
 
             filterSelects.each(function () {
                 $(this).val($(this).find('[selected]').val()).trigger('change');
@@ -217,9 +223,8 @@ function recipesFilterAjax(data) {
             typeBlockSelect.append(selectTypeResponse);
             productsBlockSelect.append(selectProductsResponse);
             timeBlockSelect.append(selectTimeResponse);
-            
             appendItems.append(itemsResponse);
-            itemsBlock.after(pagenavResponse);
+            itemsResponse.after(pagenavResponse);
             
             filterSelects.each(function () {
                 $(this).val($(this).find('[selected]').val()).trigger('change');

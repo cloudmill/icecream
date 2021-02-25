@@ -88,7 +88,9 @@
 			<div class="page-header__logo"><a href="/"><img src="assets/images/logo.svg" alt="Чистая линия"></a></div>
 			<nav class="navbar">
 				<ul class="main-menu">
-					<li class="main-menu__item main-menu__item--active"><a class="main-menu__link" href="#">Мороженое</a></li>
+					<li class="main-menu__item main-menu__item--active"><a class="main-menu__link" href="#">Молочная продукция</a></li>
+					<li class="main-menu__item"><a class="main-menu__link" href="#">Мороженое</a></li>
+					<li class="main-menu__item"><a class="main-menu__link" href="#">Шоколад</a></li>
 				</ul>
 				<ul class="main-nav">
 					<li class="main-nav__item  main-nav__item--active"><a class="main-nav__link" href="/" title="Мир Чистой Линии">Мир Чистой Линии</a></li>
@@ -97,6 +99,7 @@
 					<li class="main-nav__item"><a class="main-nav__link" href="#" title="Рецепты">Рецепты</a></li>
 					<li class="main-nav__item"><a class="main-nav__link" href="#" title="Интересное">Интересное</a></li>
 					<li class="main-nav__item"><a class="main-nav__link" href="#" title="Пресс–центр">Пресс–центр</a></li>
+					<li class="main-nav__item"><a class="main-nav__link" href="#" title="Реферальная программа">Реферальная программа</a></li>
 					<li class="main-nav__item"><a class="main-nav__link" href="#" title="Контакты">Контакты</a></li>
 				</ul>
 			</nav><a class="page-header__link" href="#"><img src="assets/images/ava.png" alt="" /><span>Битва пломбиров</span></a>
@@ -124,7 +127,11 @@
 						<div class="referral-img" data-aos="fade-up"><img src="assets/images/referral/stepper.svg" alt="" /></div>
 					</div>
 					<div class="referral__container">
-						<div class="referral__video"><img id="play" src="assets/images/referral/play.svg" alr=""><video id="video" poster="assets/images/referral/slider.jpg" muted loop>
+						<div class="referral__video"><svg id="play" width="194" height="194" viewBox="0 0 194 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle opacity="0.3" cx="97" cy="97" r="97" fill="#17A3D0"></circle>
+								<circle cx="97" cy="97" r="72" fill="#17A3D0"></circle>
+								<path d="M112.5 93.1699C115.833 95.0944 115.833 99.9056 112.5 101.83L90.75 114.388C87.4167 116.312 83.25 113.906 83.25 110.057L83.25 84.9426C83.25 81.0936 87.4167 78.688 90.75 80.6125L112.5 93.1699Z" fill="white"></path>
+							</svg><video id="video" poster="assets/images/referral/slider.jpg" muted loop>
 								<source src="assets/images/video/video.mp4"></video></div>
 						<div class="referral__billet" data-aos="fade-up">
 							<div class="referral__billet-item">
@@ -177,7 +184,7 @@
 						<div class="referral__calc-block">
 							<div class="row">
 								<div class="col col__lg-6 col__xs-12" data-aos="fade-up">
-									<h5>Количество первых заказов клиентов <br> (привлечённых за месяц)</h5><output></output><input type="range" min="0" max="1000" step="10" value="250" data-rangeslider>
+									<h5>Количество первых заказов клиентов <span class="br-style-lg"></span> (привлечённых за месяц)</h5><output></output><input type="range" min="0" max="1000" step="10" value="250" data-rangeslider>
 								</div>
 								<div class="col col__lg-6 col__xs-12" data-aos="fade-up">
 									<h5>Сумма одного заказа, руб.</h5><output></output><input type="range" min="0" max="12000" step="100" value="2500" data-rangeslider>
@@ -192,7 +199,7 @@
 										<p>До 250 заказов</p><b>10% вознаграждение</b>
 									</div>
 									<div class="col col__md-8 col__xs-12">
-										<div class="result"><span>62 500</span></div>
+										<div class="result"><span class="sum">62 500</span></div>
 									</div>
 								</div>
 							</div>
@@ -202,7 +209,7 @@
 										<p>250 заказов</p><b>10% вознаграждение <span class="br-style"></span> + iPhone 12 ProMax</b>
 									</div>
 									<div class="col col__md-8 col__xs-12">
-										<div class="result"><span>62 500</span>+<div class="small">iPhone 12 <span class="br-style"></span>ProMax</div>
+										<div class="result"><span class="sum">62 500</span>+<div class="small">iPhone 12 <span class="br-style"></span>ProMax</div>
 										</div>
 									</div>
 								</div>
@@ -213,7 +220,7 @@
 										<p>5000 заказов</p><b>10% вознаграждение <span class="br-style"></span> + Mercedes Benz</b>
 									</div>
 									<div class="col col__md-8 col__xs-12">
-										<div class="result"><span>62 500</span>+<div class="small">Mercedes-<span class="br-style"></span>Benz</div>
+										<div class="result"><span class="sum">62 500</span>+<div class="small">Mercedes-<span class="br-style"></span>Benz</div>
 										</div>
 									</div>
 								</div>
@@ -227,7 +234,7 @@
 						<div class="row referral__info-block">
 							<div class="col col__lg-6 col__xs-12" data-aos="fade-up">
 								<div class="referral__info-item">
-									<div class="percent">10%</div><span>вознаграждение c каждого заказа <span class="br-style"></span> привлеченных вами клиентов</span>
+									<div class="percent">10%</div><span>вознаграждение c каждого заказа <span class="br-style-lg"></span>привлеченных вами клиентов</span>
 								</div>
 							</div>
 							<div class="col col__lg-6 col__xs-12" data-aos="fade-up">
@@ -660,6 +667,7 @@
 								<ul class="footer-menu footer-menu--sm">
 									<li><a href="#">Карта сайта</a></li>
 									<li><a href="#">Пользовательское соглашение</a></li>
+									<li><a href="#">Условия Оферты</a></li>
 								</ul>
 							</div>
 							<div class="col col__lg-12 col__md-6 col__xs-12">

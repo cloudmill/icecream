@@ -27,6 +27,10 @@
           opacity: 1;
         }
       }
+
+      .accordion-body {
+        cursor: text;
+      }
     }
 
     &--sm {

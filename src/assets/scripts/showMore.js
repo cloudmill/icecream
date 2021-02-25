@@ -1,43 +1,54 @@
 import AOS from 'aos';
 
 
-$(document).on('click', '.accordion__item--sm', function () {
-	$('.accordion-body').removeClass('shown');
+$(document).on('click', '.accordion__item--sm', function (event) {
 	if ($(this).hasClass('active')) {
-		$('.accordion__item').removeClass('active');
-		$(this).removeClass('active').find('.accordion-body').removeClass('shown');
-		setTimeout(() => {
-			$(this).find('.accordion-body').removeClass('ellipses');
-		}, 350);
+		if ($(event.target).closest('.accordion-body').length === 0) {
+			$('.accordion-body').removeClass('shown');
+
+			$('.accordion__item').removeClass('active');
+			$(this).removeClass('active').find('.accordion-body').removeClass('shown');
+			setTimeout(() => {
+				$(this).find('.accordion-body').removeClass('ellipses');
+			}, 350);
+
+			setTimeout(() => {
+				AOS.refresh({
+					offset: 50,
+				});
+			}, 400);
+		}
 	} else {
+		$('.accordion-body').removeClass('shown');
+
 		$('.accordion__item').removeClass('active');
 		$(this).removeClass('active');
 		$(this).addClass('active').find('.accordion-body').addClass('shown ellipses');
-	}
 
-	setTimeout(() => {
-		AOS.refresh({
-			offset: 50,
-		});
-	}, 400);
-	return false;
+		setTimeout(() => {
+			AOS.refresh({
+				offset: 50,
+			});
+		}, 400);
+	}
 });
-$(document).on('click', '.accordion__item--js', function () {
-	if ($(this).hasClass('active')) {
-		$('.accordion__item').removeClass('active');
-		$(this).removeClass('active').find('.accordion-body').slideUp();
-	} else {
-		$('.accordion__item').removeClass('active').find('.accordion-body').slideUp();
-		$(this).removeClass('active');
-		$(this).addClass('active').find('.accordion-body').slideDown();
-	}
+$(document).on('click', '.accordion__item--js', function (event) {
+	if ($(event.target).closest('.accordion-body').length === 0) {
+		if ($(this).hasClass('active')) {
+			$('.accordion__item').removeClass('active');
+			$(this).removeClass('active').find('.accordion-body').slideUp();
+		} else {
+			$('.accordion__item').removeClass('active').find('.accordion-body').slideUp();
+			$(this).removeClass('active');
+			$(this).addClass('active').find('.accordion-body').slideDown();
+		}
 
-	setTimeout(() => {
-		AOS.refresh({
-			offset: 50,
-		});
-	}, 400);
-	return false;
+		setTimeout(() => {
+			AOS.refresh({
+				offset: 50,
+			});
+		}, 400);
+	}
 });
 
 export function showMore() {
