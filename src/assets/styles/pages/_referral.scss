@@ -948,7 +948,10 @@
     background-color: white;
     border-radius: 40px;
     text-align: center;
-    padding: 130px 120px;
+    padding: 20px;
+    @media screen and (min-width: $screen-md-min) {
+      padding: 130px 120px;
+    }
     .inner {
       justify-content: center;
     }
