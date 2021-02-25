@@ -24,6 +24,7 @@
 
   &__features-frame-image {
     display: flex;
+    align-items: flex-start;
     border-radius: 20px;
     overflow: hidden;
 
@@ -460,6 +461,7 @@
 
   &__frame-container {
     display: flex;
+    align-items: flex-start;
     border-radius: 20px;
     overflow: hidden;
 
@@ -549,6 +551,7 @@
 
   &__card-image {
     display: flex;
+    align-items: flex-start;
     justify-content: flex-end;
   }
 
