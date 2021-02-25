@@ -21,13 +21,12 @@
 
   &__frame-img {
     display: block;
+    flex-shrink: 0;
 
     @each $prop in max-width,
     max-height {
       #{$prop}: 100%;
     }
-
-    object-fit: contain;
 
     &--factory {
       
