@@ -11,6 +11,7 @@
 
   &__frame-image {
     display: flex;
+    align-items: center;
     border-radius: 20px;
     overflow: hidden;
 
@@ -26,8 +27,6 @@
     max-height {
       #{$prop}: 100%;
     }
-
-    min-height: 1px;
 
     &--factory {
       
