@@ -386,14 +386,16 @@
       }
 
       @media (min-width: $screen-lg-min) {
-        left: -340px;
         right: -40px;
         background-position: center bottom, right -85px bottom -10px, center bottom;
         background-size: 1366px auto, 460px auto, cover;
       }
 
-      @media (min-width: $screen-xl-min) {
+      @media (min-width: $screen-lgx-min) {
         left: -360px;
+      }
+
+      @media (min-width: $screen-xl-min) {
         background-position: center bottom, right -215px bottom -80px, center bottom;
         background-size: 1680px auto, 870px auto, cover;
       }
