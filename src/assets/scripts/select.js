@@ -14,14 +14,14 @@ function formatState(state) {
 			'<span>' + state.text + '</span>'
 		);
 	}
-	
+
 	return $state;
 }
 
 // Selection result template
 function formatStateSelection(state, e) {
 	const title = $(e.prevObject).closest('.select2').prev().data('title');
-	
+
 	let $state;
 	if (state.element !== undefined && state.element.dataset.img !== undefined) {
 		$state = $(
@@ -45,37 +45,40 @@ $('.select-template').select2({
 	templateResult: formatState,
 	templateSelection: formatStateSelection,
 	minimumResultsForSearch: Infinity,
-	theme: $(this).data('theme')
+	theme: $(this).data('theme'),
+	dropdownParent: $('.catalogFilter').length !== 0 ? $('.catalogFilter') : undefined,
 });
 
 $('.select-template').each(function () {
-	$(this).on('select2:select', function(e) {
+	$(this).on('select2:select', function (e) {
 		console.log('Select', this);
 
 		$('.catalogFilter--js span').text(e.params.data.text);
 	});
-	$(this).on('select2:open', function() {
+	$(this).on('select2:open', function () {
 		console.log('Open', this);
 
 		$('.select2-dropdown').hide();
-		setTimeout(function() {
+		setTimeout(function () {
 			$('.select2-dropdown').slideDown({ duration: 500, easing: 'easeInOutCubic' });
 		}, 200);
 	});
-	$(this).on('select2:closing', function(e) {
+	$(this).on('select2:closing', function (e) {
 		console.log('Closing', this);
 
 		e.preventDefault();
-		setTimeout(function() {
+		setTimeout(function () {
 			$('.select2').addClass('closing');
-			$('.select2-dropdown').slideUp(500, function() {
-				setTimeout(function() {
+			$('.select2-dropdown').slideUp(500, function () {
+				setTimeout(function () {
 					$('.select-template').select2('destroy');
 					$('.select-template').select2({
 						selectOnClose: true,
 						templateResult: formatState,
 						templateSelection: formatStateSelection,
-						minimumResultsForSearch: Infinity
+						minimumResultsForSearch: Infinity,
+						theme: $(this).data('theme'),
+						dropdownParent: $('.catalogFilter').length !== 0 ? $('.catalogFilter') : undefined,
 					});
 					$('.select-template').removeClass('closing');
 				}, 500);
