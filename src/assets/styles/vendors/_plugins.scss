@@ -16,10 +16,12 @@ $items:
 
 .sprite {
   display: inline-block;
+
   &:before {
     content: '';
     display: block;
   }
+
   @each $item in $items {
     &--#{$item} {
       &:before {
@@ -30,6 +32,7 @@ $items:
     }
   }
 }
+
 //svg-icons
 
 .jBox-overlay.jBox-overlay-Image {
@@ -40,7 +43,8 @@ $items:
   transition: transform .5s, opacity .5s .2s !important;
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
@@ -56,9 +60,17 @@ $items:
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-location:before { content: '\e802'; }
-.icon-message:before { content: '\e803'; }
-.icon-phone:before { content: '\e806'; }
+.icon-location:before {
+  content: '\e802';
+}
+
+.icon-message:before {
+  content: '\e803';
+}
+
+.icon-phone:before {
+  content: '\e806';
+}
 
 //select
 .select2-container--default .select2-selection--single {
@@ -68,6 +80,7 @@ $items:
   border-color: $base-color-lighten;
   height: auto;
   transition: background .5s, border-color .5s, border-radius .2s .1s;
+
   @media screen and (min-width: $screen-lg-min) {
     padding: 15px 20px;
     border-radius: 20px;
@@ -78,49 +91,60 @@ $items:
     background: url("../images/icons/select-arr.svg") no-repeat center;
     transition: transform .5s;
     right: 20px;
+
     b {
       display: none;
     }
   }
+
   .select2-selection__rendered {
     padding: 0;
     padding-right: 30px;
-    > span {
+
+    >span {
       width: 100%;
       font-size: 14px;
       font-weight: bold;
       display: flex;
       align-items: center;
+
       @media screen and (min-width: $screen-lg-min) {
         font-size: 18px;
       }
+
       span {
         line-height: 1.5;
       }
+
       .title {
         display: block;
         font-size: 12px;
         font-weight: 400;
+
         @media screen and (min-width: $screen-lg-min) {
           font-size: 14px;
         }
       }
+
       img {
         margin-right: 20px;
       }
     }
   }
 }
+
 .select2-container--open,
 .select2-container--focus {
   .select2-selection--single {
     background: #D2F0FA;
     border-color: #D2F0FA;
   }
+
   .select2-selection__arrow {
     transform: rotate(180deg);
   }
 }
+
 .select2.closing {
   .select2-selection--single {
     background: $base-color-lighten;
@@ -136,10 +160,12 @@ $items:
       border-bottom-right-radius: $border-radius !important;
     }
   }
+
   .select2-selection__arrow {
     transform: rotate(0);
   }
 }
+
 .select2-dropdown {
   position: relative;
   background: #D2F0FA;
@@ -163,16 +189,20 @@ $items:
     border-top-right-radius: 20px;
   }
 }
+
 .select2-container {
   width: auto !important;
   display: block;
 }
+
 .select2-results__option {
   padding: 3px 0 3px 10px;
+
   @media screen and (min-width: $screen-lg-min) {
     padding: 8px 0 8px 20px;
   }
-  > span {
+
+  >span {
     width: 100%;
     font-size: 14px;
     font-weight: bold;
@@ -182,49 +212,70 @@ $items:
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     background: transparent;
+
     @media screen and (min-width: $screen-lg-min) {
       font-size: 18px;
     }
+
     img {
       margin-right: 20px;
     }
   }
 }
+
 .select2-container--default .select2-results__option[aria-selected=true] {
   background-color: transparent;
 }
-.select2-container--default .select2-results > .select2-results__options {
-  max-height: 312px;
+
+.select2-container--default .select2-results>.select2-results__options {
+  max-height: #{52 * 5}px;
+
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+
+  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+  }
 
   @media screen and (min-width: $screen-lg-min) {
-    max-height: 310px;
+    max-height: #{62 * 5}px;
   }
 }
+
+.select2-container--default.only-text .select2-results>.select2-results__options {
+  max-height: #{26 * 7}px;
+
+  @media screen and (min-width: $screen-lg-min) {
+    max-height: #{42 * 7}px;
+  }
+}
+
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
   background: transparent;
   transition: color .5s;
+
   span {
     background: $color-type-1a;
   }
 }
-.select2-container--default .select2-results > .select2-results__options {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
-  }
-}
+
 // select custom
 .select2-dropdown {
   overflow: hidden;
 }
+
 .select2-container--default.only-text .select2-results__option--highlighted[aria-selected] {
   background: $color-type-1a;
   transition: color .5s;
+
   span {
     background: none;
   }
 }
+
 .select2-selection-text {
   overflow: hidden;
   text-overflow: ellipsis;
