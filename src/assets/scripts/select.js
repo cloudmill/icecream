@@ -1,6 +1,7 @@
 import 'select2';
 import 'jquery.easing';
 
+// Dropdown result template
 function formatState(state) {
 	let $state;
 
@@ -17,6 +18,7 @@ function formatState(state) {
 	return $state;
 }
 
+// Selection result template
 function formatStateSelection(state, e) {
 	const title = $(e.prevObject).closest('.select2').prev().data('title');
 	
@@ -37,6 +39,7 @@ function formatStateSelection(state, e) {
 	return $state;
 }
 
+// Init select on page
 $('.select-template').select2({
 	selectOnClose: true,
 	templateResult: formatState,
@@ -45,30 +48,38 @@ $('.select-template').select2({
 	theme: $(this).data('theme')
 });
 
-$('.select-template').on('select2:select', function(e) {
-	$('.catalogFilter--js span').text(e.params.data.text);
-});
-$('.select-template').on('select2:open', function() {
-	$('.select2-dropdown').hide();
-	setTimeout(function() {
-		$('.select2-dropdown').slideDown({ duration: 500, easing: 'easeInOutCubic' });
-	}, 200);
-});
-$('.select-template').on('select2:closing', function(e) {
-	e.preventDefault();
-	setTimeout(function() {
-		$('.select2').addClass('closing');
-		$('.select2-dropdown').slideUp(500, function() {
-			setTimeout(function() {
-				$('.select-template').select2('destroy');
-				$('.select-template').select2({
-					selectOnClose: true,
-					templateResult: formatState,
-					templateSelection: formatStateSelection,
-					minimumResultsForSearch: Infinity
-				});
-				$('.select-template').removeClass('closing');
-			}, 500);
-		});
-	}, 0);
+$('.select-template').each(function () {
+	$(this).on('select2:select', function(e) {
+		console.log('Select', this);
+
+		$('.catalogFilter--js span').text(e.params.data.text);
+	});
+	$(this).on('select2:open', function() {
+		console.log('Open', this);
+
+		$('.select2-dropdown').hide();
+		setTimeout(function() {
+			$('.select2-dropdown').slideDown({ duration: 500, easing: 'easeInOutCubic' });
+		}, 200);
+	});
+	$(this).on('select2:closing', function(e) {
+		console.log('Closing', this);
+
+		e.preventDefault();
+		setTimeout(function() {
+			$('.select2').addClass('closing');
+			$('.select2-dropdown').slideUp(500, function() {
+				setTimeout(function() {
+					$('.select-template').select2('destroy');
+					$('.select-template').select2({
+						selectOnClose: true,
+						templateResult: formatState,
+						templateSelection: formatStateSelection,
+						minimumResultsForSearch: Infinity
+					});
+					$('.select-template').removeClass('closing');
+				}, 500);
+			});
+		}, 0);
+	});
 });
