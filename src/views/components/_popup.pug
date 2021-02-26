@@ -8,11 +8,11 @@ div#grabMe.popup(style="display: none")
       .form__group: +fieldInput('text', 'phone', 'phone', '', 'Телефон', true)
       .form__group: +fieldInput('email', 'email', 'email', '', 'E–mail', true)
       .checkbox.form__group.col__md-8
-        input(type="checkbox", id='sign', required)
-        label(for='sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
+        input(type="checkbox", id='popup-sign', required)
+        label(for='popup-sign') Согласен на обработку персональных данных в соответствии с #[a(href='#') политикой конфиденциальности]
         .control-error
       button.btn.btn--primary.btn--full.form--js(type='submit'): span Отправить
   .form-response
     .inner
       h3 Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
-      button.btn.btn--primary.btn--full.close-popup--js: span Закрыть
+      button.btn.btn--primary.btn--full.close-popup--js: span Закрыть 
