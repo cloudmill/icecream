@@ -122,6 +122,9 @@
   width: 100%;
   max-width: 290px;
   z-index: 9;
+  @media screen and (min-width: $screen-mdx-min) {
+    padding-top: 165px;
+  }
   @media screen and (min-width: $screen-lg-min) {
     padding: 0;
     position: static;
@@ -137,7 +140,7 @@
   &__item {
     width: 100%;
     margin-bottom: 10px;
-    @media screen and (min-width: $screen-md-min) {
+    @media screen and (min-width: $screen-lg-min) {
       margin-bottom: 40px;
       width: 33.3333%;
       padding-left: 15px;
