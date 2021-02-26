@@ -110,6 +110,7 @@ $('.form--js').on('click', function (e) {
 	const name = form.find('input[name=name]');
 	const email = form.find('input[name=email]');
 	const phone = form.find('input[name=phone]');
+	const birthdate = form.find('input[name=birth]');
 	const message = form.find('textarea[name=content]');
 	const type = form.attr('data-type-title');
 	const curForm = $(this);
@@ -148,6 +149,17 @@ $('.form--js').on('click', function (e) {
 			name: name.val(),
 			email: email.val(),
 			text: message.val(),
+			phone: phone.val(),
+			type: type,
+		};
+	}
+
+	if (path[1] == 'ref') {
+		url = '/local/templates/main/include/ajax/contact/application.php';
+		data = {
+			name: name.val(),
+			birthdate: birthdate.val(),
+			email: email.val(),
 			phone: phone.val(),
 			type: type,
 		};

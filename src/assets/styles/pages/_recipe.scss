@@ -1,5 +1,9 @@
 .recipe {
-    
+    padding-bottom: 80px;
+
+    @media (min-width: $screen-xl-min) {
+        padding-bottom: 160px;
+    }
 
     &__desc {
         margin-top: 20px;
