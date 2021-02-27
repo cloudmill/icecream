@@ -61,6 +61,7 @@
       max-width: 240px;
       max-height: 240px;
       display: flex;
+      align-items: flex-start;
     }
     img {
       position: relative;
@@ -159,6 +160,7 @@
   }
   &--btn {
     display: inline-flex;
+    align-items: flex-start;
     background: $base-color-lighten;
     border-radius: 20px;
     padding: 17px 20px;

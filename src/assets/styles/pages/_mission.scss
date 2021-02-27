@@ -173,6 +173,7 @@
         flex-shrink: 0;
         align-self: flex-start;
         display: flex;
+        align-items: flex-start;
 
         @media screen and (min-width: 1150px) {
             max-width: 140px;

@@ -16,6 +16,7 @@
 
       &:first-child {
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
         justify-content: space-between;
       }
@@ -199,6 +200,7 @@
 
   &__feature-image {
     display: flex;
+    align-items: flex-start;
   }
 
   &__feature-img {

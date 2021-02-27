@@ -185,6 +185,7 @@
 
   &__list-image {
     display: flex;
+    align-items: flex-start;
   }
 
   &__list-img {
@@ -299,6 +300,7 @@
     flex-shrink: 0;
     display: flex;
     justify-content: center;
+    align-items: flex-start;
   }
 
   &__card-img {
@@ -375,6 +377,7 @@
   &__card-item-image {
     flex-shrink: 0;
     display: flex;
+    align-items: flex-start;
   }
 
   &__card-item-img {
@@ -487,6 +490,7 @@
 
   &__image {
     display: flex;
+    align-items: flex-start;
   }
 
   &__img {
@@ -648,6 +652,7 @@
   &__bottom-image {
     position: relative;
     display: flex;
+    align-items: flex-start;
   }
 
   &__bottom-bg-img {
