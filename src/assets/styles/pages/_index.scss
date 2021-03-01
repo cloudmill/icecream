@@ -34,13 +34,32 @@
       padding-left: 250px;
     }
 
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      display: block;
+      height: 80px;
+      background-color: #F8F6E9;
+
+      @media (min-width: 580px) {
+        height: 70px;
+      }
+
+      @media (min-width: $screen-md-min) {
+        display: none;
+      }
+    }
+
     .swiper-container {
       overflow: visible;
     }
 
     .btn {
       position: absolute;
-      bottom: 20px;
+      bottom: 60px;
       left: 20px;
       right: 20px;
       margin: auto;
@@ -60,9 +79,12 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -1px;
+      bottom: 70px;
       width: 100%;
       z-index: 1;
+      @media screen and (min-width: 580px) {
+        bottom: 60px;
+      }
       @media screen and (min-width: $screen-md-min) {
         bottom: -20px;
       }
@@ -78,7 +100,6 @@
       }
       .fullpage-desc {
         opacity: 1;
-        //transform: translate(0, 0);
       }
     }
   }
@@ -127,12 +148,13 @@
     transform: scale(0.7);
     transition: all .5s;
     position: absolute;
-    right: 40px;
+    right: 0;
     text-align: right;
     z-index: 9;
     top: 120px;
     @media screen and (min-width: $screen-mdx-min) {
       top: 140px;
+      right: 20px;
     }
     @media screen and (min-width: $screen-lgx-min) {
       top: 40px;
@@ -189,20 +211,27 @@
   }
 
   &-desc {
-    opacity: 0;
-    //transform: translate(-40px, 40px);
-    transition: all .5s;
     position: absolute;
     top: 20px;
-    left: 100px;
-    color: white;
+    right: 0;
+    opacity: 0;
+
+    max-width: 144px;
+    
     font-weight: bold;
-    line-height: 1.3;
     font-size: 14px;
-    display: none;
+    line-height: 1.3;
+    color: white;
+    
+    transition: all .5s;
+    
     @media screen and (min-width: $screen-md-min) {
-      display: block;
+      left: 100px;
+      right: auto;
+
+      max-width: none;
     }
+
     @media screen and (min-width: $screen-mdx-min) {
       top: 40px;
       left: 140px;
@@ -234,6 +263,14 @@
       &.active:after {
         width: 100%;
       }
+    }
+  }
+
+  &-desc-br {
+    display: none;
+
+    @media (min-width: $screen-md-min) {
+      display: inline;
     }
   }
 }
