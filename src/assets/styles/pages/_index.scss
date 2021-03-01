@@ -269,10 +269,9 @@
     }
     svg,
     img {
-      vertical-align: middle;
-      width: 130%;
       max-width: inherit;
-      margin-left: -20%;
+      margin-left: -20px;
+      width: calc(100% + 20px * 2);
       @media screen and (min-width: $screen-lg-min) {
         width: 100%;
         max-width: 100%;
