@@ -16,7 +16,7 @@
 
   &__tab-nav {
 
-    @media (min-width: $screen-lg-min) {
+    @media (min-width: $screen-xl-min) {
       margin-left: -40px;
       width: calc(100% + (40px * 2));
     }
@@ -24,7 +24,7 @@
 
   &__tab-nav-wrapper {
 
-    @media (min-width: $screen-lg-min) {
+    @media (min-width: $screen-xl-min) {
       padding: 0 40px;
     }
   }
