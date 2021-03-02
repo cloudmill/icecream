@@ -46,6 +46,10 @@
         @media (max-width: #{$screen-md-min - 1px}) {
           display: flex;
           align-items: center;
+
+          &::before {
+            bottom: calc(50% - 180px);
+          }
         }
       }
     }
