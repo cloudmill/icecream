@@ -285,3 +285,16 @@ $(() => {
 	}
 });
 
+{
+	const label = document.createElement('span');
+	$(label).css('position', 'fixed').css('top', '0').css('z-index', '10000000').css('font-size', '20px');
+	$(document.body).append(label);
+
+	let currentWindowHeight = $(window).height();
+	$(label).text(currentWindowHeight);
+	$(window).on('resize', () => {
+		currentWindowHeight = $(window).height();
+		$(label).text(currentWindowHeight);
+	});
+}
+
