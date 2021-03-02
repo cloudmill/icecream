@@ -1,0 +1,286 @@
+.history {
+    // component
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    background-color: #EBFAFF;
+    border-radius: 20px;
+
+    @media (min-width: $screen-xl-min) {
+        border-radius: 40px;
+    }
+
+    
+    // slider
+    &__slider-wrapper {
+        position: relative;
+        z-index: 100000;
+        padding: 40px 0 55px;
+
+        @media (min-width: $screen-xl-min) {
+            padding: 80px 0;
+        }
+    }
+
+    &__slider {}
+
+    &__slide {
+        padding: 0 20px;
+
+        @media (min-width: $screen-md-min) {
+            padding-right: 210px;
+        }
+
+        @media (min-width: $screen-xl-min) {
+            padding-left: 125px;
+            padding-right: 285px;
+        }
+
+        @media (min-width: $screen-xxl-min) {
+            padding-right: 540px;
+        }
+    }
+
+    &__slide-text {
+        font-size: 16px;
+        line-height: 140%;
+
+        @media (min-width: $screen-xl-min) {
+            font-size: 18px;
+        }
+    }
+
+
+    // control
+    &__control {
+        position: absolute;
+        z-index: 100000;
+        top: calc(100% - 15px);
+        right: 20px;
+
+        display: flex;
+
+        @media (min-width: $screen-md-min) {
+            top: 40px;
+        }
+
+        @media (min-width: $screen-xl-min) {
+            top: 80px;
+            right: 40px;
+        }
+
+        @media (min-width: $screen-xxl-min) {
+            right: 120px;
+        }
+    }
+
+    &__button {
+        $button: &;
+
+        position: relative;
+        z-index: 0;
+
+        $size: 56px;
+        width: $size;
+        height: $size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        @media (min-width: $screen-xl-min) {
+            $size: 80px;
+            width: $size;
+            height: $size;
+        }
+
+        &::before {
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0) scale(0);
+            content: "";
+            display: block;
+            $size: 70px;
+            width: $size;
+            height: $size;
+
+            background-color: white;
+            border-radius: 50%;
+            transition: transform .45s cubic-bezier(.4, 0, 0, 1);
+
+            @media (min-width: $screen-xl-min) {
+                $size: 108px;
+                width: $size;
+                height: $size;
+            }
+        }
+
+        &--prev {}
+
+        &--next {
+            #{$button}-img {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:last-child {
+            margin-left: 7px;
+
+            @media (min-width: $screen-xl-min) {
+                margin-left: 10px;
+            }
+        }
+
+        &:hover {
+            &::before {
+                transform: translate3d(-50%, -50%, 0) scale(1);
+                transition: transform 0.45s cubic-bezier(.6, .01, 0, 1.38);
+            }
+        }
+    }
+
+    &__button-img {
+        max-width: 16px;
+
+        @media (min-width: $screen-xl-min) {
+            max-width: none;
+        }
+    }
+
+
+    // pagination
+    $col-gap: 10px;
+    $row-gap: 14px;
+    $active-color: #5DCBEE;
+
+    &__pagination-wrapper {
+        padding: 60px 20px 20px;
+
+        background-image: url("../images/slider-wave.svg");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+
+        @media (min-width: $screen-md-min) {
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        @media (min-width: $screen-xl-min) {
+            padding: 70px 125px 20px;
+        }
+
+        @media (min-width: $screen-xxl-min) {
+            padding: 35px 125px 25px;
+        }
+    }
+    
+    &__pagination {
+        margin-top: -$row-gap;
+        margin-left: -$col-gap;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+
+        @media (min-width: $screen-md-min) {
+            margin-left: -20px;
+        }
+    }
+
+    &__pagination-item {
+        position: relative;
+        z-index: 0;
+        margin-top: $row-gap;
+        margin-left: $col-gap;
+        min-height: 25px;
+
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        transition: 0.5s;
+
+        @media (min-width: $screen-md-min) {
+            margin-left: 20px;
+            min-height: 30px;
+
+            line-height: 140%;
+        }
+
+        @media (min-width: $screen-xl-min) {
+            min-height: 57px;
+
+            font-size: 22px;
+            line-height: 130%;
+        }
+
+        @media (min-width: $screen-xxl-min) {
+            min-height: 90px;
+
+            font-size: 30px;
+        }
+
+        &::before {
+            opacity: 0;
+
+            position: absolute;
+            z-index: -1;
+            top: calc(100% + 1px);
+            left: 0;
+            right: 0;
+            content: "";
+            display: block;
+            height: 4px;
+            
+            background-color: $active-color;
+            border-radius: 2px;
+            transition: inherit;
+
+            @media (min-width: $screen-xl-min) {
+                top: auto;
+                bottom: -20px;
+            }
+
+            @media (min-width: $screen-xxl-min) {
+                bottom: -25px;
+            }
+        }
+
+        &--active {
+            font-size: 18px;
+            color: $active-color;
+
+            @media (min-width: $screen-md-min) {
+                font-size: 22px;
+                line-height: 130%;
+            }
+
+            @media (min-width: $screen-xl-min) {
+                font-size: 50px;
+                line-height: 110%;
+            }
+
+            @media (min-width: $screen-xxl-min) {
+                font-size: 80px;
+            }
+
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        &:hover {
+            color: $active-color;
+        }
+    }
+}

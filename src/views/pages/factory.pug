@@ -68,23 +68,7 @@ block content
         h2.factory__top-mid-title(data-aos='fade-up')
           |История завода
         .factory__top-mid-slider(data-aos='fade-up')
-          .page-about-us__slider
-            .swiper-container.page-about-us__swiper-container
-              .swiper-wrapper.page-about-us__swiper-wrapper
-                - for (let i = 0; i < 10; i++)
-                  .swiper-slide
-                    .page-about-us__slide
-                      p.page-about-us__slide-text
-                        |История компании «Чистая Линия» началась в 2001 году на складе бывшего продуктового магазина под Солнечногорском, где два партнера — Гагик Эвонян и Тигран Матитян открыли производство этнического кисломолочного продукта — тана.
-            .page-about-us__slider-pagination
-              each item in [2001, 2002, 2005, 2007, 2008, 2016, 2017, 2018, 2019, 2020]
-                .page-about-us__slider-pagination-item
-                  |#{item}
-            form.page-about-us__slider-btns
-              button.page-about-us__slider-btn.page-about-us__slider-btn--prev
-                img.page-about-us__slider-btn-icon(src='assets/images/icons/prevArr.svg')
-              button.page-about-us__slider-btn.page-about-us__slider-btn--next
-                img.page-about-us__slider-btn-icon(src='assets/images/icons/prevArr.svg')
+          include ../components/_history
         .factory__top-mid-photos
           h2.factory__top-mid-photos-title(data-aos='fade-up')
             |Производственные процессы с молоком происходят автоматически, без участия человека, что обеспечивает высокое качество продукции

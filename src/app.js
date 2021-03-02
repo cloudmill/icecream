@@ -291,20 +291,10 @@ $(() => {
 			if ($(window).scrollTop() < 1) {
 				$('.fullpage-block').addClass('fullpage-block--start');
 			}
-		}
 
-		$(window).one('scroll', updateFullpageBlock);
+			$(window).one('scroll', updateFullpageBlock);
 
-		function updateFullpageBlock() {
-			if ($(window).scrollTop() >= 1) {
-				console.log('>= 1', $(window).scrollTop());
-				$('.fullpage-block').removeClass('fullpage-block--start');
-			} else {
-				console.log('< 1', $(window).scrollTop());
-				$('.fullpage-block').addClass('fullpage-block--start');
-			}
-
-			const timeout = setTimeout(() => {
+			function updateFullpageBlock() {
 				if ($(window).scrollTop() >= 1) {
 					console.log('>= 1', $(window).scrollTop());
 					$('.fullpage-block').removeClass('fullpage-block--start');
@@ -313,10 +303,20 @@ $(() => {
 					$('.fullpage-block').addClass('fullpage-block--start');
 				}
 
-				$(window).one('scroll', updateFullpageBlock);
+				const timeout = setTimeout(() => {
+					if ($(window).scrollTop() >= 1) {
+						console.log('>= 1', $(window).scrollTop());
+						$('.fullpage-block').removeClass('fullpage-block--start');
+					} else {
+						console.log('< 1', $(window).scrollTop());
+						$('.fullpage-block').addClass('fullpage-block--start');
+					}
 
-				clearTimeout(timeout);
-			}, 250);
+					$(window).one('scroll', updateFullpageBlock);
+
+					clearTimeout(timeout);
+				}, 250);
+			}
 		}
 	});
 }
