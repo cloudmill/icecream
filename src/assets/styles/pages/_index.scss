@@ -6,20 +6,16 @@
   display: flex;
   justify-content: space-between;
   margin: 40px -10px 0;
-
   @media screen and (min-width: $screen-md-min) {
     margin: 0;
     justify-content: center;
   }
-
   a {
     display: inline-block;
     margin: 0 10px;
-
     @media screen and (min-width: $screen-lg-min) {
       margin: 0 4px;
     }
-
     @media screen and (min-width: $screen-xl-min) {
       margin: 0 20px;
     }
@@ -29,31 +25,11 @@
 
 .fullpage {
   &-block {
-    &.fullpage-block--start {
-      .fullpage-slider {
-        @media (max-width: #{$screen-md-min - 1px}) {
-          position: fixed;
-          top: 0;
-          bottom: 0;
-          left: 20px;
-          right: 20px;
-        }
-      }
-
-      .swiper-slide {
-        @media (max-width: #{$screen-md-min - 1px}) {
-          display: flex;
-          align-items: center;
-        }
-      }
-    }
-
     position: relative;
     padding: 0 20px;
     min-height: 100vh;
     background: url("../images/back.svg") no-repeat center center / cover;
     overflow: hidden;
-
     @media screen and (min-width: $screen-lgx-min) {
       padding-left: 250px;
     }
@@ -89,34 +65,29 @@
       margin: auto;
       z-index: 9;
       width: 210px;
-
       @media screen and (min-width: $screen-md-min) {
         bottom: 40px;
         width: auto;
         right: auto;
       }
-
       @media screen and (min-width: $screen-lgx-min) {
         left: 100px;
       }
     }
 
-    >img {
+    > img {
       position: absolute;
       left: 0;
       right: 0;
       bottom: 70px;
       width: 100%;
       z-index: 1;
-
       @media screen and (min-width: 580px) {
         bottom: 60px;
       }
-
       @media screen and (min-width: $screen-md-min) {
         bottom: -20px;
       }
-
       @media screen and (min-width: $screen-lg-min) {
         bottom: -40px;
       }
@@ -127,7 +98,6 @@
         opacity: 1;
         transform: scale(1);
       }
-
       .fullpage-desc {
         opacity: 1;
       }
@@ -182,12 +152,10 @@
     text-align: right;
     z-index: 9;
     top: 120px;
-
     @media screen and (min-width: $screen-mdx-min) {
       top: 140px;
       right: 20px;
     }
-
     @media screen and (min-width: $screen-lgx-min) {
       top: 40px;
     }
@@ -196,15 +164,12 @@
       margin: 0;
       color: white;
       font-size: 22px;
-
       @media screen and (min-width: $screen-lg-min) {
         font-size: 3.5vw;
       }
-
       @media screen and (min-width: $screen-xl-min) {
         font-size: 7vh;
       }
-
       @media screen and (min-width: $screen-xl-min) and (min-height: 800px) {
         font-size: 55px;
       }
@@ -215,38 +180,30 @@
       transform: scale(0.7) !important;
 
       top: 90px;
-
       @media screen and (min-width: 900px) {
         top: 110px;
       }
-
       @media screen and (min-width: $screen-lg-min) {
         top: 10px;
       }
-
       &.active {
         transform: scale(0.7) !important;
         top: 150px;
-
         @media screen and (min-width: 900px) {
           top: 170px;
         }
-
         @media screen and (min-width: $screen-lg-min) {
           top: 70px;
         }
       }
     }
-
     &.active {
       transform: scale(1) !important;
 
       top: 120px;
-
       @media screen and (min-width: $screen-mdx-min) {
         top: 140px;
       }
-
       @media screen and (min-width: $screen-lgx-min) {
         top: 40px;
       }
@@ -260,14 +217,14 @@
     opacity: 0;
 
     max-width: 144px;
-
+    
     font-weight: bold;
     font-size: 14px;
     line-height: 1.3;
     color: white;
-
+    
     transition: all .5s;
-
+    
     @media screen and (min-width: $screen-md-min) {
       left: 100px;
       right: auto;
@@ -279,12 +236,10 @@
       top: 40px;
       left: 140px;
     }
-
     @media screen and (min-width: $screen-lgx-min) {
       font-size: 1.6vw;
       left: 100px;
     }
-
     @media screen and (min-width: $screen-xl-min) {
       font-size: 22px;
     }
@@ -305,7 +260,6 @@
         z-index: -1;
         transition: width .5s .6s;
       }
-
       &.active:after {
         width: 100%;
       }
@@ -329,12 +283,10 @@
     overflow: hidden;
     position: relative;
     background: linear-gradient(180deg, #F8F6E9 0%, #F8F6E9 46%, #F3F0DA 47%, #F3F0DA 100%), #F8F6E9;
-
     @media screen and (min-width: $screen-md-min) {
       padding-left: 0;
       padding-right: 0;
     }
-
     &:after {
       content: '';
       position: absolute;
@@ -345,29 +297,24 @@
       width: 100%;
       height: 45px;
       background: url("../images/houseb-mob.svg") no-repeat center top / 100% auto;
-
       @media screen and (min-width: 550px) {
         height: 60px;
       }
-
       @media screen and (min-width: $screen-md-min) {
         display: none;
       }
     }
-
     svg,
     img {
       max-width: inherit;
       margin-left: -20px;
       width: calc(100% + 20px * 2);
-
       @media screen and (min-width: $screen-lg-min) {
         width: 100%;
         max-width: 100%;
         margin-left: 0;
       }
     }
-
     h2 {
       margin-top: 0;
     }
@@ -384,7 +331,6 @@
 
     p {
       margin: 20px 0;
-
       @media screen and (min-width: $screen-md-min) {
         margin: 40px 0;
       }
@@ -405,7 +351,6 @@
           left: 0;
           right: 0;
           z-index: -1;
-
           @media screen and (min-width: $screen-lg-min) {
             top: 15px;
           }
@@ -420,23 +365,18 @@
     background: #F3F0DA;
     padding-top: 70px;
     padding-bottom: 80px;
-
     @media screen and (min-width: $screen-md-min) {
       padding-top: 0;
       padding-bottom: 0;
     }
-
     h4 {
       margin-top: 0;
     }
-
     .inline-link {
       margin-top: 10px;
-
       @media screen and (min-width: $screen-md-min) {
         margin-top: 20px;
       }
-
       @media screen and (min-width: $screen-lg-min) {
         margin-top: 40px;
       }
@@ -457,7 +397,6 @@
       url("../images/animation/background-m.svg") no-repeat top right / 104% auto,
       #F3F0DA;
     position: relative;
-
     &:after {
       content: '';
       background: url("../images/news.svg") no-repeat bottom -1px center / 100% auto;
@@ -470,7 +409,6 @@
       pointer-events: none;
       user-select: none;
     }
-
     @media screen and (min-width: $screen-md-min) {
       padding-bottom: 140px;
       padding-top: 80px;
@@ -480,12 +418,10 @@
         url("../images/animation/background.svg") no-repeat top center / 111% auto,
         #F3F0DA;
     }
-
     @media screen and (min-width: $screen-lg-min) {
       padding-bottom: 100px;
       padding-top: 100px;
     }
-
     @media screen and (min-width: 1100px) {
       background:
         //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
@@ -493,7 +429,6 @@
         url("../images/animation/background.svg") no-repeat top center / 104% auto,
         #F3F0DA;
     }
-
     @media screen and (min-width: 1200px) {
       background:
         //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
@@ -501,7 +436,6 @@
         url("../images/animation/background.svg") no-repeat top center / 100% auto,
         #F3F0DA;
     }
-
     @media screen and (min-width: $screen-xl-min) {
       background:
         //url("../images/news.svg") no-repeat bottom -1px center / 100% auto,
@@ -509,35 +443,29 @@
         url("../images/animation/background.svg") no-repeat top center / cover,
         #F3F0DA;
     }
-
     @media screen and (min-width: $screen-xl-min) {
       padding-top: 200px;
       padding-bottom: 160px;
     }
-
     .left-container {
       position: relative;
       z-index: 5;
     }
   }
-
   h2 {
     margin-top: 0;
     font-size: 37px;
     line-height: 100%;
     margin-bottom: 40px;
     color: $gray;
-
     @media screen and (min-width: $screen-md-min) {
       font-size: 37px;
       margin-bottom: 100px;
     }
-
     @media screen and (min-width: $screen-lg-min) {
       font-size: 5.1vw;
       margin-bottom: 40px;
     }
-
     @media screen and (min-width: $screen-xl-min) {
       font-size: 120px;
       margin-bottom: 80px;
@@ -546,7 +474,6 @@
 
   .swiper-container {
     margin-top: 20px;
-
     //margin-top: 53vh;
     @media screen and (min-width: $screen-md-min) {
       margin: 0;
@@ -559,17 +486,14 @@
     padding-top: 50px;
     padding-bottom: 80px;
     background: white;
-
     @media screen and (min-width: $screen-md-min) {
       padding-top: 80px;
       padding-bottom: 60px;
     }
-
     @media screen and (min-width: $screen-lg-min) {
       padding-top: 180px;
       padding-bottom: 160px;
     }
-
     h2 {
       margin: 0;
     }
@@ -585,18 +509,13 @@
       position: absolute;
       z-index: -1;
       $pos: (top: -15px, bottom: -60px, left: -20px, right: -20px);
-
-      @each $prop,
-      $val in $pos {
+      @each $prop, $val in $pos {
         #{$prop}: $val;
       }
-
       content: "";
-
       @media (min-width: $screen-md-min) {
         display: none;
       }
-
       pointer-events: none;
       user-select: none;
 
