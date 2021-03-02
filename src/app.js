@@ -286,15 +286,14 @@ $(() => {
 });
 
 {
-	const label = document.createElement('span');
-	$(label).css('position', 'fixed').css('top', '0').css('z-index', '10000000').css('font-size', '20px');
-	$(document.body).append(label);
-
-	let currentWindowHeight = $(window).height();
-	$(label).text(currentWindowHeight);
-	$(window).on('resize', () => {
-		currentWindowHeight = $(window).height();
-		$(label).text(currentWindowHeight);
-	});
+	const testElement = document.createElement('div');
+	$(testElement).css('position', 'fixed')
+		.css('top', '0')
+		.css('bottom', '0')
+		.css('left', '0')
+		.css('right', '0')
+		.css('border', '10px dashed black')
+		.css('z-index', '100000000');
+	$(document.body).append(testElement);
 }
 
