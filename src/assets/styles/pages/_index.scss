@@ -105,13 +105,11 @@
   }
 
   &-slider {
-    min-height: 100vh;
     display: flex;
     align-items: center;
-    position: relative;
-    z-index: 9;
-
+    
     position: fixed;
+    z-index: 100000;
     top: 0;
     bottom: 0;
     left: 20px;
