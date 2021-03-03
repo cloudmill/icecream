@@ -296,19 +296,15 @@ $(() => {
 
 			function updateFullpageBlock() {
 				if ($(window).scrollTop() >= 1) {
-					console.log('>= 1', $(window).scrollTop());
 					$('.fullpage-block').removeClass('fullpage-block--start');
 				} else {
-					console.log('< 1', $(window).scrollTop());
 					$('.fullpage-block').addClass('fullpage-block--start');
 				}
 
 				const timeout = setTimeout(() => {
 					if ($(window).scrollTop() >= 1) {
-						console.log('>= 1', $(window).scrollTop());
 						$('.fullpage-block').removeClass('fullpage-block--start');
 					} else {
-						console.log('< 1', $(window).scrollTop());
 						$('.fullpage-block').addClass('fullpage-block--start');
 					}
 
