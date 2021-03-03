@@ -152,25 +152,14 @@
       right: 0;
       bottom: 0;
       top: 0;
-      //margin: auto;
       opacity: 0;
       transition: opacity .5s;
       display: flex;
       justify-content: center;
       align-items: center;
-      //img {
-      //  margin-top: 10vh;
-      //}
-      //width: 100%;
-      //height: 100vh;
+      pointer-events: none;
     }
-
-    //&:after {
-    //  content: '';
-    //  width: 100%;
-    //  height: 100vh;
-    //  background: url("../images/animation/blur.svg") no-repeat center / cover;
-    //}
+    
     &.active {
       .blur {
         opacity: 1;
