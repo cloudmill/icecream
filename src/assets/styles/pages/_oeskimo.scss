@@ -6,7 +6,7 @@
   &__top {
     background-image: url("../images/world/top-transition.svg"),
       url("../images/animation/slide-4.png"),
-      url("../images/world/top-background.svg");
+      url("../images/world/top-background.png");
 
     @media (max-width: #{$screen-md-min - 1px}) {
       padding-bottom: 420px;
