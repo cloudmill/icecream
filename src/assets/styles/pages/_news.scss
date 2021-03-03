@@ -7,8 +7,8 @@
     margin-bottom: 30px;
   }
   .aside {
-    margin-top: 50px;
-    @media screen and (min-width: $screen-xl-min) {
+    margin-top: 80px;
+    @media screen and (min-width: 1150px) {
       margin-top: 0;
     }
   }
@@ -33,6 +33,14 @@
     }
     @media screen and (min-width: 1150px) {
       margin-top: 160px;
+    }
+  }
+}
+
+.page-news {
+  .sameBlock {
+    @media (max-width: #{$screen-md-min - 1px}) {
+      margin-top: 0;
     }
   }
 }
