@@ -10,7 +10,10 @@ block content
       .block-aside(data-sticky-container)
         .interests.typical-page
           .date 20 ноября 2020
-          .img.img--desktop--hidden.hidden__xl.hidden__lg: +img('interests/int-1.jpg')
+          .img.img--desktop--hidden.hidden__xl.hidden__lg
+            .page-interesting__frame
+              .page-interesting__frame-image
+                img(src="assets/images/interests/int-1.jpg", alt="").page-interesting__frame-img
           .col__xl-10
             h4 Для тех, кто знает, сколько весит котлета и сколько калорий в сырниках, мы подготовили топ-6 самых низкокалорийных вкусов мороженого. Спойлер – лидируют фруктовые вкусы.
             h4 Шестое место

@@ -1,6 +1,9 @@
 aside.aside
     .sticky(data-margin-top="40")
-        .img-block.visible__lg.visible__xl: +img('interests/int-1.jpg')
+        .img-block.visible__lg.visible__xl
+            .page-interesting__frame
+                .page-interesting__frame-image
+                    img(src="assets/images/interests/int-1.jpg", alt="").page-interesting__frame-img
         .sign-block(data-aos='fade-up')
             .form-request
                 h4 Подписаться на новые статьи

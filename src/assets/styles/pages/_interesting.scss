@@ -63,8 +63,23 @@
     }
 
     img {
-      display: flex;
-      align-items: flex-start;
+      display: block;
     }
+  }
+
+  &__frame {
+    display: flex;
+  }
+
+  &__frame-image {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+
+    border-radius: 20px;
+  }
+
+  &__frame-img {
+    display: block;
   }
 }
