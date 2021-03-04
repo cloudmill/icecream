@@ -198,7 +198,7 @@ $items:
 .select2-results__option {
   padding: 3px 0 3px 10px;
 
-  @media screen and (min-width: $screen-lg-min) {
+  @media (min-width: $screen-lg-min) {
     padding: 8px 0 8px 20px;
   }
 
@@ -223,6 +223,10 @@ $items:
   }
 }
 
+.only-text .select2-results__option {
+  padding: 8px 0 8px 10px;
+}
+
 .select2-container--default .select2-results__option[aria-selected=true] {
   background-color: transparent;
 }
@@ -240,13 +244,13 @@ $items:
     /* Safari and Chrome */
   }
 
-  @media screen and (min-width: $screen-lg-min) {
+  @media (min-width: $screen-lg-min) {
     max-height: #{62 * 5}px;
   }
 }
 
 .select2-container--default.only-text .select2-results>.select2-results__options {
-  max-height: #{26 * 7}px;
+  max-height: #{36 * 7}px;
 
   @media screen and (min-width: $screen-lg-min) {
     max-height: #{42 * 7}px;
