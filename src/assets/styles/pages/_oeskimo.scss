@@ -94,6 +94,8 @@
     @media (min-width: $screen-md-min) {
       margin-top: 40px;
       margin-left: 30px;
+      $min-cols: 4;
+      max-width: calc((100% - 30px * #{$min-cols}) / #{$min-cols});
     }
 
     @media (min-width: $screen-lg-min) {
