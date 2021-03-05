@@ -32,11 +32,12 @@ block content
                 .col.col__xl-4.col__md-6.col__xs-12.more__item--js(data-aos='fade-up'): +newsList()
             .col.col__xl-4.col__md-6.col__xs-12.more__item--js(data-aos='fade-up'): +newsList('news-list__item--light')
             .col.col__xl-4.col__md-6.col__xs-12.more__item--js(data-aos='fade-up'): +newsList()
-          .row
-            .col.col__xl-8.col__md-6.col__xs-12.ml-auto.margtop80(data-aos='fade-up')
+          .row.page-news__press-showmore-wrapper
+            .col.col__xl-8.col__md-6.col__xs-12.margtop80.page-news__press-showmore-container(data-aos='fade-up')
               a.btn.btn--default.btn--full.btn-icon(href='#')
                 span Показать еще
                 i.sprite.sprite--arr-d
+        - const isPressPage = true;
         include ../components/_sidebar
 
 
