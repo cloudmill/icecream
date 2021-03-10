@@ -119,11 +119,12 @@
       }
 
       @media screen and (min-width: $screen-md-min) {
-        bottom: -20px;
+        bottom: 0;
+        height: 120px;
       }
 
       @media screen and (min-width: $screen-lg-min) {
-        bottom: -40px;
+        height: 140px;
       }
     }
 
