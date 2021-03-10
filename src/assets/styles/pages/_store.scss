@@ -365,7 +365,7 @@
     &::before {
       position: absolute;
       z-index: -1;
-      bottom: 0;
+      bottom: -1px;
       left: -20px;
       right: -20px;
       content: "";
@@ -373,19 +373,19 @@
       height: calc(100% + 400px);
       background-image: url("../images/world/top-transition.svg"), url("../images/world/top-image-1.png"), url("../images/world/top-background.png");
       background-repeat: no-repeat, no-repeat, no-repeat;
-      background-position: center bottom, right -93px bottom 0px, center bottom;
+      background-position: center bottom -1px, right -93px bottom 0px, center bottom;
       background-size: 768px auto, 460px auto, cover;
       pointer-events: none;
 
       @media (min-width: $screen-md-min) {
         height: calc(100% + 500px);
-        background-position: center bottom, right -85px bottom -10px, center bottom;
+        background-position: center bottom -1px, right -85px bottom -10px, center bottom;
         background-size: 1024px auto, 460px auto, cover;
       }
 
       @media (min-width: $screen-lg-min) {
         right: -40px;
-        background-position: center bottom, right -100px bottom -10px, center bottom;
+        background-position: center bottom -1px, right -100px bottom -10px, center bottom;
         background-size: 1366px auto, 620px auto, cover;
       }
 
@@ -394,12 +394,12 @@
       }
 
       @media (min-width: $screen-xl-min) {
-        background-position: center bottom, right -215px bottom -80px, center bottom;
+        background-position: center bottom -1px, right -215px bottom -80px, center bottom;
         background-size: 1680px auto, 870px auto, cover;
       }
 
       @media (min-width: 1680px) {
-        background-position: center bottom, right -250px bottom -70px, center bottom;
+        background-position: center bottom -1px, right -250px bottom -70px, center bottom;
         background-size: 1920px auto, 995px auto, cover;
       }
     }
