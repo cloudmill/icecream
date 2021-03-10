@@ -150,6 +150,7 @@
 
     @media (min-width: $screen-lg-min) {
       margin-top: 160px;
+      padding-bottom: 110px;
       min-height: calc(450px + 30px);
     }
   }
@@ -321,7 +322,8 @@
     display: flex;
 
     @media (min-width: $screen-lg-min) {
-      top: calc(450px - 80px);
+      top: auto;
+      bottom: 15px;
       right: auto;
       left: 0;
     }

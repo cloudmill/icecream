@@ -3,9 +3,13 @@
 
   overflow: hidden;
 
-  &__main {}
+  &__main {
+    will-change: transform;
+  }
 
   &__wrapper {
+    will-change: transform;
+
     height: 250px;
     display: flex;
     transition: $transition;
@@ -22,6 +26,8 @@
   }
 
   &__slide {
+    will-change: transform;
+
     transform-origin: left top;
     $size: 250px;
     width: $size;
