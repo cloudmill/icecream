@@ -714,6 +714,9 @@
             margin-top: -30px;
             height: auto;
           }
+          @media (min-width: $screen-md-min) and (max-width: #{$screen-lg-min - 1px}) {
+            max-width: 125%;
+          }
           @media screen and (min-width: 1500px) {
             width: 270px;
           }
