@@ -1,0 +1,7 @@
+.page-reviews {
+    &__aside {
+        @media (min-width: $screen-md-min) and (max-width: #{1150 - 1}px) {
+            width: 100% !important;
+        }
+    }
+}
