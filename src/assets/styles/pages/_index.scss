@@ -147,6 +147,10 @@
     position: relative;
     z-index: 9;
 
+    @media (min-width: $screen-md-min) {
+      z-index: auto;
+    }
+
     .blur {
       position: absolute;
       left: 0;
