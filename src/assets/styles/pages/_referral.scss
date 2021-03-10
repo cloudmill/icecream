@@ -156,6 +156,7 @@
   &__container {
     max-width: 950px;
     margin: 0 auto 50px;
+    margin-top: 40px;
     @media (min-width: $screen-lg-min) {
       margin: 80px auto 160px;
     }
