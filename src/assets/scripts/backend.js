@@ -11,8 +11,8 @@ function showMore() {
         let container = $(this).parents('[data-type=main_container]'),
             itemsContainer = container.find('[data-type=items_block]'),
             url = $(this).attr('data-url'),
-            pagenav = container.find('[data-type=pagenav_block]');
-            data = null;
+            pagenav = container.find('[data-type=pagenav_block]'),
+            data = null,
             path = window.location.pathname.split('/');
 
         if (path[1] == 'catalog' || path[1] == 'recipes') {
@@ -24,14 +24,13 @@ function showMore() {
         }
         
         if (url !== undefined) {
+            pagenav.remove();
             $.ajax({
                 type: 'POST',
                 url: url,
                 dataType: 'html',
                 data: data,
                 success: function (data) {
-                    pagenav.remove();
-
                     let itemsResponse = $(data).find('[data-type=item]'),
                         pagenavResponse = $(data).find('[data-type=pagenav_block]');
                     
