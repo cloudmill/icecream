@@ -18,7 +18,7 @@
     }
     &.active {
       background: $base-color-lighten;
-      
+
       .accordion-head {
         &:after {
           opacity: 0;
@@ -153,7 +153,7 @@
 
   &-body {
     display: none;
-    div {
+    > div {
       padding: 10px 20px 30px;
       @media screen and (min-width: $screen-md-min) {
         padding: 10px 80px 30px 150px;
