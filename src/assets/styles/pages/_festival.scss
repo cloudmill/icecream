@@ -246,12 +246,20 @@
       &:after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: 0;
+        transition: width .5s .3s;
         height: 100%;
         background: #EF747A;
         border-radius: 7px;
         left: 0;
         z-index: -1;
+      }
+    }
+    &.aos-animate {
+      span {
+        &:after {
+          width: 100%;
+        }
       }
     }
   }
@@ -435,12 +443,25 @@
             top: 3px;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 0;
             z-index: -1;
+            transition: width .5s .3s;
           }
           &:last-child {
             &:after {
               background: $color-type-3a;
+            }
+          }
+        }
+        &.aos-animate {
+          span {
+            &:after {
+              width: 100%;
+            }
+            &:last-child {
+              &:after {
+                transition-delay: .5s;
+              }
             }
           }
         }
@@ -531,7 +552,6 @@
     }
     .rollerIt {
       margin-bottom: 20px;
-      overflow: visible;
       .swiper-slide {
         border-radius: 30px;
         background: url("../images/festival/line1.svg") no-repeat left bottom, white;
@@ -650,12 +670,6 @@
           }
         }
       }
-      &-num {
-
-      }
-      &-ico {
-
-      }
       &-title {
         font-weight: bold;
         font-size: 18px;
@@ -671,7 +685,8 @@
           &:after {
             content: '';
             position: absolute;
-            width: 100%;
+            width: 0;
+            transition: width .5s .3s;
             height: 90%;
             top: 0;
             bottom: 0;
@@ -696,6 +711,15 @@
           color: $color-type-2a;
           text-decoration: none;
           border-bottom: 1px dashed $color-type-2a;
+        }
+      }
+      .aos-animate {
+        > .referral__programm-item .referral__programm-title {
+          span {
+            &:after {
+              width: 100%;
+            }
+          }
         }
       }
     }
@@ -733,6 +757,8 @@
       flex-wrap: wrap;
       align-items: center;
       margin-bottom: 50px;
+      position: relative;
+      z-index: 9;
       @media (min-width: $screen-md-min) {
         margin-bottom: 60px;
       }
@@ -749,7 +775,7 @@
         margin: 0;
         width: 100%;
         @media (min-width: $screen-md-min) {
-          width: auto;
+          width: 25%;
         }
       }
     }

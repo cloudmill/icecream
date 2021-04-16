@@ -109,13 +109,18 @@ if ($('.rollerIt').length) {
 	});
 }
 
+
 if ($('.rollerItThree').length) {
 	$('.rollerItThree').each(function() {
 		const component = $(this);
-		const slider = component.find('.swiper-container');
+		const slider = component.find('.rollerItCont');
 		const roller = new Swiper(slider[0], {
 			slidesPerView: 1,
 			simulateTouch: false,
+		});
+		const rollerPag = new Swiper('.rollerItPag', {
+			slidesPerView: '3',
+			spaceBetween: 20,
 		});
 
 		const paginationItem = component.find('.fest__pagination-item');
@@ -138,8 +143,12 @@ if ($('.rollerItThree').length) {
 		button.on('click', function() {
 			if ($(this).hasClass('swiper-prev1')) {
 				roller.slidePrev();
+				rollerPag.slidePrev();
 			} else {
 				roller.slideNext();
+				if(rollerPag.realIndex < 2) {
+					rollerPag.slideNext();
+				}
 			}
 			updatePagination();
 		});

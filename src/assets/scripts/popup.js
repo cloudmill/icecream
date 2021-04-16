@@ -85,7 +85,7 @@ $('.myModal').each(function() {
 		},
 		onCloseComplete: () => {
 			if ($('.main-slider').length) {
-				swiper.destroy(false, true);
+				// swiper.destroy(false, true);
 			}
 		}
 	});
