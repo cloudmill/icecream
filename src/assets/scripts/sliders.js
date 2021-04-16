@@ -117,6 +117,7 @@ if ($('.rollerItThree').length) {
 		const roller = new Swiper(slider[0], {
 			slidesPerView: 1,
 			simulateTouch: false,
+			autoHeight: true,
 		});
 		const rollerPag = new Swiper('.rollerItPag', {
 			slidesPerView: '3',

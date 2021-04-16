@@ -411,7 +411,7 @@
       .swiper-slide {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-around;
       }
     }
@@ -421,9 +421,9 @@
         width: 45%;
         max-width: 525px;
       }
-      @media (min-width: 1500px) {
-        padding-bottom: 80px;
-      }
+      //@media (min-width: 1500px) {
+      //  padding-bottom: 80px;
+      //}
       h3 {
         font-size: 18px;
         margin-top: 0;
