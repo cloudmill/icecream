@@ -227,6 +227,33 @@ ol {
         margin-right: 11px;
       }
     }
+    &--bl {
+      margin: 0 0 40px;
+      font-size: 18px;
+      line-height: 140%;
+      font-weight: normal;
+      color: $black-darken;
+      li {
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 140%;
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 10px;
+          height: 10px;
+          font-size: 0;
+          margin-right: 20px;
+          border-radius: 10px;
+          display: inline-block;
+          background: $color-type-1a;
+        }
+      }
+    }
   }
 
   &--number {

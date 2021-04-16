@@ -1,0 +1,1028 @@
+.festival {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    min-height: 750px;
+    height: 80vh;
+    z-index: 1;
+    background: url("../images/festival/path.svg") no-repeat center bottom / 120% auto,
+      url("../images/festival/fest-m.jpg") no-repeat center / cover;
+    @media (min-width: $screen-md-min) {
+      background: url("../images/festival/path.svg") no-repeat center bottom / 100% auto,
+        url("../images/festival/fest.jpg") no-repeat center / cover;
+    }
+    @media (min-width: $screen-lg-min) {
+      height: 109vh;
+    }
+    @media (min-width: 1600px) {
+      height: 100vh;
+      background:
+        url("../images/festival/path.svg") no-repeat center bottom -1px / 100% auto,
+        url("../images/festival/fest.jpg") no-repeat center / cover;
+    }
+  }
+  .left-container {
+    position: relative;
+    z-index: 10;
+  }
+
+  .mainTitle {
+    margin-bottom: 0;
+
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 70px;
+    }
+  }
+
+  .fest__card-slider {
+    //margin-bottom: 60px;
+    padding-bottom: 20px;
+    .swiper-button {
+      margin: 0 0 20px;
+      @media (min-width: $screen-lg-min) {
+        margin: 0;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    &-wrapper {
+      justify-content: center;
+      position: relative;
+      overflow: visible;
+      align-items: flex-end;
+      .breadcrumbs {
+        margin-right: auto;
+        @media (min-width: $screen-lg-min) {
+          margin-left: auto;
+          margin-right: 0;
+        }
+      }
+      img {
+        position: absolute;
+        left: 0;
+        right: 20px;
+        top: -100px;
+        bottom: 0;
+        margin: auto;
+        width: 110px;
+        @media (min-width: $screen-md-min) {
+          width: auto;
+          top: -130px;
+        }
+        @media (min-width: $screen-lg-min) {
+          top: 0;
+        }
+      }
+    }
+    &__link {
+      color: #5DCBEE;
+    }
+  }
+
+  .rollerItThree {
+    .left-container {
+      @media (min-width: $screen-md-min) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .fest__pagination {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    &-item {
+      margin-right: 10px;
+      width: 220px;
+      min-width: 220px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      background: #EBFAFF;
+      padding: 10px;
+      transition: background .5s cubic-bezier(0.65, 0, 0.35, 1);
+      cursor: pointer;
+      @media (min-width: $screen-md-min) {
+        width: 328px;
+        min-width: 328px;
+        margin-right: 20px;
+        padding: 20px;
+      }
+      &:hover,
+      &--active {
+        background: $color-type-1a;
+        .fest__pagination-date,
+        .fest__pagination-name {
+          color: white;
+        }
+      }
+      &:first-child {
+        .fest__pagination-img {
+          &-m {
+            height: 30px;
+            top: -10px;
+            @media (min-width: $screen-md-min) {
+              top: -20px;
+              height: 40px;
+            }
+            img {
+              height: 30px;
+              border-radius: 20px;
+              @media (min-width: $screen-md-min) {
+                height: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-img {
+      position: relative;
+      &-back {
+        overflow: hidden;
+        svg {
+          width: 60px;
+          height: auto;
+          @media (min-width: $screen-md-min) {
+            width: 91px;
+            height: 88px;
+          }
+        }
+      }
+      &-m {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 48px;
+        bottom: 0;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        border-radius: 50px;
+        overflow: hidden;
+        img {
+          height: 38px;
+          @media (min-width: $screen-md-min) {
+            height: 48px;
+          }
+        }
+      }
+    }
+    &-desc {
+      margin-left: 20px;
+    }
+    &-name {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 22px;
+      transition: color .5s cubic-bezier(0.65, 0, 0.35, 1);
+      @media (min-width: $screen-md-min) {
+        font-size: 18px;
+      }
+    }
+    &-date {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 140%;
+      color: $base-color-light;
+      transition: color .5s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+  }
+}
+
+.festival {
+  &__sl {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+      @media (min-width: $screen-lg-min) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+  .dates_place {
+    display: flex;
+    align-items: flex-start;
+    color: #083645;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -30px;
+    width: 150px;
+    text-align: center;
+    margin: auto;
+    @media (min-width: $screen-md-min) {
+      position: static;
+      font-size: 22px;
+      width: auto;
+      margin: 0;
+      margin-right: auto;
+      text-align: left;
+    }
+    .titl {
+      margin-bottom: 10px;
+    }
+    img {
+      position: static;
+      margin: 0 10px 0 0;
+      display: none;
+      @media (min-width: $screen-md-min) {
+        display: block;
+      }
+    }
+    span {
+      color: #F8F6E9;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        transition: width .5s .3s;
+        height: 100%;
+        background: #EF747A;
+        border-radius: 7px;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    &.aos-animate {
+      span {
+        &:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__title {
+    div {
+      @media (min-width: $screen-md-min) {
+        margin-bottom: 20px;
+      }
+    }
+    h1 {
+      @media (min-width: $screen-md-min) {
+        margin-bottom: 40px;
+      }
+    }
+    .btn {
+      margin-top: 25px;
+      @media (min-width: $screen-md-min) {
+        margin-top: 50px;
+      }
+    }
+  }
+  &__info {
+    margin-top: 90px;
+    margin-bottom: 100px;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+      @media (min-width: $screen-lg-min) {
+        margin-bottom: 80px;
+      }
+    }
+    &-block {
+      a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        background: white;
+        border: 1px solid #DAEFFB;
+        border-radius: 20px;
+        padding: 25px;
+        text-decoration: none;
+        transition: border-color .5s cubic-bezier(0.65, 0, 0.35, 1);
+        position: relative;
+        z-index: 1;
+        height: 155px;
+        @media (min-width: $screen-md-min) {
+          margin-bottom: 40px;
+          border-radius: 40px;
+          border: 4px solid #DAEFFB;
+          height: calc(100% - 40px);
+          padding: 20px;
+        }
+        &:after {
+          content: '';
+          left: -3px;
+          right: -3px;
+          bottom: -3px;
+          top: -3px;
+          position: absolute;
+          z-index: -1;
+          border-radius: 40px;
+          background: linear-gradient(106.01deg, #5ACAEF 0%, #A5E9FF 100%);
+          opacity: 0;
+          transition: opacity .5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+        .fillIt {
+          transition: opacity .5s cubic-bezier(0.65, 0, 0.35, 1);
+          opacity: 0;
+        }
+        &:hover {
+          border-color: transparent;
+          &:after {
+            opacity: 1;
+          }
+          .festival__info-item {
+            color: white;
+          }
+          .fillIt {
+            opacity: 1;
+            //fill: white;
+          }
+        }
+      }
+    }
+    &-text {
+      width: calc(100% - 100px);
+      margin-left: 20px;
+      font-size: 14px;
+      line-height: 140%;
+      @media (min-width: $screen-md-min) {
+        width: 59%;
+        font-size: 18px;
+      }
+      @media (min-width: 1500px) {
+        padding-right: 40px;
+      }
+    }
+    &-item {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 140%;
+      transition: color .5s;
+      text-decoration: none;
+      height: calc(100% - 40px);
+    }
+    &-img {
+      width: 90px;
+      @media (min-width: $screen-md-min) {
+        width: 37%;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__main {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 83vh;
+    @media (min-width: $screen-md-min) {
+      width: 40%;
+      margin-right: 0;
+      min-height: 60vh;
+      text-align: left;
+    }
+    @media (min-width: $screen-xl-min) {
+      width: 50%;
+      min-height: 80vh;
+    }
+  }
+
+  &__tour {
+    padding-bottom: 50px;
+    background:
+      url("../images/festival/path3.svg") no-repeat bottom -1px center / 100% auto,
+      url("../images/festival/path1.svg") no-repeat top center / 100% auto,
+      linear-gradient(239deg, #A0E8FF -6.4%, #DFF7FF 97.93%);
+    @media (min-width: $screen-md-min) {
+      padding-bottom: 180px;
+    }
+    &-inner {
+      padding-top: 80px;
+      @media (min-width: $screen-md-min) {
+        padding-top: 220px;
+      }
+      .swiper-slide {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+    &-desc {
+      width: 100%;
+      @media (min-width: $screen-lg-min) {
+        width: 45%;
+        max-width: 525px;
+      }
+      //@media (min-width: 1500px) {
+      //  padding-bottom: 80px;
+      //}
+      h3 {
+        font-size: 18px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        @media (min-width: $screen-md-min) {
+          margin-bottom: 40px;
+          font-size: 30px;
+        }
+        span {
+          position: relative;
+          z-index: 1;
+          &:after {
+            content: '';
+            background: $color-type-1a;
+            border-radius: 7px;
+            position: absolute;
+            top: 3px;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            z-index: -1;
+            transition: width .5s .3s;
+          }
+          &:last-child {
+            &:after {
+              background: $color-type-3a;
+            }
+          }
+        }
+        &.aos-animate {
+          span {
+            &:after {
+              width: 100%;
+            }
+            &:last-child {
+              &:after {
+                transition-delay: .5s;
+              }
+            }
+          }
+        }
+      }
+      .btn {
+        margin-bottom: 40px;
+        font-size: 14px;
+        @media (min-width: $screen-md-min) {
+          margin-bottom: 60px;
+          font-size: 16px;
+        }
+      }
+      .links {
+        color: white;
+        padding: 2px 6px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 140%;
+        background: $color-type-1a;
+        display: inline-block;
+        margin-bottom: 20px;
+        border-radius: 7px;
+        @media (min-width: $screen-md-min) {
+          font-size: 18px;
+          padding: 2px 10px;
+        }
+      }
+      ul {
+        margin: 0;
+      }
+      li {
+        padding: 0;
+        @media (min-width: $screen-md-min) {
+          margin-right: 10px;
+        }
+        a {
+          display: block;
+        }
+        img {
+          height: 40px;
+          @media (min-width: $screen-md-min) {
+            height: 60px;
+          }
+        }
+      }
+    }
+    &-img {
+      width: 100%;
+      @media (min-width: $screen-lg-min) {
+        width: 55%;
+      }
+    }
+  }
+
+  &__experts {
+    background: url("../images/festival/path.svg") no-repeat bottom center / 100% auto, #F8F6E9;
+    overflow: hidden;
+    padding-bottom: 160px;
+    @media (min-width: 1500px) {
+      padding-bottom: 250px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+      @media (min-width: $screen-lg-min) {
+        margin-bottom: 90px;
+      }
+    }
+    .left-container {
+      padding-right: 0;
+    }
+    .card-slider {
+      padding-bottom: 20px;
+      margin-right: 0;
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+      .swiper-slide {
+        height: auto;
+      }
+      .swiper-button {
+        margin-top: 20px;
+        margin-left: 0;
+        .nextBlock--ico {
+          background: #fff;
+        }
+      }
+    }
+    .rollerIt {
+      margin-bottom: 20px;
+      .swiper-slide {
+        border-radius: 30px;
+        background: url("../images/festival/line1.svg") no-repeat left bottom, white;
+        width: 90%;
+        @media (min-width: $screen-xl-min) {
+          width: 1000px;
+        }
+        &:nth-child(3) {
+          background: url("../images/festival/line2.svg") no-repeat right top, white;
+        }
+      }
+    }
+    &-block {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      @media (min-width: $screen-md-min) {
+        padding: 20px 50px 30px 20px;
+      }
+      &-img {
+        position: relative;
+        width: 100%;
+        @media (min-width: $screen-md-min) {
+          width: 260px;
+        }
+        img {
+          margin-top: -20px;
+          margin-left: -20px;
+          width: 130px;
+          @media (min-width: $screen-md-min) {
+            width: auto;
+          }
+          //position: absolute;
+          //left: 4px;
+          //top: 4px;
+          //width: 210px;
+        }
+        .clip-svg {
+          clip-path: url(#myClip);
+        }
+      }
+      &-desc {
+        width: 100%;
+        @media (min-width: $screen-md-min) {
+          width: calc(100% - 260px);
+        }
+      }
+    }
+    &-name {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 130%;
+      margin-bottom: 5px;
+      @media (min-width: $screen-md-min) {
+        font-size: 30px;
+      }
+    }
+    &-prof {
+      background: $color-type-1a;
+      border-radius: 7px;
+      color: white;
+      padding: 2px 10px;
+      display: inline-block;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 130%;
+      @media (min-width: $screen-md-min) {
+        font-size: 22px;
+      }
+    }
+    &-desc {
+      margin-top: 20px;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 140%;
+      color: $base-color-light;
+      margin-bottom: 40px;
+      @media (min-width: $screen-md-min) {
+        font-size: 14px;
+      }
+    }
+    &-sub {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 140%;
+      color: $black-darken;
+      margin-bottom: 20px;
+      @media (min-width: $screen-md-min) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__adds {
+    padding-top: 50px;
+    @media (min-width: $screen-md-min) {
+      padding-top: 100px;
+    }
+    h2 {
+      margin-bottom: 50px;
+      @media (min-width: $screen-md-min) {
+        margin-bottom: 70px;
+      }
+    }
+
+    .referral__programm {
+      &-item {
+        &--bl {
+          padding: 80px 20px;
+          border-radius: 20px;
+          background: url("../images/festival/ice.jpg") no-repeat center / cover;
+          @media (min-width: $screen-md-min) {
+            padding: 100px 75px 120px 75px;
+            border-radius: 40px;
+            max-width: 490px;
+          }
+        }
+      }
+      &-title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 130%;
+        @media (min-width: $screen-md-min) {
+          font-size: 22px;
+        }
+        span {
+          position: relative;
+          color: white;
+          z-index: 1;
+          display: inline-block;
+          &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            transition: width .5s .3s;
+            height: 90%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: $base-color-main;
+            border-radius: 7px;
+            left: 0;
+            z-index: -1;
+          }
+          &:last-child {
+            &:after {
+              background: $color-type-2a;
+            }
+          }
+        }
+      }
+      &-text {
+        @media (min-width: $screen-md-min) {
+          margin-top: 170px;
+        }
+        a:not(.inline-link) {
+          color: $color-type-2a;
+          text-decoration: none;
+          border-bottom: 1px dashed $color-type-2a;
+        }
+      }
+      .aos-animate {
+        > .referral__programm-item .referral__programm-title {
+          span {
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__foto {
+    padding-top: 90px;
+    padding-bottom: 80px;
+    background: url("../images/festival/path1.svg") no-repeat top -4px center / 100% auto,
+    url("../images/festival/path.svg") no-repeat bottom -4px center / 100% auto,
+    linear-gradient(236.11deg, #DFF7FF -1.88%, #A0E8FF 98.01%);
+    @media (min-width: $screen-md-min) {
+      background: url("../images/festival/path1.svg") no-repeat top -40px center / 100% auto,
+      url("../images/festival/path.svg") no-repeat bottom -40px center / 100% auto,
+      linear-gradient(236.11deg, #DFF7FF -1.88%, #A0E8FF 98.01%);
+    }
+    @media (min-width: $screen-md-min) {
+      padding-top: 280px;
+      padding-bottom: 160px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+      @media (min-width: $screen-lg-min) {
+        margin-bottom: 80px;
+      }
+    }
+    .left-container {
+      @media (min-width: $screen-md-min) {
+        padding-right: 0;
+      }
+    }
+    &-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 9;
+      @media (min-width: $screen-md-min) {
+        margin-bottom: 60px;
+      }
+      .filter {
+        margin-bottom: 20px;
+        width: 100%;
+        @media (min-width: $screen-md-min) {
+          margin-bottom: 0;
+          margin-right: 80px;
+          width: auto;
+        }
+      }
+      .catalogFilter__item {
+        margin: 0;
+        width: 100%;
+        @media (min-width: $screen-md-min) {
+          width: 25%;
+        }
+      }
+    }
+    &-body {
+      .card-slider {
+        margin-right: 0;
+        padding-bottom: 20px;
+        .swiper-button {
+          margin-top: 20px;
+          margin-left: 0;
+          .nextBlock--ico {
+            background: #fff;
+          }
+        }
+
+        .swiper-slide {
+          width: 240px;
+          height: 260px;
+          border: 1px solid #F1EFD6;
+          background: white;
+          padding: 20px;
+          border-radius: 20px;
+          cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          text-decoration: none;
+          transition: all .5s cubic-bezier(.6, .01, 0, 1.38);
+          @media (min-width: $screen-md-min) {
+            width: 288px;
+            height: 373px;
+            padding: 30px;
+            border-radius: 40px;
+          }
+          svg {
+            transition: transform .5s cubic-bezier(.6, .01, 0, 1.38);
+            path {
+              transition: fill .5s cubic-bezier(.6, .01, 0, 1.38);
+            }
+          }
+          .svg-pack {
+            .circ path {
+              fill: #F8F6E9;
+            }
+          }
+          &:first-child .fest__pagination-img-m img {
+            height: 40px;
+            margin-top: -6px;
+            border-radius: 20px;
+          }
+          .fest__pagination {
+            &-img {
+              width: 61px;
+              @media (min-width: $screen-md-min) {
+                width: 92px;
+              }
+              &-m {
+
+              }
+              &-back {
+                path {
+                  stroke: #F8F6E9;
+                  transition: stroke .5s cubic-bezier(.6, .01, 0, 1.38);
+                }
+              }
+            }
+            &-desc {
+              margin-top: 40px;
+              margin-left: 0;
+            }
+            &-name {
+              font-weight: bold;
+              font-size: 18px;
+              line-height: 22px;
+              margin-bottom: 5px;
+            }
+            &-date {
+
+            }
+          }
+          &:hover {
+            background: $base-color-lighten;
+            border-color: $base-color-lighten;
+            .svg-pack svg.hover {
+              transform: scale(1.4);
+            }
+
+            .fest__pagination {
+              &-img {
+                &-back {
+                  path {
+                    stroke: #DAEFFB;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__mail {
+    padding: 80px 0 70px;
+    @media (min-width: $screen-md-min) {
+      padding: 130px 0 100px;
+    }
+    h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    h4, a {
+      font-size: 18px;
+      @media (min-width: $screen-md-min) {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+
+.popup--lg {
+  .accordion-head {
+    padding: 30px 50px 30px 30px;
+  }
+  .accordion-body > div {
+    padding: 0 30px 30px;
+  }
+  .backBl {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 130%;
+    color: white;
+    padding: 2px 10px;
+    background: $color-type-1a;
+    display: inline-block;
+    border-radius: 7px;
+  }
+  .slideshow-container,
+  .mb {
+    margin-bottom: 40px !important;
+    @media (min-width: $screen-lg-min) {
+      margin-bottom: 80px !important;
+    }
+  }
+  .mbs {
+    margin-bottom: 40px !important;
+  }
+
+  .popupRoll {
+    &-item {
+      width: 100%;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 30px;
+      overflow: hidden;
+      height: 360px;
+      @media (min-width: $screen-md-min) {
+        height: auto;
+        margin-bottom: 40px;
+      }
+      &-desc {
+        width: 100%;
+        color: white;
+        font-size: 16px;
+        position: relative;
+        @media (min-width: $screen-md-min) {
+          width: 230px;
+          font-size: 18px;
+        }
+        .roller {
+          margin-top: 10px;
+          display: inline-block;
+          padding: 2px 5px;
+          border-radius: 7px;
+          color: white;
+          font-weight: bold;
+          font-size: 22px;
+          background: $color-type-2a;
+          @media (min-width: $screen-md-min) {
+            font-size: 30px;
+          }
+          span {
+            font-size: 18px;
+          }
+          &--y {
+            color: $black;
+            background: #F1EFD6;
+          }
+        }
+        .log {
+          margin-top: 25px;
+        }
+      }
+      &:first-child {
+        background: url("../images/festival/pres-1m.jpg") no-repeat center right / cover;
+        @media (min-width: $screen-md-min) {
+          background: url("../images/festival/pres-1.jpg") no-repeat center right / cover;
+        }
+      }
+      &:last-child {
+        background: url("../images/festival/pres-2m.jpg") no-repeat center right / cover;
+        @media (min-width: $screen-md-min) {
+          background: url("../images/festival/pres-2.jpg") no-repeat center right / cover;
+        }
+        .log {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          img {
+            width: 40px;
+          }
+          @media (min-width: $screen-md-min) {
+            position: static;
+            img {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popupList {
+    margin-top: 80px;
+    &--med {
+      .popupList-item {
+        align-items: center;
+        h4 {
+          margin: 0;
+        }
+      }
+    }
+    &-item {
+      margin-bottom: 40px;
+      display: flex;
+      h4 {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+      &-desc {
+        width: calc(100% - 140px);
+        max-width: 250px;
+      }
+      &-img {
+        width: 140px;
+      }
+    }
+  }
+}

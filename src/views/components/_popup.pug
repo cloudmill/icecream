@@ -1,4 +1,4 @@
-div#grabMe.popup(style="display: none")
+#grabMe.popup(style="display: none")
   .close-popup.close-popup--js: +img('icons/close.svg')
   .form-request
     h3 Оставить заявку
@@ -15,4 +15,233 @@ div#grabMe.popup(style="display: none")
   .form-response
     .inner
       h3 Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.
-      button.btn.btn--primary.btn--full.close-popup--js: span Закрыть 
+      button.btn.btn--primary.btn--full.close-popup--js: span Закрыть
+
+#lesson.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha Уроки молочного сомелье
+    .imag: +img('festival/popup1.jpg')
+    .row
+      .col.col__md-6.col__xs-12
+        h3 Коктейли
+        ul.list--bullet.list--bullet--bl
+          li Сыворотка, банан, клубника и ванильное мороженое
+          li Сыворотка, кокос и ванильное мороженное
+          li Йогурт, свежая мята и хлопья
+          li Простокваша, орехи и мед с выдержанным яблоком
+          li Сгущенка с йогуртом и клубничным кули
+      .col.col__md-6.col__xs-12
+        h3 Десерты
+        ul.list--bullet.list--bullet--bl
+          li Бургер с мороженным и ягодами
+          li Десерт в стаканчике с ряженкой и клюквой в шоколаде
+          li Десерт коктейль из шоколадного мороженого с кешью медом и кунжутом
+          li Десерт коктейль из ванильного мороженного с кешью и корицей
+
+#diet.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha Public talk с диетологом, психологом и&nbsp;нутрициологом
+    .test__lg.backBl Лекция, вопрос/ответ/, разбор ситуации из зала
+    .row.popupList
+      .col.col__md-6.col__xs-12
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-1.svg')
+          .popupList-item-desc
+            h4 Все о&nbsp;детском питании
+            p Основные принципы сбалансированного детского рациона
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-2.svg')
+          .popupList-item-desc
+            h4 Главные ошибки в ежедневном рационе
+            p Разрушим основные мифы о&nbsp;питании
+      .col.col__md-6.col__xs-12
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-3.svg')
+          .popupList-item-desc
+            h4 Как похудеть без вреда для здоровья
+            p Способы похудения без отказа от&nbsp;любимых продуктов
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-4.svg')
+          .popupList-item-desc
+            h4 Осознанность в&nbsp;пищевом поведении
+            p Как устоять перед соблазнами в&nbsp;еде
+
+#children.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mb Мастерская для детей
+    .slideshow-container.img
+      .swiper-container.main-slider(data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]', data-num='13')
+        .swiper-wrapper
+          - for (let i = 1; i < 4; i++)
+            .swiper-slide
+              .slide-bgimg(style='background-image:url(assets/images/festival/children.jpg')
+              +img('festival/children.jpg')
+      .swiper-tools
+        .swiper-button.hidden__sm.hidden__xs
+          .swiper-prev.nextBlock--ico
+            +img('icons/prevArr.svg')
+          .swiper-next.nextBlock--ico
+            +img('icons/nextArr.svg')
+        .swiper-pagination
+    .row
+      .col.col__md-6.col__xs-12
+        ul.list--bullet.list--bullet--bl
+          li Создаем авторские обертки для мороженого
+          li Строим королевство Мороженого
+          li Мастерим полезные поделки из палочек для мороженого
+      .col.col__md-6.col__xs-12
+        ul.list--bullet.list--bullet--bl
+          li Плетем браслеты, книжные закладки, корзинки, венки из фирменных оберток
+          li Делаем из фольги картины, короны и кокошники, шлемы и щиты для сказочных жителей страны Мороженого
+
+#battls.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mb Семейные кулинарные баттлы
+    .slideshow-container.img
+      .swiper-container.main-slider(data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]', data-num='3')
+        .swiper-wrapper
+          - for (let i = 1; i < 4; i++)
+            .swiper-slide
+              .slide-bgimg(style='background-image:url(assets/images/festival/battle.jpg')
+              +img('festival/battle.jpg')
+      .swiper-tools
+        .swiper-button.hidden__sm.hidden__xs
+          .swiper-prev.nextBlock--ico
+            +img('icons/prevArr.svg')
+          .swiper-next.nextBlock--ico
+            +img('icons/nextArr.svg')
+        .swiper-pagination
+    .row
+      .col.col__md-6.col__xs-12
+        h3 Объедините усилия, чтобы одержать победу во вкусном соревновании!
+      .col.col__md-6.col__xs-12
+        p Участникам баттла предстоит продемонстрировать свои навыки в приготовлении десертов или коктейлей.
+
+#theater.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mb Театральные постановки
+    .slideshow-container.img
+      .swiper-container.main-slider(data-image-pagination='["assets/images/interests/pagin-1.png", "assets/images/interests/pagin-2.png", "assets/images/interests/pagin-3.png"]', data-num='23')
+        .swiper-wrapper
+          - for (let i = 1; i < 4; i++)
+            .swiper-slide
+              .slide-bgimg(style='background-image:url(assets/images/festival/theater.jpg')
+              +img('festival/theater.jpg')
+      .swiper-tools
+        .swiper-button.hidden__sm.hidden__xs
+          .swiper-prev.nextBlock--ico
+            +img('icons/prevArr.svg')
+          .swiper-next.nextBlock--ico
+            +img('icons/nextArr.svg')
+        .swiper-pagination
+    .row
+      .col.col__md-6.col__xs-12
+        h3 Посетителей ждёт насыщенная анимационная программа!
+      .col.col__md-6.col__xs-12
+        p Яркие шоу и запоминающиеся постановки подарят море позитивных эмоций и хорошее настроение. За актуальным расписанием программы следите на сайте.
+
+
+#deg.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mbs Дегустация продукции #[br] «Чистая Линия»
+    p Бесплатная дегустация вкусных, натуральных молочных продуктов и мороженого «Чистая Линия»
+    .row.popupList.popupList--med
+      .col.col__md-6.col__xs-12
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-5.svg')
+          .popupList-item-desc
+            h4 Мороженое
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-6.svg')
+          .popupList-item-desc
+            h4 Хиты продаж
+      .col.col__md-6.col__xs-12
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-7.svg')
+          .popupList-item-desc
+            h4 Новинки
+        .popupList-item
+          .popupList-item-img
+            +img('festival/pop-ico-8.svg')
+          .popupList-item-desc
+            h4 Свежая молочная продукция
+
+#present.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mb Гостей молочной академии ждут фирменные подарки
+    .popupRoll
+      .popupRoll-item
+        .popupRoll-item-desc
+          p Сертификаты на покупки в интернет-магазине «Омолоко» номиналом
+          .roller 1000 и 2000 #[span руб.]
+          .log: +img('festival/milk.svg')
+      .popupRoll-item
+        .popupRoll-item-desc
+          p Билеты на посещение смотровой площадки
+          .roller.roller--y PANORAMA360
+          .log: +img('festival/bez.svg')
+
+
+#progg.popup.popup--lg(style="display: none")
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    h2.alpha.mb Программа на 1-2 мая
+    -
+      let items2 = [
+        {
+          title: 'Уроки молочного сомелье'
+        },
+        {
+          title: 'Public talk с нутрициологом Екатериной Масловой'
+        },
+        {
+          title: 'Мастерская для детей'
+        },
+        {
+          title: 'Семейный кулинарные баттлы'
+        },
+        {
+          title: 'Театральные постановки'
+        },
+        {
+          title: 'Дегустация продукции «Чистая Линия»'
+        },
+        {
+          title: 'Вручение подарков'
+        }
+      ]
+    .accordion
+      each item in items2
+        .accordion__item.accordion__item--js(data-aos = 'fade-up')
+          .accordion-head= item.title
+          .accordion-body
+            div.row
+              .col.col__md-6.col__xs-12
+                h5 Коктейли
+                ul.list--bullet--bl
+                  li Сыворотка, банан, клубника и ванильное мороженое
+                  li Сыворотка, кокос и ванильное мороженное
+                  li Йогурт, свежая мята и хлопья
+                  li Простокваша, орехи и мед с выдержанным яблоком
+                  li Сгущенка с йогуртом и клубничным кули
+              .col.col__md-6.col__xs-12
+                h5 Коктейли
+                ul.list--bullet--bl
+                  li Бургер с мороженным и ягодами
+                  li Десерт в стаканчике с ряженкой и клюквой в шоколаде
+                  li Десерт коктейль из шоколадного мороженого с кешью медом и кунжутом
+                  li Десерт коктейль из ванильного мороженного с кешью и корицей

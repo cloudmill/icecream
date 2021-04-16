@@ -1,0 +1,397 @@
+extends ../layouts/master.pug
+
+block pageName
+  - pageName = "fest"
+
+block header
+  include ../partials/_header--referral.pug
+
+block content
+  main.page-festival.festival
+    .left-container
+      .mainTitle
+        .breadcrumbs-wrapper
+          .dates_place(data-aos='fade-down')
+            +img('icons/loc.svg')
+            div
+              .titl Парки Москвы и МО
+              span май-август 2021
+          ul.breadcrumbs(data-aos='fade-left')
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href="#") Молочная академия
+            li.breadcrumbs__item.active
+              a.breadcrumbs__link(href="/")
+                svg(width='23' height='22' viewbox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M11.5958 0.578664C11.9567 0.295897 12.4637 0.294803 12.8259 0.576012L22.6131 8.17601C23.0493 8.51474 23.1283 9.14295 22.7896 9.57917C22.4509 10.0154 21.8227 10.0944 21.3865 9.75568L12.2153 2.63406L7.6165 6.23701C7.18176 6.57762 6.55321 6.5013 6.2126 6.06655C5.87199 5.6318 5.94831 5.00326 6.38306 4.66265L11.5958 0.578664Z' fill='#5DCBEE')
+                  path(fill-rule='evenodd' clip-rule='evenodd' d='M20.9998 10.9659C20.4475 10.9659 19.9998 11.4137 19.9998 11.9659V19.6342H4.99978V16.2219C4.99978 15.6696 4.55206 15.2219 3.99978 15.2219C3.4475 15.2219 2.99978 15.6696 2.99978 16.2219V20.6342C2.99978 21.1865 3.4475 21.6342 3.99978 21.6342H20.9998C21.5521 21.6342 21.9998 21.1865 21.9998 20.6342V11.9659C21.9998 11.4137 21.5521 10.9659 20.9998 10.9659Z' fill='#5DCBEE')
+                  path(d='M5.0071 7.70724C5.37848 7.373 5.37848 6.79067 5.00711 6.45643C4.68712 6.16843 4.20135 6.16842 3.88136 6.45642L0.825665 9.20653C0.384283 9.60378 0.384283 10.2959 0.825665 10.6931L3.88136 13.4432C4.20135 13.7312 4.68712 13.7312 5.00711 13.4432C5.37848 13.109 5.37848 12.5267 5.00711 12.1924L3.40424 10.7498H11.1998C11.6416 10.7498 11.9998 10.3916 11.9998 9.94983C11.9998 9.50801 11.6416 9.14984 11.1998 9.14984H3.40424L5.0071 7.70724Z' fill='#5DCBEE')
+      .festival__main
+        .festival__title(data-aos='fade-up')
+          h1(data-aos='fade-up') Молочная академия #[br] «Чистая Линия»
+          div: a.inline-link(href='#') #академиячистаялиния
+          div: a.inline-link(href='#') #запломбирься
+          div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#grabMe'): span Принять участие
+    .left-container
+      .festival__info
+        h2(data-aos='fade-up') В программе молочной академии
+        .row.festival__info-block
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#lesson', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='139' height='146' viewbox='0 0 139 146' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='url(#paint0_linear)')
+                  path.fillIt(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='white')
+                  rect(x='15' y='22' width='102' height='102' fill='url(#pattern0)')
+                  defs
+                    pattern#pattern0(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image0' transform='scale(0.00980392)')
+                    lineargradient#paint0_linear(x1='148.457' y1='145.44' x2='100.011' y2='-20.1862' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image0(width='102' height='102' xlink:href='assets/images/festival/milkshake.svg')
+              .festival__info-text Уроки #[br] молочного #[br] сомелье
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#diet', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='149' height='149' viewbox='0 0 149 149' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M82.8502 120.614C101.244 114.546 124.254 119.875 138.859 96.6778C164.504 55.9471 127.339 -6.08613 64.9509 10.2393C-6.62594 28.9691 -17.6974 145.475 32.8095 147.436C57.1253 148.381 59.576 128.292 82.8502 120.614Z' fill='url(#paint1_linear)')
+                  path.fillIt(d='M82.8502 120.614C101.244 114.546 124.254 119.875 138.859 96.6778C164.504 55.9471 127.339 -6.08613 64.9509 10.2393C-6.62594 28.9691 -17.6974 145.475 32.8095 147.436C57.1253 148.381 59.576 128.292 82.8502 120.614Z' fill='white')
+                  rect(x='15' width='129' height='130' fill='url(#pattern1)')
+                  defs
+                    pattern#pattern1(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image1' transform='scale(0.00775194)')
+                    lineargradient#paint1_linear(x1='148.457' y1='145.44' x2='100.011' y2='-20.1862' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image1(width='129' height='130' xlink:href='assets/images/festival/megaphone.svg')
+              .festival__info-text Public talk c диетологом и психологом
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#children', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='139' height='146' viewbox='0 0 139 146' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='url(#paint2_linear)')
+                  path.fillIt(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='white')
+                  rect(x='16' y='21' width='100' height='100' fill='url(#pattern2)')
+                  defs
+                    pattern#pattern2(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image2' transform='scale(0.01)')
+                    lineargradient#paint2_linear(x1='0' y1='0' x2='166.464' y2='45.483' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image2(width='100' height='100' xlink:href='assets/images/festival/rocking-horse.png')
+              .festival__info-text Мастерская для&nbsp;детей
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#battls', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='149' height='143' viewbox='0 0 149 143' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M82.8502 114.614C101.244 108.546 124.254 113.875 138.859 90.6778C164.504 49.9471 127.339 -12.0861 64.9509 4.23929C-6.62594 22.9691 -17.6974 139.475 32.8095 141.436C57.1253 142.381 59.576 122.292 82.8502 114.614Z' fill='url(#paint3_linear)')
+                  path.fillIt(d='M82.8502 114.614C101.244 108.546 124.254 113.875 138.859 90.6778C164.504 49.9471 127.339 -12.0861 64.9509 4.23929C-6.62594 22.9691 -17.6974 139.475 32.8095 141.436C57.1253 142.381 59.576 122.292 82.8502 114.614Z' fill='white')
+                  rect(x='24' y='17' width='96' height='96' fill='url(#pattern3)')
+                  defs
+                    pattern#pattern3(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image3' transform='scale(0.0100167)')
+                    lineargradient#paint3_linear(x1='148.457' y1='139.44' x2='100.011' y2='-26.1862' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image3(width='100' height='100' xlink:href='assets/images/festival/chef.svg')
+              .festival__info-text Семейные #[br] кулинарные#[br] батлы
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#theater', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='139' height='146' viewbox='0 0 139 146' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='url(#paint4_linear)')
+                  path.fillIt(d='M25.9925 65.1534C31.7311 46.6541 25.9925 23.7429 48.9257 8.7259C89.1923 -17.6413 151.879 18.4105 136.669 81.0803C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3696 18.7314 88.5609 25.9925 65.1534Z' fill='white')
+                  rect(x='8' y='15' width='116' height='116' fill='url(#pattern4)')
+                  defs
+                    pattern#pattern4(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image4' transform='scale(0.00862069)')
+                    lineargradient#paint4_linear(x1='0' y1='0' x2='166.464' y2='45.483' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image4(width='100' height='100' xlink:href='assets/images/festival/theater.png')
+              .festival__info-text Театральные постановки
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#deg', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='149' height='143' viewbox='0 0 149 143' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M82.8502 114.614C101.244 108.546 124.254 113.875 138.859 90.6778C164.504 49.9471 127.339 -12.0861 64.9509 4.23929C-6.62594 22.9691 -17.6974 139.475 32.8095 141.436C57.1253 142.381 59.576 122.292 82.8502 114.614Z' fill='url(#paint5_linear)')
+                  path.fillIt(d='M82.8502 114.614C101.244 108.546 124.254 113.875 138.859 90.6778C164.504 49.9471 127.339 -12.0861 64.9509 4.23929C-6.62594 22.9691 -17.6974 139.475 32.8095 141.436C57.1253 142.381 59.576 122.292 82.8502 114.614Z' fill='white')
+                  rect(x='25' y='6' width='100' height='100' fill='url(#pattern5)')
+                  defs
+                    pattern#pattern5(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image5' transform='scale(0.01)')
+                    lineargradient#paint5_linear(x1='148.457' y1='139.44' x2='100.011' y2='-26.1862' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image5(width='100' height='100' xlink:href='assets/images/festival/ice-cream-cup.png')
+              .festival__info-text Дегустации
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            a.festival__info-item.myModal(href='#present', data-class='jbox--lg')
+              .festival__info-img
+                svg(width='139' height='146' viewbox='0 0 139 146' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink')
+                  path(d='M25.9925 65.1537C31.7311 46.6544 25.9925 23.7431 48.9257 8.72615C89.1923 -17.6411 151.879 18.4108 136.669 81.0805C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3699 18.7314 88.5611 25.9925 65.1537Z' fill='url(#paint6_linear)')
+                  path.fillIt(d='M25.9925 65.1537C31.7311 46.6544 25.9925 23.7431 48.9257 8.72615C89.1923 -17.6411 151.879 18.4108 136.669 81.0805C119.22 152.98 2.93017 166.129 0.0676828 115.665C-1.31042 91.3699 18.7314 88.5611 25.9925 65.1537Z' fill='white')
+                  rect(x='23' y='27' width='92' height='92' fill='url(#pattern6)')
+                  defs
+                    pattern#pattern6(patterncontentunits='objectBoundingBox' width='1' height='1')
+                      use(xlink:href='#image6' transform='scale(0.0108696)')
+                    lineargradient#paint6_linear(x1='0' y1='0.000244141' x2='166.464' y2='45.4833' gradientunits='userSpaceOnUse')
+                      stop(stop-color='#5ACAEF')
+                      stop(offset='1' stop-color='#A5E9FF')
+                    image#image6(width='100' height='100' xlink:href='assets/images/festival/giftbox.png')
+              .festival__info-text Подарки
+    .rollerItThree
+      .left-container
+        .festival__sl
+          h2(data-aos='fade-up') Расписание молочной академии
+          .fest__card-slider
+            .row.bottom__xs(data-aos='fade-up')
+              .col.col__xl-2.col__lg-3.col__xs-12
+                .swiper-button.hidden__sm.hidden__xs
+                  .swiper-prev1.nextBlock--ico.fest__button
+                    +img('icons/prevArr.svg')
+                  .swiper-next1.nextBlock--ico.fest__button
+                    +img('icons/nextArr.svg')
+              .col.col__xl-10.col__lg-9.col__xs-12
+                .fest__pagination.rollerItPag.swiper-container
+                  .swiper-wrapper
+                    -
+                      let items = [
+                        {
+                          title: 'Сокольники',
+                          date: 'с 1 по 10 мая',
+                          img: 'assets/images/festival/logo-1.png'
+                        },
+                        {
+                          title: 'Измайловский',
+                          date: 'с 10 по 25 мая',
+                          img: 'assets/images/festival/logo-2.png'
+                        },
+                        {
+                          title: 'Сад им. Баумана',
+                          date: 'с 25 мая по 15 июня',
+                          img: 'assets/images/festival/logo-3.png'
+                        },
+                        {
+                          title: 'Красная Пресня',
+                          date: 'с 25 мая по 15 июня',
+                          img: 'assets/images/festival/logo-4.png'
+                        },
+                        {
+                          title: 'Одинцово',
+                          date: 'с 25 мая по 15 июня',
+                          img: 'assets/images/festival/logo-5.png'
+                        },
+                      ]
+                    each item, index in items
+                      .swiper-slide.fest__pagination-item
+                        .fest__pagination-img
+                          .fest__pagination-img-back
+                            svg(width="91" height="88" viewBox="0 0 91 88" fill="none" xmlns="http://www.w3.org/2000/svg")
+                              path(d="M21.3718 13.0156L21.4932 12.9353L21.6017 12.8382C31.658 3.84048 42.8771 1.4994 53.2087 3.80206C63.6032 6.11877 73.2634 13.1797 79.9459 23.2783C86.6965 33.48 89.6711 43.6011 88.5893 52.6999C87.5149 61.7356 82.4051 70.0696 72.3541 76.7205C52.0922 90.1282 22.8267 87.6317 9.74717 67.8657C3.07859 57.788 1.05531 47.3871 3.08951 37.9244C5.12515 28.455 11.2734 19.6979 21.3718 13.0156Z" stroke="#DAEFFB" fill='white' stroke-width="4")
+                          .fest__pagination-img-m
+                            img(src=item.img, alt='')
+                        .fest__pagination-desc
+                          .fest__pagination-name= item.title
+                          .fest__pagination-date= item.date
+      .festival__tour
+        .left-container
+          .festival__tour-inner(data-aos='fade-up')
+            .swiper-container.rollerItCont
+              .swiper-wrapper
+                .swiper-slide
+                  .festival__tour-desc
+                    h3(data-aos='fade-up') Молочная академия «Чистая Линия» ждет вас в парке #[span «Сокольники»] #[br] #[span 1-2 мая с 12:00 до 20:00]
+                    div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#progg', data-class='jbox--lg'): span Программа академии
+                    div: .links(data-aos='fade-up'): span Построить маршрут?
+                    ul.list--inline(data-aos='fade-up')
+                      li: a(href='#'): +img('festival/soc-1.png')
+                      li: a(href='#'): +img('festival/soc-2.png')
+                      li: a(href='#'): +img('festival/soc-3.png')
+                  .festival__tour-img(data-aos='fade-up')
+                    +img('festival/fest-1.svg')
+                .swiper-slide
+                  .festival__tour-desc
+                    h3(data-aos='fade-up') Молочная академия «Чистая Линия» ждет вас в парке #[span «Измайловский»] #[br] #[span 1-2 мая с 12:00 до 20:00]
+                    div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#progg', data-class='jbox--lg'): span Программа академии
+                    div: .links(data-aos='fade-up'): span Построить маршрут?
+                    ul.list--inline(data-aos='fade-up')
+                      li: a(href='#'): +img('festival/soc-1.png')
+                      li: a(href='#'): +img('festival/soc-2.png')
+                      li: a(href='#'): +img('festival/soc-3.png')
+                  .festival__tour-img(data-aos='fade-up')
+                    +img('festival/fest-2.png')
+                .swiper-slide
+                  .festival__tour-desc
+                    h3(data-aos='fade-up') Молочная академия «Чистая Линия» ждет вас в парке #[span «Сад Баумана»] #[br] #[span 1-2 мая с 12:00 до 20:00]
+                    div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#progg', data-class='jbox--lg'): span Программа академии
+                    div: .links(data-aos='fade-up'): span Построить маршрут?
+                    ul.list--inline(data-aos='fade-up')
+                      li: a(href='#'): +img('festival/soc-1.png')
+                      li: a(href='#'): +img('festival/soc-2.png')
+                      li: a(href='#'): +img('festival/soc-3.png')
+                  .festival__tour-img(data-aos='fade-up')
+                    +img('festival/fest-3.png')
+                .swiper-slide
+                  .festival__tour-desc
+                    h3(data-aos='fade-up') Молочная академия «Чистая Линия» ждет вас в парке #[span «Красная Пресня»] #[br] #[span 1-2 мая с 12:00 до 20:00]
+                    div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#progg', data-class='jbox--lg'): span Программа академии
+                    div: .links(data-aos='fade-up'): span Построить маршрут?
+                    ul.list--inline(data-aos='fade-up')
+                      li: a(href='#'): +img('festival/soc-1.png')
+                      li: a(href='#'): +img('festival/soc-2.png')
+                      li: a(href='#'): +img('festival/soc-3.png')
+                  .festival__tour-img(data-aos='fade-up')
+                    +img('festival/fest-4.png')
+                .swiper-slide
+                  .festival__tour-desc
+                    h3(data-aos='fade-up') Молочная академия «Чистая Линия» ждет вас в парке #[span «Одинцово»] #[br] #[span 1-2 мая с 12:00 до 20:00]
+                    div: a.btn.btn--primary.myModal(data-aos='fade-up', href='#progg', data-class='jbox--lg'): span Программа академии
+                    div: .links(data-aos='fade-up'): span Построить маршрут?
+                    ul.list--inline(data-aos='fade-up')
+                      li: a(href='#'): +img('festival/soc-1.png')
+                      li: a(href='#'): +img('festival/soc-2.png')
+                      li: a(href='#'): +img('festival/soc-3.png')
+                  .festival__tour-img(data-aos='fade-up')
+                    +img('festival/fest-5.png')
+    .festival__experts
+      .left-container
+        h2(data-aos='fade-up') Наши эксперты
+        .card-slider
+          .rollerIt.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                .festival__experts-block
+                  .festival__experts-block-img
+                    img(src='assets/images/festival/user-1.png', alt='')
+                  .festival__experts-block-desc
+                    .festival__experts-name Екатерина Маслова
+                    .festival__experts-prof специалист по питанию
+                    .festival__experts-desc Дипломированный нутрициолог, фуд-коуч, автор 5 книг (4 кулинарных книги и про здоровье «Просто про иммунитет»), ресторанный обозреватель, фуд-блогер
+                    .festival__experts-sub Темы лекций и семинаров
+                    ul.list--bullet
+                      li 3 простых способа похудеть, не отказываясь от любимых продуктов
+                      li Мифы о еде ( молоко, мясо и пр.)
+                      li Эко, био, органика и здоровое питание, что их связывает и отличает
+                      li Тяга к сладкому: о чем она нам сигнализирует и нужно ли с ней бороться?
+              .swiper-slide
+                .festival__experts-block
+                  .festival__experts-block-img
+                    img(src='assets/images/festival/user-2.png', alt='')
+                  .festival__experts-block-desc
+                    .festival__experts-name Екатерина Белова
+                    .festival__experts-prof главный диетолог
+                    .festival__experts-desc Врач-диетолог, терапевт центра «Палитра Питания»
+                    .festival__experts-sub Темы лекций и семинаров
+                    ul.list--bullet
+                      li Как правильно накормить ребёнка (дома, в школе, на прогулке и т.д.)
+                      li Мифы о еде ( молоко, мясо и пр.)
+                      li Эко, био, органика и здоровое питание, что их связывает и отличает
+                      li Тяга к сладкому: о чем она нам сигнализирует и нужно ли с ней бороться?
+              .swiper-slide
+                .festival__experts-block
+                  .festival__experts-block-img
+                    img(src='assets/images/festival/user-3.png', alt='')
+                    //svg(width='274' height='273' viewbox='-2 -2 270 269' xmlns='http://www.w3.org/2000/svg')
+                    //  path(d="M46.8897 26.4493L47.0719 26.3288L47.2346 26.1832C70.1789 5.65408 95.8737 0.2575 119.564 5.53762C143.35 10.8388 165.361 26.9674 180.554 49.9271C195.849 73.0413 202.694 96.1312 200.21 117.027C197.736 137.828 185.965 156.916 163.076 172.061C117.06 202.511 50.3099 197.019 20.3523 151.747C5.18024 128.818 0.514574 105.046 5.18037 83.3416C9.84832 61.6272 23.9305 41.6419 46.8897 26.4493Z" stroke="#5DCBEE" fill='white' stroke-width="10")
+                    //img.clip-svg(src='assets/images/festival/user-3.jpg', alt='')
+                    //svg(width="0" height="0" viewBox="0 0 204 195" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    //  clipPath(id="myClip")
+                    //    path(d="M46.8897 26.4493L47.0719 26.3288L47.2346 26.1832C70.1789 5.65408 95.8737 0.2575 119.564 5.53762C143.35 10.8388 165.361 26.9674 180.554 49.9271C195.849 73.0413 202.694 96.1312 200.21 117.027C197.736 137.828 185.965 156.916 163.076 172.061C117.06 202.511 50.3099 197.019 20.3523 151.747C5.18024 128.818 0.514574 105.046 5.18037 83.3416C9.84832 61.6272 23.9305 41.6419 46.8897 26.4493Z" stroke="#5DCBEE" stroke-width="6")
+                  .festival__experts-block-desc
+                    .festival__experts-name Антон Калер
+                    .festival__experts-prof главный сомелье
+                    .festival__experts-desc Шеф-повар, бренд-шеф, ведущий
+                    ul.list--bullet
+                      li Бренд шеф ресторана «Легенда» и «De bassus»
+                      li Шеф повар кулинарной студии «Open Kitchen»
+                      li Ведущий кулинарной рубрики на ТВЦ в передаче настроение «фудкорт», передачи на youtube канала Нестле дети и передачи на канале Korting с Екатериной Гордон
+                    .festival__experts-soc
+                      include ../components/social-m
+          .swiper-button.hidden__sm.hidden__xs
+            .swiper-prev.nextBlock--ico
+              +img('icons/prevArr.svg')
+            .swiper-next.nextBlock--ico
+              +img('icons/nextArr.svg')
+    .festival__adds
+      .left-container
+        h2(data-aos='fade-up') Как принять участие?
+        .row.referral__programm
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 1
+              .referral__programm-ico: +img('festival/ref-1.svg')
+              .referral__programm-text
+                span Ознакомьтесь #[a(href='#') с расписанием] #[span.br-style] молочной академии #[span.br-style] «Чистая Линия» на сайте
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 2
+              .referral__programm-ico: +img('festival/ref-2.svg')
+              .referral__programm-text
+                span В указанный промежуток #[span.br-style] времени придите в парк
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 3
+              .referral__programm-ico: +img('festival/ref-3.svg')
+              .referral__programm-text
+                span Скачайте приложение «Омолоко» #[span.br-style] на ваш смартфон
+                br
+                a.inline-link(href='#') Скачать
+          .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
+            .referral__programm-item
+              .referral__programm-num 4
+              .referral__programm-ico: +img('festival/ref-4.svg')
+              .referral__programm-text
+                span Примите участие в программе #[span.br-style] молочной академии
+          .col.col__lg-6.col__md-8.col__xs-12(data-aos='fade-up')
+            .referral__programm-item.referral__programm-item--bl
+              .referral__programm-title До встречи #[span в академии] #[span.br-style] #[br] #[span.r Чистая Линия!]
+    .festival__foto
+      .left-container
+        h2(data-aos='fade-up') Фотоотчет
+        .festival__foto-head(data-aos='fade-up')
+          ul.filter.filter--js
+            li.active(data-text='may') май
+            li(data-text='june') июнь
+            li(data-text='july') август
+          .catalogFilter__item
+            select.select.select-template(data-title='Даты', data-theme='default only-text')
+              option(value='filter-1') 1-2 мая
+              option(value='filter-2') 3-4 мая
+              option(value='filter-3') 5-6 мая
+        .festival__foto-body
+          .card-slider(data-aos='fade-up')
+            .rollerIt.swiper-container
+              .swiper-wrapper
+                each item, index in items
+                  a.swiper-slide(href='#')
+                    .fest__pagination-img
+                      .fest__pagination-img-back
+                        svg(width="91" height="88" viewBox="0 0 91 88" fill="none" xmlns="http://www.w3.org/2000/svg")
+                          path(d="M21.3718 13.0156L21.4932 12.9353L21.6017 12.8382C31.658 3.84048 42.8771 1.4994 53.2087 3.80206C63.6032 6.11877 73.2634 13.1797 79.9459 23.2783C86.6965 33.48 89.6711 43.6011 88.5893 52.6999C87.5149 61.7356 82.4051 70.0696 72.3541 76.7205C52.0922 90.1282 22.8267 87.6317 9.74717 67.8657C3.07859 57.788 1.05531 47.3871 3.08951 37.9244C5.12515 28.455 11.2734 19.6979 21.3718 13.0156Z" stroke="#DAEFFB" fill='white' stroke-width="4")
+                      .fest__pagination-img-m
+                        img(src=item.img, alt='')
+                    .fest__pagination-desc
+                      .fest__pagination-name= item.title
+                      .fest__pagination-date= item.date
+                    .news-list__item-link
+                      .svg-pack
+                        svg.arrow(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          path(fill-rule='evenodd' clip-rule='evenodd' d='M22.2545 18.2762C22.5937 17.9079 23.1435 17.9079 23.4827 18.2762L28.6936 23.9337C29.0327 24.3019 29.0327 24.8989 28.6936 25.2672L23.4827 30.9247C23.1435 31.2929 22.5937 31.2929 22.2545 30.9247C21.9153 30.5565 21.9153 29.9594 22.2545 29.5912L26.8513 24.6004L22.2545 19.6097C21.9153 19.2414 21.9153 18.6444 22.2545 18.2762Z' fill='#5CA8C0')
+                        svg.circ(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='white')
+                        svg.hover(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='#5DCBEE')
+            .swiper-button.hidden__sm.hidden__xs
+              .swiper-prev.nextBlock--ico
+                +img('icons/prevArr.svg')
+              .swiper-next.nextBlock--ico
+                +img('icons/nextArr.svg')
+    .festival__mail
+      .left-container(data-aos='fade-up')
+        h4 Для отзывов и предложений:
+        a.inline-link(href='mailto:academy@icecream-chl.ru') academy@icecream-chl.ru
+
+
+block footer
+  include ../partials/_footer.pug

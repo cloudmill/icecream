@@ -247,7 +247,7 @@
 
         &-small {
           margin-top: 15px;
-          
+
           font-size: 12px;
         }
       }
@@ -444,6 +444,7 @@
       position: relative;
       padding-bottom: 20px;
       margin-bottom: 30px;
+      height: 155px;
       @media (min-width: $screen-md-min) {
         padding-bottom: 30px;
         margin-bottom: 40px;
@@ -955,6 +956,7 @@
 
 .jBox-Modal .jBox-container {
   border-radius: 40px;
+  overflow: hidden;
 }
 .jBox-Modal .jBox-content {
   width: 100%;
@@ -972,6 +974,41 @@
 
   .checkbox {
     margin: 20px 0;
+  }
+}
+.jbox--lg.jBox-Modal .jBox-content {
+  padding-top: 90px;
+  @media screen and (min-width: $screen-md-min) {
+    max-width: 1270px;
+    padding: 100px 165px;
+  }
+  @media screen and (min-width: $screen-xl-min) {
+    width: 1270px !important;
+  }
+  .popup-inner {
+    h3 {
+      text-align: left;
+      margin-top: 0;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 30px;
+      }
+    }
+    h2 {
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 20px;
+      @media screen and (min-width: $screen-md-min) {
+        font-size: 50px;
+      }
+    }
+    .imag {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      @media screen and (min-width: $screen-md-min) {
+        margin-top: 80px;
+        margin-bottom: 80px;
+      }
+    }
   }
 }
 .popup {
