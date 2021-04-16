@@ -955,8 +955,11 @@
 }
 
 .jBox-Modal .jBox-container {
-  border-radius: 40px;
+  border-radius: 20px;
   overflow: hidden;
+  @media screen and (min-width: $screen-md-min) {
+    border-radius: 40px;
+  }
 }
 .jBox-Modal .jBox-content {
   width: 100%;
@@ -978,6 +981,17 @@
 }
 .jbox--lg.jBox-Modal .jBox-content {
   padding-top: 90px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
   @media screen and (min-width: $screen-md-min) {
     max-width: 1270px;
     padding: 100px 165px;
