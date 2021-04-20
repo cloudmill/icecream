@@ -982,14 +982,17 @@
 .jbox--lg.jBox-Modal .jBox-content {
   padding-top: 90px;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-color: #5DCBEE #fff;
+  scrollbar-width: thin;
 
   &::-webkit-scrollbar {
-    display: none;
+    width: 6px;
+    background-color: #fff;
   }
+
   &::-webkit-scrollbar-thumb {
-    display: none;
+    background-color: #5DCBEE;
+    border-radius: 0px;
   }
 
   @media screen and (min-width: $screen-md-min) {

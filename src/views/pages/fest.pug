@@ -28,8 +28,8 @@ block content
       .festival__main
         .festival__title(data-aos='fade-up')
           h1(data-aos='fade-up') Молочная академия #[br] «Чистая Линия»
-          div: a.inline-link(href='#') #академиячистаялиния
-          div: a.inline-link(href='#') #запломбирься
+          div: .inline-link #академиячистаялиния
+          div: .inline-link #запломбирься
           div.anchor: a.btn.btn--primary(data-aos='fade-up', href='#getIt'): span Принять участие
     .left-container
       .festival__info
@@ -49,7 +49,7 @@ block content
                       stop(stop-color='#5ACAEF')
                       stop(offset='1' stop-color='#A5E9FF')
                     image#image0(width='102' height='102' xlink:href='assets/images/festival/milkshake.svg')
-              .festival__info-text Уроки #[br] молочного #[br] сомелье
+              .festival__info-text Уроки молочного сомелье
               .news-list__item-link
                 .svg-pack
                   svg.arrow(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -118,7 +118,7 @@ block content
                       stop(stop-color='#5ACAEF')
                       stop(offset='1' stop-color='#A5E9FF')
                     image#image3(width='100' height='100' xlink:href='assets/images/festival/chef.svg')
-              .festival__info-text Семейные #[br] кулинарные#[br] батлы
+              .festival__info-text Семейные кулинарные батлы
               .news-list__item-link
                 .svg-pack
                   svg.arrow(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -196,7 +196,7 @@ block content
                     path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='#F8F6E9')
                   svg.hover(width='50' height='50' viewbox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg')
                     path(d='M2.23937e-06 24.3846C3.51835e-06 9.75476 9.67956 0.28867 24.0758 0.288671C40.114 -2.09681 50 10.6613 50 25.2911C50 39.9209 42.6958 50 28.2996 50C13.9034 50 9.60395e-07 39.0144 2.23937e-06 24.3846Z' fill='#5DCBEE')
-    .rollerItThree
+    .rollerItThree#schedule
       .left-container
         .festival__sl
           h2(data-aos='fade-up') Расписание молочной академии
@@ -325,7 +325,7 @@ block content
                     .festival__experts-prof специалист по питанию
                     .festival__experts-desc Дипломированный нутрициолог, фуд-коуч, автор 5 книг (4 кулинарных книги и про здоровье «Просто про иммунитет»), ресторанный обозреватель, фуд-блогер
                     .festival__experts-sub Темы лекций и семинаров
-                    ul.list--bullet
+                    ul.list--bullet--bl
                       li 3 простых способа похудеть, не отказываясь от любимых продуктов
                       li Мифы о еде ( молоко, мясо и пр.)
                       li Эко, био, органика и здоровое питание, что их связывает и отличает
@@ -339,7 +339,7 @@ block content
                     .festival__experts-prof главный диетолог
                     .festival__experts-desc Врач-диетолог, терапевт центра «Палитра Питания»
                     .festival__experts-sub Темы лекций и семинаров
-                    ul.list--bullet
+                    ul.list--bullet--bl
                       li Как правильно накормить ребёнка (дома, в школе, на прогулке и т.д.)
                       li Мифы о еде ( молоко, мясо и пр.)
                       li Эко, био, органика и здоровое питание, что их связывает и отличает
@@ -358,7 +358,7 @@ block content
                     .festival__experts-name Антон Калер
                     .festival__experts-prof главный сомелье
                     .festival__experts-desc Шеф-повар, бренд-шеф, ведущий
-                    ul.list--bullet
+                    ul.list--bullet--bl
                       li Бренд шеф ресторана «Легенда» и «De bassus»
                       li Шеф повар кулинарной студии «Open Kitchen»
                       li Ведущий кулинарной рубрики на ТВЦ в передаче настроение «фудкорт», передачи на youtube канала Нестле дети и передачи на канале Korting с Екатериной Гордон
@@ -378,7 +378,7 @@ block content
               .referral__programm-num 1
               .referral__programm-ico: +img('festival/ref-1.svg')
               .referral__programm-text
-                span Ознакомьтесь #[a(href='#') с расписанием] #[span.br-style] молочной академии #[span.br-style] «Чистая Линия» на сайте
+                span.anchor Ознакомьтесь #[a(href='#schedule' data-top='10') с расписанием] #[span.br-style] молочной академии #[span.br-style] «Чистая Линия» на сайте
           .col.col__lg-4.col__md-6.col__xs-12(data-aos='fade-up')
             .referral__programm-item
               .referral__programm-num 2

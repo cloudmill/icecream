@@ -41,8 +41,9 @@ $(document).ready(() => {
 	$('.anchor').on('click', 'a', function(event) {
 		event.preventDefault();
 		const id = $(this).attr('href');
+		const getTop = $(this).data('top');
 		const top = $(id).offset().top;
-		$('body,html').animate({scrollTop: top + 40}, 1000);
+		$('body,html').animate({scrollTop: top + getTop || 40}, 1000);
 	});
 	// anchor
 
