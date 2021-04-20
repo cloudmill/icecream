@@ -1,7 +1,11 @@
+import { initSwiper } from './sliders.js';
+
 $(function() {
     showMore();
     changeFilterCatalog();
     changeFilterRecipes();
+    filterFestMonth();
+    filterFestDate();
 });
 
 function showMore() {
@@ -231,3 +235,68 @@ function recipesFilterAjax(data) {
         }
     });
 }
+
+function filterFestMonth() {
+    $(document).on('click', '[data-type=select-month]', function () {
+      let container = $(this).parents('[data-type=fest-foto-container]'),
+        month = $(this).attr('data-month'),
+        itemsContainer = container.find('[data-type=items-container]'),
+        dateSelect = container.find('[data-type=date-filter-select]');
+  
+      itemsContainer.empty();
+      dateSelect.empty();
+  
+      $.ajax({
+        type: 'post',
+        url: window.location.pathname,
+        dataType: 'html',
+        data: {
+          monthRequest: month,
+        },
+        success: function(data) {
+          let dateSelectResponse = $(data).find('[data-type=date-filter-select]').children(),
+            itemsContainerResponse = $(data).find('[data-type=items-container]').children();
+  
+          dateSelect.append(dateSelectResponse);
+          itemsContainer.append(itemsContainerResponse);
+  
+          dateSelect.each(function () {
+            $(this).val($(this).find('[selected]').val()).trigger('change');
+          });
+  
+          initSwiper();
+        }
+      });
+    });
+  }
+  
+  function filterFestDate() {
+    $('[data-type=date-filter-select]').on('select2:select', function() {
+      let container = $(this).parents('[data-type=fest-foto-container]'),
+        month = container.find('[data-type=select-month].active').attr('data-month'),
+        itemsContainer = container.find('[data-type=items-container]'),
+        dateVal = $(this).val();
+  
+      console.log(month);
+  
+      itemsContainer.empty();
+  
+      $.ajax({
+        type: 'post',
+        url: window.location.pathname,
+        dataType: 'html',
+        data: {
+          monthRequest: month,
+          dateRequest: dateVal,
+        },
+        success: function(data) {
+          let itemsContainerResponse = $(data).find('[data-type=items-container]').children();
+  
+          itemsContainer.append(itemsContainerResponse);
+  
+          initSwiper();
+        }
+      });
+    });
+  }
+  
