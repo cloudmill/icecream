@@ -13,7 +13,7 @@
       url("../images/festival/fest-m.jpg") no-repeat center / cover;
     @media (min-width: $screen-md-min) {
       background: url("../images/festival/path.svg") no-repeat center bottom / 100% auto,
-        url("../images/festival/fest.jpg") no-repeat center / cover;
+        url("../images/festival/fest.jpg") no-repeat bottom center / cover;
     }
     @media (min-width: $screen-lg-min) {
       height: 109vh;
@@ -401,7 +401,7 @@
       text-align: left;
     }
     @media (min-width: $screen-xl-min) {
-      width: 50%;
+      width: 49%;
       min-height: 80vh;
     }
 
@@ -425,7 +425,7 @@
     &-inner {
       padding-top: 80px;
       @media (min-width: $screen-md-min) {
-        padding-top: 220px;
+        padding-top: 190px;
       }
       .swiper-slide {
         display: flex;
