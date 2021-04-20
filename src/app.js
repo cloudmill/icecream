@@ -28,13 +28,24 @@ $(document).ready(() => {
 		const sticky = new Sticky('.sticky');
 	}
 
-	$('.backLink').mouseover(function () {
+	$('.backLink').mouseover(function() {
 		const getBtnWidth = $(this).width();
 		const getArrWidth = $(this).find('.nextBlock--ico').width();
 		$(this).find('.nextBlock--ico').css('left', -(getBtnWidth / 2 - getArrWidth * 2.5));
-	}).mouseleave(function () {
+	}).mouseleave(function() {
 		$(this).find('.nextBlock--ico').css('left', 0);
 	});
+
+
+	// anchor
+	$('.anchor').on('click', 'a', function(event) {
+		event.preventDefault();
+		const id = $(this).attr('href');
+		const getTop = $(this).data('top');
+		const top = $(id).offset().top;
+		$('body,html').animate({scrollTop: top + getTop || 40}, 1000);
+	});
+	// anchor
 
 	require('Scripts/input');
 	require('Scripts/server');
@@ -46,7 +57,7 @@ $(window).scroll(() => {
 });
 // scroll
 
-$(window).on('load', function () {
+$(window).on('load', function() {
 
 
 	// PAGE: mission
@@ -59,14 +70,14 @@ $(window).on('load', function () {
 			timeGap: 300
 		};
 
-		$('.page-mission__mission-highlight').each(function () {
+		$('.page-mission__mission-highlight').each(function() {
 			if (highlight.minWidth === null || $(this).width() < highlight.minWidth) {
 				highlight.minWidth = $(this).width();
 			}
 		});
 
 		const timer = setTimeout(() => {
-			$('.page-mission__mission-highlight').each(function () {
+			$('.page-mission__mission-highlight').each(function() {
 				const timer = setTimeout(
 					() => {
 						const highlightWidth = $(this).width();
@@ -90,7 +101,7 @@ $(window).on('load', function () {
 	// PAGE: about-us
 
 	if ($('.page-about-us').length) {
-		$('.page-about-us__slider').each(function () {
+		$('.page-about-us__slider').each(function() {
 			const component = $(this);
 
 			const container = component.find('.swiper-container');
@@ -112,14 +123,14 @@ $(window).on('load', function () {
 				pagination: {
 					el: pagination[0],
 					type: 'custom',
-					renderCustom: function (swiper, current, total) {
+					renderCustom: function(swiper, current, total) {
 						paginationItems.removeClass('page-about-us__slider-pagination-item--active');
 						paginationItems.eq(current - 1).addClass('page-about-us__slider-pagination-item--active');
 					}
 				}
 			});
 
-			paginationItems.on('click', function () {
+			paginationItems.on('click', function() {
 				const index = $(this).index();
 				swiper.slideTo(index + 1);
 			});
@@ -138,7 +149,7 @@ $(() => {
 	console.log(getMainUrl);
 
 	if (process.env.NODE_ENV === 'production' || $('.summerdream').length) {
-		setTimeout(function () {
+		setTimeout(function() {
 			window.scrollTo(0, 0);
 		}, 200);
 	}

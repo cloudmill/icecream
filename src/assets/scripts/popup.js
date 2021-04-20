@@ -13,6 +13,7 @@ $('.myModal').each(function() {
 		closeButton: false,
 		addClass: $(this).data('class'),
 		onOpen: () => {
+			$(id).parent().animate({scrollTop: 0}, 100);
 			if ($('.main-slider').length) {
 			  if($(id).css('display') === 'block') {
 					const component = $(id).find('.main-slider');
