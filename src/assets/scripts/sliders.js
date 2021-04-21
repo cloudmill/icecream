@@ -1,5 +1,6 @@
 import Swiper from 'swiper/swiper-bundle.min';
 
+const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 
 if ($('.fullpage-slider').length) {
 	const img = $('.fullpage-slider').data('image-pagination');
@@ -120,28 +121,43 @@ if ($('.rollerItThree').length) {
 		const component = $(this);
 		const slider = component.find('.rollerItCont');
 		const roller = new Swiper(slider[0], {
+			loop: true,
 			slidesPerView: 1,
 			simulateTouch: false,
 			autoHeight: true,
 		});
 		const rollerPag = new Swiper('.rollerItPag', {
-			slidesPerView: '3',
-			spaceBetween: 20,
+		  loop: true,
+			slidesPerView: 1,
+			simulateTouch: false,
+			spaceBetween: 0,
+			breakpoints: {
+				1200: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				}
+			}
 		});
 
 		const paginationItem = component.find('.fest__pagination-item');
 		function updatePagination() {
 			paginationItem.removeClass('fest__pagination-item--active');
 			const currentSlideIndex = roller.realIndex;
-			paginationItem.eq(currentSlideIndex).addClass('fest__pagination-item--active');
+			paginationItem.eq(currentSlideIndex);
+			// paginationItem.eq(currentSlideIndex).addClass('fest__pagination-item--active');
 		}
 		roller.on('slideChange', updatePagination);
 
 
 		updatePagination();
 		paginationItem.on('click', function() {
-			const newSlideIndex = $(this).index();
-			roller.slideTo(newSlideIndex);
+			const newSlideIndex = $(this).data('swiper-slide-index');
+			roller.slideTo(newSlideIndex + 1);
+			rollerPag.slideTo($(this).index());
 			updatePagination();
 		});
 
@@ -152,9 +168,7 @@ if ($('.rollerItThree').length) {
 				rollerPag.slidePrev();
 			} else {
 				roller.slideNext();
-				if(rollerPag.realIndex < 2) {
-					rollerPag.slideNext();
-				}
+				rollerPag.slideNext();
 			}
 			updatePagination();
 		});
