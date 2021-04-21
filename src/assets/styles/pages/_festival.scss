@@ -1014,13 +1014,13 @@
       &:first-child {
         background: url("../images/festival/pres-1m.jpg") no-repeat center right / cover;
         @media (min-width: $screen-md-min) {
-          background: url("../images/festival/pres-1.jpg") no-repeat center right / cover;
+          background: url("../images/festival/pres-2.jpg") no-repeat center right / cover;
         }
       }
       &:last-child {
         background: url("../images/festival/pres-2m.jpg") no-repeat center right / cover;
         @media (min-width: $screen-md-min) {
-          background: url("../images/festival/pres-2.jpg") no-repeat center right / cover;
+          background: url("../images/festival/pres-1.jpg") no-repeat center right / cover;
         }
         .log {
           position: absolute;
