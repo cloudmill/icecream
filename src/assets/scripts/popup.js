@@ -97,6 +97,7 @@ $('.myModal').each(function() {
 
 let ajaxModal = new jBox('Modal', {
   attach: '.get-programm-academy',
+  addClass: 'jbox--lg',
   ajax: {
     type: 'post',
     url: '/local/templates/main/include/ajax/fest/programm_academy.php',
