@@ -13,7 +13,7 @@
       url("../images/festival/fest-m.jpg") no-repeat center / cover;
     @media (min-width: $screen-md-min) {
       background: url("../images/festival/path.svg") no-repeat center bottom / 100% auto,
-        url("../images/festival/fest.jpg") no-repeat center / cover;
+        url("../images/festival/fest.jpg") no-repeat bottom center / cover;
     }
     @media (min-width: $screen-lg-min) {
       height: 109vh;
@@ -96,7 +96,7 @@
     display: flex;
     align-items: flex-start;
     &-item {
-      margin-right: 10px;
+      //margin-right: 10px;
       width: 220px;
       min-width: 220px;
       border-radius: 20px;
@@ -113,6 +113,7 @@
         padding: 20px;
       }
       &:hover,
+      &.swiper-slide-active,
       &--active {
         background: $color-type-1a;
         .fest__pagination-date,
@@ -120,7 +121,7 @@
           color: white;
         }
       }
-      &:first-child {
+      &[data-swiper-slide-index="0"] {
         .fest__pagination-img {
           &-m {
             height: 30px;
@@ -401,7 +402,7 @@
       text-align: left;
     }
     @media (min-width: $screen-xl-min) {
-      width: 50%;
+      width: 49%;
       min-height: 80vh;
     }
 
@@ -425,7 +426,7 @@
     &-inner {
       padding-top: 80px;
       @media (min-width: $screen-md-min) {
-        padding-top: 220px;
+        padding-top: 190px;
       }
       .swiper-slide {
         display: flex;
@@ -816,6 +817,10 @@
       }
     }
     &-body {
+      margin-right: -20px;
+      @media (min-width: $screen-md-min) {
+        margin-right: 0;
+      }
       .card-slider {
         margin-right: 0;
         padding-bottom: 20px;
