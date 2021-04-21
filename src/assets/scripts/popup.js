@@ -94,3 +94,22 @@ $('.myModal').each(function() {
 		myModal.close();
 	});
 });
+
+let ajaxModal = new jBox('Modal', {
+  attach: '.get-programm-academy',
+  ajax: {
+    type: 'post',
+    url: '/local/templates/main/include/ajax/fest/programm_academy.php',
+    data: '',
+    getData: 'data-id',
+    reload: 'strict',
+    setContent: false,
+    success: function (response) {
+      this.setContent(response);
+
+      $('.close-popup--js').click(function() {
+        ajaxModal.close();
+      });
+    },
+  }
+});
