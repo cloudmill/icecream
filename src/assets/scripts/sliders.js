@@ -99,22 +99,25 @@ if ($('.carousel').length) {
 	});
 }
 
-if ($('.rollerIt').length) {
-	const roller = new Swiper('.rollerIt', {
-		slidesPerView: 'auto',
-		spaceBetween: 10,
-		navigation: {
-			nextEl: '.card-slider .swiper-next',
-			prevEl: '.card-slider .swiper-prev',
-		},
-		breakpoints: {
-			768: {
-				spaceBetween: 40,
+export function initSwiper() {
+	if ($('.rollerIt').length) {
+		const roller = new Swiper('.rollerIt', {
+			slidesPerView: 'auto',
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.card-slider .swiper-next',
+				prevEl: '.card-slider .swiper-prev',
+			},
+			breakpoints: {
+				768: {
+					spaceBetween: 40,
+				}
 			}
-		}
-	});
+		});
+	}
 }
 
+initSwiper();
 
 if ($('.rollerItThree').length) {
 	$('.rollerItThree').each(function() {
