@@ -135,7 +135,7 @@ if ($('.rollerItThree').length) {
 			simulateTouch: false,
 			spaceBetween: 0,
 			breakpoints: {
-				1200: {
+				1500: {
 					slidesPerView: 3,
 					spaceBetween: 20,
 				},

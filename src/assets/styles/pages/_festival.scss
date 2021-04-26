@@ -107,8 +107,8 @@
       transition: background .5s cubic-bezier(0.65, 0, 0.35, 1);
       cursor: pointer;
       @media (min-width: $screen-md-min) {
-        width: 328px;
-        min-width: 328px;
+        //width: 328px;
+        //min-width: 328px;
         margin-right: 20px;
         padding: 20px;
       }
