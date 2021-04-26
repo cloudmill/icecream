@@ -121,6 +121,7 @@
           color: white;
         }
       }
+      &[data-swiper-slide-index="1"],
       &[data-swiper-slide-index="0"] {
         .fest__pagination-img {
           &-m {
@@ -433,6 +434,20 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
+        &[data-swiper-slide-index="0"] {
+          h3 {
+            font-size: 26px;
+            span {
+              &:first-child {
+                background: $color-type-1a;
+                border-radius: 7px;
+                &::after {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
       }
     }
     &-desc {
