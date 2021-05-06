@@ -107,8 +107,8 @@
       transition: background .5s cubic-bezier(0.65, 0, 0.35, 1);
       cursor: pointer;
       @media (min-width: $screen-md-min) {
-        //width: 328px;
-        //min-width: 328px;
+        width: 328px;
+        min-width: 328px;
         margin-right: 20px;
         padding: 20px;
       }
@@ -434,22 +434,17 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
-        @media (min-width: $screen-md-min) {
-          align-items: flex-start;
-        }
+        &[data-swiper-slide-index="1"],
         &[data-swiper-slide-index="0"] {
           h3 {
-            font-size: 16px;
-            @media (min-width: $screen-md-min) {
-              font-size: 26px;
-            }
-            span {
-              &:first-child {
-                background: $color-type-1a;
-                border-radius: 7px;
-                &::after {
-                  display: none;
-                }
+            font-size: 26px;
+          }
+          span {
+            &:first-child {
+              background: $color-type-1a;
+              border-radius: 7px;
+              &::after {
+                display: none;
               }
             }
           }
@@ -461,11 +456,10 @@
       @media (min-width: $screen-lg-min) {
         width: 45%;
         max-width: 525px;
-        margin-top: 60px;
       }
-      @media (min-width: 1500px) {
-        margin-top: 180px;
-      }
+      //@media (min-width: 1500px) {
+      //  padding-bottom: 80px;
+      //}
       h3 {
         font-size: 18px;
         margin-top: 0;
