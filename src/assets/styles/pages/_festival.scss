@@ -126,9 +126,9 @@
         .fest__pagination-img {
           &-m {
             height: 30px;
-            top: -10px;
+            top: -5px;
             @media (min-width: $screen-md-min) {
-              top: -20px;
+              //top: -20px;
               height: 40px;
             }
             img {
@@ -441,12 +441,15 @@
           h3 {
             font-size: 26px;
           }
-          span {
-            &:first-child {
-              background: $color-type-1a;
-              border-radius: 7px;
-              &::after {
-                display: none;
+          h3 {
+            span {
+              &:first-child {
+                background: $color-type-1a;
+                border-radius: 7px;
+
+                &::after {
+                  display: none;
+                }
               }
             }
           }
