@@ -451,6 +451,14 @@
                   display: none;
                 }
               }
+              &:last-child {
+                background: #F1EFD6;
+                border-radius: 7px;
+
+                &::after {
+                  display: none;
+                }
+              }
             }
           }
         }
