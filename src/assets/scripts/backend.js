@@ -75,7 +75,7 @@ function changeFilterCatalog() {
             flavors: '',
         }
 
-        catalogFilterAjax(data);
+        catalogFilterAjax(data, filterOptions, itemsBlock, pagenavBlock, selectKind, selectFlavors, filterBlock, filterSelects);
     });
 
     $('[data-type=change_filter_catalog]').on('select2:select', function() {
@@ -104,11 +104,11 @@ function changeFilterCatalog() {
             flavors: flavors,
         };
 
-        catalogFilterAjax(data);
+        catalogFilterAjax(data, filterOptions, itemsBlock, pagenavBlock, selectKind, selectFlavors, filterBlock, filterSelects);
     });
 }
 
-function catalogFilterAjax(data) {
+function catalogFilterAjax(data, filterOptions, itemsBlock, pagenavBlock, selectKind, selectFlavors, filterBlock, filterSelects) {
     $.ajax({
         type: 'post',
         url: window.location.pathname,
@@ -203,11 +203,11 @@ function changeFilterRecipes() {
             time: time,
         };
 
-        recipesFilterAjax(data);
+        recipesFilterAjax(data, filterOptions, itemsBlock, pagenavBlock, typeBlockSelect, productsBlockSelect, timeBlockSelect, appendItems, filterSelects);
     });
 }
 
-function recipesFilterAjax(data) {
+function recipesFilterAjax(data, filterOptions, itemsBlock, pagenavBlock, typeBlockSelect, productsBlockSelect, timeBlockSelect, appendItems, filterSelects) {
     $.ajax({
         type: 'post',
         url: window.location.pathname,
