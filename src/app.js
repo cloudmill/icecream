@@ -327,3 +327,124 @@ $(() => {
 		}
 	});
 }
+
+// integration
+$(function () {
+  function openModal(modal) {
+    if ($(modal).length === 0) {
+      return;
+    }
+
+    $('html').css('overflow', 'hidden');
+    const modalContent = $(modal).find('.modal-dialog');
+    modalContent.hide();
+    $(modal).fadeIn(250, function () {
+      modalContent.slideDown(100);
+    });
+  }
+
+  function closeModal(modal) {
+    if ($(modal).length === 0) {
+      return;
+    }
+
+    $('html').css('overflow', '');
+    const modalContent = $(modal).find('.modal-dialog');
+    modalContent.slideUp(100, function () {
+      $(modal).fadeOut(250);
+    });
+  }
+
+  function autoScroll() {
+    const festivalModal = $('#festival-modal');
+    closeModal(festivalModal);
+
+    $("html, body").animate({
+      scrollTop: $('.festival__gift-form-card').offset().top - 200,
+    }, 800);
+  }
+
+  const festivalModal = $('#festival-modal');
+  if (festivalModal.length > 0) {
+    const closeBtn = festivalModal.find('.modal-close button');
+    closeBtn.on('click', function (e) {
+      closeModal(festivalModal);
+    });
+
+    festivalModal.on('click', function (e) {
+      if ($(e.target).hasClass('modal')) {
+        closeModal(festivalModal);
+      }
+    });
+
+    festivalModal.find('.festival-modal-btn-wrapper').find('.btn').on('click', function (e) {
+      e.preventDefault();
+      autoScroll();
+    });
+
+    setTimeout(function () {
+      openModal(festivalModal);
+    }, 5000);
+  }
+
+  const festGiftForm = $('#fest-send-gift-form');
+  festGiftForm.on('submit', function (e) {
+    e.preventDefault();
+    let formData = {};
+    const signErrorBlock = $('#gift-sign').closest('.checkbox').find('.control-error');
+    const signRulesErrorBlock = $('#gift-sign-rules').closest('.checkbox').find('.control-error');
+    const submitBtn = $(festGiftForm).find('[type=submit]');
+    const arFormData = $(festGiftForm).serializeArray();
+    const emptyFields = arFormData.filter(function (fieldData) {
+      return !fieldData.value;
+    });
+
+    signErrorBlock.text('');
+    signRulesErrorBlock.text('');
+
+    if (emptyFields.length > 0) {
+      alert('Пожалуйста, заполните поле');
+      return;
+    }
+
+    arFormData.forEach(function (fieldData) {
+      formData[fieldData.name] = fieldData.value;
+    });
+
+    if (!formData.sign) {
+      signErrorBlock.text('Для отправки сообщения необходимо согласие');
+      return;
+    }
+
+    if (!formData.signRules) {
+      signRulesErrorBlock.text('Для отправки сообщения необходимо согласие');
+    }
+
+    submitBtn.prop('disabled', true);
+    fbq('track', 'Contact');
+
+    $.ajax({
+      type: 'POST',
+      url: '/local/templates/main/include/ajax/fest/send-gift.php',
+      dataType: 'json',
+      data: formData,
+      success: function (response) {
+        if (response.success === false) {
+          let message = 'Возникла ошибка!';
+
+          if (response.message) {
+            message = response.message;
+          }
+
+          alert(message);
+          submitBtn.prop('disabled', true);
+        } else {
+          submitBtn.html('<span>Отправлено</span>');
+        }
+      },
+      error: function (...args) {
+        submitBtn.prop('disabled', true);
+      }
+    });
+  });
+});

@@ -137,6 +137,9 @@ $debug-mode:                   false!default;
 // Pages
 @import "pages/*.scss";
 
+// integration
+@import "fest.scss";
+
 @import "~swiper/swiper-bundle.css";
 @import "~jbox/dist/jBox.all.css";
 @import "~aos/dist/aos.css";

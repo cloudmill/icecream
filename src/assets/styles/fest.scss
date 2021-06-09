@@ -1,0 +1,363 @@
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.festival .fest__pagination-item[data-swiper-slide-index="1"] .fest__pagination-img-m img, .festival .fest__pagination-item[data-swiper-slide-index="0"] .fest__pagination-img-m img {
+  border-radius: 0;
+}
+
+.festival__tour-desc h3 span:not(:last-child) {
+  background: #5DCBEE;
+  border-radius: 7px;
+}
+
+.festival__gift {
+  padding-bottom: 40px;
+
+  h2 {
+    padding: 50px 0 0;
+    margin-bottom: 30px;
+  }
+
+  &-title {
+    position: relative;
+    display: inline-block;
+
+    &-left-img, &-right-img {
+      position: absolute;
+      display: block;
+
+      img {
+        display: block;
+
+        &.visible__xl {
+          display: none;
+        }
+      }
+    }
+
+    &-left-img {
+      top: -20px;
+      left: -0px;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    &-right-img {
+      bottom: -48px;
+      right: 0;
+
+      img {
+        width: 78px;
+      }
+    }
+  }
+
+  &-description {
+    margin-bottom: 40px;
+
+    ul {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-sub {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 140%;
+    color: #083645;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &-form-card {
+    width: 100%;
+    border-radius: 20px;
+    background: #F8F6E9;
+    padding: 20px 22px;
+    margin: 0 10px;
+
+    &-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .catalogFilter__item {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 15px;
+    }
+
+    .select2-selection {
+      padding: 12px 20px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background: white;
+      border: 1px solid #DAEFFB;
+      border-radius: 10px;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered > span {
+      font-size: 16px;
+      color: #29434E;
+      font-weight: normal;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered > span .title {
+      display: none;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+      filter: brightness(0);
+    }
+
+    [type=submit] {
+      margin-top: 20px;
+    }
+
+    [type=checkbox] {
+      position: absolute;
+      appearance: auto !important;
+      display: inline-block !important;
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  &-form-img {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 46px;
+
+    img {
+      width: 225px;
+    }
+  }
+}
+
+.festival-modal {
+  background: rgba(#083645, .3);
+  padding-right: 0 !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  cursor: pointer;
+
+  .modal-dialog {
+    max-width: 748px;
+    padding: 0 30px;
+    width: 100%;
+    min-height: calc(100% - 3.5rem);
+    margin: 1.75rem auto;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    cursor: auto;
+  }
+
+  .modal-content {
+    pointer-events: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 60px 20px 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 1;
+
+    button {
+      appearance: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        border: 1px solid #F9F6DE;
+        background: transparent;
+        border-radius: 50%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform .25s ease-in-out, background-color .25s ease-in-out;
+        z-index: -1;
+      }
+
+      &:hover {
+        &::before {
+          transform: translate(-50%, -50%) scale(1.2);
+          background: #F9F6DE;
+        }
+      }
+
+      svg {
+        width: 15px;
+        height: 15px;
+        padding: 0;
+        margin: 0;
+        display: block;
+        fill: black;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 22px;
+    line-height: 29px;
+    color: #083645;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &-description {
+    display: none;
+  }
+
+  &-img {
+    img {
+      width: 100%;
+      max-width: 190px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .festival__gift {
+    &-sub {
+      font-size: 18px;
+    }
+
+    &-title-right-img {
+      right: -70px;
+    }
+  }
+
+  .festival-modal {
+    .modal-content {
+      text-align: left;
+      padding: 56px 43px 0 63px;
+    }
+
+    &-title {
+      font-size: 30px;
+      line-height: 39px;
+      margin-bottom: 30px;
+    }
+
+    &-description {
+      display: block;
+      font-size: 16px;
+      line-height: 23px;
+      color: #083645;
+      margin-bottom: 15px;
+    }
+
+    &-img {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .festival__gift {
+    &-form-card {
+      flex: 0 0 auto;
+      width: 55%;
+      margin: 0;
+    }
+
+    &-form-img {
+      flex: 1 1 auto;
+      padding: 0 15px;
+      margin-bottom: 0;
+      margin-left: auto;
+      width: auto;
+
+      img {
+        width: 100%;
+        max-width: 411px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .festival__gift {
+    padding-bottom: 140px;
+
+    h2 {
+      padding: 0 0 30px;
+      margin-bottom: 38px;
+    }
+
+    &-title {
+      &-left-img, &-right-img {
+        img {
+          &.visible__xl {
+            display: block;
+          }
+
+          &.hidden__xl {
+            display: none;
+          }
+        }
+      }
+
+      &-left-img {
+        top: -54px;
+        left: -78px;
+
+        img {
+          width: 125px;
+        }
+      }
+
+      &-right-img {
+        bottom: -18px;
+        right: -48px;
+
+        img {
+          width: 48px;
+        }
+      }
+    }
+
+    &-description {
+      margin-bottom: 80px;
+    }
+
+    &-form-card {
+      padding: 22px 40px 20px 36px;
+
+      &-title {
+        font-size: 30px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
