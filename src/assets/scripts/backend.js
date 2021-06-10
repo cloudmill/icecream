@@ -6,6 +6,10 @@ $(function() {
     changeFilterRecipes();
     filterFestMonth();
     filterFestDate();
+    subscribe();
+    faq();
+    reviews();
+    filterYears();
 });
 
 function showMore() {
@@ -299,3 +303,106 @@ function filterFestMonth() {
       });
     });
   }
+
+function reviews() {
+  $(document).on('submit', '[data-type=review-form]', function (e) {
+    e.preventDefault();
+    let email = $('[data-attr=email]').val();
+    let theme = $('[data-attr=theme]').val();
+    let name = $('[data-attr=name]').val();
+    console.log(email);
+
+    $.ajax({
+      type: 'POST',
+      url: '/local/templates/main/include/ajax/side/review.php',
+      data: {
+        email: email,
+        theme: theme,
+        name: name
+      },
+      dataType: 'html',
+      success: function (data) {
+        console.log(data);
+      }
+    })
+  });
+}
+function faq() {
+  $(document).on('submit', '[data-type=faq-form]', function (e) {
+    e.preventDefault();
+
+    let email = $('[data-attr=email]').val();
+    let theme = $('[data-attr=theme]').val();
+    console.log(email);
+
+    $.ajax({
+      type: 'POST',
+      url: '/local/templates/main/include/ajax/side/faq.php',
+      data: {
+        email: email,
+        theme: theme
+      },
+      dataType: 'html',
+      success: function (data) {
+        console.log(data);
+      }
+    })
+  });
+}
+
+function subscribe() {
+  $(document).on('submit', '[data-type=subscribe]', function (e) {
+    e.preventDefault();
+    let email = $('[data-type=mail]').val();
+
+    $.ajax({
+      type: 'POST',
+      url: '/local/templates/main/include/ajax/side/subscribe.php',
+      data: {
+        email: email
+      },
+      dataType: 'html',
+      success: function (data) {
+        console.log(data);
+      }
+    })
+  });
+}
+
+function filterYears() {
+  $(document).on('click', '[data-type=filter-item]', function (e) {
+    e.preventDefault();
+    let year = $(this).attr('data-text'),
+      container = $('[data-type=items_block]').parents(),
+      itemsContainer = $('[data-type=items_block]'),
+      pagenav = container.find('[data-type=pagenav_block]');
+    $('[data-type=filter-item]').removeClass('active');
+    $(this).addClass('active');
+
+    console.log(year);
+    $.ajax({
+      type: 'POST',
+      data: {
+        ajax: true,
+        year: year
+      },
+      dataType: 'html',
+      success: function (data) {
+        pagenav.remove();
+
+        let pagenavResponse = $(data).find('[data-type=pagenav_block]'),
+          itemsResponse = $(data).find('[data-type=item]');
+
+        itemsContainer.html(itemsResponse);
+        itemsContainer.after(pagenavResponse);
+
+        console.log(pagenavResponse);
+
+      }
+    })
+  });
+  $(document).on('click', '[data-type=reset]', function (e) {
+    e.preventDefault();
+    $('[data-type=filter-item]')[0].click();
+  });
+}
