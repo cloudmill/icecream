@@ -177,7 +177,7 @@ module.exports = env => {
 		plugins: [
 			new CopyWebpackPlugin({
 				patterns: [
-					{from: 'assets/images/favicons/favicon.svg', to: 'assets/favicon.svg'},
+					{from: 'assets/images/favicons/favicon.png', to: 'assets/favicon.png'},
 					{from: 'assets/images', to: 'assets/images'},
 					{from: 'assets/fonts', to: 'assets/fonts'},
 				]
