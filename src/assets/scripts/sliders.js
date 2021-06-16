@@ -124,13 +124,13 @@ if ($('.rollerItThree').length) {
 		const component = $(this);
 		const slider = component.find('.rollerItCont');
 		const roller = new Swiper(slider[0], {
-			loop: true,
+      loop: slider.find('.swiper-slide').length > 2 ? true : false,
 			slidesPerView: 1,
 			simulateTouch: false,
 			autoHeight: true,
 		});
 		const rollerPag = new Swiper('.rollerItPag', {
-		  loop: true,
+      loop: slider.find('.swiper-slide').length > 2 ? true : false,
 			slidesPerView: 1,
 			simulateTouch: false,
 			spaceBetween: 0,
