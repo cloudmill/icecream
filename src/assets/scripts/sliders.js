@@ -124,13 +124,13 @@ if ($('.rollerItThree').length) {
 		const component = $(this);
 		const slider = component.find('.rollerItCont');
 		const roller = new Swiper(slider[0], {
-      loop: slider.find('.swiper-slide').length > 2 ? true : false,
+			loop: slider.find('.swiper-slide').length > 2 ? true : false,
 			slidesPerView: 1,
 			simulateTouch: false,
 			autoHeight: true,
 		});
 		const rollerPag = new Swiper('.rollerItPag', {
-      loop: slider.find('.swiper-slide').length > 2 ? true : false,
+			loop: slider.find('.swiper-slide').length > 2 ? true : false,
 			slidesPerView: 1,
 			simulateTouch: false,
 			spaceBetween: 0,
@@ -172,6 +172,15 @@ if ($('.rollerItThree').length) {
 			} else {
 				roller.slideNext();
 				rollerPag.slideNext();
+				if (rollerPag.slides.length <= 2) {
+					rollerPag.slides.each(function() {
+						if ($(this).hasClass('swiper-slide-active')) {
+							$(this).removeClass('swiper-slide-active');
+						} else {
+							$(this).addClass('swiper-slide-active');
+						}
+					});
+				}
 			}
 			updatePagination();
 		});
