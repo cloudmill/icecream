@@ -245,3 +245,20 @@
                   li Десерт в стаканчике с ряженкой и клюквой в шоколаде
                   li Десерт коктейль из шоколадного мороженого с кешью медом и кунжутом
                   li Десерт коктейль из ванильного мороженного с кешью и корицей
+
+// academy-stop (modal)
+//- .academy-stop класс (блок) прокидывается через js (библиотеку)
+#academy-stop.popup(style="display: none" data-modal-class='academy-stop')
+  .close-popup.close-popup--js: +img('icons/close.svg')
+  .popup-inner
+    .academy-stop__container
+      h2.academy-stop__title
+        |В&nbsp;соответствии с&nbsp;принятыми Мэром Москвы новыми ограничениями* по&nbsp;предотвращению распространения коронавирусной инфекции Молочная академия временно приостановлена. Следите за&nbsp;новостями!
+      p.academy-stop__caption
+        a.academy-stop__link(href='https://www.mos.ru/authority/documents/doc/46665220/' target='_blank')
+          |*В соответствии с указом Мэра Москвы от 22 июня 2021 г. № 35-УМ
+      .academy-stop__button
+        button.btn.btn--primary.close-popup--js
+          span
+            |Понятно
+      
