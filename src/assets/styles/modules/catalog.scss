@@ -23,6 +23,9 @@
       .sea {
         transform: scale(1);
       }
+      .tags {
+        top: -10px;
+      }
     }
   }
   img {
@@ -54,6 +57,7 @@
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+    margin-bottom: 25px;
     @media screen and (min-width: $screen-md-min) {
       height: 270px;
     }
@@ -75,18 +79,20 @@
   }
 
   .tags {
-    position: absolute;
+    position: relative;
     top: 0;
-    left: 0;
-    z-index: 9;
+
+    margin-bottom: 10px;
+
+    transition: top .5s cubic-bezier(0.65, 0, 0.35, 1);
   }
 
   &--main {
     .catalog__item {
-      padding-top: 30px;
-      @media screen and (min-width: $screen-md-min) {
-        padding-top: 60px;
-      }
+      // padding-top: 30px;
+      // @media screen and (min-width: $screen-md-min) {
+      //   padding-top: 60px;
+      // }
     }
   }
 
