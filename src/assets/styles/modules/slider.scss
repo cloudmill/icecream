@@ -74,6 +74,9 @@
     position: relative;
     z-index: 8;
 
+    display: block;
+    pointer-events: all;
+
     img {
       position: relative;
       z-index: 10;
