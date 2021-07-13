@@ -10,6 +10,7 @@ $(function() {
     faq();
     reviews();
     filterYears();
+    // filtersChange();
 });
 
 function showMore() {
@@ -48,6 +49,46 @@ function showMore() {
             })
         }
     });
+}
+
+function filtersChange() {
+  $('[data-type=change-filter]').on('select2:select', function() {
+    let thisObj = $(this),
+      container = thisObj.parents('[data-type=container]'),
+      itemsContainer = container.find('[data-type=items-container'),
+      getData = container.find('[data-type=get-field-val'),
+      data = {};
+
+      getData.each(function () {
+        console.log($(this));
+        data[$(this).attr('data-field')] = $(this).val();
+      });
+
+    // console.log(data);
+
+    $.ajax({
+      type: 'get',
+      url: window.location.pathname,
+      dataType: 'html',
+      data: data,
+      success: function(r) {
+        let itemsResponse = $(r).find('[data-type=items-container]').children(),
+          pagenavResponse = $(r).find('[data-type=pagenav_block]');
+
+        itemsContainer.empty();
+        itemsContainer.append(itemsResponse);
+        pagenavBlock.remove();
+
+        if (pagenavResponse) {
+          itemsContainer.after(pagenavResponse);
+        }
+
+        filterSelects.each(function () {
+          $(this).val($(this).find('[selected]').val()).trigger('change');
+        });
+      }
+    });
+  });
 }
 
 function changeFilterCatalog() {
