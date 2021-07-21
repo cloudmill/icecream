@@ -16,7 +16,7 @@ function showMore() {
         e.preventDefault();
 
         let container = $(this).parents('[data-type=main_container]'),
-            itemsContainer = container.find('[data-type=items_block]'),
+            itemsContainer = container.find('[data-type=items-container]'),
             url = $(this).attr('data-url'),
             pagenav = container.find('[data-type=pagenav_block]'),
             data = null,
