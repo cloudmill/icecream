@@ -116,29 +116,29 @@ let ajaxModal = new jBox('Modal', {
 });
 
 // academy-stop (modal)
-$(() => {
-	// проверка на необходимую страницу
-	if ($('.page-fest').length !== 0) {
-		const MODAL_DELAY = 1500
-		const MODAL_ID = '#academy-stop'
-
-		const modal = new jBox('Modal', {
-			content: $(MODAL_ID),
-			closeButton: false,
-			addClass: $(MODAL_ID).data('modal-class'),
-
-			onOpen: () => {
-				$(MODAL_ID).parent().animate({scrollTop: 0}, 100);
-			},
-		})
-
-		setTimeout(() => {
-			modal.open()
-		}, MODAL_DELAY)
-
-		$('.close-popup--js').on('click', function() {
-			modal.close()
-		})
-	}
-})
+// $(() => {
+// 	// проверка на необходимую страницу
+// 	if ($('.page-fest').length !== 0) {
+// 		const MODAL_DELAY = 1500
+// 		const MODAL_ID = '#academy-stop'
+//
+// 		const modal = new jBox('Modal', {
+// 			content: $(MODAL_ID),
+// 			closeButton: false,
+// 			addClass: $(MODAL_ID).data('modal-class'),
+//
+// 			onOpen: () => {
+// 				$(MODAL_ID).parent().animate({scrollTop: 0}, 100);
+// 			},
+// 		})
+//
+// 		setTimeout(() => {
+// 			modal.open()
+// 		}, MODAL_DELAY)
+//
+// 		$('.close-popup--js').on('click', function() {
+// 			modal.close()
+// 		})
+// 	}
+// })
 
